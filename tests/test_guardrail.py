@@ -71,7 +71,7 @@ def test_new_keys_equal_legacy_encoding(name: str, force: str) -> None:
 
     lab = LabConfig.load()
     spec = resolve_spec(name)
-    assert spec["postflop"]["guardrail"]["force_min"] == force
+    spec["postflop"]["guardrail"].update(seuil=0.5, force_min=force)   # réglage exprimable dans l'ancien codage
     calls = []
     original = RuleStrategy._guard_pass
 

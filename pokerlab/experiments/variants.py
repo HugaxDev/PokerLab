@@ -305,6 +305,8 @@ def run_confirmation(ctx: ExperimentContext) -> dict[str, Any]:
     base = resolve_spec(cfg["strategy"])
     space = str(cfg.get("deck_space", "confirmation"))
     comps = list(cfg.get("compositions", ["humains_simules"]))
+    if cfg.get("reference_patch"):   # référence figée (ex. ancien réglage), sinon la config actuelle
+        base = {**variant(base, cfg["reference_patch"], "ref"), "name": base["name"], "label": base.get("label", base["name"])}
     ref_cfg = dict(base)
     ref_cfg["name"] = f"{base['name']}[actuel]"
     ref_cfg["label"] = f"{base.get('label', base['name'])} [{cfg.get('reference_label', 'actuel')}]"

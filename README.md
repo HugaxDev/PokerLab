@@ -177,7 +177,7 @@ position).
 | `zero_bluff` | Préflop de large. Postflop : ne mise/relance jamais sans paire ; paie un tirage seulement avec la cote. |
 | `position` | BTN/CO : range large, ouvre 3 bb. Ailleurs : 99+, AK, AQ, AJ. Pas de bluff. BB : check gratuit, couché sans main de la range serrée. Postflop de serré, garde-fou compris. |
 | `bluff` | Position + un bluff 1/2 pot au flop si relanceur préflop, un seul adversaire, flop sec. Un seul bluff par main. |
-| `joueur` | ≈ 35-40 % des mains. Ouvre 3 bb, paie ≤ 4/5 bb selon la main. Postflop : mise 1/3-1/2 avec paire ou tirage, c-bet 1/3, garde-fou face aux grosses mises. |
+| `joueur` | ≈ 35-40 % des mains. Ouvre 3 bb, paie ≤ 4/5 bb selon la main. Postflop : mise 1/3-1/2 avec paire ou tirage, c-bet 1/3, garde-fou au-delà de 1/3 du pot (top paire bon kicker ou mieux). |
 | `equity_bot` | Référence « bon joueur » : équité Monte Carlo contre la range adverse estimée, cote du pot, tailles standard. |
 | `random_legal` | Témoin : actions légales au hasard (doit perdre nettement). |
 
@@ -190,7 +190,7 @@ rapport (palette catégorielle validée pour le daltonisme).
 | Paramètre | Valeurs | Défaut |
 |---|---|---|
 | `seuil` : déclenchement | `0.33`, `0.5`, `0.75`, `1.0` (mise/relance adverse > cette fraction du pot, ou tapis) ; `tapis` (tapis seulement) | `0.5` |
-| `force_min` : force minimale pour payer | `top_paire_bon_kicker` (kicker valet ou mieux) < `overpair` < `overpair_qq` < `deux_paires` < `brelan` (ou mieux) | `overpair_qq` ; `deux_paires` pour joueur (+ exception d'équité) |
+| `force_min` : force minimale pour payer | `top_paire_bon_kicker` (kicker valet ou mieux) < `overpair` < `overpair_qq` < `deux_paires` < `brelan` (ou mieux) | `overpair_qq` ; joueur : seuil `0.33`, `top_paire_bon_kicker` (+ exception d'équité) |
 
 Ces valeurs reproduisent exactement l'ancien codage (`trigger_fraction`, `min_made`,
 `allow_overpair_from`, toujours accepté), vérifié main par main dans `tests/test_guardrail.py`.
@@ -447,8 +447,8 @@ Les règles décrites en français laissent des ambiguïtés. Elles sont tranch�
    deux paires ou mieux, ou une overpair QQ+ (QQ, KK, AA au-dessus du tableau) ; jamais d'exception
    à l'équité. `trigger_scope: raise_only` limite le garde-fou aux seules relances. **Ce garde-fou
    est uniforme** : large, zero_bluff, position et bluff, qui reprennent le postflop de serré, ont
-   exactement le même bloc (`postflop.guardrail`). joueur garde le sien (deux paires+, avec exception
-   d'équité contre la range estimée) ; equity_bot et random_legal n'en ont pas. Pour mesurer ce qu'il
+   exactement le même bloc (`postflop.guardrail`). joueur garde le sien (au-delà de 1/3 du pot : top paire bon kicker ou mieux,
+   avec exception d'équité contre la range estimée ; ancien réglage 50 % / deux paires, voir plus bas) ; equity_bot et random_legal n'en ont pas. Pour mesurer ce qu'il
    rapporte : `python -m pokerlab ablation --config ablation_garde_fou` (`--set strategy=position`…).
 5. **large** : 3-bet QQ+/AK comme serré (non précisé) ; paie ≤ 3 bb avec toute sa range. « Tirage » =
    couleur ou quinte ouverte (double ventrale incluse). « Si la cote le justifie » : équité par les
@@ -468,9 +468,11 @@ Les règles décrites en français laissent des ambiguïtés. Elles sont tranch�
    défense de BB). Face à une relance ≤ 4 bb : paie avec tout roi, tout as, toute paire, **toute main
    assortie** (règle littérale) ; ≤ 5 bb avec deux cartes ≥ T. 3-bet QQ+/AK. Face à un 3-bet : tapis
    QQ+/AK, paie ≤ 12 bb avec TT-JJ, AQ, AJs, KQs. « 1/3 à 1/2 du pot » : 1/2 avec top paire ou mieux,
-   1/3 avec une paire plus faible ou un tirage. Face à une mise ≤ 50 % du pot : paie avec une paire
-   ou un tirage ; au-delà ou face à un tapis : garde-fou (deux paires+, sinon équité Monte Carlo
-   contre la range estimée ≥ cote). C-bet au flop seulement.
+   1/3 avec une paire plus faible ou un tirage. Face à une mise ≤ 1/3 du pot : paie avec une paire
+   ou un tirage ; au-delà ou face à un tapis : garde-fou (top paire kicker J+ ou mieux, sinon équité
+   Monte Carlo contre la range estimée ≥ cote). Réglage changé de 50 % / deux paires à 1/3 / top paire
+   bon kicker après confirmation hors échantillon (`out/humains/confirmation_garde_fou`) : +7,1 ± 1,3 bb/100
+   sur humains_simules et +7,2 ± 1,4 sur humains_tilt_fort (100 000 donnes appariées chacune, Holm). C-bet au flop seulement.
 10. **Relance qui engage ≥ 70 % du tapis** : transformée en tapis (`shove_commit_fraction`).
 11. **Mode PokerKit** : « tournoi » (un seul déroulé du tableau en cas de tapis, cartes montrées) ;
     sans incidence sur les gains d'une partie cash sans rake.

@@ -160,10 +160,8 @@ def postflop_rules(cfg: dict[str, Any], max_lines: int = 10) -> list[str]:
     seuil = g.get("seuil")
     tapis_seul = seuil is not None and str(seuil).lower() == "tapis"
     frac = float(g["trigger_fraction"]) if seuil is None else (None if tapis_seul else float(seuil))
-    call_text = f"Face à une mise : paie avec {level_phrase(p['call_vs_bet']['min_made'])}"
-    if g["enabled"] and frac is not None:
-        call_text += f" si elle fait au plus {fraction_label(frac)}"
-    lines.append(call_text + ", sinon couche-toi.")
+    size = f" d'au plus {fraction_label(frac)}" if g["enabled"] and frac is not None else ""
+    lines.append(f"Face à une mise{size} : paie avec {level_phrase(p['call_vs_bet']['min_made'])}, sinon couche-toi.")
     cd = p["call_draws"]
     if cd["enabled"]:
         if cd.get("use_pot_odds", True):

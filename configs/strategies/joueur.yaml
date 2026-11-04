@@ -2,7 +2,7 @@ name: joueur
 label: Joueur
 color: "#008300"
 type: rules
-description: "~40 % des mains. Ouvre 3 bb ; paie <= 4 bb (rois, as, paires, assorties), <= 5 bb (deux cartes >= 10). Postflop : mise 1/3-1/2 avec paire ou tirage, c-bet 1/3, garde-fou face aux grosses mises."
+description: "~40 % des mains. Ouvre 3 bb ; paie <= 4 bb (rois, as, paires, assorties), <= 5 bb (deux cartes >= 10). Postflop : mise 1/3-1/2 avec paire ou tirage, c-bet 1/3, garde-fou au-delà de 1/3 du pot (top paire bon kicker ou mieux)."
 preflop:
   unopened:
     raise_range: "22+, A2+, KT+, QT+, JT, K2s+, T9s-32s, J9s, T8s-42s"
@@ -34,7 +34,9 @@ postflop:
   call_draws: {enabled: true, draws: strong, use_pot_odds: false}   # ... ou un tirage
   guardrail:
     enabled: true
-    seuil: 0.5                  # mise/relance > 50 % du pot (0.33 / 0.5 / 0.75 / 1.0) ou « tapis » (tapis seulement)
-    force_min: deux_paires      # suit seulement avec deux paires ou mieux (top_paire_bon_kicker / overpair / overpair_qq / deux_paires / brelan)...
+    seuil: 0.33                 # mise/relance > 1/3 du pot (0.33 / 0.5 / 0.75 / 1.0) ou « tapis » (tapis seulement)
+    force_min: top_paire_bon_kicker   # suit seulement avec top paire kicker J+ ou mieux (top_paire_bon_kicker / overpair / overpair_qq / deux_paires / brelan)...
+    # Ancien réglage : seuil 0.5, deux_paires. Changé après confirmation hors échantillon (out/humains/confirmation_garde_fou) :
+    # +7.1 ± 1.3 bb/100 sur humains_simules et +7.2 ± 1.4 sur humains_tilt_fort, 100 000 donnes appariées chacune.
     equity_check: true          # ... sauf si équité vs range estimée >= cote du pot
     equity_sims: 300

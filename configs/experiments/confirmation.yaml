@@ -9,7 +9,8 @@ deck_space: confirmation     # graines jamais utilisées par compare, sweep, abl
 decks: 100000                # par case (x6 mains)
 block_decks: 2000
 max_minutes: 120
-reference_label: "actuel : seuil 0.5, deux paires"
+reference_label: "ancien réglage : seuil 0.5, deux paires"
+reference_patch: {garde_fou_seuil: 0.5, garde_fou_force: deux_paires}   # référence figée (sans clé : la config actuelle)
 candidates:                  # les 3 meilleures cases du sweep 5x5 (joueur, humains_simules, tilt ≈ 25 %)
   - {label: "seuil 0.33, top paire bon kicker", patch: {garde_fou_seuil: 0.33, garde_fou_force: top_paire_bon_kicker}}
   - {label: "seuil 0.33, overpair", patch: {garde_fou_seuil: 0.33, garde_fou_force: overpair}}
