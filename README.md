@@ -79,6 +79,8 @@ Chaque expérience a une commande et une config YAML dans `configs/experiments/`
 | `serve` | Génère et sert le tableau de bord sur http://localhost:8765, régénéré automatiquement. | `site.yaml` |
 | `robustesse` | Par stratégie, sur toutes les compositions mesurées : bb/100 médian, pire cas, plus faible borne basse d'IC, classement par pire cas, et verdict de gagnante. | — |
 | `population` | Stats des adversaires importés et composition `population_reelle` calibrée. | — |
+| `mesure-tilt` | Part mesurée des sièges adverses en tilt, par archétype. | — |
+| `confirmation` | Réglage actuel contre des candidats (ex. meilleures cases d'un sweep) sur des graines jamais utilisées, plusieurs compositions, écarts appariés + Holm ; retenu seulement s'il gagne partout. | `confirmation.yaml` |
 | `bench` | Mesure le débit réel (mains/s). | `bench.yaml` |
 | `precompute` | Calcule la table d'équité préflop 169×169. | `game.yaml` |
 | `replay` | Affiche l'historique texte d'une main de campagne. | — |
@@ -222,7 +224,10 @@ par défaut, donc les anciens archétypes jouent exactement comme avant) :
   bluffs montrés et son VPIP).
 
 `humains_simules` (débutants 35 %, prudents 20 %, agressifs 15 %, réguliers 15 %, pousseurs de tapis
-15 %) active les quatre. `session_decks: 10` : les mêmes adversaires restent 10 decks (60 mains),
+15 %) active les quatre. Le tilt y est réglé pour ≈ 8 % de sièges en tilt à un instant donné, **mesuré**
+en jouant (`python -m pokerlab mesure-tilt` : 8,1 % ± 0,9 avec joueur en héros, 7,4 à 8,1 % selon le
+héros). `humains_tilt_fort` garde le premier réglage (≈ 25 % mesuré) pour vérifier qu'une conclusion ne
+dépend pas du niveau de tilt ; une composition peut ajuster ses archétypes (bloc `ajustements`). `session_decks: 10` : les mêmes adversaires restent 10 decks (60 mains),
 le tilt et les observations se construisent pendant la session. L'état ne change qu'en fin de main et
 la table rejoue au besoin le début de la session : résultats identiques quel que soit le découpage
 en tâches ou le nombre de processus, et l'audit ou les historiques rejouent l'état exact.
