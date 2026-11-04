@@ -1,0 +1,5 @@
+# Mesure du débit réel (mains/s). Le résultat est écrit dans out/bench/bench.json.
+experiment: bench
+hands: 600
+strategies: [serre, large, position, bluff, zero_bluff]
+composition: micro_play_money

@@ -1,0 +1,41 @@
+name: joueur
+label: Joueur
+color: "#008300"
+type: rules
+description: "~40 % des mains. Ouvre 3 bb ; paie <= 4 bb (rois, as, paires, assorties), <= 5 bb (deux cartes >= 10). Postflop : mise 1/3-1/2 avec paire ou tirage, c-bet 1/3, garde-fou face aux grosses mises."
+preflop:
+  unopened:
+    raise_range: "22+, A2+, KT+, QT+, JT, K2s+, T9s-32s, J9s, T8s-42s"
+    raise_size_bb: 3.0
+    per_limper_bb: 1.0
+  vs_open:
+    raise_range: "QQ+, AK"      # Interprétation : 3-bet comme serré (non précisé)
+    raise_multiplier: 3.0
+    call:
+      - {range: "22+, A2+, K2+, Q2s+, J2s+, T2s+, 92s+, 82s+, 72s+, 62s+, 52s+, 42s+, 32s", max_bb: 4.0}
+      - {range: "KT+, QT+, JT", max_bb: 5.0}
+  vs_3bet:                      # Interprétation : tapis QQ+/AK, paie un 3-bet <= 12 bb avec TT-JJ, AQ, AJs, KQs
+    raise_range: "QQ+, AK"
+    raise_allin: true
+    call:
+      - {range: "TT-JJ, AQ, AJs, KQs", max_bb: 12.0}
+  vs_4bet:
+    call:
+      - {range: "QQ+, AK", max_bb: 1000}
+postflop:
+  value_bet:
+    tiers:                      # Interprétation de « 1/3 à 1/2 » : 1/2 avec top paire+, 1/3 avec une paire plus faible
+      - {min_made: top_pair, size_pot: 0.5}
+      - {min_made: weak_pair, size_pot: 0.33}
+  draw_bet: {enabled: true, draws: strong, size_pot: 0.33, streets: [1, 2]}
+  cbet: {enabled: true, size_pot: 0.33, max_opponents: 1, streets: [1], frequency: 1.0}
+  raise_vs_bet: {enabled: true, min_made: two_pair, multiplier: 3.0}
+  call_vs_bet: {min_made: weak_pair}          # Interprétation : paie une mise <= 50 % du pot avec une paire
+  call_draws: {enabled: true, draws: strong, use_pot_odds: false}   # ... ou un tirage
+  guardrail:
+    enabled: true
+    trigger_fraction: 0.5       # mise/relance > 50 % du pot
+    trigger_all_in: true        # ou tapis
+    min_made: two_pair          # suit seulement avec deux paires ou mieux...
+    equity_check: true          # ... sauf si équité vs range estimée >= cote du pot
+    equity_sims: 300

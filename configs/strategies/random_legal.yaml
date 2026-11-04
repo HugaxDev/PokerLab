@@ -1,0 +1,7 @@
+name: random_legal
+label: Aléatoire (témoin)
+color: "#e34948"
+type: random
+description: "Actions légales au hasard. Sert à vérifier que le moteur et les statistiques fonctionnent (doit perdre nettement)."
+weights: {fold: 1.0, call: 1.0, raise: 1.0}
+min_raise_share: 0.5

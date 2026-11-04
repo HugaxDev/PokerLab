@@ -1,0 +1,40 @@
+name: position
+label: Position
+color: "#eda100"
+type: rules
+description: "BTN/CO : range large, ouvre 3 bb. Ailleurs : 99+, AK, AQ, AJ. Pas de bluff. BB : check gratuit, sinon couché sans main de la range serrée."
+preflop:
+  unopened:
+    raise_range:
+      default: "99+, AK, AQ, AJ"
+      BTN: "22+, A2+, KT+, QT+, JT, T9s-54s"
+      CO: "22+, A2+, KT+, QT+, JT, T9s-54s"
+    raise_size_bb: 3.0
+    per_limper_bb: 1.0
+  vs_open:
+    raise_range: "QQ+, AK"
+    raise_multiplier: 3.0
+    call:
+      - {range: "99-JJ, AQ, AJ", max_bb: 4.0}
+    by_position:                # Interprétation : au BTN/CO, paie comme large (<= 3 bb)
+      BTN:
+        call:
+          - {range: "99-JJ, AQ, AJ", max_bb: 4.0}
+          - {range: "22+, A2+, KT+, QT+, JT, T9s-54s", max_bb: 3.0}
+      CO:
+        call:
+          - {range: "99-JJ, AQ, AJ", max_bb: 4.0}
+          - {range: "22+, A2+, KT+, QT+, JT, T9s-54s", max_bb: 3.0}
+  vs_3bet:
+    raise_range: "QQ+, AK"
+    raise_allin: true
+  vs_4bet:
+    call:
+      - {range: "QQ+, AK", max_bb: 1000}
+postflop:
+  value_bet:
+    tiers:
+      - {min_made: top_pair, size_pot: 0.667}
+  raise_vs_bet: {enabled: true, min_made: two_pair, multiplier: 3.0}
+  call_vs_bet: {min_made: top_pair}
+  call_draws: {enabled: false}

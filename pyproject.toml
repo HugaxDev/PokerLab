@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pokerlab"
+version = "0.1.0"
+description = "Laboratoire local de simulation de poker NLHE 6-max (PokerKit)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pokerkit>=0.7,<0.8",
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "scipy>=1.11",
+  "pyyaml>=6",
+  "plotly>=5.18",
+  "pyarrow>=14",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+optim = ["optuna>=3"]
+
+[tool.setuptools.packages.find]
+include = ["pokerlab*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

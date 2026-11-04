@@ -1,0 +1,148 @@
+# Archétypes adverses. Les valeurs vpip/pfr/three_bet sont des cibles (percentiles de mains) ;
+# le rapport affiche les stats réellement mesurées pour vérifier qu'ils jouent comme annoncé.
+# Paramètres : voir pokerlab/opponents/archetype.py (PARAM_DEFAULTS).
+defaults:
+  open_size_bb: 3.0
+  size_jitter: 0.15
+
+calling_station:
+  label: Calling station (loose-passive)
+  vpip: 0.55
+  pfr: 0.06
+  three_bet: 0.02
+  limp: true
+  cold_call_share: 0.9
+  call_cap_bb: 10.0
+  bb_defend_cap_bb: 8.0
+  fold_to_3bet: 0.3
+  aggression: 0.3
+  cbet: 0.35
+  fold_to_cbet: 0.1
+  bluff: 0.03
+  semi_bluff: 0.1
+  thin_value: 0.1
+  call_weak: 0.9
+  float: 0.4
+  raise_value: 0.1
+  check_raise: 0.1
+  bluff_raise: 0.0
+  bet_size_pot: 0.5
+  stackoff_min_made: weak_pair
+  big_bet_fraction: 1.5
+
+nit:
+  label: Nit
+  vpip: 0.12
+  pfr: 0.09
+  three_bet: 0.03
+  cold_call_share: 0.5
+  call_cap_bb: 3.5
+  fold_to_3bet: 0.6
+  aggression: 0.55
+  cbet: 0.55
+  fold_to_cbet: 0.6
+  bluff: 0.03
+  semi_bluff: 0.2
+  thin_value: 0.15
+  call_weak: 0.2
+  float: 0.02
+  raise_value: 0.3
+  bet_size_pot: 0.6
+  stackoff_min_made: two_pair
+
+TAG:
+  label: TAG (serré-agressif)
+  vpip: 0.22
+  pfr: 0.18
+  three_bet: 0.07
+  cold_call_share: 0.5
+  call_cap_bb: 4.0
+  fold_to_3bet: 0.5
+  aggression: 0.7
+  cbet: 0.7
+  fold_to_cbet: 0.45
+  bluff: 0.1
+  semi_bluff: 0.5
+  thin_value: 0.3
+  call_weak: 0.45
+  float: 0.08
+  raise_value: 0.4
+  check_raise: 0.25
+  bluff_raise: 0.03
+  bet_size_pot: 0.66
+  stackoff_min_made: overpair
+
+LAG:
+  label: LAG (large-agressif)
+  vpip: 0.30
+  pfr: 0.25
+  three_bet: 0.10
+  cold_call_share: 0.5
+  call_cap_bb: 4.5
+  fold_to_3bet: 0.4
+  aggression: 0.75
+  cbet: 0.75
+  fold_to_cbet: 0.35
+  bluff: 0.2
+  semi_bluff: 0.6
+  thin_value: 0.35
+  call_weak: 0.55
+  float: 0.15
+  raise_value: 0.45
+  check_raise: 0.3
+  bluff_raise: 0.06
+  bet_size_pot: 0.7
+  stackoff_min_made: top_pair
+
+maniac:
+  label: Maniac
+  vpip: 0.65
+  pfr: 0.45
+  three_bet: 0.18
+  limp: true
+  cold_call_share: 0.8
+  call_cap_bb: 12.0
+  bb_defend_cap_bb: 10.0
+  fold_to_3bet: 0.2
+  four_bet: 0.06
+  aggression: 0.85
+  cbet: 0.9
+  fold_to_cbet: 0.2
+  bluff: 0.45
+  semi_bluff: 0.8
+  thin_value: 0.5
+  call_weak: 0.7
+  float: 0.3
+  raise_value: 0.5
+  check_raise: 0.2
+  bluff_raise: 0.15
+  bet_size_pot: 0.9
+  stackoff_min_made: weak_pair
+  big_bet_fraction: 2.0
+
+nit_trappeur:
+  label: Nit trappeur (slowplay)
+  vpip: 0.13
+  pfr: 0.10
+  three_bet: 0.03
+  preflop_trap: 0.6          # paie au lieu de 3-beter avec AA/KK
+  cold_call_share: 0.6
+  call_cap_bb: 4.0
+  fold_to_3bet: 0.6
+  aggression: 0.45
+  cbet: 0.5
+  fold_to_cbet: 0.6
+  bluff: 0.02
+  semi_bluff: 0.15
+  thin_value: 0.1
+  call_weak: 0.25
+  float: 0.02
+  raise_value: 0.25
+  check_raise: 0.85          # relance après avoir checké sa grosse main
+  slowplay: 0.8              # checke les deux paires+ 80 % du temps
+  bet_size_pot: 0.6
+  stackoff_min_made: two_pair
+
+equity_bot:
+  label: Equity bot
+  type: equity_ref           # résolu vers configs/strategies/equity_bot.yaml

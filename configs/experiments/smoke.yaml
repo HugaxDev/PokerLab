@@ -1,0 +1,60 @@
+# Version miniature de toutes les expériences (<= 2 000 mains au total) + rapport de démonstration.
+experiment: smoke
+max_hands: 2000
+compare:
+  strategies: [serre, large, zero_bluff, position, bluff, joueur, equity_bot, random_legal]
+  compositions: [micro_play_money, reguliers, mixte]
+  autostop: {enabled: false}
+  decks: 3
+  history_samples: 5
+round_robin:
+  strategies: [serre, large, zero_bluff, position, bluff, joueur, equity_bot, random_legal]
+  tables: 2
+  decks_per_table: 2
+sessions:
+  strategies: [serre, large, zero_bluff, position, bluff, joueur, equity_bot]
+  composition: micro_play_money
+  n_sessions: 2
+  hands_per_session: 10
+bankroll:
+  strategies: [serre, joueur]
+  capital: 3.50
+  currency_per_bb: 0.02
+  stop_loss_bb: 25
+  n_trajectories: 500
+  max_sessions: 50
+sweep:
+  strategy: bluff
+  composition: micro_play_money
+  decks: 2
+  params:
+    - {path: taille_ouverture, label: ouverture_bb, values: [2.5, 3.0]}
+    - {path: frequence_bluff, label: freq_bluff, values: [0.0, 1.0]}
+ablation:
+  strategy: joueur
+  composition: micro_play_money
+  decks: 2
+  ablations:
+    - {name: garde-fou, patch: {postflop.guardrail.enabled: false}}
+    - {name: c-bet, patch: {postflop.cbet.enabled: false}}
+optimize:
+  strategy: joueur
+  composition: micro_play_money
+  n_trials: 3
+  train_decks: 2
+  validation_decks: 2
+  top_k: 2
+  space:
+    - {path: taille_ouverture, low: 2.0, high: 4.0, step: 0.5}
+    - {path: taille_cbet, low: 0.25, high: 0.75, step: 0.05}
+audit:
+  strategy: joueur
+  composition: micro_play_money
+  pool_decks: 2
+  n_decisions: 12
+  rollouts: 2
+  bet_sizes_pot: [0.5, 1.0]
+  include_allin: true
+journal:
+  csv: journal/exemple_journal.csv
+  phases: journal/phases.yaml

@@ -1,0 +1,17 @@
+name: bluff
+label: Bluff
+color: "#e87ba4"
+extends: position
+description: "Règles de position + un bluff (1/2 pot) au flop si relanceur préflop, un seul adversaire, flop sec. Un seul bluff par main."
+postflop:
+  bluff:
+    enabled: true
+    size_pot: 0.5
+    frequency: 1.0              # paramètre de sweep (fréquence de bluff)
+    streets: [1]                # flop uniquement -> un seul bluff par main
+    require_preflop_raiser: true
+    max_opponents: 1
+    require_dry: true
+    dry_board:
+      connected_max_span: 4     # 3 rangs distincts dans un écart <= 4 = connecté (As haut ou bas)
+      paired_wet_max_gap: 2     # Interprétation : paire au tableau « mouillée » si une autre carte est à <= 2 rangs

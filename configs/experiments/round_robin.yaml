@@ -1,0 +1,8 @@
+# Les stratégies les unes contre les autres à la même table.
+experiment: round_robin
+strategies: [serre, large, zero_bluff, position, bluff, joueur, equity_bot, random_legal]
+tables: all              # all = les 28 sous-ensembles de 6 parmi 8 ; ou un nombre de tables tirées
+decks_per_table: 2000    # x 6 rotations
+test: t
+record_decisions: false
+history_samples: 10

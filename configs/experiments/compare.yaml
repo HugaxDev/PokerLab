@@ -1,0 +1,15 @@
+# Les 8 stratégies contre chaque composition, en duplicate (matrice stratégie x composition).
+experiment: compare
+strategies: [serre, large, zero_bluff, position, bluff, joueur, equity_bot, random_legal]
+compositions: [micro_play_money, reguliers, mixte]
+autostop:
+  enabled: true
+  block_decks: 500                 # 500 decks = 3 000 mains par bloc et par cellule
+  ci_halfwidth_bb100: 3.0          # arrêt quand l'IC 95 % fait ± 3 bb/100
+  max_hands_per_strategy: 200000   # par cellule (stratégie, composition)
+  min_decks: 200
+  metric: ev                       # ev = all-in adjusted
+test: t                            # t (test t apparié) ou bootstrap (par blocs)
+record_decisions: true
+decision_decks: 10000          # décisions enregistrées sur les 10 000 premiers decks (composition principale) : mémoire maîtrisée
+history_samples: 30

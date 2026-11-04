@@ -1,0 +1,28 @@
+name: serre
+label: Serré
+color: "#2a78d6"
+type: rules
+description: "99+, AK, AQ, AJs, KQs. Ouvre 3 bb, 3-bet 3x QQ+/AK, paie <= 4 bb avec 99-JJ/AQ. Postflop : mise 2/3 avec top paire+, sinon check/couché."
+preflop:
+  unopened:
+    raise_range: "99+, AK, AQ, AJs, KQs"
+    raise_size_bb: 3.0
+    per_limper_bb: 1.0          # Interprétation : +1 bb par limper
+  vs_open:
+    raise_range: "QQ+, AK"
+    raise_multiplier: 3.0
+    call:
+      - {range: "99-JJ, AQ", max_bb: 4.0}
+  vs_3bet:                      # Interprétation : après avoir ouvert, tapis avec QQ+/AK, sinon couché
+    raise_range: "QQ+, AK"
+    raise_allin: true
+  vs_4bet:                      # Interprétation : paie/tapis avec QQ+/AK uniquement
+    call:
+      - {range: "QQ+, AK", max_bb: 1000}
+postflop:
+  value_bet:
+    tiers:
+      - {min_made: top_pair, size_pot: 0.667}
+  raise_vs_bet: {enabled: true, min_made: two_pair, multiplier: 3.0}   # Interprétation : relance avec deux paires+
+  call_vs_bet: {min_made: top_pair}     # se couche face à une mise sans top paire (y compris face à un tapis)
+  call_draws: {enabled: false}

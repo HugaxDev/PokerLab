@@ -1,0 +1,10 @@
+# Balayage d'un ou deux paramètres d'une stratégie (mêmes decks pour chaque variante).
+# Alias : taille_ouverture, seuil_paie, frequence_bluff, taille_bluff, taille_cbet, frequence_cbet, taille_value
+# ou tout chemin pointé de la config (ex. postflop.guardrail.trigger_fraction).
+experiment: sweep
+strategy: bluff
+composition: micro_play_money
+decks: 1000
+params:
+  - {path: taille_ouverture, label: ouverture_bb, values: [2.0, 2.5, 3.0, 4.0]}
+  - {path: frequence_bluff, label: freq_bluff, values: [0.0, 0.5, 1.0]}

@@ -1,0 +1,12 @@
+name: mixte
+label: Mixte
+description: "Mélange équilibré de tous les archétypes."
+mode: sample
+weights:
+  calling_station: 0.20
+  maniac: 0.12
+  nit: 0.15
+  nit_trappeur: 0.13
+  TAG: 0.20
+  LAG: 0.15
+  equity_bot: 0.05

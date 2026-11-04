@@ -1,0 +1,18 @@
+name: equity_bot
+label: Equity bot (référence)
+color: "#6250d6"
+type: equity
+description: "Décide à l'EV : équité Monte Carlo contre la range adverse estimée à partir de ses actions, cote du pot, tailles standard."
+preflop:
+  open_pct: {UTG: 0.15, MP: 0.19, CO: 0.27, BTN: 0.45, SB: 0.40, BB: 0.25}
+  open_size_bb: 2.5
+  iso_pct: 0.15
+  three_bet_equity: 0.60
+  four_bet_equity: 0.62
+postflop:
+  sims: 300
+  value_margin: 0.25
+  raise_margin: 0.45
+  bet_size_pot: 0.66
+range_model:
+  looseness: 1.3                # micro-limites : les adversaires jouent plus large que la norme

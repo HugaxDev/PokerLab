@@ -1,0 +1,9 @@
+name: reguliers
+label: Réguliers
+description: "Table de joueurs solides : TAG et LAG, un peu d'equity bot."
+mode: sample
+weights:
+  TAG: 0.45
+  LAG: 0.30
+  nit: 0.10
+  equity_bot: 0.15

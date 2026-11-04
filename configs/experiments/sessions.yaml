@@ -1,0 +1,7 @@
+# 10 000 sessions de 50 mains par stratégie : pourquoi mes résultats à la main ne prouvent rien.
+experiment: sessions
+strategies: [serre, large, zero_bluff, position, bluff, joueur, equity_bot]
+composition: micro_play_money
+n_sessions: 10000
+hands_per_session: 50
+stack_mode: persistent   # tapis conservés d'une main à l'autre, recave selon game.rebuy

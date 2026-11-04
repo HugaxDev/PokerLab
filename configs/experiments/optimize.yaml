@@ -1,0 +1,15 @@
+# Recherche des meilleurs paramètres : graines d'entraînement, validation sur graines jamais vues.
+experiment: optimize
+strategy: joueur
+composition: micro_play_money
+method: random           # recherche aléatoire reproductible
+seed: 1
+n_trials: 30
+train_decks: 500
+validation_decks: 1000
+top_k: 5
+space:
+  - {path: taille_ouverture, low: 2.0, high: 4.0, step: 0.5}
+  - {path: taille_cbet, low: 0.25, high: 0.75, step: 0.05}
+  - {path: postflop.guardrail.trigger_fraction, low: 0.3, high: 1.0, step: 0.1}
+  - {path: "preflop.vs_open.call[0].max_bb", low: 2.5, high: 5.0, step: 0.5}

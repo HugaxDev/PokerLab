@@ -1,0 +1,13 @@
+# On retire une règle à la fois pour mesurer ce qu'elle rapporte ou coûte.
+experiment: ablation
+strategy: joueur
+composition: micro_play_money
+decks: 2000
+ablations:
+  - {name: garde-fou, patch: {postflop.guardrail.enabled: false}}
+  - {name: c-bet, patch: {postflop.cbet.enabled: false}}
+  - {name: mise des tirages, patch: {postflop.draw_bet.enabled: false}}
+  - {name: paie des tirages, patch: {postflop.call_draws.enabled: false}}
+  - {name: paie 5 bb broadways, patch: {"preflop.vs_open.call[1].max_bb": 0.0}}
+  - {name: mise avec petite paire, patch: {"postflop.value_bet.tiers": [{min_made: top_pair, size_pot: 0.5}]}}
+# Autre exemple (stratégie bluff) : {name: condition flop sec, patch: {postflop.bluff.require_dry: false}}

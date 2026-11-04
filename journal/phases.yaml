@@ -1,0 +1,5 @@
+# Une entrée par phase du journal : stratégie suivie, blinds et tapis de départ (monnaie de la table).
+# EXEMPLE : adaptez aux phases que vous avez réellement jouées.
+phases:
+  "1": {strategie: serre, small_blind: 0.01, big_blind: 0.02, tapis_depart: 2.00}
+  "2": {strategie: joueur, small_blind: 0.02, big_blind: 0.05, tapis_depart: 5.00}

@@ -1,0 +1,11 @@
+name: zero_bluff
+label: Zéro bluff
+color: "#1baf7a"
+extends: large
+description: "Préflop de large. Postflop : ne mise/relance jamais sans au moins une paire ; paie un tirage seulement si la cote le justifie."
+postflop:
+  value_bet:
+    tiers:
+      - {min_made: weak_pair, size_pot: 0.667}   # Interprétation : mise avec toute paire (c'est ce qui la distingue de large)
+  never_bet_without_pair: true
+  call_vs_bet: {min_made: top_pair}

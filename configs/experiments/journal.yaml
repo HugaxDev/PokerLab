@@ -1,0 +1,8 @@
+# Import du journal réel et comparaison avec la stratégie simulée de chaque phase.
+experiment: journal
+csv: journal/exemple_journal.csv
+phases: journal/phases.yaml
+simulation:
+  composition: micro_play_money
+  n_sessions: 2000
+  hands_per_session: 50

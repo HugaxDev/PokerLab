@@ -1,0 +1,37 @@
+# Configuration globale de PokerLab. Unité interne : la grosse blind (bb).
+seed: 20261103            # graine globale : toutes les graines de mains en dérivent
+workers: 0                # 0 = tous les cœurs
+mp_start_method: forkserver   # forkserver (Linux, sûr avec numpy multi-thread) ou spawn (Windows/macOS)
+
+game:
+  players: 6
+  chips_per_bb: 100       # résolution : 1 bb = 100 jetons PokerKit
+  small_blind_bb: 0.5     # 0,01/0,02 -> 0.5 ; 0,02/0,05 -> 0.4
+  starting_stack_bb: 100
+  currency_per_bb: 0.02   # valeur d'une bb (historiques texte, bankroll)
+  currency_symbol: "€"
+  stack_mode: reset       # reset : chaque main à 100 bb (requis pour le duplicate)
+  rebuy:                  # mode persistant (sessions) : recave si tapis < below_bb
+    below_bb: 100         # 100 = recave systématique à 100 bb (top-up)
+    to_bb: 100
+  allin_ev:
+    exact_max_runouts: 2000   # énumération exacte si le nombre de tableaux restants <= ce seuil
+    mc_samples: 3000          # sinon Monte Carlo (tapis préflop)
+  memoize_hand_eval: true     # mémoïsation de l'évaluation PokerKit (résultats identiques, ~3x plus rapide)
+  shove_commit_fraction: 0.7  # une relance qui engage >= 70 % du tapis devient un tapis
+
+equity:
+  preflop_table_path: cache/preflop_169.npz
+  preflop_sims_per_matchup: 400   # précision de la matrice 169x169 (python -m pokerlab precompute)
+  postflop_sims: 300
+  cache_size: 50000
+  seed: 7
+
+analysis:
+  confidence: 0.95
+  bootstrap_resamples: 2000
+  bootstrap_block: 50
+  value_min_level: middle_pair   # une mise avec paire moyenne ou mieux = « value »
+  leak_min_count: 30
+  leak_examples: 3
+  max_curve_points: 3000

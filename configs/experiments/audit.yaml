@@ -1,0 +1,11 @@
+# Audit contrefactuel : EV perdue par décision, par rollouts de chaque alternative légale.
+experiment: audit
+strategy: joueur
+composition: micro_play_money
+pool_decks: 1000          # decks joués pour constituer la réserve de décisions
+n_decisions: 2000
+rollouts: 16              # rollouts par action (mêmes tirages pour toutes les actions)
+bet_sizes_pot: [0.5, 1.0]
+include_allin: true
+nontrivial_preflop_pct: 0.5   # ignore les abandons préflop avec des mains hors du top 50 %
+top_leaks: 15

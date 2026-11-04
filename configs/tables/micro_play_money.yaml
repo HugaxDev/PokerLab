@@ -1,0 +1,11 @@
+name: micro_play_money
+label: Micro / jetons fictifs
+description: "Ressemble aux tables en jetons fictifs : beaucoup de calling stations et de maniacs, peu de nits."
+mode: sample        # chaque deck tire 5 adversaires selon ces poids (graine fixe, identique pour toutes les stratégies)
+weights:
+  calling_station: 0.40
+  maniac: 0.25
+  LAG: 0.10
+  TAG: 0.08
+  nit: 0.07
+  nit_trappeur: 0.10

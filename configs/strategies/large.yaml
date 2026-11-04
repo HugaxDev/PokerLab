@@ -1,0 +1,32 @@
+name: large
+label: Large
+color: "#eb6834"
+type: rules
+description: "Toutes les paires, tous les as, deux cartes >= 10, assorties connectées 54s+. Ouvre 2 bb, paie <= 3 bb. Postflop : serré + paie les tirages si la cote le justifie."
+preflop:
+  unopened:
+    raise_range: "22+, A2+, KT+, QT+, JT, T9s-54s"
+    raise_size_bb: 2.0
+    per_limper_bb: 1.0
+  vs_open:
+    raise_range: "QQ+, AK"      # Interprétation : 3-bet comme serré (non précisé)
+    raise_multiplier: 3.0
+    call:
+      - {range: "22+, A2+, KT+, QT+, JT, T9s-54s", max_bb: 3.0}
+  vs_3bet:
+    raise_range: "QQ+, AK"
+    raise_allin: true
+  vs_4bet:
+    call:
+      - {range: "QQ+, AK", max_bb: 1000}
+postflop:
+  value_bet:
+    tiers:
+      - {min_made: top_pair, size_pot: 0.667}
+  raise_vs_bet: {enabled: true, min_made: two_pair, multiplier: 3.0}
+  call_vs_bet: {min_made: top_pair}
+  call_draws:
+    enabled: true
+    draws: strong               # tirage couleur ou quinte ouverte
+    use_pot_odds: true          # équité (règle des outs, 1 carte ; 2 si tapis au flop) >= cote du pot
+    implied_odds_factor: 0.0    # 0 = cote directe uniquement
