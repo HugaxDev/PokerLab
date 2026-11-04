@@ -378,10 +378,17 @@ Les règles décrites en français laissent des ambiguïtés. Elles sont tranch�
     ≥ cote. C'est un étalon simple, pas un solveur.
 17. **Fuites** : seules les actions actives (paie, mise, relance) sont évaluées, sur la composition
     principale ; abandonner = 0 bb à partir de la décision.
-18. **Audit** : les cartes réelles des adversaires restent celles de la main, les cartes à venir sont
-    retirées au hasard, l'aléa des adversaires est resalé ; EV perdue estimée par validation croisée
-    (moitié des rollouts pour choisir, l'autre pour mesurer). Les abandons préflop avec une main hors
-    du top 50 % sont exclus de l'échantillon (`nontrivial_preflop_pct`).
+18. **Audit** : on rejoue la main en **imposant toutes les actions déjà prises**, puis on termine
+    la main R fois pour chaque alternative légale. Dans chaque rollout, le joueur garde ses cartes et
+    le tableau déjà vu ; les cartes des adversaires encore en jeu sont **tirées dans leur range estimée
+    d'après leurs actions** (même modèle de range qu'equity_bot, `range_model` dans `audit.yaml`), et
+    les cartes à venir au hasard. On mesure donc l'EV avec l'information du joueur, pas contre ses
+    vraies cartes (ce qui reviendrait à jouer contre un adversaire à cartes visibles et gonflerait
+    les fuites). L'aléa des adversaires est resalé ; EV perdue estimée par validation croisée
+    (moitié des rollouts pour choisir, l'autre pour mesurer). Les fuites sont regroupées par street,
+    main, ce qu'il y a à payer et action (`group_by`). Les abandons préflop avec une main hors du
+    top 50 % sont exclus de l'échantillon (`nontrivial_preflop_pct`). Limite : la qualité de l'audit
+    dépend du modèle de range, volontairement simple.
 19. **Bankroll** : sessions tirées avec remise ; quand la bankroll passe sous 100 bb, la perte d'une
     session est plafonnée à ce qui reste.
 20. **Journal** : VPIP/PFR déduits des mots-clés du résumé préflop, à défaut de `mise_totale`.

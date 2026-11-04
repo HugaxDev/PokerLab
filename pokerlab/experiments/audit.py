@@ -10,7 +10,6 @@ meilleure action sur une moitié des rollouts, mesure sur l'autre) pour ne pas l
 from __future__ import annotations
 
 import json
-import random
 from dataclasses import dataclass
 from typing import Any
 
@@ -19,7 +18,10 @@ import pandas as pd
 
 from pokerlab.engine.hand_runner import COUNTERS, play_hand
 from pokerlab.engine.history import format_hand
-from pokerlab.engine.types import Action, Observation
+from pokerlab.cards.ranges import COMBO_CARDS
+from pokerlab.engine.types import Action, ActionRecord, Kind, Observation
+from pokerlab.equity.montecarlo import sample_villains
+from pokerlab.strategies.range_model import RangeModel
 from pokerlab.experiments.base import ExperimentContext, composition_dict, save_outputs
 from pokerlab.experiments.common import (
     TaskResult,
@@ -32,7 +34,7 @@ from pokerlab.experiments.common import (
     split_range,
 )
 from pokerlab.experiments.duplicate import Autostop, Cell, collect, run_cells
-from pokerlab.analysis.leaks import GROUP_KEYS, leak_title, situation_labels
+from pokerlab.analysis.leaks import AUDIT_GROUP_KEYS, leak_title, situation_labels
 from pokerlab.analysis.stats import z_value
 from pokerlab.opponents.compositions import Composition
 from pokerlab.report import charts, sections
@@ -96,15 +98,59 @@ class AuditTask:
     rollouts: int
     sizes: list[float]
     include_allin: bool
+    range_model: dict[str, Any] | None = None
 
 
-def _rollout_deck(deck: list[int], n: int, dealt: int, seed: int) -> list[int]:
-    known = set(deck[: 2 * n]) | set(deck[2 * n: 2 * n + dealt])
-    pool = [c for c in range(52) if c not in known]
-    rng = random.Random(seed)
-    new = rng.sample(pool, 5 - dealt)
+def recorded_action(rec: ActionRecord) -> Action:
+    """Action de l'historique rejouable à l'identique (montant total visé pour une mise)."""
+    if rec.kind == Kind.FOLD:
+        return Action.fold()
+    if rec.kind in (Kind.BET, Kind.RAISE):
+        return Action.raise_to(rec.to)
+    return Action.check_call()
+
+
+def forced_prefix(history: list[ActionRecord], idx: int) -> dict[int, Action]:
+    """Impose toutes les décisions déjà prises avant la décision auditée (index global < idx)."""
+    out: dict[int, Action] = {}
+    k = 0
+    for rec in history:
+        if rec.kind == Kind.POST:
+            continue
+        if k >= idx:
+            break
+        out[k] = recorded_action(rec)
+        k += 1
+    return out
+
+
+def posterior_deck(deck: list[int], obs: Observation, n: int, range_model: RangeModel, seed: int) -> list[int]:
+    """Paquet de rollout avec l'information du joueur : ses cartes et le tableau vu restent ;
+    les adversaires encore en jeu reçoivent des mains tirées dans leur range estimée d'après
+    leurs actions ; le reste (joueurs couchés, cartes à venir) est tiré au hasard."""
+    rng = np.random.default_rng(seed)
+    dealt = BOARD_DEALT[obs.street]
+    board = list(deck[2 * n: 2 * n + dealt])
+    dead = list(obs.hole) + board
+    active = obs.active_opponents
     out = list(deck)
-    out[2 * n + dealt: 2 * n + 5] = new
+    used = set(dead)
+    if active:
+        weights = [range_model.villain_range(obs, v)[1] for v in active]
+        combos = sample_villains(rng, weights, dead, 1)[0]
+        for v, c in zip(active, combos):
+            a, b = (int(x) for x in COMBO_CARDS[int(c)])
+            out[2 * v], out[2 * v + 1] = a, b
+            used.update((a, b))
+    rest = [c for c in range(52) if c not in used]
+    rng.shuffle(rest)
+    it = iter(rest)
+    for i in range(n):
+        if i != obs.seat and i not in active:
+            out[2 * i], out[2 * i + 1] = next(it), next(it)
+    for pos in range(2 * n + dealt, 2 * n + 5):
+        out[pos] = next(it)
+    out[2 * n + 5:] = list(it)
     return out
 
 
@@ -116,6 +162,7 @@ def run_audit_task(task: AuditTask) -> TaskResult:
     out = TaskResult()
     c0 = COUNTERS["hands"]
     stacks = [lab.game.starting_stack] * n
+    model = RangeModel(get_context(lab).table, task.range_model)
     for d in task.decisions:
         deck_i, rot, idx = int(d["deck"]), int(d["rot"]), int(d["idx"])
         names = comp.opponents(lab.seed, lineup_unit(deck_i, "deck"), n - 1)
@@ -123,7 +170,7 @@ def run_audit_task(task: AuditTask) -> TaskResult:
         seed = deck_seed(lab, deck_i)
         deck = shuffled_deck(seed)
         cap = _Capture(hero, idx)
-        play_hand(seating(cap, opponents, rot, n), lab.game, deck, stacks, deck_i * n + rot, seed)
+        original = play_hand(seating(cap, opponents, rot, n), lab.game, deck, stacks, deck_i * n + rot, seed)
         obs = cap.obs
         if obs is None:
             continue
@@ -141,12 +188,14 @@ def run_audit_task(task: AuditTask) -> TaskResult:
                 alts.append(("action prise", Action.raise_to(taken_to)))
                 taken = len(alts) - 1
         players = seating(hero, opponents, rot, n)
-        dealt = BOARD_DEALT[obs.street]
+        prefix = forced_prefix(original.history, idx)
         ev = np.zeros((len(alts), task.rollouts))
         for r in range(task.rollouts):
-            rdeck = _rollout_deck(deck, n, dealt, derive_seed(seed, "rollout", r))
+            rdeck = posterior_deck(deck, obs, n, model, derive_seed(seed, "rollout", idx, r))
             for j, (_, a) in enumerate(alts):
-                hr = play_hand(players, lab.game, rdeck, stacks, deck_i * n + rot, seed, forced={idx: a}, fork_after=idx, fork_salt=r)
+                forced = dict(prefix)
+                forced[idx] = a
+                hr = play_hand(players, lab.game, rdeck, stacks, deck_i * n + rot, seed, forced=forced, fork_after=idx, fork_salt=r)
                 ev[j, r] = hr.ev_payoffs[rot] / lab.game.chips_per_bb
         means = ev.mean(axis=1)
         even, odd = ev[:, 0::2], ev[:, 1::2]
@@ -201,7 +250,8 @@ def run(ctx: ExperimentContext, report: Report | None = None) -> dict[str, Any]:
     rollouts = int(cfg.get("rollouts", 16))
     ctx.log(f"audit : {len(sample)} décisions x {rollouts} rollouts par action")
     tasks = [AuditTask(ctx.lab.raw, hero, cdict, sample.iloc[a:b].to_dict("records"), rollouts, list(cfg.get("bet_sizes_pot", [0.5, 1.0])),
-                       bool(cfg.get("include_allin", True))) for a, b in split_range(0, len(sample), max(1, ctx.workers * 4))]
+                       bool(cfg.get("include_allin", True)), cfg.get("range_model", {"looseness": 1.3}))
+             for a, b in split_range(0, len(sample), max(1, ctx.workers * 4))]
     outs = run_tasks(run_audit_task, tasks, ctx.workers, ctx.lab.mp_start_method)
     merged = TaskResult()
     for o in outs:
@@ -217,7 +267,7 @@ def run(ctx: ExperimentContext, report: Report | None = None) -> dict[str, Any]:
                           f"Perte totale estimée sur l'échantillon : {total:.1f} bb."]
         if leaks is not None and len(leaks):
             for _, row in leaks.head(3).iterrows():
-                report.verdict.append(f"Fuite : {leak_title(row)} — {row['mean']:.2f} bb par décision ({int(row['count'])} cas).")
+                report.verdict.append(f"Fuite : {leak_title(row, list(cfg.get('group_by', AUDIT_GROUP_KEYS)))} — {row['mean']:.2f} bb par décision ({int(row['count'])} cas).")
         paths = save_outputs(ctx, report, None, audited, (), {"decisions_auditees": len(audited)})
     else:
         paths = {}
@@ -230,15 +280,16 @@ def add_audit_section(report: Report, ctx: ExperimentContext, hero: dict[str, An
         sec.paragraph("Aucune décision auditée.")
         return None
     d = situation_labels(audited.assign(result_ev=0.0))
-    g = d.groupby(list(GROUP_KEYS))["loss_cv"].agg(["count", "mean", "std", "sum"]).reset_index()
+    keys = list(ctx.cfg.get("group_by", AUDIT_GROUP_KEYS))
+    g = d.groupby(keys)["loss_cv"].agg(["count", "mean", "std", "sum"]).reset_index()
     g["ci_half"] = z_value(ctx.confidence) * g["std"].fillna(0) / np.sqrt(g["count"])
     g = g.sort_values("sum", ascending=False).reset_index(drop=True)
     top = g.head(int(ctx.cfg.get("top_leaks", 15)))
     color = sections.colors_labels([hero["name"]])[1][hero["name"]]
-    sec.figure(charts.bars_with_ci([leak_title(r) for _, r in top.iterrows()], top["mean"].tolist(), top["ci_half"].tolist(), color,
+    sec.figure(charts.bars_with_ci([leak_title(r, keys) for _, r in top.iterrows()], top["mean"].tolist(), top["ci_half"].tolist(), color,
                                    "EV perdue par décision, situations les plus coûteuses (classées par perte totale)", "bb"),
                "EV perdue = EV de la meilleure alternative − EV de l'action prise (validation croisée sur les rollouts).")
-    sec.table(pd.DataFrame({"situation": [leak_title(r) for _, r in top.iterrows()], "décisions": top["count"].astype(int),
+    sec.table(pd.DataFrame({"situation": [leak_title(r, keys) for _, r in top.iterrows()], "décisions": top["count"].astype(int),
                             "EV perdue / décision (bb)": top["mean"], "IC ±": top["ci_half"], "perte totale (bb)": top["sum"]}), digits=3)
     by_street = d.groupby("street_label")["loss_cv"].agg(["count", "mean", "sum"]).reset_index()
     sec.table(by_street.rename(columns={"street_label": "street", "count": "décisions", "mean": "EV perdue moy. (bb)", "sum": "total (bb)"}),
@@ -247,7 +298,7 @@ def add_audit_section(report: Report, ctx: ExperimentContext, hero: dict[str, An
     lab = ctx.lab
     for _, leak in top.head(8).iterrows():
         mask = np.ones(len(d), dtype=bool)
-        for key in GROUP_KEYS:
+        for key in keys:
             mask &= (d[key] == leak[key]).to_numpy()
         ex = d[mask].sort_values("loss_cv", ascending=False).head(k)
         blocks = []
@@ -258,5 +309,5 @@ def add_audit_section(report: Report, ctx: ExperimentContext, hero: dict[str, An
             blocks.append(f"<p>Décision n° {int(row['idx'])} ({esc(row['street_label'])}) : prise = {esc(row['taken_action'])}, "
                           f"meilleure = {esc(row['best_action'])}, EV perdue ≈ {row['loss_cv']:.2f} bb</p><p class='legend-note'>{esc(alt_txt)}</p>"
                           f"<pre>{esc(format_hand(hr, lab.game, cdict['name'], labels, hero=int(row['rot'])))}</pre>")
-        sec.details(f"Exemples : {leak_title(leak)}", "".join(blocks))
+        sec.details(f"Exemples : {leak_title(leak, keys)}", "".join(blocks))
     return top

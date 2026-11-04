@@ -13,7 +13,7 @@ import pandas as pd
 
 from pokerlab.cards.ranges import CLASS_INDEX_BY_NAME
 from pokerlab.config import PROJECT_ROOT, list_strategies, load_strategy_config, load_yaml
-from pokerlab.engine.types import Kind
+from pokerlab.engine.types import Action, Kind
 from pokerlab.fiche import CALL, FOLD, RAISE
 from pokerlab.fiche.build import build_fiche, chart_for
 from pokerlab.fiche.content import postflop_rules
@@ -94,8 +94,8 @@ def test_fiche_with_campaign(lab, tmp_path: Path) -> None:
     res = build_fiche("serre", lab, tmp_path / "camp", tmp_path / "f.html")
     html = res["path"].read_text(encoding="utf-8")
     assert res["filled"] == {"interdits": True, "resultat": True}
-    assert "Ne paie pas avec top paire face à une relance au turn en CO" in html
-    assert "Ne te couche pas avec paire moyenne (66-99) sans relance devant avant le flop en SB" in html
+    assert "Ne paie pas avec top paire face à une relance au turn : couche-toi." in html
+    assert "Ne te couche pas avec paire moyenne (66-99) sans relance devant avant le flop : relance 3x." in html
     assert "50 mains" in html and "200 mains" in html and "1000 mains" in html
     assert "Pas encore de chiffres" not in html
 
@@ -110,3 +110,34 @@ def test_journal_flags_off_sheet(lab) -> None:
     assert not bool(ak["hors_fiche"])
     fold_vs_raise = flagged[(flagged["phase"] == "1") & (flagged["main"] == 2)].iloc[0]
     assert fold_vs_raise["situation"] == "vs_raise" and fold_vs_raise["joue"] == "couché"
+
+
+def test_audit_rollout_uses_hero_information_only(lab) -> None:
+    """Rollouts d'audit : historique imposé, cartes du héros et tableau vu gardés, cartes adverses
+    retirées dans leur range estimée (pas les vraies), paquet sans doublon. Joue 2 mains."""
+    from pokerlab.engine.hand_runner import play_hand
+    from pokerlab.experiments.audit import _Capture, forced_prefix, posterior_deck
+    from pokerlab.experiments.common import seating
+    from pokerlab.rng import derive_seed, shuffled_deck
+    from pokerlab.strategies.range_model import RangeModel
+    from pokerlab.strategies.registry import build_strategy, get_context
+
+    hero = build_strategy("joueur", lab)
+    opponents = [build_strategy(x, lab) for x in ("calling_station", "maniac", "calling_station", "LAG", "maniac")]
+    seed = derive_seed(4242, 0)
+    deck = shuffled_deck(seed)
+    rot = 5
+    cap = _Capture(hero, 3)
+    original = play_hand(seating(cap, opponents, rot, 6), lab.game, deck, [10000] * 6, 0, seed)
+    obs = cap.obs
+    assert obs is not None and obs.seat == rot
+    rdeck = posterior_deck(deck, obs, 6, RangeModel(get_context(lab).table, {"looseness": 1.3}), 7)
+    assert sorted(rdeck) == list(range(52))
+    assert (rdeck[2 * rot], rdeck[2 * rot + 1]) == tuple(obs.hole)
+    dealt = {0: 0, 1: 3, 2: 4, 3: 5}[obs.street]
+    assert rdeck[12:12 + dealt] == list(obs.board)
+    prefix = forced_prefix(original.history, 3)
+    replay = play_hand(seating(hero, opponents, rot, 6), lab.game, rdeck, [10000] * 6, 0, seed,
+                       forced={**prefix, 3: Action.fold() if obs.legal.can_fold else Action.check_call()}, fork_after=3, fork_salt=1)
+    voluntary = [a for a in original.history if a.kind != Kind.POST][:3]
+    assert [(a.seat, a.kind, a.to) for a in replay.history if a.kind != Kind.POST][:3] == [(a.seat, a.kind, a.to) for a in voluntary]

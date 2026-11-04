@@ -11,7 +11,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from pokerlab.analysis.leaks import GROUP_KEYS, situation_labels
+from pokerlab.analysis.leaks import AUDIT_GROUP_KEYS, situation_labels
 from pokerlab.config import deep_merge
 from pokerlab.features.hand import MADE_LABELS, level_of
 from pokerlab.analysis.stats import summarize
@@ -221,7 +221,8 @@ def find_campaign(root: str | Path, strategy: str) -> Campaign:
     return camp
 
 
-def leak_prohibitions(camp: Campaign, strategy: str, top: int, min_count: int, z: float = 1.96) -> tuple[list[dict[str, Any]], str]:
+def leak_prohibitions(camp: Campaign, strategy: str, top: int, min_count: int, z: float = 1.96,
+                      keys: tuple[str, ...] | list[str] = AUDIT_GROUP_KEYS) -> tuple[list[dict[str, Any]], str]:
     """Les fuites les plus chères de l'audit, formulées comme des interdits."""
     if camp.audit_dir is None:
         return [], "aucun audit de cette stratégie dans la campagne"
@@ -235,12 +236,12 @@ def leak_prohibitions(camp: Campaign, strategy: str, top: int, min_count: int, z
     if "result_ev" not in df.columns:
         df = df.assign(result_ev=0.0)
     d = situation_labels(df)
-    g = d.groupby(list(GROUP_KEYS)).agg(count=("loss_cv", "size"), mean=("loss_cv", "mean"), std=("loss_cv", "std"), total=("loss_cv", "sum")).reset_index()
+    g = d.groupby(list(keys)).agg(count=("loss_cv", "size"), mean=("loss_cv", "mean"), std=("loss_cv", "std"), total=("loss_cv", "sum")).reset_index()
     g = g[g["mean"] > 0].sort_values("total", ascending=False).head(top)
-    best = d.groupby(list(GROUP_KEYS))["best_action"].agg(lambda s: s.value_counts().index[0])
+    best = d.groupby(list(keys))["best_action"].agg(lambda s: s.value_counts().index[0])
     out = []
     for _, row in g.iterrows():
-        key = tuple(row[k] for k in GROUP_KEYS)
+        key = tuple(row[k] for k in keys) if len(keys) > 1 else row[keys[0]]
         half = z * (row["std"] if row["std"] == row["std"] else 0.0) / np.sqrt(row["count"])
         out.append({
             "texte": prohibition_text(row, str(best.loc[key])),
@@ -260,10 +261,10 @@ BEST_TEXT = {"se couche": "couche-toi", "paie": "paie", "check": "checke", "tapi
 def prohibition_text(row: pd.Series, best_action: str) -> str:
     verb = VERBS.get(row["action_label"], f"N'{row['action_label']} pas")
     facing = "" if row["facing_label"] == "rien à payer" else f" {row['facing_label']}"
-    board = "" if row["street_label"] == "préflop" else f", tableau {row['board_label']}"
+    board = "" if row["street_label"] == "préflop" or "board_label" not in row else f", tableau {row['board_label']}"
+    where = f" en {row['position']}" if "position" in row else ""
     best = BEST_TEXT.get(best_action, re.sub(r"(\d)\.(\d)", r"\1,\2", best_action))
-    return (f"{verb} avec {row['hand_label']}{facing} {STREET_AT.get(row['street_label'], row['street_label'])} "
-            f"en {row['position']}{board} : {best}.")
+    return f"{verb} avec {row['hand_label']}{facing} {STREET_AT.get(row['street_label'], row['street_label'])}{where}{board} : {best}."
 
 
 @dataclass

@@ -50,6 +50,8 @@ def situation_labels(dec: pd.DataFrame) -> pd.DataFrame:
 
 
 GROUP_KEYS = ("street_label", "position", "hand_label", "board_label", "facing_label", "action_label")
+# Regroupement plus large pour l'audit (quelques milliers de décisions) : assez de cas par situation.
+AUDIT_GROUP_KEYS = ("street_label", "hand_label", "facing_label", "action_label")
 
 
 def find_leaks(dec: pd.DataFrame, min_count: int = 30, confidence_z: float = 1.96, top: int = 20) -> pd.DataFrame:
@@ -80,8 +82,11 @@ def leak_examples(dec: pd.DataFrame, leak: pd.Series, k: int = 3) -> pd.DataFram
     return d[mask].sort_values("net_after").head(k)
 
 
-def leak_title(row: pd.Series) -> str:
-    return f"{row['street_label']} · {row['position']} · {row['hand_label']} · {row['board_label']} · {row['facing_label']} → {row['action_label']}"
+def leak_title(row: pd.Series, keys: tuple[str, ...] | list[str] = GROUP_KEYS) -> str:
+    """Titre lisible d'une situation (champs présents dans ``keys``, action en dernier)."""
+    parts = [str(row[k]) for k in keys if k != "action_label"]
+    title = " · ".join(parts)
+    return f"{title} → {row['action_label']}" if "action_label" in keys else title
 
 
 def format_ci(mean: float, half: float) -> str:
