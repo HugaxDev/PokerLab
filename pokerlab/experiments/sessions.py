@@ -15,14 +15,14 @@ import pandas as pd
 
 from pokerlab.analysis.stats import max_drawdown
 from pokerlab.engine.hand_runner import COUNTERS
-from pokerlab.engine.table import Table
+from pokerlab.engine.table import Table, pk_order
 from pokerlab.experiments.base import ExperimentContext, composition_dict, save_outputs
 from pokerlab.experiments.common import TaskResult, lab_from_raw, record_seat, run_tasks, split_range
 from pokerlab.opponents.compositions import Composition
 from pokerlab.report import charts, sections
 from pokerlab.report.html import Report
 from pokerlab.rng import derive_seed, shuffled_deck
-from pokerlab.strategies.registry import build_strategy, resolve_spec
+from pokerlab.strategies.registry import build_player, build_strategy, resolve_spec
 
 
 @dataclass
@@ -46,13 +46,25 @@ def run_session_task(task: SessionTask) -> TaskResult:
     c0 = COUNTERS["hands"]
     for s in range(task.session_start, task.session_end):
         names = comp.opponents(lab.seed, s, n - 1)
-        seats = [hero] + [build_strategy(resolve_spec(x), lab) for x in names]
+        opponents = [build_player(resolve_spec(x), lab) for x in names]
+        for j, opp in enumerate(opponents):   # archétypes « humains » : paramètres tirés et état propres à la session
+            if hasattr(opp, "begin_session"):
+                opp.begin_session(derive_seed(lab.seed, "humain", comp.name, s, j))
+        seats = [hero] + opponents
         button = random.Random(derive_seed(lab.seed, "session_button", s)).randrange(n)
         table = Table(seats, game, button=button)
         for h in range(task.hands_per_session):
             seed = derive_seed(lab.seed, "session", s, h)
+            upcoming = pk_order(table.button, n)
+            hero_pk = upcoming.index(0)
+            for j, opp in enumerate(opponents):
+                if hasattr(opp, "begin_hand"):
+                    opp.begin_hand(upcoming.index(j + 1), hero_pk)
             hr, order = table.play(shuffled_deck(seed), seed, s * 10_000 + h, track_seats=[0])
             pk_seat = order.index(0)
+            for j, opp in enumerate(opponents):
+                if hasattr(opp, "end_hand"):
+                    opp.end_hand(hr, order.index(j + 1), pk_seat, game.chips_per_bb)
             keys = {"strategy": hero.name, "composition": comp.name, "session": s, "hand_no": h, "deck": s, "rot": h,
                     "hand_id": s * 10_000 + h, "lineup": "|".join(names), "rebuys_bb": table.rebuys[0] / game.chips_per_bb}
             record_seat(out, hr, pk_seat, lab, keys, record_decisions=False)

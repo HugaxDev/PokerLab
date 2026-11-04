@@ -1,0 +1,13 @@
+# Sweep du garde-fou : seuil de déclenchement × force minimale pour payer, grille complète 5 × 5,
+# heatmap bb/100 ± IC 95 %. Valable pour toutes les stratégies qui ont le garde-fou :
+# --set strategy=serre (ou large, zero_bluff, position, bluff, joueur).
+#   seuil     : mise/relance adverse > 0.33 / 0.5 / 0.75 / 1.0 pot, ou « tapis » (tapis seulement)
+#   force_min : top_paire_bon_kicker (kicker valet+) < overpair < overpair_qq < deux_paires < brelan (ou mieux)
+experiment: sweep
+strategy: joueur
+composition: humains_simules
+decks: 30000
+max_minutes: 120
+params:
+  - {path: garde_fou_seuil, label: seuil, values: [0.33, 0.5, 0.75, 1.0, tapis]}
+  - {path: garde_fou_force, label: force_min, values: [top_paire_bon_kicker, overpair, overpair_qq, deux_paires, brelan]}

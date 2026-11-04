@@ -40,6 +40,15 @@ def fraction_label(value: float) -> str:
     return f"{value:.0%} du pot".replace("%", " %")
 
 
+FORCE_PHRASES = {
+    "top_paire_bon_kicker": "une top paire avec un bon kicker (valet ou plus)",
+    "overpair": "une overpair",
+    "overpair_qq": "une overpair QQ+",
+    "deux_paires": "deux paires",
+    "brelan": "un brelan",
+}
+
+
 def level_phrase(name: str | int) -> str:
     if isinstance(name, int):
         from pokerlab.features.hand import MADE_LEVELS
@@ -148,9 +157,12 @@ def postflop_rules(cfg: dict[str, Any], max_lines: int = 10) -> list[str]:
     if p["raise_vs_bet"]["enabled"]:
         lines.append(f"Face à une mise : relance à {float(p['raise_vs_bet']['multiplier']):g} fois la mise avec {level_phrase(p['raise_vs_bet']['min_made'])}.")
     g = p["guardrail"]
+    seuil = g.get("seuil")
+    tapis_seul = seuil is not None and str(seuil).lower() == "tapis"
+    frac = float(g["trigger_fraction"]) if seuil is None else (None if tapis_seul else float(seuil))
     call_text = f"Face à une mise : paie avec {level_phrase(p['call_vs_bet']['min_made'])}"
-    if g["enabled"]:
-        call_text += f" si elle fait au plus {fraction_label(float(g['trigger_fraction']))}"
+    if g["enabled"] and frac is not None:
+        call_text += f" si elle fait au plus {fraction_label(frac)}"
     lines.append(call_text + ", sinon couche-toi.")
     cd = p["call_draws"]
     if cd["enabled"]:
@@ -159,9 +171,13 @@ def postflop_rules(cfg: dict[str, Any], max_lines: int = 10) -> list[str]:
         else:
             lines.append(f"Avec {DRAW_PHRASES.get(cd['draws'], 'un tirage')} : paie les petites mises.")
     if g["enabled"]:
-        text = f"Face à un tapis ou une mise de plus de {fraction_label(float(g['trigger_fraction']))} : ne suis qu'avec {level_phrase(g['min_made'])}"
-        if g.get("allow_overpair_from"):
-            text += f", ou une overpair {str(g['allow_overpair_from']).upper()[0] * 2}+"
+        trigger = "Face à un tapis" if frac is None else f"Face à un tapis ou une mise de plus de {fraction_label(frac)}"
+        if g.get("force_min"):
+            text = f"{trigger} : ne suis qu'avec {FORCE_PHRASES.get(str(g['force_min']).lower(), g['force_min'])} ou mieux"
+        else:
+            text = f"{trigger} : ne suis qu'avec {level_phrase(g['min_made'])}"
+            if g.get("allow_overpair_from"):
+                text += f", ou une overpair {str(g['allow_overpair_from']).upper()[0] * 2}+"
         if g.get("equity_check"):
             text += " (sauf si ton équité contre sa range estimée bat la cote)"
         lines.append(text + ".")

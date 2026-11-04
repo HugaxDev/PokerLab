@@ -22,6 +22,21 @@ def archetypes() -> dict[str, dict[str, Any]]:
     return _ARCHETYPES
 
 
+def register_archetypes(specs: dict[str, dict[str, Any]]) -> None:
+    """Ajoute (ou remplace) des archétypes en mémoire, pour ce processus (calibrage de la population)."""
+    arch = archetypes()
+    for name, spec in specs.items():
+        cfg = dict(spec)
+        cfg.setdefault("name", name)
+        arch[name] = cfg
+
+
+def reset_archetypes() -> None:
+    """Relit les archétypes sur disque au prochain accès."""
+    global _ARCHETYPES
+    _ARCHETYPES = None
+
+
 def resolve_spec(spec: str | dict[str, Any]) -> dict[str, Any]:
     """Nom -> config complète. Un dict est renvoyé tel quel (variante de sweep, etc.)."""
     if isinstance(spec, dict):
@@ -76,6 +91,19 @@ def build_strategy(spec: str | dict[str, Any], lab: LabConfig) -> Strategy:
         raise ValueError(f"Type de stratégie inconnu : {kind}")
     _BUILT[key] = built
     return built
+
+
+def build_player(spec: str | dict[str, Any], lab: LabConfig) -> Strategy:
+    """Comme ``build_strategy``, mais une instance neuve pour un archétype à état (humain) : un objet par siège."""
+    cfg = resolve_spec(spec)
+    if cfg.get("type", "rules") == "archetype":
+        from pokerlab.opponents.human import is_stateful
+
+        if is_stateful(cfg) or (cfg.get("humain") or {}).get("mixte", {}).get("enabled"):
+            from pokerlab.opponents.archetype import Archetype
+
+            return Archetype(cfg, get_context(lab))
+    return build_strategy(cfg, lab)
 
 
 def strategy_meta(spec: str | dict[str, Any]) -> dict[str, Any]:

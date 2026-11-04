@@ -1,5 +1,6 @@
 name: random_legal
 label: Aléatoire (témoin)
+reference: true                # témoin : jamais déclaré gagnant
 color: "#e34948"
 type: random
 description: "Actions légales au hasard. Sert à vérifier que le moteur et les statistiques fonctionnent (doit perdre nettement)."

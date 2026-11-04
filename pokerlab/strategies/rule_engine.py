@@ -59,11 +59,42 @@ POSTFLOP_DEFAULTS: dict[str, Any] = {
         "trigger_scope": "bet_or_raise",
         "min_made": "two_pair",
         "allow_overpair_from": None,
+        "seuil": None,          # 0.33 / 0.5 / 0.75 / 1.0 (fraction du pot) ou « tapis » ; remplace trigger_fraction
+        "force_min": None,      # top_paire_bon_kicker / overpair / overpair_qq / deux_paires / brelan ; remplace min_made
+        "bon_kicker": "J",      # top paire « bon kicker » : kicker valet ou mieux
         "equity_check": True,
         "equity_sims": 300,
     },
     "never_bet_without_pair": False,
 }
+
+
+# Garde-fou : les deux paramètres réglables (sweep, configs) et l'échelle de force pour payer.
+GUARD_SEUILS = (0.33, 0.5, 0.75, 1.0, "tapis")
+GUARD_FORCES = ("top_paire_bon_kicker", "overpair", "overpair_qq", "deux_paires", "brelan")
+_FORCE_RANK = {name: i + 1 for i, name in enumerate(GUARD_FORCES)}
+
+
+def guard_strength(hole: tuple[int, ...] | list[int], hr: HandRead, good_kicker: int) -> int:
+    """Rang sur l'échelle du garde-fou : 0 sous top paire bon kicker, 1 top paire bon kicker, 2 overpair,
+    3 overpair QQ+, 4 deux paires, 5 brelan ou mieux (quinte, couleur, full...)."""
+    lv = hr.level
+    if lv >= level_of("trips"):
+        return 5
+    if lv == level_of("two_pair"):
+        return 4
+    if lv == level_of("overpair"):
+        return 3 if (hole[0] >> 2) >= RANK_INDEX["Q"] else 2
+    if lv == level_of("top_pair"):
+        return 1 if hr.kicker >= good_kicker else 0
+    return 0
+
+
+def guard_force_rank(name: str) -> int:
+    key = str(name).lower()
+    if key not in _FORCE_RANK:
+        raise ValueError(f"force_min inconnue : {name!r} (attendu : {', '.join(GUARD_FORCES)})")
+    return _FORCE_RANK[key]
 
 
 class RangeSpec:
@@ -134,7 +165,20 @@ class RuleStrategy:
         )
         self.raise_min = level_of(post["raise_vs_bet"]["min_made"])
         self.call_min = level_of(post["call_vs_bet"]["min_made"])
-        self.guard_min = level_of(post["guardrail"]["min_made"])
+        g = post["guardrail"]
+        self.guard_min = level_of(g["min_made"])
+        self.guard_force = guard_force_rank(g["force_min"]) if g.get("force_min") else None
+        self.guard_kicker = RANK_INDEX[str(g.get("bon_kicker", "J")).upper()[0]]
+        seuil = g.get("seuil")
+        if seuil is None:
+            self.guard_fraction = float(g["trigger_fraction"])
+            self.guard_all_in = bool(g["trigger_all_in"])
+        elif str(seuil).lower() == "tapis":
+            self.guard_fraction = float("inf")
+            self.guard_all_in = True
+        else:
+            self.guard_fraction = float(seuil)
+            self.guard_all_in = True
         self.range_model = RangeModel(context.table, config.get("range_model"))
 
     # ------------------------------------------------------------------ préflop
@@ -225,9 +269,9 @@ class RuleStrategy:
         g = self.post["guardrail"]
         if not g["enabled"] or obs.to_call <= 0:
             return False
-        if g["trigger_all_in"] and facing_all_in(obs):
+        if self.guard_all_in and facing_all_in(obs):
             return True
-        if facing_fraction(obs) <= float(g["trigger_fraction"]):
+        if facing_fraction(obs) <= self.guard_fraction:
             return False
         if g.get("trigger_scope", "bet_or_raise") == "raise_only":
             return bets_on_street(obs) >= 2
@@ -240,6 +284,12 @@ class RuleStrategy:
             return False
         return obs.hole[0] >> 2 == obs.hole[1] >> 2 and (obs.hole[0] >> 2) >= RANK_INDEX[str(rank).upper()[0]]
 
+    def _guard_pass(self, obs: Observation, hr: HandRead) -> bool:
+        """Main assez forte pour payer malgré le garde-fou."""
+        if self.guard_force is not None:
+            return guard_strength(obs.hole, hr, self.guard_kicker) >= self.guard_force
+        return hr.level >= self.guard_min or self._strong_overpair(obs, hr)
+
     def _facing(self, obs: Observation, hr: HandRead, allow_raise: bool = True) -> Action:
         p = self.post
         g = p["guardrail"]
@@ -248,7 +298,7 @@ class RuleStrategy:
         if allow_raise and rv["enabled"] and hr.level >= self.raise_min and obs.legal.can_raise:
             return make_raise(obs, float(rv["multiplier"]) * max(obs.bets), self.shove_fraction, "value-raise")
         if big:
-            if hr.level >= self.guard_min or self._strong_overpair(obs, hr):
+            if self._guard_pass(obs, hr):
                 return Action.check_call("call-value")
             if g["equity_check"]:
                 eq = self._equity(obs, int(g["equity_sims"]))

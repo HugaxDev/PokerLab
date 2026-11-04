@@ -6,4 +6,4 @@ composition: micro_play_money
 decks: 2000
 ablations:
   - {name: garde-fou, patch: {postflop.guardrail.enabled: false}}
-  - {name: exception overpair QQ+, patch: {postflop.guardrail.allow_overpair_from: null}}
+  - {name: exception overpair QQ+, patch: {postflop.guardrail.force_min: deux_paires}}   # sans l'exception : deux paires minimum

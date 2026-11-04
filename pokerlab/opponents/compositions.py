@@ -20,6 +20,7 @@ class Composition:
     seats: tuple[str, ...]
     weights: tuple[tuple[str, float], ...]
     description: str
+    session_decks: int = 1   # adversaires (et leur état : tilt, observations) conservés sur ce nombre de decks consécutifs
 
     @staticmethod
     def from_dict(data: dict[str, Any]) -> "Composition":
@@ -31,6 +32,7 @@ class Composition:
             seats=tuple(data.get("seats") or ()),
             weights=tuple((k, float(v)) for k, v in weights.items()),
             description=data.get("description", ""),
+            session_decks=max(1, int(data.get("session_decks", 1))),
         )
 
     @staticmethod

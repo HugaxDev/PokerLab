@@ -92,7 +92,22 @@ l'import et la mise à jour du site sont automatiques.</li>
 {ex}"""
 
 
-def mon_jeu(p: Played, ref: Reference | None, cone: dict[str, Any] | None, color: str, label: str, cfg: dict[str, Any]) -> str:
+def opponents_section(players: pd.DataFrame, has_population: bool) -> str:
+    """Stats des adversaires importés (les plus vus) et état de la composition population_reelle."""
+    if players is None or players.empty:
+        return ""
+    top = players.head(12)
+    view = pd.DataFrame({"joueur": top["joueur"], "mains": top["mains"], "VPIP": top["VPIP"], "PFR": top["PFR"], "3-bet": top["3bet"],
+                         "AF": top["AF"], "WTSD": top["WTSD"], "fold c-bet": top["fold_cbet"]})
+    pop = ("La composition <code>population_reelle</code> est générée : <code>python -m pokerlab compare --set \"compositions=[population_reelle]\"</code>."
+           if has_population else "Génère la composition calibrée sur ces joueurs : <code>python -m pokerlab population</code>.")
+    return ("<h2>Mes adversaires</h2>" + table(view, f"{len(players)} adversaires observés, les plus fréquents en premier. "
+            "VPIP, PFR, 3-bet, WTSD et fold to c-bet en % ; AF = (mises + relances) / paies après le flop.", 1)
+            + f'<div class="card"><p>{pop}</p></div>')
+
+
+def mon_jeu(p: Played, ref: Reference | None, cone: dict[str, Any] | None, color: str, label: str, cfg: dict[str, Any],
+            opponents: str = "") -> str:
     h = p.hands
     bb100, ci = p.bb100()
     respect = p.respect_rate()
@@ -168,6 +183,7 @@ def mon_jeu(p: Played, ref: Reference | None, cone: dict[str, Any] | None, color
                          f"({num(s['mean'], 1, True)} bb en moyenne) — mains : {links}</li>")
         parts.append('<div class="card"><ol>' + "".join(items) + '</ol><p class="legend-note">Gain à partir de la décision '
                      "(résultat de la main + mise déjà investie) : négatif = continuer a coûté plus qu'abandonner.</p></div>")
+    parts.append(opponents)
     return "\n".join(parts)
 
 
@@ -231,19 +247,25 @@ def labo(cells: pd.DataFrame, rob: pd.DataFrame, colors: dict[str, str], labels:
         parts.append('<p class="legend-note">bb/100 all-in adjusted ± IC 95 % (duplicate). La meilleure valeur de chaque composition est colorée '
                      "de la couleur de sa stratégie.</p>")
         if not rob.empty:
+            from pokerlab.analysis.robustness import winner_verdict
+
             n_comp = len(comps)
             rows = []
-            for k, (_, r) in enumerate(rob.iterrows()):
+            winner, text = winner_verdict(rob, labels)
+            for _, r in rob.iterrows():
                 complete = int(r["compositions"]) == n_comp
-                style = _best_style(colors.get(r["strategy"], theme.MUTED)) if k == 0 and complete else ""
+                style = _best_style(colors.get(r["strategy"], theme.MUTED)) if r["strategy"] == winner else ""
                 note = "" if complete else f" <span class=\"tag\">({int(r['compositions'])}/{n_comp} compositions)</span>"
-                rows.append(f"<tr><td class=\"l\">{sw(r['strategy'])}{note}</td><td{style}>{num(r['score_robustesse'], 1, True)}</td>"
-                            f"<td>{esc(r['pire_composition'])}</td><td>{num(r['rang_moyen'], 1)}</td></tr>")
-            parts.append("<h2>Score de robustesse</h2>")
-            parts.append('<div class="card tbl"><table><thead><tr><th class="l">stratégie</th><th>score</th><th>pire table</th><th>rang moyen</th></tr></thead>'
-                         f'<tbody>{"".join(rows)}</tbody></table><p class="legend-note">Score = pire borne basse de l\'IC 95 % sur les {n_comp} compositions '
-                         "mesurées : le gain qu'on peut garantir quelle que soit la table. Un score n'est comparable qu'entre stratégies mesurées sur "
-                         "toutes les compositions.</p></div>")
+                note += " <span class=\"tag\">(référence)</span>" if r["reference"] else ""
+                rows.append(f"<tr><td class=\"l\">{sw(r['strategy'])}{note}</td><td{style}>{num(r['pire_cas'], 1, True)} ± {num(r['pire_cas_ci'])}</td>"
+                            f"<td>{esc(r['pire_composition'])}</td><td>{num(r['bb100_median'], 1, True)}</td>"
+                            f"<td>{'oui' if r['gagnante_partout'] else 'non'}</td></tr>")
+            parts.append("<h2>Robustesse</h2>")
+            parts.append(f'<div class="banner {"ok" if winner else "warn"}">{esc(text)}</div>')
+            parts.append('<div class="card tbl"><table><thead><tr><th class="l">stratégie</th><th>pire cas</th><th>pire table</th><th>médiane</th>'
+                         f'<th>IC > 0 partout</th></tr></thead><tbody>{"".join(rows)}</tbody></table><p class="legend-note">bb/100 sur les {n_comp} compositions '
+                         "mesurées, classé par pire cas (plus faible bb/100). Une stratégie n'est déclarée gagnante que si la borne basse de son IC 95 % "
+                         "est > 0 sur toutes les compositions ; les références et témoins ne le sont jamais.</p></div>")
         strats = [s for s in labels if s in set(cells["strategy"]) and s != "random_legal"]
         z = np.array([[float(cells[(cells["strategy"] == s) & (cells["composition"] == c)]["bb100"].iloc[0])
                        if ((cells["strategy"] == s) & (cells["composition"] == c)).any() else np.nan for c in comps] for s in strats])
@@ -268,7 +290,7 @@ def labo(cells: pd.DataFrame, rob: pd.DataFrame, colors: dict[str, str], labels:
             for p in pts:
                 a, b = v0.index(p["values"][0]), v1.index(p["values"][1])
                 zz[a, b] = p["bb100"]
-                text[a, b] = f"{p['bb100']:+.1f} ± {p['ci']:.1f}"
+                text[a, b] = f"{p['bb100']:+.1f}<br>± {p['ci']:.1f}"
             parts.append(figure(charts.matrix_heatmap(zz, [str(v) for v in v0], [str(v) for v in v1],
                                                       f"{prm[0]['label']} (lignes) × {prm[1]['label']} (colonnes)", text=text),
                                 "bb/100 ± IC 95 % de chaque réglage (mêmes donnes pour tous : comparaisons appariées)."))

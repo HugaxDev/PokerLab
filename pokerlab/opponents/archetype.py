@@ -18,6 +18,7 @@ from pokerlab.features.situation import (
     raise_to_bb,
     street_actions,
 )
+from pokerlab.opponents.human import HumanState, draw_params, human_config
 from pokerlab.strategies.base import StrategyContext, check_or_fold, decision_rng, make_raise, pot_bet
 
 PARAM_DEFAULTS: dict[str, Any] = {
@@ -69,10 +70,62 @@ class Archetype:
         self.label: str = config.get("label", self.name)
         p = dict(PARAM_DEFAULTS)
         p.update({k: v for k, v in config.items() if k in PARAM_DEFAULTS})
+        self.declared = p
+        self.base_p = p
         self.p = p
         self.ctx = context
         self.stackoff = level_of(p["stackoff_min_made"])
         self.shove_fraction = context.game.shove_commit_fraction
+        hc = human_config(config)
+        self.human_cfg = hc
+        self.mix = bool(hc["mixte"]["enabled"])
+        self.human = HumanState(hc) if any(hc[k]["enabled"] for k in hc) else None
+
+    # ------------------------------------------------------------------ humain : cycle de vie
+    def begin_session(self, seed: int) -> None:
+        """Nouvelle session : paramètres tirés pour ce joueur (si ``tirage``), tilt et observations remis à zéro."""
+        if self.human is None:
+            return
+        t = self.human_cfg["tirage"]
+        self.base_p = draw_params(self.declared, float(t["ecart"]), seed) if t["enabled"] else self.declared
+        self.human = HumanState(self.human_cfg)
+        self.p = self.base_p
+
+    def begin_hand(self, my_seat: int, hero_seat: int | None) -> None:
+        if self.human is not None:
+            self.human.my_seat, self.human.hero_seat = my_seat, hero_seat
+
+    def end_hand(self, hr: Any, my_seat: int, hero_seat: int | None, chips_per_bb: float) -> None:
+        """Fin de main : tilt (d'après mon résultat réel) et observation du héros (VPIP, PFR, bluffs montrés)."""
+        if self.human is None:
+            return
+        hero_obs = None
+        if hero_seat is not None and self.human_cfg["adaptation"]["enabled"]:
+            hero_obs = observe_hero(hr, hero_seat)
+        self.human.end_hand(hr.payoffs[my_seat] / chips_per_bb, hero_obs)
+        self.p = self.human.apply_tilt(self.base_p)
+
+    def _below(self, pct: float, threshold: float, rng) -> bool:
+        if self.mix:
+            return self.human.mixed_below(pct, threshold, rng)
+        return pct <= threshold
+
+    def _vs_hero(self, obs: Observation, preflop: bool) -> float:
+        """Multiplicateur de défense face au héros (adaptation), 1 sinon."""
+        h = self.human
+        if h is None or h.hero_seat is None:
+            return 1.0
+        if preflop:
+            aggressor = preflop_aggressor(obs.history)
+        else:
+            bets = [a for a in street_actions(obs.history, obs.street) if a.kind in AGGRESSIVE]
+            aggressor = bets[-1].seat if bets else None
+        if aggressor != h.hero_seat:
+            return 1.0
+        f = h.adaptation_factors()
+        if f is None:
+            return 1.0
+        return f[0] if preflop else f[1]
 
     def _size(self, obs: Observation, rng, base: float) -> float:
         jitter = float(self.p["size_jitter"])
@@ -83,32 +136,34 @@ class Archetype:
         rng = decision_rng(obs)
         pct = float(self.ctx.table.class_percentile[hole_class(obs.hole)])
         spot = preflop_spot(obs)
+        below = self._below
         if spot == "unopened":
-            if pct <= p["pfr"]:
+            if below(pct, p["pfr"], rng):
                 size = p["open_size_bb"] + limpers(obs.history)
                 return make_raise(obs, obs.chips(size), self.shove_fraction, "open")
-            if pct <= p["vpip"] and p["limp"]:
+            if p["limp"] and below(pct, p["vpip"], rng):
                 return Action.check_call("limp")
             return check_or_fold(obs)
         current = raise_to_bb(obs)
+        m = self._vs_hero(obs, preflop=True)
         if spot == "vs_open":
             trap = pct <= p["trap_top_pct"] and rng.random() < p["preflop_trap"]
-            if pct <= p["three_bet"] and not trap:
+            if not trap and below(pct, p["three_bet"] * m, rng):
                 return make_raise(obs, p["raise_multiplier"] * max(obs.bets), self.shove_fraction, "3bet")
             if trap:
                 return Action.check_call("trap")
-            if pct <= p["vpip"] * p["cold_call_share"] and current <= p["call_cap_bb"]:
+            if current <= p["call_cap_bb"] and below(pct, p["vpip"] * p["cold_call_share"] * m, rng):
                 return Action.check_call("call")
-            if obs.position == "BB" and pct <= p["vpip"] and current <= p["bb_defend_cap_bb"]:
+            if obs.position == "BB" and current <= p["bb_defend_cap_bb"] and below(pct, p["vpip"] * m, rng):
                 return Action.check_call("call")
             return check_or_fold(obs)
         if spot == "vs_3bet":
-            if pct <= p["four_bet"]:
+            if below(pct, p["four_bet"] * m, rng):
                 return make_raise(obs, obs.legal.max_raise_to, self.shove_fraction, "4bet")
-            if pct <= p["pfr"] * (1.0 - p["fold_to_3bet"]) and obs.to_call <= p["call_3bet_max_stack"] * obs.stack:
+            if obs.to_call <= p["call_3bet_max_stack"] * obs.stack and below(pct, p["pfr"] * (1.0 - p["fold_to_3bet"]) * m, rng):
                 return Action.check_call("call")
             return check_or_fold(obs)
-        if pct <= p["four_bet"] * p["five_bet_factor"]:
+        if below(pct, p["four_bet"] * p["five_bet_factor"] * m, rng):
             return make_raise(obs, obs.legal.max_raise_to, self.shove_fraction, "5bet")
         return check_or_fold(obs)
 
@@ -147,20 +202,25 @@ class Archetype:
             return Action.check_call("call-value")
         if good:
             if big:
-                return Action.check_call("call-value") if level >= self.stackoff else Action.fold("fold")
+                stack_off = level >= self.stackoff
+                if self.mix and rng.random() < float(self.human_cfg["mixte"]["ecart_postflop"]):
+                    stack_off = not stack_off
+                return Action.check_call("call-value") if stack_off else Action.fold("fold")
             return Action.check_call("call-value")
+        m = self._vs_hero(obs, preflop=False)
         bets = [a for a in acts if a.kind in AGGRESSIVE]
         is_cbet = obs.street == 1 and len(bets) == 1 and bets[0].seat == aggressor
-        if is_cbet and rng.random() < p["fold_to_cbet"]:
+        fold_cbet = p["fold_to_cbet"] if m == 1.0 else min(0.98, p["fold_to_cbet"] / m)
+        if is_cbet and rng.random() < fold_cbet:
             return Action.fold("fold-cbet")
         ref = float(p["call_size_ref"])
         size_factor = 1.0 if frac <= ref else ref / frac
         if all_in:
             size_factor *= float(p["allin_call_factor"])
-        if (pair or hr.any_draw) and rng.random() < p["call_weak"] * size_factor:
+        if (pair or hr.any_draw) and rng.random() < p["call_weak"] * size_factor * m:
             if pair and level >= self.stackoff or not big:
                 return Action.check_call("call-weak")
-        if not big and rng.random() < p["float"] * size_factor:
+        if not big and rng.random() < p["float"] * size_factor * m:
             return Action.check_call("float")
         if not big and obs.legal.can_raise and rng.random() < p["bluff_raise"]:
             return make_raise(obs, p["raise_multiplier"] * max(obs.bets), self.shove_fraction, "bluff-raise")
@@ -189,3 +249,15 @@ class Archetype:
         if observation.street == 0:
             return self._preflop(observation)
         return self._postflop(observation)
+
+
+def observe_hero(hr: Any, hero_seat: int) -> tuple[int, int, int, int]:
+    """(VPIP, PFR, a misé/relancé après le flop et montré ses cartes, bluff montré) du héros sur une main."""
+    from pokerlab.engine.flags import FLAG_NAMES, seat_flags
+
+    f = dict(zip(FLAG_NAMES, seat_flags(hr, hero_seat)))
+    shown = bool(hr.shown[hero_seat]) and len(hr.board) >= 3 and f["post_aggr"] > 0
+    bluff = 0
+    if shown:
+        bluff = int(read_hand(hr.holes[hero_seat], hr.board).level < level_of("weak_pair"))
+    return int(f["vpip"] > 0), int(f["pfr"] > 0), int(shown), bluff

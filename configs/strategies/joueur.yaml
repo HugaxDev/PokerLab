@@ -34,8 +34,7 @@ postflop:
   call_draws: {enabled: true, draws: strong, use_pot_odds: false}   # ... ou un tirage
   guardrail:
     enabled: true
-    trigger_fraction: 0.5       # mise/relance > 50 % du pot
-    trigger_all_in: true        # ou tapis
-    min_made: two_pair          # suit seulement avec deux paires ou mieux...
+    seuil: 0.5                  # mise/relance > 50 % du pot (0.33 / 0.5 / 0.75 / 1.0) ou « tapis » (tapis seulement)
+    force_min: deux_paires      # suit seulement avec deux paires ou mieux (top_paire_bon_kicker / overpair / overpair_qq / deux_paires / brelan)...
     equity_check: true          # ... sauf si équité vs range estimée >= cote du pot
     equity_sims: 300
