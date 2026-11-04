@@ -342,8 +342,11 @@ def hand_row(hand: ParsedHand, rep: Replayed, chips_per_bb: int, value_min_level
 
 
 def import_texts(texts: Iterable[str], strategy: Any | None, chips_per_bb: int = 100, hero: str | None = None,
-                 value_min_level: str = "middle_pair") -> tuple[list[dict[str, Any]], int]:
-    """Relit des fichiers d'historiques ; renvoie (lignes, mains ignorées)."""
+                 value_min_level: str = "middle_pair", opponents: list[dict[str, Any]] | None = None) -> tuple[list[dict[str, Any]], int]:
+    """Relit des fichiers d'historiques ; renvoie (lignes, mains ignorées). ``opponents`` reçoit, si fourni,
+    une ligne de compteurs par adversaire et par main (stats de la population réelle)."""
+    from pokerlab.journal.population import opponent_rows
+
     rows, skipped = [], 0
     vmin = level_of(value_min_level)
     for text in texts:
@@ -354,6 +357,8 @@ def import_texts(texts: Iterable[str], strategy: Any | None, chips_per_bb: int =
                 skipped += 1
                 continue
             rows.append(hand_row(hand, rep, chips_per_bb, vmin))
+            if opponents is not None:
+                opponents.extend(opponent_rows(hand.hand_id, hand.date, rep.result, rep.hero_index))
     return rows, skipped
 
 

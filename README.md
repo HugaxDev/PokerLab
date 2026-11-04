@@ -77,7 +77,8 @@ Chaque expérience a une commande et une config YAML dans `configs/experiments/`
 | `import` | Importe des historiques PokerStars (.txt) dans `data/reel` et compare chaque décision à la fiche. | `site.yaml` |
 | `site` | Génère le tableau de bord statique dans `out/site/`. | `site.yaml` |
 | `serve` | Génère et sert le tableau de bord sur http://localhost:8765, régénéré automatiquement. | `site.yaml` |
-| `robustesse` | Score de robustesse par stratégie sur toutes les compositions mesurées. | — |
+| `robustesse` | Par stratégie, sur toutes les compositions mesurées : bb/100 médian, pire cas, plus faible borne basse d'IC, classement par pire cas, et verdict de gagnante. | — |
+| `population` | Stats des adversaires importés et composition `population_reelle` calibrée. | — |
 | `bench` | Mesure le débit réel (mains/s). | `bench.yaml` |
 | `precompute` | Calcule la table d'équité préflop 169×169. | `game.yaml` |
 | `replay` | Affiche l'historique texte d'une main de campagne. | — |
@@ -106,6 +107,16 @@ python -m pokerlab journal --csv journal/mon_journal.csv --phases journal/phases
 ```bash
 python -m pokerlab fiche --strategy serre --campaign out
 ```
+
+```bash
+python -m pokerlab compare --rapport-seul --out out/compare
+```
+
+**Stratégie gagnante** : `compare` ne déclare une stratégie gagnante que si la borne basse de son
+IC 95 % est > 0 sur toutes les compositions de la campagne (références et témoins exclus) ; s'il y
+en a plusieurs, la meilleure en pire cas. Sinon le verdict commence par « PAS DE GAGNANTE ». Le
+tableau de robustesse donne le bb/100 médian et le pire cas, classé par pire cas.
+`--rapport-seul` régénère le rapport d'une campagne déjà jouée sans re-simuler.
 
 Sorties de chaque campagne (`out/<commande>/`) : `rapport.html`, `mains.csv` + `mains.parquet`
 (une ligne par main), `decisions.csv` + `decisions.parquet` (une ligne par décision),
@@ -171,6 +182,19 @@ position).
 Les couleurs de chaque stratégie sont fixées dans sa config et restent les mêmes dans tout le
 rapport (palette catégorielle validée pour le daltonisme).
 
+**Garde-fou** (serre, large, zero_bluff, position, bluff, joueur) : deux paramètres dans le bloc
+`postflop.guardrail` de chaque config.
+
+| Paramètre | Valeurs | Défaut |
+|---|---|---|
+| `seuil` : déclenchement | `0.33`, `0.5`, `0.75`, `1.0` (mise/relance adverse > cette fraction du pot, ou tapis) ; `tapis` (tapis seulement) | `0.5` |
+| `force_min` : force minimale pour payer | `top_paire_bon_kicker` (kicker valet ou mieux) < `overpair` < `overpair_qq` < `deux_paires` < `brelan` (ou mieux) | `overpair_qq` ; `deux_paires` pour joueur (+ exception d'équité) |
+
+Ces valeurs reproduisent exactement l'ancien codage (`trigger_fraction`, `min_made`,
+`allow_overpair_from`, toujours accepté), vérifié main par main dans `tests/test_guardrail.py`.
+Grille complète : `python -m pokerlab sweep --config sweep_garde_fou` (alias `garde_fou_seuil`,
+`garde_fou_force`), heatmap bb/100 ± IC 95 %.
+
 ## Adversaires et compositions
 
 Archétypes (`configs/opponents/archetypes.yaml`) : `calling_station`, `nit`, `TAG`, `LAG`,
@@ -179,9 +203,40 @@ VPIP, PFR, 3-bet, agressivité, fréquence de c-bet, fold to c-bet, bluff, semi-
 float, relance de value, check-relance, slowplay, taille de mise, seuil de tapis.
 
 Compositions (`configs/tables/`) : `micro_play_money` (défaut : beaucoup de calling stations et de
-maniacs, peu de nits), `reguliers` (TAG/LAG), `mixte`. Chaque deck tire ses 5 adversaires selon les
+maniacs, peu de nits), `reguliers` (TAG/LAG), `mixte`, `humains_simules`, et `population_reelle`
+une fois générée depuis tes historiques. Chaque deck (ou session) tire ses 5 adversaires selon les
 poids, avec une graine fixe : toutes les stratégies affrontent exactement les mêmes adversaires sur
 les mêmes cartes.
+
+**Adversaires humains** : options d'archétype, chacune désactivable (bloc `humain`, `enabled: false`
+par défaut, donc les anciens archétypes jouent exactement comme avant) :
+
+- `tirage` : chaque joueur tire ses paramètres autour de ceux de l'archétype (écart réglable, loi
+  log-normale de moyenne 1) à chaque session ;
+- `mixte` : fréquences au lieu de seuils déterministes (probabilité logistique autour du seuil de
+  range préflop ; une part d'écarts autour du seuil de tapis postflop) ;
+- `tilt` : après une perte de plus de `perte_bb` sur une main, ranges plus larges et jeu plus agressif
+  pendant `mains` mains ;
+- `adaptation` : observe le VPIP, le PFR et les bluffs montrés du héros sur une fenêtre glissante
+  (`fenetre` mains) et défend plus ou moins face à lui (préflop selon son PFR, postflop selon ses
+  bluffs montrés et son VPIP).
+
+`humains_simules` (débutants 35 %, prudents 20 %, agressifs 15 %, réguliers 15 %, pousseurs de tapis
+15 %) active les quatre. `session_decks: 10` : les mêmes adversaires restent 10 decks (60 mains),
+le tilt et les observations se construisent pendant la session. L'état ne change qu'en fin de main et
+la table rejoue au besoin le début de la session : résultats identiques quel que soit le découpage
+en tâches ou le nombre de processus, et l'audit ou les historiques rejouent l'état exact.
+
+**Population réelle** : à l'import des historiques PokerStars, chaque adversaire de chaque main est
+compté (VPIP, PFR, 3-bet, AF, WTSD, fold to c-bet ; `data/reel/adversaires.parquet`, sans double
+compte en cas de réimport). `python -m pokerlab population` regroupe les joueurs observés sur au
+moins 50 mains en 5 profils (k-moyennes pondérées, graine fixe) plus un profil « occasionnels »,
+traduit chaque profil en paramètres d'archétype puis les calibre par simulation (on joue la
+population, on mesure, on corrige ; 4 tours de 300 decks par défaut). Écrit
+`configs/opponents/population_reelle.yaml` (cibles réelles et stats obtenues en simulation pour
+chaque profil) et `configs/tables/population_reelle.yaml` (poids = part des mains observées), puis :
+`python -m pokerlab compare --set "compositions=[population_reelle]"`. Tilt et adaptation ne sont pas
+mesurables avec ces stats : désactivés dans cette composition.
 
 Le rapport `compare` affiche les stats **mesurées** des archétypes à côté de leurs cibles.
 
@@ -330,7 +385,8 @@ Pages :
   25e–75e centiles, par tirage de mains simulées) avec le verdict « dans la variance normale » ou
   « sous le 5e centile, à analyser » ; progression vers le nombre de mains nécessaire pour
   distinguer le taux de gain de zéro ; dernières sessions ; résultats par position et grille 13×13 ;
-  tes stats face à la stratégie simulée ; tes 5 situations les plus perdantes avec lien vers les mains.
+  tes stats face à la stratégie simulée ; tes 5 situations les plus perdantes avec lien vers les mains ;
+  tes adversaires les plus vus (VPIP, PFR, 3-bet, AF, WTSD, fold to c-bet).
   Sans données réelles : état vide qui explique l'import, et lien vers les données d'exemple
   (`exemple.html`, marquées « EXEMPLE », mains inventées de `journal/exemple_pokerstars.txt`).
 - **Labo** : classement par composition (IC, meilleure valeur colorée de la couleur de la

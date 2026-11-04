@@ -36,6 +36,8 @@ def _parser() -> argparse.ArgumentParser:
         sp.add_argument("--seed", type=int, help="graine globale")
         sp.add_argument("--set", action="append", default=[], metavar="CHEMIN=VALEUR", help="surcharge de la config d'expérience")
         sp.add_argument("--game-set", action="append", default=[], metavar="CHEMIN=VALEUR", help="surcharge de configs/game.yaml")
+        if name == "compare":
+            sp.add_argument("--rapport-seul", action="store_true", help="régénère rapport.html depuis les données du dossier --out, sans re-simuler")
         if name == "journal":
             sp.add_argument("--csv", help="journal CSV")
             sp.add_argument("--phases", help="YAML des phases")
@@ -53,6 +55,12 @@ def _parser() -> argparse.ArgumentParser:
     im.add_argument("--strategie", help="stratégie suivie (défaut : configs/site.yaml)")
     im.add_argument("--hero", help="ton pseudo PokerStars")
     im.add_argument("--dest", help="dossier de stockage (défaut : data/reel)")
+    po = sub.add_parser("population", help="stats des adversaires importés et composition population_reelle calibrée")
+    po.add_argument("--source", help="dossier des mains importées (défaut : donnees_reelles de configs/site.yaml)")
+    po.add_argument("--profils", type=int, default=5, help="nombre de profils de réguliers (défaut 5)")
+    po.add_argument("--min-mains", type=int, default=50, help="mains minimum pour qu'un joueur compte comme régulier (défaut 50)")
+    po.add_argument("--iterations", type=int, default=4, help="tours de calibrage par simulation (défaut 4 ; 0 = mesure seule)")
+    po.add_argument("--decks", type=int, default=300, help="decks simulés par tour de calibrage (x6 mains)")
     sub.add_parser("site", help="génère le tableau de bord statique dans out/site")
     sv = sub.add_parser("serve", help="génère et sert le tableau de bord sur http://localhost:8765 (régénération automatique)")
     sv.add_argument("--port", type=int)
@@ -106,6 +114,29 @@ def main(argv: list[str] | None = None) -> int:
                            args.dest or site_cfg.get("donnees_reelles", "data/reel"), args.hero or site_cfg.get("hero"),
                            float(site_cfg.get("pause_session_minutes", 30)))
         print(f"{res['lues']} mains importées, {res['ignorees']} ignorées, {res['total']} au total dans {res['dossier']}")
+        print(f"{res['adversaires']} adversaires observés : python -m pokerlab population pour (re)générer la composition population_reelle")
+        return 0
+    if cmd == "population":
+        from pokerlab.config import configs_root, load_yaml
+        from pokerlab.journal.population import STAT_KEYS, generate
+        from pokerlab.journal.store import load_opponents
+        from pokerlab.strategies.registry import get_context
+
+        site_cfg = load_yaml(configs_root() / "site.yaml")
+        source = args.source or site_cfg.get("donnees_reelles", "data/reel")
+        rows = load_opponents(source)
+        if rows.empty:
+            print(f"Aucun adversaire dans {source} : importe d'abord tes historiques (python -m pokerlab import <fichiers>).")
+            return 1
+        lab = LabConfig.load()
+        get_context(lab)
+        res = generate(lab, rows, args.profils, args.min_mains, args.iterations, args.decks, source=str(source))
+        for p in res["profiles"]:
+            cib = " ".join(f"{k} {p['cibles'].get(k)}" for k in STAT_KEYS)
+            mes = " ".join(f"{k} {p.get('mesure', {}).get(k)}" for k in STAT_KEYS)
+            print(f"{p['name']} ({p['type']}, {p['joueurs']} joueurs, {p['part']:.0%} des mains)\n  réel   : {cib}\n  simulé : {mes}")
+        print(f"Écrit : {res['paths'][0]}\n        {res['paths'][1]}")
+        print('Utilisable : python -m pokerlab compare --set "compositions=[population_reelle]"')
         return 0
     if cmd in ("site", "serve"):
         from pokerlab.site.build import build_site
@@ -123,9 +154,13 @@ def main(argv: list[str] | None = None) -> int:
         if cells.empty:
             print("Aucun compare avec résultats par case : lance python -m pokerlab compare")
             return 1
+        from pokerlab.analysis.robustness import winner_verdict
+
         table = robustness_table(cells)
-        print(f"Compositions : {', '.join(sorted(cells['composition'].unique()))}")
-        print(table.to_string(index=False, float_format=lambda v: f"{v:.1f}"))
+        print(f"Compositions : {', '.join(sorted(cells['composition'].unique()))} (classement par pire cas)")
+        view = table[["strategy", "compositions", "bb100_median", "pire_cas", "pire_cas_ci", "pire_composition", "borne_basse_min", "gagnante_partout", "reference"]]
+        print(view.to_string(index=False, float_format=lambda v: f"{v:.1f}"))
+        print(winner_verdict(table)[1])
         return 0
     if cmd == "fiche":
         from pokerlab.fiche.build import build_fiche, fiche_config
@@ -170,7 +205,7 @@ def main(argv: list[str] | None = None) -> int:
     if cmd == "compare":
         from pokerlab.experiments import compare as mod
 
-        res = mod.run(ctx)
+        res = mod.rebuild_report(ctx) if args.rapport_seul else mod.run(ctx)
     elif cmd == "round_robin":
         from pokerlab.experiments import round_robin as mod
 

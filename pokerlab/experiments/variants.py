@@ -26,6 +26,8 @@ ALIASES = {
     "taille_cbet": "postflop.cbet.size_pot",
     "frequence_cbet": "postflop.cbet.frequency",
     "taille_value": "postflop.value_bet.tiers[0].size_pot",
+    "garde_fou_seuil": "postflop.guardrail.seuil",
+    "garde_fou_force": "postflop.guardrail.force_min",
 }
 
 
@@ -86,8 +88,12 @@ def run_sweep(ctx: ExperimentContext) -> dict[str, Any]:
                                        f"bb/100 selon {params[0].get('label', params[0]['path'])}", str(params[0].get("label", params[0]["path"]))))
     else:
         z = np.array([summ[c["name"]].ev.bb100 for c in configs]).reshape(len(grids[0]), len(grids[1]))
+        ci = np.array([summ[c["name"]].ev.ci_half for c in configs]).reshape(len(grids[0]), len(grids[1]))
+        text = np.array([[f"{z[i, j]:+.1f}<br>± {ci[i, j]:.1f}" for j in range(z.shape[1])] for i in range(z.shape[0])], dtype=object)
         sec.figure(charts.matrix_heatmap(z, [str(v) for v in grids[0]], [str(v) for v in grids[1]],
-                                         f"bb/100 : {params[0].get('label', params[0]['path'])} (lignes) × {params[1].get('label', params[1]['path'])} (colonnes)"))
+                                         f"bb/100 : {params[0].get('label', params[0]['path'])} (lignes) × {params[1].get('label', params[1]['path'])} (colonnes)",
+                                         text=text),
+                   "Chaque case : bb/100 all-in adjusted ± demi-largeur de l'IC 95 % (mêmes decks pour toutes les cases).")
     table = pd.DataFrame({
         "variante": [c["label"] for c in configs],
         "bb/100 EV": [summ[c["name"]].ev.bb100 for c in configs],

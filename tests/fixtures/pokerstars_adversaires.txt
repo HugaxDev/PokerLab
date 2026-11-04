@@ -1,0 +1,99 @@
+PokerStars Hand #900000000001:  Hold'em No Limit (50/100) - 2026/10/01 20:00:00 CET
+Table 'Fixture' 6-max Seat #1 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Alice (10000 in chips)
+Seat 3: Bob (10000 in chips)
+Seat 4: Carl (10000 in chips)
+Seat 5: Dana (10000 in chips)
+Seat 6: Eve (10000 in chips)
+Alice: posts small blind 50
+Bob: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7c 2d]
+Carl: raises 200 to 300
+Dana: folds
+Eve: folds
+Hero: folds
+Alice: calls 250
+Bob: folds
+*** FLOP *** [Kd 8s 3h]
+Alice: checks
+Carl: bets 300
+Alice: folds
+Uncalled bet (300) returned to Carl
+Carl collected 700 from pot
+*** SUMMARY ***
+Total pot 700 | Rake 0
+Board [Kd 8s 3h]
+
+
+PokerStars Hand #900000000002:  Hold'em No Limit (50/100) - 2026/10/01 20:01:00 CET
+Table 'Fixture' 6-max Seat #2 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Alice (9700 in chips)
+Seat 3: Bob (9900 in chips)
+Seat 4: Carl (10400 in chips)
+Seat 5: Dana (10000 in chips)
+Seat 6: Eve (10000 in chips)
+Bob: posts small blind 50
+Carl: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9c 4d]
+Dana: folds
+Eve: raises 200 to 300
+Hero: folds
+Alice: raises 600 to 900
+Bob: folds
+Carl: folds
+Eve: calls 600
+*** FLOP *** [Ah 7d 2c]
+Eve: checks
+Alice: bets 900
+Eve: calls 900
+*** TURN *** [Ah 7d 2c] [5s]
+Eve: checks
+Alice: checks
+*** RIVER *** [Ah 7d 2c 5s] [Jh]
+Eve: bets 1500
+Alice: calls 1500
+*** SHOW DOWN ***
+Eve: shows [As Kd] (a pair of Aces)
+Alice: shows [Qs Qc] (a pair of Queens)
+Eve collected 6750 from pot
+*** SUMMARY ***
+Total pot 6750 | Rake 0
+Board [Ah 7d 2c 5s Jh]
+
+
+PokerStars Hand #900000000003:  Hold'em No Limit (50/100) - 2026/10/01 20:02:00 CET
+Table 'Fixture' 6-max Seat #3 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Alice (6400 in chips)
+Seat 3: Bob (9850 in chips)
+Seat 4: Carl (10300 in chips)
+Seat 5: Dana (10000 in chips)
+Seat 6: Eve (13450 in chips)
+Carl: posts small blind 50
+Dana: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ac Qc]
+Eve: calls 100
+Hero: raises 300 to 400
+Alice: folds
+Bob: calls 400
+Carl: folds
+Dana: folds
+Eve: folds
+*** FLOP *** [Qd 9h 4s]
+Hero: bets 500
+Bob: raises 1000 to 1500
+Hero: calls 1000
+*** TURN *** [Qd 9h 4s] [2d]
+Hero: checks
+Bob: bets 2000
+Hero: folds
+Uncalled bet (2000) returned to Bob
+Bob collected 4050 from pot
+*** SUMMARY ***
+Total pot 4050 | Rake 0
+Board [Qd 9h 4s 2d]

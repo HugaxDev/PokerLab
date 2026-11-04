@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 from pokerlab.engine.history import format_hand
-from pokerlab.analysis.robustness import cell_summaries, robustness_table
+from pokerlab.analysis.robustness import cell_summaries, robustness_table, winner_verdict
 from pokerlab.experiments.base import ExperimentContext, apply_holm, composition_dict, pairwise_tests, save_outputs
 from pokerlab.experiments.common import replay_duplicate_hand
 from pokerlab.experiments.duplicate import Autostop, Cell, collect, run_cells
@@ -55,9 +55,41 @@ def run(ctx: ExperimentContext) -> dict[str, Any]:
     histories = sample_histories(ctx, cells, hands, int(cfg.get("history_samples", 20)))
     summary = {"cellules": {k: {"decks": p.decks, "arret": p.stopped, "bb100_metric": p.bb100()} for k, p in progress.items()},
                "resultats": cell_summaries(hands, ctx.confidence),
+               "compteurs_joueurs": {k: [int(x) for x in v] for k, v in flags.items()},
                "corrections_actions": corrections}
     paths = save_outputs(ctx, report, hands, decisions, histories, summary)
     return {"report": report, "paths": paths, "hands": hands, "decisions": decisions, "flags": flags, "cells": cells}
+
+
+def rebuild_report(ctx: ExperimentContext) -> dict[str, Any]:
+    """Régénère rapport.html d'un compare déjà joué (mains.parquet, decisions.parquet, resume.json), sans re-simuler."""
+    import json
+
+    from pokerlab.experiments.duplicate import CellProgress
+
+    folder = ctx.out_dir
+    meta = json.loads((folder / "resume.json").read_text(encoding="utf-8"))
+    cfg = meta.get("config") or ctx.cfg
+    ctx.cfg = cfg
+    strategies = cfg.get("strategies", [])
+    compositions = cfg.get("compositions", ["micro_play_money"])
+    hands = pd.read_parquet(folder / "mains.parquet")
+    for col in ("strategy", "composition"):
+        hands[col] = hands[col].astype(str)
+    dec_path = folder / "decisions.parquet"
+    decisions = pd.read_parquet(dec_path) if dec_path.exists() else pd.DataFrame()
+    if not decisions.empty:
+        for col in ("strategy", "composition"):
+            decisions[col] = decisions[col].astype(str)
+    progress = {k: CellProgress(decks=int(v.get("decks", 0)), stopped=str(v.get("arret", ""))) for k, v in (meta.get("cellules") or {}).items()}
+    flags = {k: list(v) for k, v in (meta.get("compteurs_joueurs") or {}).items()}
+    ctx.hands_played = int(meta.get("mains_jouees", len(hands)))
+    cells = build_cells(strategies, compositions, cfg.get("decision_decks", 10_000))
+    report = build_report(ctx, cells, hands, decisions, flags, progress, strategies, compositions)
+    if not flags:
+        report.meta["note"] = "rapport régénéré depuis les données sauvegardées ; stats mesurées des archétypes non sauvegardées pour cette campagne"
+    path = report.save(folder / "rapport.html")
+    return {"report": report, "paths": {"rapport": path}, "hands": hands}
 
 
 def sample_histories(ctx: ExperimentContext, cells: list[Cell], hands: pd.DataFrame, k: int) -> list[str]:
@@ -105,17 +137,18 @@ def build_report(ctx, cells, hands, decisions, flags, progress, strategies, comp
     for j, comp in enumerate(compositions):
         mtable[comp] = [f"{matrix[i, j]:+.1f} ± {halfs[i, j]:.1f}" if np.isfinite(matrix[i, j]) else "–" for i in range(len(names))]
     sec.table(mtable, "Table de lecture de la matrice (IC 95 %).")
+    rob = robustness_table(pd.DataFrame(cell_summaries(hands, conf)))
     if len(compositions) > 1:
-        rob = robustness_table(pd.DataFrame(cell_summaries(hands, conf)))
         rob_view = pd.DataFrame({
-            "stratégie": [labels.get(x, x) for x in rob["strategy"]],
-            "score de robustesse (bb/100)": rob["score_robustesse"],
+            "stratégie": [labels.get(x, x) + (" (réf.)" if r else "") for x, r in zip(rob["strategy"], rob["reference"])],
+            "pire cas (bb/100)": [f"{v:+.1f} ± {c:.1f}" for v, c in zip(rob["pire_cas"], rob["pire_cas_ci"])],
             "pire composition": rob["pire_composition"],
-            "rang moyen": rob["rang_moyen"],
-            "bb/100 moyen": rob["bb100_moyen"],
+            "médiane (bb/100)": rob["bb100_median"],
+            "borne basse min": rob["borne_basse_min"],
+            "gagnante partout": ["oui" if g else "non" for g in rob["gagnante_partout"]],
         })
-        sec.table(rob_view, "Score de robustesse = pire borne basse de l'IC 95 % sur les compositions : "
-                  "le gain garanti quelle que soit la table.")
+        sec.table(rob_view, "Robustesse sur les compositions de la campagne, classée par pire cas (plus faible bb/100). "
+                  "« Gagnante partout » : borne basse de l'IC 95 % > 0 sur toutes les compositions.")
     # Tests appariés
     tests = []
     for comp in compositions:
@@ -143,7 +176,7 @@ def build_report(ctx, cells, hands, decisions, flags, progress, strategies, comp
         "decks appariés": [t.n_units for _, t in tests],
     }), "Différence = moyenne par deck (6 rotations) A − B, all-in adjusted.", digits=4)
     # Verdict
-    report.verdict = verdict_lines(names, labels, hands, compositions, tests, main_comp, summaries, progress, ctx)
+    report.verdict = verdict_lines(names, labels, hands, compositions, tests, main_comp, summaries, progress, ctx, rob)
     # Graphiques
     g = report.section(f"Graphiques — {main_comp}")
     g.figure(sections.winrate_figure(summaries, colors, labels), "Barres pleines : all-in adjusted avec IC 95 % ; claires : résultat réel.")
@@ -155,7 +188,10 @@ def build_report(ctx, cells, hands, decisions, flags, progress, strategies, comp
     st = report.section("Statistiques mesurées")
     sections.add_player_stats(st, summaries, labels)
     st.html("<h3>Archétypes adverses : annoncé vs mesuré</h3>")
-    sections.add_archetype_stats(st, flags, archetypes(), exclude=names)
+    if flags:
+        sections.add_archetype_stats(st, flags, archetypes(), exclude=names)
+    else:
+        st.paragraph("Compteurs des adversaires non sauvegardés pour cette campagne (rapport régénéré).")
     lk = report.section("Fuites détectées")
     lk.paragraph("Situations récurrentes où continuer la main (payer, miser, relancer) perd de l'argent en moyenne à partir de la décision.")
     dec_main = decisions[decisions["composition"] == main_comp] if not decisions.empty else decisions
@@ -168,30 +204,29 @@ def build_report(ctx, cells, hands, decisions, flags, progress, strategies, comp
     return report
 
 
-def verdict_lines(names, labels, hands, compositions, tests, main_comp, summaries, progress, ctx) -> list[str]:
+def verdict_lines(names, labels, hands, compositions, tests, main_comp, summaries, progress, ctx, rob=None) -> list[str]:
+    """Une stratégie n'est déclarée gagnante que si sa borne basse d'IC est > 0 sur toutes les compositions."""
     lines = []
-    overall = {n: hands[hands["strategy"] == n].groupby(["composition", "deck"])["result_ev"].mean().mean() * 100 for n in names if (hands["strategy"] == n).any()}
-    if overall:
-        ranked = sorted(overall, key=overall.get, reverse=True)
-        best = ranked[0]
-        s = summaries.get(best)
-        ci = f" (± {s.ev.ci_half:.1f} sur {main_comp})" if s else ""
-        lines.append(f"Meilleure stratégie sur la durée (moyenne des compositions, all-in adjusted) : {labels[best]} à {overall[best]:+.1f} bb/100{ci}.")
-        if len(ranked) > 1:
-            second = ranked[1]
-            match = [t for c, t in tests if c == main_comp and {t.a, t.b} == {labels[best], labels[second]}]
+    if rob is None:
+        rob = robustness_table(pd.DataFrame(cell_summaries(hands, ctx.confidence)))
+    winner, text = winner_verdict(rob, labels)
+    lines.append(text)
+    if winner is not None and len(rob) > 1:
+        others = rob[(~rob["reference"]) & (rob["strategy"] != winner)]
+        if not others.empty:
+            second = others.iloc[0]["strategy"]
+            match = [t for c, t in tests if c == main_comp and {t.a, t.b} == {labels[winner], labels[second]}]
             if match:
                 lines.append(match[0].verdict() + f" — sur {main_comp}.")
-        per_comp = []
-        for comp in compositions:
-            sub = hands[hands["composition"] == comp]
-            if sub.empty:
-                continue
-            m = sub.groupby("strategy").apply(lambda h: h.groupby("deck")["result_ev"].mean().mean() * 100, include_groups=False)
-            per_comp.append(f"{comp} → {labels.get(m.idxmax(), m.idxmax())} ({m.max():+.1f})")
-        lines.append("Gagnant par composition : " + " ; ".join(per_comp) + ".")
-        worst = ranked[-1]
-        lines.append(f"Pire stratégie : {labels[worst]} à {overall[worst]:+.1f} bb/100.")
+    per_comp = []
+    for comp in compositions:
+        sub = hands[hands["composition"] == comp]
+        if sub.empty:
+            continue
+        m = sub.groupby("strategy").apply(lambda h: h.groupby("deck")["result_ev"].mean().mean() * 100, include_groups=False)
+        per_comp.append(f"{comp} → {labels.get(m.idxmax(), m.idxmax())} ({m.max():+.1f})")
+    if per_comp:
+        lines.append("Meilleur bb/100 par composition (sans condition d'IC) : " + " ; ".join(per_comp) + ".")
     n_hands = sum(p.decks for p in progress.values()) * ctx.lab.game.players
     halfs = [s.ev.ci_half for s in summaries.values() if np.isfinite(s.ev.ci_half)]
     n_txt = f"{n_hands:,}".replace(",", " ")

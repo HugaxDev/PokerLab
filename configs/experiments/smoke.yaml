@@ -3,7 +3,7 @@ experiment: smoke
 max_hands: 2000
 compare:
   strategies: [serre, large, zero_bluff, position, bluff, joueur, equity_bot, random_legal]
-  compositions: [micro_play_money, reguliers, mixte]
+  compositions: [micro_play_money, reguliers, mixte, humains_simules]
   autostop: {enabled: false}
   decks: 1
   history_samples: 5

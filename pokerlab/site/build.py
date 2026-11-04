@@ -57,8 +57,10 @@ def _js_data(path: Path, hands: list[dict[str, Any]], replays: dict[str, Any]) -
 def ensure_example(cfg: dict[str, Any], lab: LabConfig) -> Path | None:
     """Importe le fichier d'exemple dans son dossier s'il n'y est pas encore."""
     dest = resolve(cfg.get("exemple", "data/exemple"))
-    if (dest / "mains.parquet").exists():
+    if (dest / "mains.parquet").exists() and (dest / "adversaires.parquet").exists():
         return dest
+    for old in ("mains.parquet", "adversaires.parquet", "imports.json"):   # format d'une version précédente : réimport
+        (dest / old).unlink(missing_ok=True)
     src = resolve(cfg.get("exemple_source", "journal/exemple_pokerstars.txt"))
     if not src.exists():
         return None
@@ -114,19 +116,26 @@ def build_site(cfg: dict[str, Any] | None = None, out: str | Path | None = None,
     has_real = not real_hands.empty
     has_example = not ex_hands.empty
 
-    def jeu_page(played, name: str, active: str) -> None:
+    from pokerlab.config import configs_root
+    from pokerlab.journal.population import player_stats
+    from pokerlab.journal.store import load_opponents
+
+    has_population = (configs_root() / "tables" / "population_reelle.yaml").exists()
+
+    def jeu_page(played, name: str, active: str, folder) -> None:
         cone = expected_cone(ref, max(played.n, 1), int(cfg.get("cone_tirages", 2000)), lab.seed) if ref else None
-        body = pages.mon_jeu(played, ref, cone, color, label, cfg)
+        opp = pages.opponents_section(player_stats(load_opponents(folder)), has_population) if folder else ""
+        body = pages.mon_jeu(played, ref, cone, color, label, cfg, opp)
         _write(site / name, pages.page("Mon jeu", active, body, version, plotly=True))
 
     if has_real:
         played = played_from_hands(real_hands, example=False)
-        jeu_page(played, "index.html", "index.html")
+        jeu_page(played, "index.html", "index.html", real_dir)
     else:
         _write(site / "index.html", pages.page("Mon jeu", "index.html", pages.empty_state(cfg, has_example), version))
     if has_example:
         ex_played = played_from_hands(ex_hands, example=True)
-        jeu_page(ex_played, "exemple.html", "index.html")
+        jeu_page(ex_played, "exemple.html", "index.html", ex_dir)
     else:
         (site / "exemple.html").unlink(missing_ok=True)
 

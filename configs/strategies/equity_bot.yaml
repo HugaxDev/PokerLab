@@ -1,5 +1,6 @@
 name: equity_bot
 label: Equity bot (référence)
+reference: true                # référence de calcul : jamais déclarée gagnante
 color: "#6250d6"
 type: equity
 description: "Décide à l'EV : équité Monte Carlo contre la range adverse estimée à partir de ses actions, cote du pot, tailles standard."

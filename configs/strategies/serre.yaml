@@ -28,9 +28,7 @@ postflop:
   call_draws: {enabled: false}
   guardrail:                    # Garde-fou : face à un tapis ou une mise/relance > 50 % du pot...
     enabled: true
-    trigger_fraction: 0.5
-    trigger_all_in: true
+    seuil: 0.5                  # déclenchement : mise/relance > 50 % du pot (0.33 / 0.5 / 0.75 / 1.0) ou « tapis » (tapis seulement)
     trigger_scope: bet_or_raise # Interprétation (comme joueur) : toute mise ou relance > 50 % du pot ; raise_only = relances seulement
-    min_made: two_pair          # ... ne suit qu'avec deux paires ou mieux
-    allow_overpair_from: Q      # ... ou une overpair QQ+
+    force_min: overpair_qq      # pour payer : overpair QQ+ ou mieux (top_paire_bon_kicker / overpair / overpair_qq / deux_paires / brelan)
     equity_check: false         # pas d'exception à l'équité pour serré

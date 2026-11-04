@@ -90,22 +90,64 @@ def load_compare_cells(root: str | Path, exclude: Iterable[Path] = ()) -> pd.Dat
     return df.drop_duplicates(["strategy", "composition"]).reset_index(drop=True)
 
 
-def robustness_table(cells: pd.DataFrame) -> pd.DataFrame:
-    """Score de robustesse par stratégie (pire borne basse de l'IC), rang moyen, pire composition."""
+def robustness_table(cells: pd.DataFrame, references: Iterable[str] | None = None) -> pd.DataFrame:
+    """Robustesse par stratégie sur toutes les compositions mesurées, classée par pire cas.
+
+    bb/100 médian et pire cas (plus faible bb/100 sur les compositions), plus faible borne basse
+    d'IC 95 %, et « gagnante partout » : borne basse > 0 sur toutes les compositions mesurées."""
     if cells.empty:
         return pd.DataFrame()
+    refs = set(reference_names() if references is None else references)
     df = cells.copy()
     df["borne_basse"] = df["bb100"] - df["ci"]
     df["rang"] = df.groupby("composition")["bb100"].rank(ascending=False, method="min")
+    n_total = int(df["composition"].nunique())
     out = []
     for strategy, g in df.groupby("strategy"):
-        worst = g.loc[g["borne_basse"].idxmin()]
+        worst = g.loc[g["bb100"].idxmin()]
+        complete = int(g["composition"].nunique()) == n_total
+        low = float(g["borne_basse"].min())
         out.append({
             "strategy": strategy,
             "compositions": int(g["composition"].nunique()),
-            "score_robustesse": float(worst["borne_basse"]),
+            "bb100_median": float(g["bb100"].median()),
+            "pire_cas": float(worst["bb100"]),
+            "pire_cas_ci": float(worst["ci"]),
             "pire_composition": str(worst["composition"]),
+            "borne_basse_min": low,
+            "gagnante_partout": bool(complete and low > 0),
+            "reference": strategy in refs,
             "rang_moyen": float(g["rang"].mean()),
             "bb100_moyen": float(g["bb100"].mean()),
         })
-    return pd.DataFrame(out).sort_values("score_robustesse", ascending=False).reset_index(drop=True)
+    return pd.DataFrame(out).sort_values("pire_cas", ascending=False).reset_index(drop=True)
+
+
+def reference_names() -> set[str]:
+    """Stratégies de référence ou témoins (``reference: true``) : jamais déclarées gagnantes."""
+    from pokerlab.config import list_strategies
+    from pokerlab.strategies.registry import resolve_spec
+
+    return {n for n in list_strategies() if resolve_spec(n).get("reference")}
+
+
+def winner_verdict(rob: pd.DataFrame, labels: dict[str, str] | None = None) -> tuple[str | None, str]:
+    """Gagnante = stratégie (hors références) dont la borne basse d'IC est > 0 sur toutes les compositions ;
+    s'il y en a plusieurs, la meilleure en pire cas. Sinon, phrase explicite : pas de gagnante."""
+    if rob.empty:
+        return None, "Aucun résultat : pas de verdict."
+    labels = labels or {}
+    lab = lambda s: labels.get(s, s)  # noqa: E731
+    n = int(rob["compositions"].max())
+    cand = rob[~rob["reference"]]
+    ok = cand[cand["gagnante_partout"]]
+    if not ok.empty:
+        w = ok.iloc[0]
+        return str(w["strategy"]), (f"Gagnante : {lab(w['strategy'])} — borne basse de l'IC 95 % > 0 sur les {n} composition(s) ; "
+                                    f"pire cas {w['pire_cas']:+.1f} ± {w['pire_cas_ci']:.1f} bb/100 ({w['pire_composition']}), médiane {w['bb100_median']:+.1f}.")
+    if cand.empty:
+        return None, "PAS DE GAGNANTE : aucune stratégie candidate (seulement des références)."
+    b = cand.iloc[0]
+    return None, (f"PAS DE GAGNANTE : aucune stratégie n'a une borne basse d'IC 95 % > 0 sur les {n} composition(s). "
+                  f"Meilleure en pire cas : {lab(b['strategy'])}, {b['pire_cas']:+.1f} ± {b['pire_cas_ci']:.1f} bb/100 sur {b['pire_composition']} "
+                  f"(borne basse la plus faible {b['borne_basse_min']:+.1f}).")

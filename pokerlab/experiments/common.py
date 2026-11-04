@@ -26,7 +26,7 @@ from pokerlab.engine.types import position_names
 from pokerlab.features.hand import level_of
 from pokerlab.opponents.compositions import Composition
 from pokerlab.rng import derive_seed, shuffled_deck
-from pokerlab.strategies.registry import build_strategy, resolve_spec
+from pokerlab.strategies.registry import build_player, build_strategy, resolve_spec
 
 _LAB_CACHE: dict[str, LabConfig] = {}
 
@@ -240,6 +240,93 @@ def seating(hero: Any, opponents: Sequence[Any], rotation: int, n: int) -> list[
     return players
 
 
+def composition_is_stateful(comp: Composition) -> bool:
+    """Vrai si un adversaire de la composition garde un état d'une main à l'autre (archétype « humain »)."""
+    from pokerlab.opponents.human import is_stateful
+
+    names = list(comp.seats) + [k for k, _ in comp.weights]
+    return any(is_stateful(resolve_spec(x)) for x in set(names))
+
+
+class SessionTable:
+    """Adversaires d'une composition pour une suite de donnes (deck, rotation), avec leur état.
+
+    Une session = ``session_decks`` decks consécutifs : mêmes adversaires (même tirage de paramètres),
+    tilt et observations du héros conservés d'une main à l'autre. Pour obtenir l'état exact au début
+    de la main (d, r), la table rejoue au besoin les mains précédentes de la session : le résultat ne
+    dépend donc ni du découpage en tâches ni du nombre de processus."""
+
+    def __init__(self, lab: LabConfig, comp: Composition, hero: Any, space: str, rotations_of: Callable[[int], Sequence[int]]) -> None:
+        self.lab, self.comp, self.hero, self.space, self.rotations_of = lab, comp, hero, space, rotations_of
+        self.n = lab.game.players
+        self.size = comp.session_decks
+        self.stateful = composition_is_stateful(comp)
+        self.session: int | None = None
+        self.pos: tuple[int, int] | None = None
+        self.names: list[str] = []
+        self.opponents: list[Any] = []
+        self.warmup_hands = 0
+
+    def _build(self, start: int) -> None:
+        unit = lineup_unit(start, self.space)
+        self.names = self.comp.opponents(self.lab.seed, unit, self.n - 1)
+        self.opponents = []
+        for j, x in enumerate(self.names):
+            opp = build_player(resolve_spec(x), self.lab) if self.stateful else build_strategy(resolve_spec(x), self.lab)
+            if self.stateful and hasattr(opp, "begin_session"):
+                opp.begin_session(derive_seed(self.lab.seed, "humain", self.comp.name, unit, j))
+            self.opponents.append(opp)
+        self.session = start
+        self.pos = (start, 0)
+
+    def at(self, d: int, r: int) -> tuple[list[str], list[Any]]:
+        """Adversaires dans l'état du début de la main (d, r)."""
+        start = d - d % self.size
+        if not self.stateful:
+            if self.session != start:
+                self._build(start)
+            return self.names, self.opponents
+        k = list(self.rotations_of(d)).index(r)
+        if self.session != start or self.pos is None or (d, k) < self.pos:
+            self._build(start)
+        while self.pos < (d, k):
+            dd, kk = self.pos
+            rr = list(self.rotations_of(dd))[kk]
+            hr = self.play(dd, rr)
+            self.warmup_hands += 1
+            self.finish(hr, dd, rr)
+        self.begin(r)
+        return self.names, self.opponents
+
+    def begin(self, r: int) -> None:
+        if not self.stateful:
+            return
+        for j, opp in enumerate(self.opponents):
+            if hasattr(opp, "begin_hand"):
+                opp.begin_hand((r + 1 + j) % self.n, r)
+
+    def play(self, d: int, r: int, hero: Any = None, **kwargs: Any) -> HandResult:
+        """Joue la main (d, r) avec le héros au siège r (adversaires déjà dans le bon état)."""
+        seed = deck_seed(self.lab, d, self.space)
+        players = seating(self.hero if hero is None else hero, self.opponents, r, self.n)
+        stacks = [self.lab.game.starting_stack] * self.n
+        return play_hand(players, self.lab.game, shuffled_deck(seed), stacks, d * self.n + r, seed, **kwargs)
+
+    def finish(self, hr: HandResult, d: int, r: int) -> None:
+        """Fin de la main (d, r) : met à jour l'état des adversaires et avance d'une main."""
+        if not self.stateful:
+            return
+        cpb = self.lab.game.chips_per_bb
+        for j, opp in enumerate(self.opponents):
+            if hasattr(opp, "end_hand"):
+                opp.end_hand(hr, (r + 1 + j) % self.n, r, cpb)
+        rots = list(self.rotations_of(d))
+        k = rots.index(r)
+        self.pos = (d, k + 1) if k + 1 < len(rots) else (d + 1, 0)
+        if self.pos[1] == 0 and self.pos[0] % self.size == 0:
+            self.session = None   # session suivante : nouveaux adversaires
+
+
 @dataclass
 class DuplicateTask:
     """Bloc de decks joués en duplicate pour un héros contre une composition."""
@@ -266,22 +353,13 @@ def run_duplicate_task(task: DuplicateTask) -> TaskResult:
     out = TaskResult()
     start_count = COUNTERS["hands"]
     start_corr = COUNTERS["corrections"]
-    stacks = [lab.game.starting_stack] * n
+    rotations_of = task_rotations(task, lab)
+    table = SessionTable(lab, comp, hero, task.deck_space, rotations_of)
     for d in range(task.deck_start, task.deck_end):
-        names = comp.opponents(lab.seed, lineup_unit(d, task.deck_space), n - 1)
-        opponents = [build_strategy(resolve_spec(x), lab) for x in names]
-        seed = deck_seed(lab, d, task.deck_space)
-        deck = shuffled_deck(seed)
-        if task.rotations is not None:
-            rotations: Iterable[int] = task.rotations
-        elif task.duplicate:
-            rotations = range(n)
-        else:
-            rotations = [int(seed % n)]
-        for r in rotations:
-            players = seating(hero, opponents, r, n)
+        for r in rotations_of(d):
+            names, _ = table.at(d, r)
+            hr = table.play(d, r, track={r})
             hand_id = d * n + r
-            hr = play_hand(players, lab.game, deck, stacks, hand_id, seed, track={r})
             keys = dict(task.keys)
             keys.update(deck=d, rot=r, hand_id=hand_id, lineup="|".join(names))
             record = task.record_decisions and (task.decision_deck_limit is None or d < task.decision_deck_limit)
@@ -289,23 +367,36 @@ def run_duplicate_task(task: DuplicateTask) -> TaskResult:
             for i in range(n):
                 if i != r:
                     add_flags(out, hr.names[i], seat_flags(hr, i))
+            table.finish(hr, d, r)
     out.hands_played = COUNTERS["hands"] - start_count
     out.corrections = COUNTERS["corrections"] - start_corr
     return out.compact()
 
 
+def task_rotations(task: Any, lab: LabConfig) -> Callable[[int], Sequence[int]]:
+    """Rotations jouées pour chaque deck (toutes en duplicate, une seule sinon)."""
+    n = lab.game.players
+
+    def rotations_of(d: int) -> Sequence[int]:
+        if getattr(task, "rotations", None) is not None:
+            return tuple(task.rotations)
+        if getattr(task, "duplicate", True):
+            return tuple(range(n))
+        return (int(deck_seed(lab, d, task.deck_space) % n),)
+
+    return rotations_of
+
+
 def replay_duplicate_hand(
     lab: LabConfig, hero: dict[str, Any], composition: dict[str, Any], deck: int, rotation: int, deck_space: str = "deck"
 ) -> tuple[HandResult, list[str]]:
-    """Rejoue à l'identique une main d'une campagne duplicate (pour les historiques)."""
+    """Rejoue à l'identique une main d'une campagne duplicate (pour les historiques), état des adversaires compris."""
     n = lab.game.players
     comp = Composition.from_dict(composition)
-    names = comp.opponents(lab.seed, lineup_unit(deck, deck_space), n - 1)
-    opponents = [build_strategy(resolve_spec(x), lab) for x in names]
     hero_s = build_strategy(hero, lab)
-    seed = deck_seed(lab, deck, deck_space)
-    players = seating(hero_s, opponents, rotation, n)
-    hr = play_hand(players, lab.game, shuffled_deck(seed), [lab.game.starting_stack] * n, deck * n + rotation, seed, track={rotation})
+    table = SessionTable(lab, comp, hero_s, deck_space, lambda d: tuple(range(n)))
+    names, _ = table.at(deck, rotation)
+    hr = table.play(deck, rotation, track={rotation})
     labels = seating(hero_s.name, names, rotation, n)
     return hr, labels
 

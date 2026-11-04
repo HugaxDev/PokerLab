@@ -193,12 +193,17 @@ def list_strategies(root: Path | None = None) -> list[str]:
 
 
 def load_archetypes(root: Path | None = None) -> dict[str, dict[str, Any]]:
-    """Charge les archétypes adverses (``configs/opponents/archetypes.yaml``)."""
+    """Charge les archétypes adverses : ``configs/opponents/archetypes.yaml`` puis les autres fichiers du
+    dossier (ex. ``population_reelle.yaml``, généré à partir des historiques importés)."""
     root = root or configs_root()
     data = load_yaml(root / "opponents" / "archetypes.yaml")
     defaults = data.pop("defaults", {})
+    extra: dict[str, Any] = {}
+    for path in sorted((root / "opponents").glob("*.yaml")):
+        if path.name != "archetypes.yaml":
+            extra.update(load_yaml(path) or {})
     result: dict[str, dict[str, Any]] = {}
-    for name, params in data.items():
+    for name, params in {**data, **extra}.items():
         merged = deep_merge(defaults, params or {})
         merged.setdefault("name", name)
         result[name] = merged

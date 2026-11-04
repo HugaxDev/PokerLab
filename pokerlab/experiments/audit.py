@@ -25,6 +25,7 @@ from pokerlab.equity.montecarlo import sample_villains
 from pokerlab.strategies.range_model import RangeModel
 from pokerlab.experiments.base import ExperimentContext, composition_dict, save_outputs
 from pokerlab.experiments.common import (
+    SessionTable,
     TaskResult,
     deck_seed,
     lab_from_raw,
@@ -164,10 +165,10 @@ def run_audit_task(task: AuditTask) -> TaskResult:
     c0 = COUNTERS["hands"]
     stacks = [lab.game.starting_stack] * n
     model = RangeModel(get_context(lab).table, task.range_model)
+    table = SessionTable(lab, comp, hero, "deck", lambda _d: tuple(range(n)))   # état des adversaires (humains) au début de la main
     for d in task.decisions:
         deck_i, rot, idx = int(d["deck"]), int(d["rot"]), int(d["idx"])
-        names = comp.opponents(lab.seed, lineup_unit(deck_i, "deck"), n - 1)
-        opponents = [build_strategy(resolve_spec(x), lab) for x in names]
+        _, opponents = table.at(deck_i, rot)
         seed = deck_seed(lab, deck_i)
         deck = shuffled_deck(seed)
         cap = _Capture(hero, idx)
