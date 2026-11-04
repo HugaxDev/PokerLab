@@ -3,138 +3,203 @@
   "composition": "humains_simules",
   "variantes": [
     {
-      "variante": "Joueur [declenchement_pot=0.33, main_min=top_pair]",
-      "bb/100 EV": 50.80209732610651,
-      "IC ±": 6.763062108407978,
-      "bb/100 réel": 51.64436666666666,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.33, force_min=top_paire_bon_kicker]",
+      "bb/100 EV": 49.4464427479806,
+      "IC ±": 5.558130993113634,
+      "bb/100 réel": 48.10825555555556,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.33, main_min=overpair]",
-      "bb/100 EV": 50.14838472878355,
-      "IC ±": 6.46239547336908,
-      "bb/100 réel": 49.780566666666665,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.33, force_min=overpair]",
+      "bb/100 EV": 47.15369339758293,
+      "IC ±": 5.488721047089419,
+      "bb/100 réel": 45.69403888888889,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.33, main_min=two_pair]",
-      "bb/100 EV": 49.78563965903848,
-      "IC ±": 6.439928523353579,
-      "bb/100 réel": 49.54707499999999,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.33, force_min=overpair_qq]",
+      "bb/100 EV": 46.114168750833976,
+      "IC ±": 5.477881978354719,
+      "bb/100 réel": 44.554383333333334,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.33, main_min=trips]",
-      "bb/100 EV": 48.87210624453632,
-      "IC ±": 6.418948214869251,
-      "bb/100 réel": 48.69596666666666,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.33, force_min=deux_paires]",
+      "bb/100 EV": 45.350159815648794,
+      "IC ±": 5.453061990757805,
+      "bb/100 réel": 43.87668333333334,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.5, main_min=top_pair]",
-      "bb/100 EV": 46.88067094022387,
-      "IC ±": 7.021947248779815,
-      "bb/100 réel": 47.06439166666667,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.33, force_min=brelan]",
+      "bb/100 EV": 45.574349189145664,
+      "IC ±": 5.449541777550455,
+      "bb/100 réel": 44.15112222222222,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.5, main_min=overpair]",
-      "bb/100 EV": 45.955334053879746,
-      "IC ±": 6.771850870515457,
-      "bb/100 réel": 45.81542499999999,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.5, force_min=top_paire_bon_kicker]",
+      "bb/100 EV": 45.29352327126904,
+      "IC ±": 5.855139851310411,
+      "bb/100 réel": 44.00305555555556,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.5, main_min=two_pair]",
-      "bb/100 EV": 46.24491563306445,
-      "IC ±": 6.750625963353057,
-      "bb/100 réel": 45.92069166666667,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.5, force_min=overpair]",
+      "bb/100 EV": 43.750343529974586,
+      "IC ±": 5.767855538370047,
+      "bb/100 réel": 42.274388888888886,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.5, main_min=trips]",
-      "bb/100 EV": 44.05183099501732,
-      "IC ±": 6.7461081684449615,
-      "bb/100 réel": 43.677899999999994,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.5, force_min=overpair_qq]",
+      "bb/100 EV": 42.5879692061811,
+      "IC ±": 5.76644499143353,
+      "bb/100 réel": 41.26021666666666,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.75, main_min=top_pair]",
-      "bb/100 EV": 39.52914713220319,
-      "IC ±": 7.315643067115955,
-      "bb/100 réel": 39.69173333333333,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.5, force_min=deux_paires]",
+      "bb/100 EV": 42.46190089649696,
+      "IC ±": 5.769514428444572,
+      "bb/100 réel": 41.04461666666667,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.75, main_min=overpair]",
-      "bb/100 EV": 37.96441332426214,
-      "IC ±": 7.133125708718015,
-      "bb/100 réel": 37.648525,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.5, force_min=brelan]",
+      "bb/100 EV": 42.98526336944068,
+      "IC ±": 5.76339682940418,
+      "bb/100 réel": 41.611,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.75, main_min=two_pair]",
-      "bb/100 EV": 37.42350462115969,
-      "IC ±": 7.122455112861716,
-      "bb/100 réel": 36.79514166666667,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.75, force_min=top_paire_bon_kicker]",
+      "bb/100 EV": 40.769453273674046,
+      "IC ±": 6.058662546654793,
+      "bb/100 réel": 39.33273333333333,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=0.75, main_min=trips]",
-      "bb/100 EV": 35.82972621206878,
-      "IC ±": 7.109131286250708,
-      "bb/100 réel": 35.627116666666666,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.75, force_min=overpair]",
+      "bb/100 EV": 38.46592692022631,
+      "IC ±": 5.992139006510653,
+      "bb/100 réel": 36.86604444444445,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=1.0, main_min=top_pair]",
-      "bb/100 EV": 35.846870593001654,
-      "IC ±": 7.599483990252372,
-      "bb/100 réel": 35.58745833333333,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.75, force_min=overpair_qq]",
+      "bb/100 EV": 37.72061807903664,
+      "IC ±": 5.992627518305065,
+      "bb/100 réel": 36.31445,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=1.0, main_min=overpair]",
-      "bb/100 EV": 34.0008138383314,
-      "IC ±": 7.446660004420584,
-      "bb/100 réel": 33.672533333333334,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.75, force_min=deux_paires]",
+      "bb/100 EV": 37.88092746736436,
+      "IC ±": 5.981876591612871,
+      "bb/100 réel": 36.446711111111114,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=1.0, main_min=two_pair]",
-      "bb/100 EV": 32.97578726004858,
-      "IC ±": 7.424440702771208,
-      "bb/100 réel": 32.4072,
-      "mains": 120000
+      "variante": "Joueur [seuil=0.75, force_min=brelan]",
+      "bb/100 EV": 37.33006996596144,
+      "IC ±": 5.968831639187504,
+      "bb/100 réel": 35.802249999999994,
+      "mains": 180000
     },
     {
-      "variante": "Joueur [declenchement_pot=1.0, main_min=trips]",
-      "bb/100 EV": 32.18971661610918,
-      "IC ±": 7.415798462814241,
-      "bb/100 réel": 31.417375000000003,
-      "mains": 120000
+      "variante": "Joueur [seuil=1.0, force_min=top_paire_bon_kicker]",
+      "bb/100 EV": 39.73441552876462,
+      "IC ±": 6.288141265888592,
+      "bb/100 réel": 38.329027777777775,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=1.0, force_min=overpair]",
+      "bb/100 EV": 37.619461419985804,
+      "IC ±": 6.227306112627349,
+      "bb/100 réel": 36.05179444444444,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=1.0, force_min=overpair_qq]",
+      "bb/100 EV": 36.87808832795438,
+      "IC ±": 6.226485152587631,
+      "bb/100 réel": 35.31131111111111,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=1.0, force_min=deux_paires]",
+      "bb/100 EV": 36.5111833910857,
+      "IC ±": 6.225021839080656,
+      "bb/100 réel": 34.79495,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=1.0, force_min=brelan]",
+      "bb/100 EV": 35.752978191871335,
+      "IC ±": 6.201134315904384,
+      "bb/100 réel": 34.198166666666665,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=tapis, force_min=top_paire_bon_kicker]",
+      "bb/100 EV": 37.50281325892709,
+      "IC ±": 6.4692382186349,
+      "bb/100 réel": 36.40446666666667,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=tapis, force_min=overpair]",
+      "bb/100 EV": 35.22209217908101,
+      "IC ±": 6.415206888995561,
+      "bb/100 réel": 33.93298333333333,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=tapis, force_min=overpair_qq]",
+      "bb/100 EV": 34.46754476045025,
+      "IC ±": 6.416698119091804,
+      "bb/100 réel": 33.20581111111111,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=tapis, force_min=deux_paires]",
+      "bb/100 EV": 34.47878158704958,
+      "IC ±": 6.415631881289745,
+      "bb/100 réel": 33.32626111111111,
+      "mains": 180000
+    },
+    {
+      "variante": "Joueur [seuil=tapis, force_min=brelan]",
+      "bb/100 EV": 33.83898147982656,
+      "IC ±": 6.3943913345836965,
+      "bb/100 réel": 32.69466111111111,
+      "mains": 180000
     }
   ],
   "grille": {
     "params": [
       {
-        "path": "postflop.guardrail.trigger_fraction",
-        "label": "declenchement_pot",
+        "path": "garde_fou_seuil",
+        "label": "seuil",
         "values": [
           0.33,
           0.5,
           0.75,
-          1.0
+          1.0,
+          "tapis"
         ]
       },
       {
-        "path": "postflop.guardrail.min_made",
-        "label": "main_min",
+        "path": "garde_fou_force",
+        "label": "force_min",
         "values": [
-          "top_pair",
+          "top_paire_bon_kicker",
           "overpair",
-          "two_pair",
-          "trips"
+          "overpair_qq",
+          "deux_paires",
+          "brelan"
         ]
       }
     ],
@@ -142,146 +207,227 @@
       {
         "values": [
           0.33,
-          "top_pair"
+          "top_paire_bon_kicker"
         ],
-        "bb100": 50.80209732610651,
-        "ci": 6.763062108407978,
-        "label": "Joueur [declenchement_pot=0.33, main_min=top_pair]"
+        "bb100": 49.4464427479806,
+        "ci": 5.558130993113634,
+        "label": "Joueur [seuil=0.33, force_min=top_paire_bon_kicker]"
       },
       {
         "values": [
           0.33,
           "overpair"
         ],
-        "bb100": 50.14838472878355,
-        "ci": 6.46239547336908,
-        "label": "Joueur [declenchement_pot=0.33, main_min=overpair]"
+        "bb100": 47.15369339758293,
+        "ci": 5.488721047089419,
+        "label": "Joueur [seuil=0.33, force_min=overpair]"
       },
       {
         "values": [
           0.33,
-          "two_pair"
+          "overpair_qq"
         ],
-        "bb100": 49.78563965903848,
-        "ci": 6.439928523353579,
-        "label": "Joueur [declenchement_pot=0.33, main_min=two_pair]"
+        "bb100": 46.114168750833976,
+        "ci": 5.477881978354719,
+        "label": "Joueur [seuil=0.33, force_min=overpair_qq]"
       },
       {
         "values": [
           0.33,
-          "trips"
+          "deux_paires"
         ],
-        "bb100": 48.87210624453632,
-        "ci": 6.418948214869251,
-        "label": "Joueur [declenchement_pot=0.33, main_min=trips]"
+        "bb100": 45.350159815648794,
+        "ci": 5.453061990757805,
+        "label": "Joueur [seuil=0.33, force_min=deux_paires]"
+      },
+      {
+        "values": [
+          0.33,
+          "brelan"
+        ],
+        "bb100": 45.574349189145664,
+        "ci": 5.449541777550455,
+        "label": "Joueur [seuil=0.33, force_min=brelan]"
       },
       {
         "values": [
           0.5,
-          "top_pair"
+          "top_paire_bon_kicker"
         ],
-        "bb100": 46.88067094022387,
-        "ci": 7.021947248779815,
-        "label": "Joueur [declenchement_pot=0.5, main_min=top_pair]"
+        "bb100": 45.29352327126904,
+        "ci": 5.855139851310411,
+        "label": "Joueur [seuil=0.5, force_min=top_paire_bon_kicker]"
       },
       {
         "values": [
           0.5,
           "overpair"
         ],
-        "bb100": 45.955334053879746,
-        "ci": 6.771850870515457,
-        "label": "Joueur [declenchement_pot=0.5, main_min=overpair]"
+        "bb100": 43.750343529974586,
+        "ci": 5.767855538370047,
+        "label": "Joueur [seuil=0.5, force_min=overpair]"
       },
       {
         "values": [
           0.5,
-          "two_pair"
+          "overpair_qq"
         ],
-        "bb100": 46.24491563306445,
-        "ci": 6.750625963353057,
-        "label": "Joueur [declenchement_pot=0.5, main_min=two_pair]"
+        "bb100": 42.5879692061811,
+        "ci": 5.76644499143353,
+        "label": "Joueur [seuil=0.5, force_min=overpair_qq]"
       },
       {
         "values": [
           0.5,
-          "trips"
+          "deux_paires"
         ],
-        "bb100": 44.05183099501732,
-        "ci": 6.7461081684449615,
-        "label": "Joueur [declenchement_pot=0.5, main_min=trips]"
+        "bb100": 42.46190089649696,
+        "ci": 5.769514428444572,
+        "label": "Joueur [seuil=0.5, force_min=deux_paires]"
+      },
+      {
+        "values": [
+          0.5,
+          "brelan"
+        ],
+        "bb100": 42.98526336944068,
+        "ci": 5.76339682940418,
+        "label": "Joueur [seuil=0.5, force_min=brelan]"
       },
       {
         "values": [
           0.75,
-          "top_pair"
+          "top_paire_bon_kicker"
         ],
-        "bb100": 39.52914713220319,
-        "ci": 7.315643067115955,
-        "label": "Joueur [declenchement_pot=0.75, main_min=top_pair]"
+        "bb100": 40.769453273674046,
+        "ci": 6.058662546654793,
+        "label": "Joueur [seuil=0.75, force_min=top_paire_bon_kicker]"
       },
       {
         "values": [
           0.75,
           "overpair"
         ],
-        "bb100": 37.96441332426214,
-        "ci": 7.133125708718015,
-        "label": "Joueur [declenchement_pot=0.75, main_min=overpair]"
+        "bb100": 38.46592692022631,
+        "ci": 5.992139006510653,
+        "label": "Joueur [seuil=0.75, force_min=overpair]"
       },
       {
         "values": [
           0.75,
-          "two_pair"
+          "overpair_qq"
         ],
-        "bb100": 37.42350462115969,
-        "ci": 7.122455112861716,
-        "label": "Joueur [declenchement_pot=0.75, main_min=two_pair]"
+        "bb100": 37.72061807903664,
+        "ci": 5.992627518305065,
+        "label": "Joueur [seuil=0.75, force_min=overpair_qq]"
       },
       {
         "values": [
           0.75,
-          "trips"
+          "deux_paires"
         ],
-        "bb100": 35.82972621206878,
-        "ci": 7.109131286250708,
-        "label": "Joueur [declenchement_pot=0.75, main_min=trips]"
+        "bb100": 37.88092746736436,
+        "ci": 5.981876591612871,
+        "label": "Joueur [seuil=0.75, force_min=deux_paires]"
+      },
+      {
+        "values": [
+          0.75,
+          "brelan"
+        ],
+        "bb100": 37.33006996596144,
+        "ci": 5.968831639187504,
+        "label": "Joueur [seuil=0.75, force_min=brelan]"
       },
       {
         "values": [
           1.0,
-          "top_pair"
+          "top_paire_bon_kicker"
         ],
-        "bb100": 35.846870593001654,
-        "ci": 7.599483990252372,
-        "label": "Joueur [declenchement_pot=1.0, main_min=top_pair]"
+        "bb100": 39.73441552876462,
+        "ci": 6.288141265888592,
+        "label": "Joueur [seuil=1.0, force_min=top_paire_bon_kicker]"
       },
       {
         "values": [
           1.0,
           "overpair"
         ],
-        "bb100": 34.0008138383314,
-        "ci": 7.446660004420584,
-        "label": "Joueur [declenchement_pot=1.0, main_min=overpair]"
+        "bb100": 37.619461419985804,
+        "ci": 6.227306112627349,
+        "label": "Joueur [seuil=1.0, force_min=overpair]"
       },
       {
         "values": [
           1.0,
-          "two_pair"
+          "overpair_qq"
         ],
-        "bb100": 32.97578726004858,
-        "ci": 7.424440702771208,
-        "label": "Joueur [declenchement_pot=1.0, main_min=two_pair]"
+        "bb100": 36.87808832795438,
+        "ci": 6.226485152587631,
+        "label": "Joueur [seuil=1.0, force_min=overpair_qq]"
       },
       {
         "values": [
           1.0,
-          "trips"
+          "deux_paires"
         ],
-        "bb100": 32.18971661610918,
-        "ci": 7.415798462814241,
-        "label": "Joueur [declenchement_pot=1.0, main_min=trips]"
+        "bb100": 36.5111833910857,
+        "ci": 6.225021839080656,
+        "label": "Joueur [seuil=1.0, force_min=deux_paires]"
+      },
+      {
+        "values": [
+          1.0,
+          "brelan"
+        ],
+        "bb100": 35.752978191871335,
+        "ci": 6.201134315904384,
+        "label": "Joueur [seuil=1.0, force_min=brelan]"
+      },
+      {
+        "values": [
+          "tapis",
+          "top_paire_bon_kicker"
+        ],
+        "bb100": 37.50281325892709,
+        "ci": 6.4692382186349,
+        "label": "Joueur [seuil=tapis, force_min=top_paire_bon_kicker]"
+      },
+      {
+        "values": [
+          "tapis",
+          "overpair"
+        ],
+        "bb100": 35.22209217908101,
+        "ci": 6.415206888995561,
+        "label": "Joueur [seuil=tapis, force_min=overpair]"
+      },
+      {
+        "values": [
+          "tapis",
+          "overpair_qq"
+        ],
+        "bb100": 34.46754476045025,
+        "ci": 6.416698119091804,
+        "label": "Joueur [seuil=tapis, force_min=overpair_qq]"
+      },
+      {
+        "values": [
+          "tapis",
+          "deux_paires"
+        ],
+        "bb100": 34.47878158704958,
+        "ci": 6.415631881289745,
+        "label": "Joueur [seuil=tapis, force_min=deux_paires]"
+      },
+      {
+        "values": [
+          "tapis",
+          "brelan"
+        ],
+        "bb100": 33.83898147982656,
+        "ci": 6.3943913345836965,
+        "label": "Joueur [seuil=tapis, force_min=brelan]"
       }
     ]
   },
@@ -290,30 +436,33 @@
     "experiment": "sweep",
     "strategy": "joueur",
     "composition": "humains_simules",
-    "decks": 20000,
+    "decks": 30000,
+    "max_minutes": 120,
     "params": [
       {
-        "path": "postflop.guardrail.trigger_fraction",
-        "label": "declenchement_pot",
+        "path": "garde_fou_seuil",
+        "label": "seuil",
         "values": [
           0.33,
           0.5,
           0.75,
-          1.0
+          1.0,
+          "tapis"
         ]
       },
       {
-        "path": "postflop.guardrail.min_made",
-        "label": "main_min",
+        "path": "garde_fou_force",
+        "label": "force_min",
         "values": [
-          "top_pair",
+          "top_paire_bon_kicker",
           "overpair",
-          "two_pair",
-          "trips"
+          "overpair_qq",
+          "deux_paires",
+          "brelan"
         ]
       }
     ]
   },
-  "mains_jouees": 1920000,
-  "duree_s": 776.8
+  "mains_jouees": 4500000,
+  "duree_s": 1745.2
 }

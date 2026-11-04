@@ -36,7 +36,7 @@ def _parser() -> argparse.ArgumentParser:
         sp.add_argument("--seed", type=int, help="graine globale")
         sp.add_argument("--set", action="append", default=[], metavar="CHEMIN=VALEUR", help="surcharge de la config d'expérience")
         sp.add_argument("--game-set", action="append", default=[], metavar="CHEMIN=VALEUR", help="surcharge de configs/game.yaml")
-        if name == "compare":
+        if name in ("compare", "sweep"):
             sp.add_argument("--rapport-seul", action="store_true", help="régénère rapport.html depuis les données du dossier --out, sans re-simuler")
         if name == "journal":
             sp.add_argument("--csv", help="journal CSV")
@@ -221,7 +221,10 @@ def main(argv: list[str] | None = None) -> int:
     elif cmd in ("sweep", "ablation", "optimize"):
         from pokerlab.experiments import variants as mod
 
-        res = {"sweep": mod.run_sweep, "ablation": mod.run_ablation, "optimize": mod.run_optimize}[cmd](ctx)
+        if cmd == "sweep" and args.rapport_seul:
+            res = mod.rebuild_sweep_report(ctx)
+        else:
+            res = {"sweep": mod.run_sweep, "ablation": mod.run_ablation, "optimize": mod.run_optimize}[cmd](ctx)
     elif cmd == "audit":
         from pokerlab.experiments import audit as mod
 

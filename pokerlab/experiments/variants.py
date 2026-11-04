@@ -63,8 +63,7 @@ def _bb100(hands: pd.DataFrame, name: str, conf: float):
 
 
 # ----------------------------------------------------------------------------- sweep
-def run_sweep(ctx: ExperimentContext) -> dict[str, Any]:
-    cfg = ctx.cfg
+def _sweep_configs(cfg: dict[str, Any]):
     base = resolve_spec(cfg["strategy"])
     params = cfg["params"][:2]
     grids = [p["values"] for p in params]
@@ -74,9 +73,41 @@ def run_sweep(ctx: ExperimentContext) -> dict[str, Any]:
         changes = {p["path"]: v for p, v in zip(params, combo)}
         suffix = ", ".join(f"{p.get('label', p['path'])}={v}" for p, v in zip(params, combo))
         configs.append(variant(base, changes, suffix))
+    return base, params, grids, combos, configs
+
+
+def run_sweep(ctx: ExperimentContext) -> dict[str, Any]:
+    cfg = ctx.cfg
+    base, params, grids, combos, configs = _sweep_configs(cfg)
     comp = cfg.get("composition", "micro_play_money")
     ctx.log(f"sweep : {len(configs)} variantes de {base['name']} ({comp})")
     hands, _ = _evaluate(ctx, configs, comp, int(cfg.get("decks", 200)))
+    return _sweep_outputs(ctx, base, params, grids, combos, configs, comp, hands)
+
+
+def rebuild_sweep_report(ctx: ExperimentContext) -> dict[str, Any]:
+    """Régénère rapport.html et resume.json d'un sweep déjà joué (mains.parquet du dossier), sans re-simuler."""
+    import json
+
+    meta = json.loads((ctx.out_dir / "resume.json").read_text(encoding="utf-8"))
+    ctx.cfg = meta.get("config") or ctx.cfg
+    ctx.hands_played = int(meta.get("mains_jouees", 0))
+    ctx.partial = list(meta.get("partiel") or [])
+    base, params, grids, combos, configs = _sweep_configs(ctx.cfg)
+    hands = pd.read_parquet(ctx.out_dir / "mains.parquet")
+    for col in ("strategy", "composition"):
+        if col in hands.columns:
+            hands[col] = hands[col].astype(str)
+    out = _sweep_outputs(ctx, base, params, grids, combos, configs, ctx.cfg.get("composition", "micro_play_money"), hands, write_hands=False)
+    if "duree_s" in meta:
+        data = json.loads((ctx.out_dir / "resume.json").read_text(encoding="utf-8"))
+        data["duree_s"] = meta["duree_s"]
+        (ctx.out_dir / "resume.json").write_text(json.dumps(data, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    return out
+
+
+def _sweep_outputs(ctx, base, params, grids, combos, configs, comp, hands, write_hands: bool = True) -> dict[str, Any]:
+    cfg = ctx.cfg
     conf = ctx.confidence
     summ = {c["name"]: _bb100(hands, c["name"], conf) for c in configs}
     report = Report(f"PokerLab — sweep de {base.get('label', base['name'])}", f"Composition {comp}, mêmes decks pour chaque variante")
@@ -106,9 +137,24 @@ def run_sweep(ctx: ExperimentContext) -> dict[str, Any]:
     worst = min(configs, key=lambda c: summ[c["name"]].ev.bb100)
     dm = {c["name"]: hands[hands["strategy"] == c["name"]].groupby("deck")["result_ev"].mean() for c in (best, worst)}
     test = apply_holm(pairwise_tests(dm, labels={best["name"]: best["label"], worst["name"]: worst["label"]}))
+    current_line = ""
+    try:   # la config actuelle de la stratégie fait-elle partie de la grille ? Écart apparié avec la meilleure case.
+        cur_vals = tuple(get_path(base, resolve_path(p["path"])) for p in params)
+        current = next((c for combo, c in zip(combos, configs) if tuple(str(v) for v in combo) == tuple(str(v) for v in cur_vals)), None)
+    except (KeyError, IndexError, TypeError):
+        current = None
+    if current is not None and current is not best:
+        dmc = {c["name"]: hands[hands["strategy"] == c["name"]].groupby("deck")["result_ev"].mean() for c in (best, current)}
+        tc = apply_holm(pairwise_tests(dmc, labels={best["name"]: best["label"], current["name"]: current["label"]}))
+        n_cmp = max(1, len(configs) - 1)
+        current_line = (f"Réglage actuel {current['label']} : {summ[current['name']].ev.bb100:+.1f} bb/100. " + (tc[0].verdict() if tc else "")
+                        + f" (meilleure case choisie parmi {len(configs)} : gain probablement surestimé, à confirmer sur d'autres decks ; "
+                        f"seuil de Bonferroni p < {0.05 / n_cmp:.4f}).")
+    elif current is best:
+        current_line = f"Le réglage actuel ({current['label']}) est la meilleure case de la grille."
     report.verdict = [
         f"Meilleure variante : {best['label']} ({summ[best['name']].ev.bb100:+.1f} ± {summ[best['name']].ev.ci_half:.1f} bb/100).",
-        f"Moins bonne : {worst['label']} ({summ[worst['name']].ev.bb100:+.1f} bb/100).",
+        current_line or f"Moins bonne : {worst['label']} ({summ[worst['name']].ev.bb100:+.1f} bb/100).",
         test[0].verdict() + "." if test else "",
         f"{len(configs)} variantes, {int(cfg.get('decks', 200))} decks chacune (x6 rotations).",
         "Un écart non significatif veut dire : le paramètre compte peu à cet échantillon, pas qu'il est sans effet.",
@@ -118,8 +164,8 @@ def run_sweep(ctx: ExperimentContext) -> dict[str, Any]:
         "points": [{"values": list(combo), "bb100": summ[c["name"]].ev.bb100, "ci": summ[c["name"]].ev.ci_half,
                     "label": c["label"]} for combo, c in zip(combos, configs)],
     }
-    paths = save_outputs(ctx, report, hands, None, (), {"strategie": base["name"], "composition": comp,
-                                                         "variantes": table.to_dict("records"), "grille": grid})
+    paths = save_outputs(ctx, report, hands if write_hands else None, None, (), {"strategie": base["name"], "composition": comp,
+                                                                                 "variantes": table.to_dict("records"), "grille": grid})
     return {"report": report, "paths": paths, "table": table, "hands": hands}
 
 

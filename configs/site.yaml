@@ -1,9 +1,9 @@
 # Tableau de bord local (python -m pokerlab site / serve).
 strategie_suivie: joueur              # stratégie dont tu suis la fiche
-composition_reference: micro_play_money  # cône attendu et stats simulées (humains_simules si tu le préfères)
+composition_reference: humains_simules   # cône attendu et stats simulées (micro_play_money possible)
 campagnes: out                        # dossier racine des campagnes (compare, audit, sweep, ablation...)
-fiche_campagne: null                  # dossier de campagne pour la fiche (défaut : campagnes)
-fiche_composition: null               # composition du résultat attendu de la fiche (défaut : composition_reference)
+fiche_campagne: out/humains           # dossier de campagne pour la fiche (compare + audit ; null = campagnes)
+fiche_composition: humains_simules    # composition du résultat attendu de la fiche (null = composition_reference)
 exclure: [smoke, site]                # sous-dossiers de campagnes ignorés par le site (tests rapides)
 donnees_reelles: data/reel            # mains réelles importées (non versionnées)
 dossier_import: data/a_importer       # dépose ici tes historiques PokerStars (.txt) : import automatique avec serve

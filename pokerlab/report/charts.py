@@ -69,8 +69,9 @@ def matrix_heatmap(z: np.ndarray, rows: Sequence[str], cols: Sequence[str], titl
         "colorbar": {"title": {"text": unit}, "thickness": 10},
         "hovertemplate": "%{y} · %{x}<br>%{z:.2f} " + unit + "<extra></extra>",
     }]
-    layout = base_layout(title, height=max(300, 40 * len(rows) + 140), yaxis={"autorange": "reversed", "gridcolor": theme.SURFACE},
-                         xaxis={"gridcolor": theme.SURFACE})
+    # axes catégoriels : des libellés comme 0.33 / 0.5 / tapis ne doivent pas être lus comme des nombres
+    layout = base_layout(title, height=max(300, 40 * len(rows) + 140), yaxis={"autorange": "reversed", "gridcolor": theme.SURFACE, "type": "category"},
+                         xaxis={"gridcolor": theme.SURFACE, "type": "category"})
     return {"data": data, "layout": layout}
 
 
