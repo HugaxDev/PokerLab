@@ -2,26 +2,26 @@
   "strategie": "serre",
   "composition": "humains_simules",
   "ablations": [
-    "Serré [sans garde-fou] bat Serré : significatif (3.8 ± 1.1 bb/100, p Holm = 4.5e-12)",
-    "Serré bat Serré [sans exception overpair QQ+] : significatif (3.4 ± 0.9 bb/100, p Holm = 3.14e-13)"
+    "Serré [sans garde-fou] bat Serré : significatif (3.7 ± 1.1 bb/100, p Holm = 2.14e-11)",
+    "Serré bat Serré [sans exception overpair QQ+] : significatif (2.2 ± 0.8 bb/100, p Holm = 4.42e-08)"
   ],
   "resultats": [
     {
       "regle": "garde-fou",
-      "apport_bb100": -3.7639498256093606,
-      "ci": 1.0657770460555611,
-      "p_holm": 4.504364203933507e-12,
+      "apport_bb100": -3.7063303648053068,
+      "ci": 1.0685262877823343,
+      "p_holm": 2.1369240589653548e-11,
       "significatif": true
     },
     {
       "regle": "exception overpair QQ+",
-      "apport_bb100": 3.387288938918532,
-      "ci": 0.8992288520573275,
-      "p_holm": 3.140126369906756e-13,
+      "apport_bb100": 2.199873107263107,
+      "ci": 0.7876624834030544,
+      "p_holm": 4.417441179680546e-08,
       "significatif": true
     }
   ],
-  "base_bb100": 16.262565260835096,
+  "base_bb100": 18.567779411606374,
   "experience": "ablation",
   "config": {
     "experiment": "ablation",
@@ -38,11 +38,11 @@
       {
         "name": "exception overpair QQ+",
         "patch": {
-          "postflop.guardrail.allow_overpair_from": null
+          "postflop.guardrail.force_min": "deux_paires"
         }
       }
     ]
   },
   "mains_jouees": 900000,
-  "duree_s": 324.2
+  "duree_s": 314.5
 }
