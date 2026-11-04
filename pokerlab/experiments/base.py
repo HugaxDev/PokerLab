@@ -103,6 +103,8 @@ def save_outputs(
     if histories:
         paths["historiques"] = write_histories(ctx.out_dir / f"{prefix}historiques.txt", histories)
     data = dict(summary or {})
+    data.setdefault("experience", ctx.name)
+    data.setdefault("config", ctx.cfg)
     data.setdefault("mains_jouees", ctx.hands_played)
     data.setdefault("duree_s", round(ctx.elapsed(), 1))
     paths["resume"] = write_json(ctx.out_dir / f"{prefix}resume.json", data)

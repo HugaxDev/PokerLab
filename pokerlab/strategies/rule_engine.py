@@ -12,6 +12,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from pokerlab.cards.cards import RANK_INDEX
 from pokerlab.cards.ranges import hole_class, range_classes
 from pokerlab.config import deep_merge
 from pokerlab.engine.types import Action, Kind, Observation
@@ -19,6 +20,7 @@ from pokerlab.features.board import board_texture
 from pokerlab.features.hand import HandRead, draw_equity, level_of, read_hand
 from pokerlab.features.situation import (
     AGGRESSIVE,
+    bets_on_street,
     facing_all_in,
     facing_fraction,
     limpers,
@@ -54,7 +56,9 @@ POSTFLOP_DEFAULTS: dict[str, Any] = {
         "enabled": False,
         "trigger_fraction": 0.5,
         "trigger_all_in": True,
+        "trigger_scope": "bet_or_raise",
         "min_made": "two_pair",
+        "allow_overpair_from": None,
         "equity_check": True,
         "equity_sims": 300,
     },
@@ -216,17 +220,35 @@ class RuleStrategy:
             ranges.append(w)
         return self.ctx.estimate_equity(obs.hole, obs.board, ranges, (self.name, tuple(sigs)), sims)
 
+    def _guardrail_triggered(self, obs: Observation) -> bool:
+        """Garde-fou actif : tapis adverse, ou mise/relance au-delà de ``trigger_fraction`` du pot."""
+        g = self.post["guardrail"]
+        if not g["enabled"] or obs.to_call <= 0:
+            return False
+        if g["trigger_all_in"] and facing_all_in(obs):
+            return True
+        if facing_fraction(obs) <= float(g["trigger_fraction"]):
+            return False
+        if g.get("trigger_scope", "bet_or_raise") == "raise_only":
+            return bets_on_street(obs) >= 2
+        return True
+
+    def _strong_overpair(self, obs: Observation, hr: HandRead) -> bool:
+        """Overpair servie au moins égale à ``allow_overpair_from`` (ex. Q -> QQ+)."""
+        rank = self.post["guardrail"].get("allow_overpair_from")
+        if not rank or hr.level != level_of("overpair"):
+            return False
+        return obs.hole[0] >> 2 == obs.hole[1] >> 2 and (obs.hole[0] >> 2) >= RANK_INDEX[str(rank).upper()[0]]
+
     def _facing(self, obs: Observation, hr: HandRead, allow_raise: bool = True) -> Action:
         p = self.post
         g = p["guardrail"]
         rv = p["raise_vs_bet"]
-        big = g["enabled"] and (
-            (g["trigger_all_in"] and facing_all_in(obs)) or facing_fraction(obs) > float(g["trigger_fraction"])
-        )
+        big = self._guardrail_triggered(obs)
         if allow_raise and rv["enabled"] and hr.level >= self.raise_min and obs.legal.can_raise:
             return make_raise(obs, float(rv["multiplier"]) * max(obs.bets), self.shove_fraction, "value-raise")
         if big:
-            if hr.level >= self.guard_min:
+            if hr.level >= self.guard_min or self._strong_overpair(obs, hr):
                 return Action.check_call("call-value")
             if g["equity_check"]:
                 eq = self._equity(obs, int(g["equity_sims"]))

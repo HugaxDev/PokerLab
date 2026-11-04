@@ -52,6 +52,37 @@ def parse_hole(cards: str, suited_flag: str) -> tuple[int, int, bool]:
     return max(r1, r2), min(r1, r2), suited
 
 
+FACING_WORDS = ("sur relance", "sur une relance", "face à", "face a ", "contre", "3bet", "3-bet", "4bet", "4-bet",
+                "paie", "paye", "payé", "call", "suit")
+FOLD_WORDS = ("couch", "fold")
+
+
+def raw_preflop(summary: str) -> str:
+    text = summary.lower()
+    for sep in ("|", "flop", ";"):
+        if sep in text:
+            text = text.split(sep, 1)[0]
+    return text
+
+
+def preflop_situation(summary: str) -> str:
+    """'vs_raise' si le résumé préflop indique une relance devant (paie, 3bet, « sur relance »...), sinon 'unopened'."""
+    raw = raw_preflop(summary)
+    return "vs_raise" if any(w in raw for w in FACING_WORDS) else "unopened"
+
+
+def preflop_played(summary: str) -> str:
+    """Action préflop jouée : 'relance', 'paie', 'couché' ou 'check'."""
+    seg = preflop_segment(summary)
+    if any(w in seg for w in RAISE_WORDS):
+        return "relance"
+    if any(w in seg for w in CALL_WORDS):
+        return "paie"
+    if any(w in seg for w in FOLD_WORDS):
+        return "couché"
+    return "check"
+
+
 CONTEXT = re.compile(r"\b(sur|face (à|a)|contre|après|apres)\s+(une?\s+)?\S+")
 
 
@@ -99,6 +130,7 @@ def load_journal(csv_path: str | Path, phases: dict[str, dict[str, Any]]) -> Jou
         rebuy = sum(_num(m) for m in REBUY.findall(rec["action_resume"]))
         rows.append({
             "phase": phase,
+            "strategie": meta.get("strategie"),
             "main": int(_num(rec["main"])),
             "classe": CLASS_NAMES[cls],
             "hand_class": cls,
@@ -113,6 +145,8 @@ def load_journal(csv_path: str | Path, phases: dict[str, dict[str, Any]]) -> Jou
             "hors_regle": _yes(rec["hors_regle"]),
             "vpip": bool(vpip),
             "pfr": bool(raised),
+            "situation": preflop_situation(rec["action_resume"]),
+            "joue": preflop_played(rec["action_resume"]),
             "bb_value": bb,
         })
     df = pd.DataFrame(rows).sort_values(["phase", "main"]).reset_index(drop=True)
@@ -129,6 +163,32 @@ def load_journal(csv_path: str | Path, phases: dict[str, dict[str, Any]]) -> Jou
     return Journal(df, phases)
 
 
+PLAYED_CODE = {"relance": 2, "paie": 1, "check": 1, "couché": 0}
+CODE_LABEL = {2: "relance", 1: "paie / check", 0: "couché"}
+
+
+def flag_off_sheet(df: pd.DataFrame, charts: dict[str, dict]) -> pd.DataFrame:
+    """Ajoute 'fiche' (action prévue) et 'hors_fiche' en comparant l'action préflop à la fiche de la phase.
+
+    ``charts`` : stratégie -> grilles préflop (voir ``pokerlab.fiche``). Les mains sans fiche
+    (phase sans stratégie, UTG face à une relance) restent non évaluées (``hors_fiche`` = None)."""
+    out = df.copy()
+    expected, off = [], []
+    for _, row in out.iterrows():
+        chart = charts.get(row.get("strategie") or "")
+        codes = chart.get((row["position"], row["situation"])) if chart else None
+        if codes is None:
+            expected.append("non évaluable")
+            off.append(None)
+            continue
+        want = int(codes[int(row["hand_class"])])
+        expected.append(CODE_LABEL[want])
+        off.append(PLAYED_CODE[row["joue"]] != want)
+    out["fiche"] = expected
+    out["hors_fiche"] = off
+    return out
+
+
 def journal_stats(df: pd.DataFrame) -> pd.DataFrame:
     """VPIP, PFR, résultats et mains hors règle par phase."""
     rows = []
@@ -143,6 +203,7 @@ def journal_stats(df: pd.DataFrame) -> pd.DataFrame:
             "mains hors règle": int(g["hors_regle"].sum()),
             "résultat hors règle (bb)": g.loc[g["hors_regle"], "result_bb"].sum(),
             "montants estimés": int(g["estime"].sum()),
+            "hors fiche": int(g["hors_fiche"].fillna(False).astype(bool).sum()) if "hors_fiche" in g else 0,
         })
     return pd.DataFrame(rows)
 

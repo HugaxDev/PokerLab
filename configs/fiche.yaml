@@ -1,0 +1,11 @@
+# Fiche de stratégie (python -m pokerlab fiche --strategy <nom> [--campaign <dossier>]).
+reference_raise_bb: 3.0      # grilles « face à une relance » : relance de référence à 3 bb
+reference_pot_bb: 6.5        # exemples de mises postflop : coup relancé à 3 bb payé par la BB (3 + 3 + 0,5)
+stakes:                      # conversions en jetons de table
+  - {label: "0,01/0,02", small_blind: 0.01, big_blind: 0.02}
+  - {label: "0,02/0,05", small_blind: 0.02, big_blind: 0.05}
+horizons: [50, 200, 1000]    # fourchettes 5e-95e centile sur ces nombres de mains
+bootstrap_resamples: 4000
+top_leaks: 5
+min_hands_reliable: 10000    # en dessous : résultats signalés comme indicatifs
+leak_min_count: 30           # en dessous : interdit signalé « à confirmer »

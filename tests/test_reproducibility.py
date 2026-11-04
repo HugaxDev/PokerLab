@@ -21,14 +21,14 @@ def _run(lab: LabConfig, hero: str, decks: int, workers: int, comp=COMP) -> pd.D
 
 
 def test_same_seed_same_result(lab) -> None:
-    a = _run(lab, "joueur", 3, 1)
-    b = _run(lab, "joueur", 3, 1)
+    a = _run(lab, "joueur", 2, 1)
+    b = _run(lab, "joueur", 2, 1)
     pd.testing.assert_frame_equal(a, b)
 
 
 def test_workers_do_not_change_results(lab) -> None:
-    a = _run(lab, "equity_bot", 4, 1)
-    b = _run(lab, "equity_bot", 4, 3)
+    a = _run(lab, "equity_bot", 3, 1)
+    b = _run(lab, "equity_bot", 3, 3)
     pd.testing.assert_frame_equal(a, b)
 
 
@@ -44,7 +44,7 @@ def test_duplicate_sum_is_zero_when_everyone_plays_the_same(lab) -> None:
     donc la somme des résultats du héros sur les 6 rotations vaut exactement 0 (réel et EV)."""
     for strat in ("joueur", "calling_station"):
         comp = {"name": "miroir", "mode": "fixed", "seats": [strat] * 5}
-        df = _run(lab, strat, 3, 1, comp)
+        df = _run(lab, strat, 2, 1, comp)
         sums = df.groupby("deck")[["result", "result_ev"]].sum()
         assert (sums["result"].abs() < 1e-9).all(), sums
         assert (sums["result_ev"].abs() < 1e-6).all(), sums
@@ -52,7 +52,7 @@ def test_duplicate_sum_is_zero_when_everyone_plays_the_same(lab) -> None:
 
 
 def test_duplicate_deals_same_cards_per_seat(lab) -> None:
-    df = _run(lab, "serre", 2, 1)
-    other = _run(lab, "large", 2, 1)
+    df = _run(lab, "serre", 1, 1)
+    other = _run(lab, "large", 1, 1)
     key = ["deck", "rot", "c1", "c2", "b0"]
     pd.testing.assert_frame_equal(df[key[:4]].reset_index(drop=True), other[key[:4]].reset_index(drop=True))

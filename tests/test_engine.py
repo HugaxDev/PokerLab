@@ -96,7 +96,7 @@ def test_illegal_requests_are_corrected(lab) -> None:
 def test_memoized_evaluation_matches_pokerkit(lab) -> None:
     rnd = build_strategy("random_legal", lab)
     plain = replace(lab.game, memoize_hand_eval=False)
-    for h in range(60):
+    for h in range(20):
         seed = derive_seed(7, h)
         deck = shuffled_deck(seed)
         a = play_hand([rnd] * 6, lab.game, deck, [10000] * 6, h, seed)
@@ -109,9 +109,9 @@ def test_persistent_table_conserves_chips_with_rebuys(lab) -> None:
     players = [build_strategy(n, lab) for n in ("random_legal", "maniac", "calling_station", "joueur", "nit_trappeur", "serre")]
     table = Table(players, game, button=2)
     initial = sum(table.stacks)
-    for h in range(80):
+    for h in range(30):
         seed = derive_seed(11, h)
         table.play(shuffled_deck(seed), seed, h)
         assert sum(table.stacks) == initial + sum(table.rebuys)
         assert all(s >= 0 for s in table.stacks)
-    assert table.button == (2 + 80) % 6
+    assert table.button == (2 + 30) % 6

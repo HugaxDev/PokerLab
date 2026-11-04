@@ -47,6 +47,15 @@ def run(ctx: ExperimentContext) -> dict[str, Any]:
         played[name] = c.hands_played
         ctx.hands_played += c.hands_played
         combined.absorb(outputs[name]["report"], prefix=f"[{name}] ")
+    fiche_path = None
+    if "fiche" in cfg:
+        from pokerlab.fiche.build import build_fiche
+
+        name = cfg["fiche"].get("strategy", "joueur")
+        res = build_fiche(name, ctx.lab, ctx.out_dir, ctx.out_dir / f"fiche_{name}.html")
+        fiche_path = res["path"]
+        played["fiche"] = 0
+        ctx.log(f"--- smoke : fiche {name} -> {fiche_path} (interdits : {res['filled']['interdits']}, résultat : {res['filled']['resultat']})")
     total = ctx.hands_played
     within = total <= budget
     combined.verdict = [
@@ -61,4 +70,6 @@ def run(ctx: ExperimentContext) -> dict[str, Any]:
     hands = outputs.get("compare", {}).get("hands")
     paths = save_outputs(ctx, combined, hands, outputs.get("compare", {}).get("decisions"),
                          (), {"mains_par_experience": played, "budget": budget, "dans_le_budget": within})
+    if fiche_path is not None:
+        paths["fiche"] = fiche_path
     return {"report": combined, "paths": paths, "played": played, "total": total, "within_budget": within, "outputs": outputs}

@@ -17,7 +17,16 @@ from pokerlab.cards.categories import CLASS_GROUP
 from pokerlab.engine.types import KIND_LABELS, STREET_NAMES, Kind
 from pokerlab.features.hand import MADE_LABELS
 
-FACING_LABELS = ("rien à payer", "face à une mise", "face à une relance", "face à un tapis")
+FACING_LABELS = ("rien à payer", "face à une mise", "face à une relance", "face à un tapis", "face à une sur-relance")
+PREFLOP_FACING_LABELS = ("rien à payer", "sans relance devant", "face à une relance", "face à un tapis", "face à une sur-relance")
+
+
+def facing_label(street: int, code: int) -> str:
+    """Libellé de ce qu'il y a à payer (préflop : les blinds seules = pas de relance devant)."""
+    labels = PREFLOP_FACING_LABELS if street == 0 else FACING_LABELS
+    return labels[min(int(code), len(labels) - 1)]
+
+
 DRAW_LABELS = ("", " + tirage faible", " + tirage")
 
 
@@ -32,7 +41,7 @@ def situation_labels(dec: pd.DataFrame) -> pd.DataFrame:
         else:
             hand_labels.append(MADE_LABELS[int(level)] + DRAW_LABELS[int(draw)])
     out["hand_label"] = hand_labels
-    out["facing_label"] = [FACING_LABELS[int(f)] for f in out["facing"]]
+    out["facing_label"] = [facing_label(int(st), int(f)) for st, f in zip(out["street"], out["facing"])]
     out["action_label"] = [KIND_LABELS[Kind(int(k))] for k in out["kind"]]
     out["net_after"] = out["result_ev"] + out["invested_bb"]
     return out

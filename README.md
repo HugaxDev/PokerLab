@@ -41,14 +41,15 @@ python -m pokerlab precompute --sims 2000
 
 ## Démarrage rapide
 
-Démonstration miniature de toutes les expériences (≤ 2 000 mains, quelques secondes) :
+Démonstration miniature de toutes les expériences (≈ 350 mains, quelques secondes) :
 
 ```bash
 python -m pokerlab smoke
 ```
 
 Rapport : `out/smoke/rapport.html` (un fichier autonome, ouvrable hors ligne, sur mobile aussi).
-Chaque expérience a aussi son propre rapport dans `out/smoke/<expérience>/`.
+Chaque expérience a aussi son propre rapport dans `out/smoke/<expérience>/`, et une fiche de
+démonstration est écrite dans `out/smoke/fiche_joueur.html`.
 
 La vraie campagne (à lancer vous-même, plusieurs heures selon la machine) :
 
@@ -71,7 +72,8 @@ Chaque expérience a une commande et une config YAML dans `configs/experiments/`
 | `optimize` | Recherche de paramètres sur graines d'entraînement, validation sur graines jamais vues. | `optimize.yaml` |
 | `audit` | Audit contrefactuel : EV perdue par décision, par rollouts de chaque alternative légale. | `audit.yaml` |
 | `journal` | Import de votre journal CSV réel et comparaison avec la stratégie simulée. | `journal.yaml` |
-| `smoke` | Toutes les expériences en miniature + rapport de démonstration. | `smoke.yaml` |
+| `smoke` | Toutes les expériences en miniature (≈ 350 mains) + rapport et fiche de démonstration. | `smoke.yaml` |
+| `fiche` | Fiche HTML d'une stratégie : grilles préflop par position, tailles de mise, règles postflop, interdits (audit) et résultat attendu (compare). | `fiche.yaml` |
 | `bench` | Mesure le débit réel (mains/s). | `bench.yaml` |
 | `precompute` | Calcule la table d'équité préflop 169×169. | `game.yaml` |
 | `replay` | Affiche l'historique texte d'une main de campagne. | — |
@@ -97,6 +99,10 @@ python -m pokerlab replay --strategy joueur --composition micro_play_money --dec
 python -m pokerlab journal --csv journal/mon_journal.csv --phases journal/phases.yaml
 ```
 
+```bash
+python -m pokerlab fiche --strategy serre --campaign out
+```
+
 Sorties de chaque campagne (`out/<commande>/`) : `rapport.html`, `mains.csv` + `mains.parquet`
 (une ligne par main), `decisions.csv` + `decisions.parquet` (une ligne par décision),
 `historiques.txt` (format proche de PokerStars), `resume.json`.
@@ -115,10 +121,11 @@ pokerlab/
   experiments/   duplicate + arrêt auto, compare, round_robin, sessions, bankroll, sweep/ablation/
                  optimize (variants), audit, smoke, bench
   analysis/      stats (IC, tests, Holm), stats de joueur, décomposition, détecteur de fuites
-  journal/       import du journal CSV réel et rapport
+  journal/       import du journal CSV réel et rapport (dont les mains hors fiche)
+  fiche/         fiche de stratégie : grilles préflop, tailles, règles postflop, blocs campagne
   report/        rapport HTML autonome, graphiques plotly, exports CSV/Parquet
   cli.py         python -m pokerlab ...
-configs/         game.yaml, strategies/, opponents/, tables/, experiments/
+configs/         game.yaml, fiche.yaml, strategies/, opponents/, tables/, experiments/
 journal/         exemple_journal.csv (inventé), phases.yaml
 tests/
 ```
@@ -148,7 +155,7 @@ position).
 
 | Stratégie | Résumé |
 |---|---|
-| `serre` | 99+, AK, AQ, AJs, KQs. Ouvre 3 bb, 3-bet 3× QQ+/AK, paie ≤ 4 bb avec 99-JJ/AQ. Postflop : mise 2/3 pot avec top paire+, sinon check, se couche face à une mise sans top paire. |
+| `serre` | 99+, AK, AQ, AJs, KQs. Ouvre 3 bb, 3-bet 3× QQ+/AK, paie ≤ 4 bb avec 99-JJ/AQ. Postflop : mise 2/3 pot avec top paire+, sinon check, se couche face à une mise sans top paire ; face à un tapis ou une mise > 50 % du pot, ne suit qu'avec deux paires+ ou une overpair QQ+. |
 | `large` | Paires, as, deux cartes ≥ T, assorties connectées 54s+. Ouvre 2 bb, paie ≤ 3 bb. Postflop : serré + paie les tirages couleur/quinte ouverte si la cote le justifie. |
 | `zero_bluff` | Préflop de large. Postflop : ne mise/relance jamais sans paire ; paie un tirage seulement avec la cote. |
 | `position` | BTN/CO : range large, ouvre 3 bb. Ailleurs : 99+, AK, AQ, AJ. Pas de bluff. BB : check gratuit, couché sans main de la range serrée. |
@@ -227,6 +234,46 @@ de sa stratégie), graphiques, statistiques mesurées, fuites (avec 3 mains d'ex
 Survol des courbes : main, position, cartes, ligne jouée, montant, cumul. Bouton « clair / sombre »
 en haut à droite. Chaque graphique a une table de lecture ou un tableau équivalent.
 
+## Fiche de stratégie
+
+```bash
+python -m pokerlab fiche --strategy <nom> [--campaign <dossier>] [--composition <nom>] [--out <fichier.html>]
+```
+
+Une page HTML autonome (aucune dépendance, ≈ 60 Ko), en français, lisible sur téléphone, à garder
+ouverte pendant que tu joues :
+
+1. **Avant le flop** : une grille 13×13 par position (UTG, MP, CO, BTN, SB, BB), « personne n'a
+   relancé » et « face à une relance » : relancer (bleu), payer ou check gratuit (jaune), se coucher
+   (gris), avec le % de mains relancées et payées. Les grilles sont obtenues en interrogeant la
+   stratégie elle-même dans chaque situation : elles montrent exactement ce que joue le moteur.
+2. **Tailles de mise** en bb et en jetons pour les blinds 0,01/0,02 et 0,02/0,05.
+3. **Après le flop** : les règles en 10 lignes maximum, générées depuis la config.
+4. **Interdits** : les 5 fuites les plus chères de l'audit, formulées comme des interdits
+   (« Ne paie pas avec top paire face à une relance au turn en CO : couche-toi »), avec leur coût et
+   la mention « à confirmer » si l'échantillon est trop petit.
+5. **Résultat attendu** : bb/100 (all-in adjusted, IC 95 %), réel, écart type, et fourchette
+   5e-95e centile du résultat réel sur 50, 200 et 1 000 mains.
+
+Les blocs 4 et 5 viennent d'une campagne : `--campaign` pointe vers un dossier qui contient (lui
+ou ses sous-dossiers) les sorties de `compare` et d'`audit` (ex. `out` ou `out/smoke`). Sans
+campagne, ou si la stratégie n'y figure pas, ces blocs disent « lance compare puis audit » au lieu
+d'afficher des chiffres. Pour une fiche complète :
+
+```bash
+python -m pokerlab compare
+```
+
+```bash
+python -m pokerlab audit --set strategy=serre
+```
+
+```bash
+python -m pokerlab fiche --strategy serre --campaign out
+```
+
+Le rapport `journal` utilise ces mêmes grilles pour signaler les **mains jouées hors de la fiche**.
+
 ## Mon journal réel
 
 Format CSV (virgule ou point-virgule, lignes commençant par `#` ignorées) :
@@ -249,7 +296,7 @@ Format CSV (virgule ou point-virgule, lignes commençant par `#` ignorées) :
 d'une main = variation de tapis (moins les recaves), converti en bb.
 
 Le rapport calcule vos vraies stats (VPIP, PFR, résultats par position et catégorie de main, mains
-hors règle) et place votre résultat dans la distribution simulée de la même stratégie sur le même
+hors règle), liste les mains jouées hors de la fiche de la stratégie de la phase, et place votre résultat dans la distribution simulée de la même stratégie sur le même
 nombre de mains : « 18e centile, dans la distribution normale » ou « sous le 5e centile ».
 
 `journal/exemple_journal.csv` contient **10 mains inventées** pour montrer le format.
@@ -285,8 +332,11 @@ Les règles décrites en français laissent des ambiguïtés. Elles sont tranch�
    appariées au tableau ; une paire servie + paire au tableau reste une paire.
 3. **Limpers** : une ouverture ajoute 1 bb par limper (toutes les stratégies à règles).
 4. **serre** : face à un 3-bet après avoir ouvert, tapis avec QQ+/AK, sinon couché ; face à un 4-bet,
-   paie avec QQ+/AK. Face à une mise postflop : paie avec top paire ou mieux, **y compris face à un
-   tapis** (règle littérale), relance 3× avec deux paires ou mieux.
+   paie avec QQ+/AK. Face à une mise postflop ≤ 50 % du pot : paie avec top paire ou mieux, relance 3×
+   avec deux paires ou mieux. **Garde-fou** : face à un tapis ou à une mise/relance > 50 % du pot
+   (même lecture que pour joueur : toute mise ou relance, pas seulement les relances), ne suit qu'avec
+   deux paires ou mieux, ou une overpair QQ+ (QQ, KK, AA au-dessus du tableau) ; jamais d'exception
+   à l'équité. `trigger_scope: raise_only` dans `serre.yaml` limite le garde-fou aux seules relances.
 5. **large** : 3-bet QQ+/AK comme serré (non précisé) ; paie ≤ 3 bb avec toute sa range. « Tirage » =
    couleur ou quinte ouverte (double ventrale incluse). « Si la cote le justifie » : équité par les
    outs (1 carte ; 2 si la paie met à tapis au flop) ≥ à payer / (pot + à payer), sans cote implicite
@@ -294,7 +344,8 @@ Les règles décrites en français laissent des ambiguïtés. Elles sont tranch�
 6. **zero_bluff** : la différence avec large est qu'elle mise (2/3 pot) avec **toute** paire ; elle ne
    semi-bluffe jamais ; elle paie une mise avec top paire ou mieux comme large.
 7. **position** : au BTN/CO, paie ≤ 3 bb avec la range large (et ≤ 4 bb avec 99-JJ, AQ, AJ) ;
-   ailleurs et en BB, paie ≤ 4 bb avec 99-JJ, AQ, AJ, 3-bet QQ+/AK. Postflop identique à serré.
+   ailleurs et en BB, paie ≤ 4 bb avec 99-JJ, AQ, AJ, 3-bet QQ+/AK. Postflop identique à serré **sans
+   son garde-fou** (ajouté à serré seulement ; bluff, qui hérite de position, ne l'a pas non plus).
 8. **bluff** : flop sec = aucune paire de couleur, pas 3 rangs distincts dans un écart ≤ 4 (As haut ou
    bas), pas de paire « mouillée » (paire au tableau avec une autre carte à ≤ 2 rangs). Le bluff
    n'existe qu'au flop, ce qui garantit un seul bluff par main ; payé ou relancé sans main, la
@@ -330,6 +381,16 @@ Les règles décrites en français laissent des ambiguïtés. Elles sont tranch�
 19. **Bankroll** : sessions tirées avec remise ; quand la bankroll passe sous 100 bb, la perte d'une
     session est plafonnée à ce qui reste.
 20. **Journal** : VPIP/PFR déduits des mots-clés du résumé préflop, à défaut de `mise_totale`.
+21. **Fiche** : « face à une relance » = une relance à 3 bb juste devant (du BTN quand tu es en blinds),
+    les autres couchés ; en BB, « personne n'a relancé » = la SB a complété. Les plafonds de paie
+    (« jusqu'à 4 bb ») sont dans le tableau des tailles. Le résultat attendu utilise la composition
+    la plus jouée de la campagne pour la stratégie (`--composition` pour en choisir une autre) ; les
+    fourchettes tirent au hasard des mains simulées (résultats réels, avec remise).
+22. **Mains hors fiche (journal)** : la situation est déduite du résumé préflop (« paie », « 3bet »,
+    « couché sur relance »… = face à une relance ; sinon personne n'a relancé), l'action jouée aussi
+    (relance / paie / check / couché). Une main est hors fiche si cette action diffère de la grille.
+    Un « couché » sans précision est compté comme « personne n'a relancé » : écrivez « couché sur
+    relance » pour lever l'ambiguïté. UTG face à une relance n'est pas évalué.
 
 ## Limites connues
 
@@ -360,5 +421,6 @@ uniquement légales, parseur de ranges (cas limites, 1 326 combinaisons, 6/4/12 
 évaluateur identique à PokerKit, équité AA vs KK ≈ 81-82 %, reproductibilité (même graine, 1 ou N
 workers), duplicate (somme nulle quand tous les sièges jouent la même stratégie), règles de chaque
 stratégie (situations construites et propriétés sur mains jouées), random_legal perd nettement contre
-equity_bot, journal d'exemple, statistiques et correction de Holm. La suite joue environ 1 450 mains
-(compteur affiché en fin de `pytest`).
+equity_bot, journal d'exemple, statistiques et correction de Holm, garde-fou de serré, fiche (grilles,
+blocs avec et sans campagne sur données synthétiques), mains hors fiche du journal. La suite joue
+environ 1 000 mains (compteur affiché en fin de `pytest`).

@@ -87,11 +87,14 @@ def _legal(state) -> Legal:
 
 
 def _facing(history: list[ActionRecord], street: int, to_call: int, stack: int) -> int:
+    """0 rien à payer, 1 mise (préflop : blinds seules), 2 relance, 3 tapis, 4 sur-relance préflop (3-bet+)."""
     if to_call <= 0:
         return 0
     if to_call >= stack:
         return 3
     raises = sum(1 for a in history if a.street == street and a.kind in (Kind.BET, Kind.RAISE))
+    if street == 0:
+        return 1 if raises == 0 else (2 if raises == 1 else 4)
     return 2 if raises >= 2 else 1
 
 

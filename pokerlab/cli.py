@@ -48,6 +48,12 @@ def _parser() -> argparse.ArgumentParser:
     rp.add_argument("--rot", type=int, default=0)
     rp.add_argument("--seed", type=int)
     sub.add_parser("strategies", help="liste les stratégies disponibles")
+    fi = sub.add_parser("fiche", help="fiche HTML d'une stratégie (grilles, tailles, règles, interdits, résultat attendu)")
+    fi.add_argument("--strategy", required=True)
+    fi.add_argument("--campaign", help="dossier de campagne contenant compare et audit (ex. out ou out/smoke)")
+    fi.add_argument("--composition", help="composition pour le résultat attendu (défaut : la plus jouée)")
+    fi.add_argument("--out", help="fichier HTML de sortie (défaut : out/fiche_<stratégie>.html)")
+    fi.add_argument("--config", help="config de fiche (défaut : configs/fiche.yaml)")
     return p
 
 
@@ -79,6 +85,18 @@ def main(argv: list[str] | None = None) -> int:
         table = build_table(eq, verbose=True)
         save_table(table, eq.table_path(), eq.seed)
         print(f"Table écrite : {eq.table_path()} ({eq.preflop_sims_per_matchup} simulations par confrontation)")
+        return 0
+    if cmd == "fiche":
+        from pokerlab.fiche.build import build_fiche, fiche_config
+        from pokerlab.strategies.registry import get_context
+
+        lab = LabConfig.load()
+        get_context(lab)
+        res = build_fiche(args.strategy, lab, args.campaign, args.out, args.composition, fiche_config(args.config))
+        print(f"Fiche écrite : {res['path']}")
+        if args.campaign:
+            for key, ok in res["filled"].items():
+                print(f"  {key:10s} {'rempli' if ok else 'non disponible dans la campagne'}")
         return 0
     if cmd == "replay":
         from pokerlab.config import load_table

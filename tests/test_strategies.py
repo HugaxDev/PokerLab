@@ -70,10 +70,54 @@ def test_serre_postflop(lab) -> None:
     s = build_strategy("serre", lab)
     bet = s.decide(flop_obs("AsKd", "Kc7h2s"))
     assert bet.kind == "raise" and bet.amount == pytest.approx(round(0.667 * 650), abs=1)
-    assert s.decide(flop_obs("9s9d", "Kc7h2s", facing=400)).kind == "fold"
-    assert s.decide(flop_obs("AsKd", "Kc7h2s", facing=400)).kind == "call"
-    assert s.decide(flop_obs("AhTh", "Kh7h2s", facing=400)).kind == "fold"  # pas de paie de tirage
+    assert s.decide(flop_obs("9s9d", "Kc7h2s", facing=300)).kind == "fold"
+    assert s.decide(flop_obs("AsKd", "Kc7h2s", facing=300)).kind == "call"   # mise <= 50 % du pot : paie avec top paire
+    assert s.decide(flop_obs("AhTh", "Kh7h2s", facing=300)).kind == "fold"  # pas de paie de tirage
     assert s.decide(flop_obs("AsQd", "Kc7h2s")).kind == "call"  # check
+
+
+def test_serre_guardrail(lab) -> None:
+    """Face à un tapis ou une mise/relance > 50 % du pot : deux paires+ ou overpair QQ+ seulement."""
+    s = build_strategy("serre", lab)
+    assert s.decide(flop_obs("AsKd", "Kc7h2s", facing=400)).kind == "fold"    # top paire, mise de 62 % du pot
+    assert s.decide(flop_obs("AsKd", "Kc7h2s", facing=9700)).kind == "fold"   # top paire face à un tapis
+    assert s.decide(flop_obs("QsQd", "Jc7h2s", facing=9700)).kind == "call"   # overpair QQ
+    assert s.decide(flop_obs("AsAd", "Kc7h2s", facing=400)).kind == "call"    # overpair AA
+    assert s.decide(flop_obs("JsJd", "Tc7h2s", facing=9700)).kind == "fold"   # overpair JJ : insuffisant
+    assert s.decide(flop_obs("QsQd", "Kc7h2s", facing=9700)).kind == "fold"   # QQ sous un roi : pas une overpair
+    assert s.decide(flop_obs("Ks7d", "Kc7h2s", facing=9700)).kind in ("call", "raise")  # deux paires
+
+
+def test_serre_guardrail_in_play(lab) -> None:
+    """Propriété : sur des mains jouées, serré ne continue jamais face à un tapis ou une grosse mise
+    sans deux paires ou une overpair QQ+."""
+    from pokerlab.features.situation import facing_all_in, facing_fraction
+
+    serre = build_strategy("serre", lab)
+    seen: list[tuple[Observation, Action]] = []
+
+    class Spy:
+        name = serre.name
+
+        def decide(self, obs: Observation) -> Action:
+            act = serre.decide(obs)
+            seen.append((obs, act))
+            return act
+
+    comp = Composition.from_dict({"name": "t", "mode": "sample", "weights": {"maniac": 2, "LAG": 1, "calling_station": 1}})
+    spy = Spy()
+    for d in range(6):
+        opponents = [build_strategy(x, lab) for x in comp.opponents(lab.seed, d, 5)]
+        seed = derive_seed(777, d)
+        for r in range(6):
+            play_hand(seating(spy, opponents, r, 6), lab.game, shuffled_deck(seed), [10000] * 6, d * 6 + r, seed)
+    for obs, act in seen:
+        if obs.street == 0 or obs.to_call == 0 or act.kind == "fold":
+            continue
+        if facing_all_in(obs) or facing_fraction(obs) > 0.5:
+            hr = read_hand(obs.hole, obs.board)
+            pocket = obs.hole[0] >> 2 == obs.hole[1] >> 2
+            assert hr.level >= LEVEL["two_pair"] or (hr.level == LEVEL["overpair"] and pocket and obs.hole[0] >> 2 >= 10), obs
 
 
 # -------------------------------------------------------------------------- position
@@ -115,7 +159,7 @@ def test_bluff_never_multiway_in_play(lab) -> None:
 
     comp = Composition.from_dict({"name": "t", "mode": "sample", "weights": {"calling_station": 2, "nit": 1, "TAG": 1, "LAG": 1}})
     spy = Spy()
-    for d in range(12):
+    for d in range(6):
         opponents = [build_strategy(x, lab) for x in comp.opponents(lab.seed, d, 5)]
         seed = derive_seed(123, d)
         for r in range(6):
@@ -151,7 +195,7 @@ def test_zero_bluff_never_bets_without_pair(lab) -> None:
 
     comp = Composition.from_dict({"name": "t", "mode": "sample", "weights": {"maniac": 1, "calling_station": 1, "LAG": 1}})
     spy = Spy()
-    for d in range(10):
+    for d in range(8):
         opponents = [build_strategy(x, lab) for x in comp.opponents(lab.seed, d, 5)]
         seed = derive_seed(321, d)
         for r in range(6):

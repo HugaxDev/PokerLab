@@ -2,7 +2,7 @@ name: serre
 label: Serré
 color: "#2a78d6"
 type: rules
-description: "99+, AK, AQ, AJs, KQs. Ouvre 3 bb, 3-bet 3x QQ+/AK, paie <= 4 bb avec 99-JJ/AQ. Postflop : mise 2/3 avec top paire+, sinon check/couché."
+description: "99+, AK, AQ, AJs, KQs. Ouvre 3 bb, 3-bet 3x QQ+/AK, paie <= 4 bb avec 99-JJ/AQ. Postflop : mise 2/3 avec top paire+, sinon check/couché ; face à un tapis ou une grosse mise, ne suit qu'avec deux paires+ ou QQ+ en overpair."
 preflop:
   unopened:
     raise_range: "99+, AK, AQ, AJs, KQs"
@@ -24,5 +24,13 @@ postflop:
     tiers:
       - {min_made: top_pair, size_pot: 0.667}
   raise_vs_bet: {enabled: true, min_made: two_pair, multiplier: 3.0}   # Interprétation : relance avec deux paires+
-  call_vs_bet: {min_made: top_pair}     # se couche face à une mise sans top paire (y compris face à un tapis)
+  call_vs_bet: {min_made: top_pair}     # se couche face à une mise sans top paire
   call_draws: {enabled: false}
+  guardrail:                    # Garde-fou : face à un tapis ou une mise/relance > 50 % du pot...
+    enabled: true
+    trigger_fraction: 0.5
+    trigger_all_in: true
+    trigger_scope: bet_or_raise # Interprétation (comme joueur) : toute mise ou relance > 50 % du pot ; raise_only = relances seulement
+    min_made: two_pair          # ... ne suit qu'avec deux paires ou mieux
+    allow_overpair_from: Q      # ... ou une overpair QQ+
+    equity_check: false         # pas d'exception à l'équité pour serré
