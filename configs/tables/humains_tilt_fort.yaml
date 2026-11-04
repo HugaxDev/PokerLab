@@ -1,0 +1,17 @@
+name: humains_tilt_fort
+label: Humains simulés (tilt fort)
+description: "Mêmes profils que humains_simules, avec le premier réglage du tilt (≈ 25 % de sièges en tilt à un instant donné, mesuré) : déclenché plus tôt et plus long. Sert à vérifier qu'une conclusion ne dépend pas du niveau de tilt."
+mode: sample
+session_decks: 10
+weights:
+  humain_debutant: 0.35
+  humain_prudent: 0.20
+  humain_agressif: 0.15
+  humain_regulier: 0.15
+  humain_tapis: 0.15
+ajustements:                 # réglages d'archétype propres à cette composition (premier réglage du tilt)
+  humain_debutant: {humain: {tilt: {perte_bb: 25, mains: 20}}}
+  humain_prudent: {humain: {tilt: {perte_bb: 40, mains: 10}}}
+  humain_agressif: {humain: {tilt: {perte_bb: 25, mains: 20}}}
+  humain_regulier: {humain: {tilt: {perte_bb: 40, mains: 10}}}
+  humain_tapis: {humain: {tilt: {perte_bb: 30, mains: 20}}}

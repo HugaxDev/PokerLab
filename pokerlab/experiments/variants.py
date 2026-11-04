@@ -294,3 +294,82 @@ def run_optimize(ctx: ExperimentContext, report: Report | None = None) -> dict[s
     else:
         paths = {}
     return {"report": report, "paths": paths, "table": table}
+
+
+# ---------------------------------------------------------------------- confirmation
+def run_confirmation(ctx: ExperimentContext) -> dict[str, Any]:
+    """Confirmation hors échantillon : réglage actuel contre des candidats, sur des graines jamais utilisées,
+    dans plusieurs compositions. Écart apparié deck par deck, correction de Holm sur tous les tests.
+    Un candidat n'est retenu que s'il bat significativement le réglage actuel dans TOUTES les compositions."""
+    cfg = ctx.cfg
+    base = resolve_spec(cfg["strategy"])
+    space = str(cfg.get("deck_space", "confirmation"))
+    comps = list(cfg.get("compositions", ["humains_simules"]))
+    ref_cfg = dict(base)
+    ref_cfg["name"] = f"{base['name']}[actuel]"
+    ref_cfg["label"] = f"{base.get('label', base['name'])} [{cfg.get('reference_label', 'actuel')}]"
+    ref_cfg.pop("color", None)
+    cands = [variant(base, c["patch"], c["label"]) for c in cfg["candidates"]]
+    variants_ = [ref_cfg] + cands
+    decks = int(cfg.get("decks", 1000))
+    ctx.log(f"confirmation : {len(cands)} candidats contre le réglage actuel de {base['name']}, {len(comps)} compositions, "
+            f"{decks} decks par case, graines « {space} » jamais utilisées")
+    cells = [Cell(f"{v['name']}@{comp}", v, composition_dict(comp), {"strategy": v["name"], "composition": comp}, deck_space=space)
+             for comp in comps for v in variants_]
+    auto = Autostop(enabled=False, decks=decks, block_decks=int(cfg.get("block_decks", 2000)),
+                    max_minutes=float(cfg.get("max_minutes", 120)), stop_file=str(ctx.out_dir / "STOP"))
+    results, progress = run_cells(cells, ctx.lab, auto, ctx.workers, record_decisions=False, log=ctx.log)
+    ctx.partial.extend(sorted({p.stopped for p in progress.values() if "partiels" in p.stopped}))
+    hands, _, _, played, _ = collect(results)
+    ctx.hands_played += played
+    for col in ("strategy", "composition"):
+        hands[col] = hands[col].astype(str)
+    conf = ctx.confidence
+    labels = {v["name"]: v["label"] for v in variants_}
+    tests, meta = [], []
+    summ: dict[tuple[str, str], Any] = {}
+    for comp in comps:
+        sub = hands[hands["composition"] == comp]
+        for v in variants_:
+            summ[(v["name"], comp)] = sections.summarize_strategy(sub[sub["strategy"] == v["name"]], v["name"], conf)
+        dm = {v["name"]: sub[sub["strategy"] == v["name"]].groupby("deck")["result_ev"].mean() for v in variants_}
+        for c in cands:
+            tests += pairwise_tests(dm, pairs=[(c["name"], ref_cfg["name"])], confidence=conf, labels=labels)
+            meta.append((c, comp))
+    tests = apply_holm(tests)
+    rows, retained = [], []
+    for c in cands:
+        mine = [(t, comp) for t, (cc, comp) in zip(tests, meta) if cc is c]
+        ok = all(t.diff_bb100 > 0 and t.p_holm < 0.05 for t, _ in mine)
+        if ok:
+            retained.append(c)
+        for t, comp in mine:
+            rows.append({"candidat": c["label"], "composition": comp, "écart vs actuel (bb/100)": t.diff_bb100, "IC ±": t.ci_half,
+                         "p Holm": t.p_holm, "bat l'actuel": "oui" if (t.diff_bb100 > 0 and t.p_holm < 0.05) else "non",
+                         "decks appariés": t.n_units})
+    table = pd.DataFrame(rows)
+    report = Report(f"PokerLab — confirmation hors échantillon ({base.get('label', base['name'])})",
+                    f"Graines jamais utilisées (« {space} »), {decks} decks par case, compositions : {', '.join(comps)}")
+    sec = report.section("Écart apparié avec le réglage actuel")
+    for comp in comps:
+        sub_rows = [r for r in rows if r["composition"] == comp]
+        sec.figure(charts.bars_with_ci([r["candidat"] for r in sub_rows], [r["écart vs actuel (bb/100)"] for r in sub_rows],
+                                       [r["IC ±"] for r in sub_rows], sections.colors_labels([cfg["strategy"]])[1][base["name"]],
+                                       f"{comp} : candidat − réglage actuel", "bb/100"),
+                   "Différence moyenne par deck (6 rotations, mêmes cartes et mêmes adversaires), IC 95 %.")
+    sec.table(table, "Correction de Holm sur les " + str(len(tests)) + " comparaisons. Retenu = bat l'actuel (p Holm < 0,05) dans toutes les compositions.", digits=2)
+    lvl = report.section("Niveaux absolus")
+    lvl.table(pd.DataFrame([{"variante": labels[v["name"]], "composition": comp, "bb/100": summ[(v["name"], comp)].ev.bb100,
+                             "IC ±": summ[(v["name"], comp)].ev.ci_half, "mains": summ[(v["name"], comp)].ev.hands}
+                            for comp in comps for v in variants_]), "bb/100 all-in adjusted.")
+    best = max(retained, key=lambda c: min(t.diff_bb100 for t, (cc, _) in zip(tests, meta) if cc is c)) if retained else None
+    report.verdict = ([f"Retenu : {best['label']} (bat le réglage actuel dans les {len(comps)} compositions)."] if best else
+                      [f"Aucun candidat retenu : aucun ne bat significativement le réglage actuel dans les {len(comps)} compositions. Garder l'actuel."])
+    report.verdict += [f"{c['label']} : " + " ; ".join(f"{comp} {t.diff_bb100:+.1f} ± {t.ci_half:.1f} (p Holm {t.p_holm:.2g})"
+                                                         for t, (cc, comp) in zip(tests, meta) if cc is c) for c in cands]
+    summary = {"strategie": base["name"], "compositions": comps, "deck_space": space,
+               "resultats": [{**{k: (float(v) if isinstance(v, (int, float, np.floating)) else v) for k, v in r.items()}} for r in rows],
+               "retenus": [c["label"] for c in retained], "choisi": best["label"] if best else None,
+               "patch_choisi": next((cc["patch"] for cc in cfg["candidates"] if best and cc["label"] == best["label"].split("[")[-1].rstrip("]")), None)}
+    paths = save_outputs(ctx, report, None, None, (), summary)
+    return {"report": report, "paths": paths, "table": table, "retained": retained, "hands": hands}

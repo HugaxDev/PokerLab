@@ -46,7 +46,7 @@ def run_session_task(task: SessionTask) -> TaskResult:
     c0 = COUNTERS["hands"]
     for s in range(task.session_start, task.session_end):
         names = comp.opponents(lab.seed, s, n - 1)
-        opponents = [build_player(resolve_spec(x), lab) for x in names]
+        opponents = [build_player(comp.spec_for(x), lab) for x in names]
         for j, opp in enumerate(opponents):   # archétypes « humains » : paramètres tirés et état propres à la session
             if hasattr(opp, "begin_session"):
                 opp.begin_session(derive_seed(lab.seed, "humain", comp.name, s, j))

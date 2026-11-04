@@ -245,7 +245,7 @@ def composition_is_stateful(comp: Composition) -> bool:
     from pokerlab.opponents.human import is_stateful
 
     names = list(comp.seats) + [k for k, _ in comp.weights]
-    return any(is_stateful(resolve_spec(x)) for x in set(names))
+    return any(is_stateful(comp.spec_for(x)) for x in set(names))
 
 
 class SessionTable:
@@ -272,7 +272,7 @@ class SessionTable:
         self.names = self.comp.opponents(self.lab.seed, unit, self.n - 1)
         self.opponents = []
         for j, x in enumerate(self.names):
-            opp = build_player(resolve_spec(x), self.lab) if self.stateful else build_strategy(resolve_spec(x), self.lab)
+            opp = build_player(self.comp.spec_for(x), self.lab) if self.stateful else build_strategy(self.comp.spec_for(x), self.lab)
             if self.stateful and hasattr(opp, "begin_session"):
                 opp.begin_session(derive_seed(self.lab.seed, "humain", self.comp.name, unit, j))
             self.opponents.append(opp)

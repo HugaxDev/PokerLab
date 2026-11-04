@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
+import json
 import random
 from dataclasses import dataclass
 from typing import Any
 
-from pokerlab.config import load_table
+from pokerlab.config import deep_merge, load_table
 from pokerlab.rng import derive_seed
 
 
@@ -21,6 +22,7 @@ class Composition:
     weights: tuple[tuple[str, float], ...]
     description: str
     session_decks: int = 1   # adversaires (et leur état : tilt, observations) conservés sur ce nombre de decks consécutifs
+    adjustments: str = "{}"  # JSON : réglages d'archétype propres à la composition (clé = archétype, « * » = tous)
 
     @staticmethod
     def from_dict(data: dict[str, Any]) -> "Composition":
@@ -33,7 +35,21 @@ class Composition:
             weights=tuple((k, float(v)) for k, v in weights.items()),
             description=data.get("description", ""),
             session_decks=max(1, int(data.get("session_decks", 1))),
+            adjustments=json.dumps(data.get("ajustements") or {}, sort_keys=True),
         )
+
+    def spec_for(self, name: str) -> dict[str, Any]:
+        """Config de l'archétype ``name`` avec les ajustements de la composition (ex. tilt plus fort)."""
+        from pokerlab.strategies.registry import resolve_spec
+
+        spec = resolve_spec(name)
+        adj = json.loads(self.adjustments)
+        if not adj:
+            return spec
+        for key in ("*", name):
+            if key in adj and isinstance(spec, dict) and spec.get("type", "archetype") == "archetype":
+                spec = deep_merge(spec, adj[key])
+        return spec
 
     @staticmethod
     def load(name: str) -> "Composition":

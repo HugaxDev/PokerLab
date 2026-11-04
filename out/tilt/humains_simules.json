@@ -1,0 +1,14 @@
+{
+  "composition": "humains_simules",
+  "heros": "joueur",
+  "mains": 18000,
+  "taux": 0.08141111111111111,
+  "ic": 0.009382647315852345,
+  "par_archetype": {
+    "humain_agressif": 0.11071428571428571,
+    "humain_debutant": 0.10805348258706468,
+    "humain_prudent": 0.01856978085351788,
+    "humain_regulier": 0.03469551282051282,
+    "humain_tapis": 0.11031007751937985
+  }
+}

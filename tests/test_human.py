@@ -136,3 +136,22 @@ def test_each_seat_has_its_own_human(lab) -> None:
     b.begin_session(2)
     assert a.base_p["vpip"] != b.base_p["vpip"]
     assert build_player(resolve_spec("maniac"), lab) is build_player(resolve_spec("maniac"), lab)
+
+
+def test_composition_adjustments_and_tilt_measure(lab) -> None:
+    """humains_tilt_fort = mêmes profils, tilt de la première version ; la mesure compte les sièges en tilt."""
+    from pokerlab.experiments.tilt import TiltTask, run_tilt_task
+
+    fort = Composition.from_dict(load_table("humains_tilt_fort"))
+    simu = Composition.from_dict(load_table("humains_simules"))
+    t_fort = human_config(fort.spec_for("humain_debutant"))["tilt"]
+    t_simu = human_config(simu.spec_for("humain_debutant"))["tilt"]
+    assert (t_fort["perte_bb"], t_fort["mains"]) == (25, 20) and (t_simu["perte_bb"], t_simu["mains"]) == (40, 7)
+    assert t_fort["elargissement"] == t_simu["elargissement"]          # seul le déclenchement et la durée changent
+    assert fort.spec_for("maniac") == resolve_spec("maniac")           # archétype non ajusté : inchangé
+    comp = dict(load_table("humains_tilt_fort"), session_decks=1)
+    out = run_tilt_task(TiltTask(lab.raw, resolve_spec("joueur"), comp, 0, 2))
+    assert out.hands_played == 12
+    tilted = sum(v[0] for v in out.flags_by_name.values())
+    seen = sum(v[1] for v in out.flags_by_name.values())
+    assert seen == 60 and 0 <= tilted <= seen

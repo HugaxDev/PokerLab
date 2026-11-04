@@ -1,0 +1,14 @@
+{
+  "composition": "humains_tilt_fort",
+  "heros": "joueur",
+  "mains": 18000,
+  "taux": 0.2545,
+  "ic": 0.02132314644575182,
+  "par_archetype": {
+    "humain_agressif": 0.3063623789764869,
+    "humain_debutant": 0.3618,
+    "humain_prudent": 0.04323493234932349,
+    "humain_regulier": 0.08238482384823849,
+    "humain_tapis": 0.39269972451790636
+  }
+}

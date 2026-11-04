@@ -1,6 +1,6 @@
 name: humains_simules
 label: Humains simulés
-description: "Profils humains typiques des tables en jetons fictifs (débutants qui paient trop, prudents qui se couchent trop, agressifs, réguliers moyens, pousseurs de tapis) : paramètres tirés par joueur, décisions en fréquences, tilt après une grosse perte, adaptation au héros, erreurs aléatoires. Modélisation PokerLab, à ajuster."
+description: "Profils humains typiques des tables en jetons fictifs (débutants qui paient trop, prudents qui se couchent trop, agressifs, réguliers moyens, pousseurs de tapis) : paramètres tirés par joueur, décisions en fréquences, tilt après une grosse perte (≈ 8 % de sièges en tilt à un instant donné, mesuré), adaptation au héros, erreurs aléatoires. Modélisation PokerLab, à ajuster."
 mode: sample
 session_decks: 10        # mêmes 5 adversaires sur 10 decks (60 mains) : tilt et adaptation se construisent dans la session
 weights:

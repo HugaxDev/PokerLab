@@ -1,0 +1,16 @@
+# Confirmation hors échantillon d'un réglage : le réglage actuel contre des candidats (ex. meilleures cases
+# d'un sweep), sur des graines jamais utilisées, dans plusieurs compositions. Écart apparié deck par deck,
+# correction de Holm sur toutes les comparaisons. Un candidat n'est retenu que s'il bat le réglage actuel
+# (p Holm < 0,05) dans TOUTES les compositions.
+experiment: confirmation
+strategy: joueur
+compositions: [humains_simules, humains_tilt_fort]
+deck_space: confirmation     # graines jamais utilisées par compare, sweep, ablation ou audit
+decks: 100000                # par case (x6 mains)
+block_decks: 2000
+max_minutes: 120
+reference_label: "actuel : seuil 0.5, deux paires"
+candidates:                  # les 3 meilleures cases du sweep 5x5 (joueur, humains_simules, tilt ≈ 25 %)
+  - {label: "seuil 0.33, top paire bon kicker", patch: {garde_fou_seuil: 0.33, garde_fou_force: top_paire_bon_kicker}}
+  - {label: "seuil 0.33, overpair", patch: {garde_fou_seuil: 0.33, garde_fou_force: overpair}}
+  - {label: "seuil 0.33, overpair QQ+", patch: {garde_fou_seuil: 0.33, garde_fou_force: overpair_qq}}

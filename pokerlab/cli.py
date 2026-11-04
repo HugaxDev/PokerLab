@@ -12,7 +12,7 @@ import yaml
 
 from pokerlab.config import PROJECT_ROOT, LabConfig, list_strategies, load_experiment, set_path
 
-COMMANDS = ("compare", "round_robin", "sessions", "bankroll", "sweep", "ablation", "optimize", "audit", "journal", "smoke", "bench")
+COMMANDS = ("compare", "round_robin", "sessions", "bankroll", "sweep", "ablation", "optimize", "confirmation", "audit", "journal", "smoke", "bench")
 
 
 def _overrides(pairs: list[str]) -> list[tuple[str, Any]]:
@@ -61,6 +61,12 @@ def _parser() -> argparse.ArgumentParser:
     po.add_argument("--min-mains", type=int, default=50, help="mains minimum pour qu'un joueur compte comme régulier (défaut 50)")
     po.add_argument("--iterations", type=int, default=4, help="tours de calibrage par simulation (défaut 4 ; 0 = mesure seule)")
     po.add_argument("--decks", type=int, default=300, help="decks simulés par tour de calibrage (x6 mains)")
+    mt = sub.add_parser("mesure-tilt", help="part des sièges adverses en tilt à un instant donné (mesurée en jouant)")
+    mt.add_argument("--composition", action="append", help="composition(s) à mesurer (défaut : humains_simules et humains_tilt_fort)")
+    mt.add_argument("--strategy", default="joueur", help="héros (défaut : joueur)")
+    mt.add_argument("--decks", type=int, default=3000, help="decks joués (x6 mains)")
+    mt.add_argument("--workers", type=int, help="processus (défaut : config)")
+    mt.add_argument("--out", default="out/tilt", help="dossier des mesures JSON")
     sub.add_parser("site", help="génère le tableau de bord statique dans out/site")
     sv = sub.add_parser("serve", help="génère et sert le tableau de bord sur http://localhost:8765 (régénération automatique)")
     sv.add_argument("--port", type=int)
@@ -115,6 +121,23 @@ def main(argv: list[str] | None = None) -> int:
                            float(site_cfg.get("pause_session_minutes", 30)))
         print(f"{res['lues']} mains importées, {res['ignorees']} ignorées, {res['total']} au total dans {res['dossier']}")
         print(f"{res['adversaires']} adversaires observés : python -m pokerlab population pour (re)générer la composition population_reelle")
+        return 0
+    if cmd == "mesure_tilt":
+        import json as _json
+
+        from pokerlab.experiments.common import worker_count
+        from pokerlab.experiments.tilt import measure_tilt
+        from pokerlab.strategies.registry import get_context
+
+        lab = LabConfig.load()
+        get_context(lab)
+        out_dir = Path(args.out)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        for comp in args.composition or ["humains_simules", "humains_tilt_fort"]:
+            r = measure_tilt(lab, comp, args.strategy, args.decks, worker_count(lab, args.workers))
+            print(f"{comp} (héros {args.strategy}, {r['mains']} mains) : {r['taux'] * 100:.1f} % ± {r['ic'] * 100:.1f} de sièges en tilt — "
+                  + ", ".join(f"{k} {v * 100:.1f} %" for k, v in r["par_archetype"].items()))
+            (out_dir / f"{comp}.json").write_text(_json.dumps(r, indent=2, ensure_ascii=False), encoding="utf-8")
         return 0
     if cmd == "population":
         from pokerlab.config import configs_root, load_yaml
@@ -218,6 +241,10 @@ def main(argv: list[str] | None = None) -> int:
         from pokerlab.experiments import bankroll as mod
 
         res = mod.run(ctx)
+    elif cmd == "confirmation":
+        from pokerlab.experiments import variants as mod
+
+        res = mod.run_confirmation(ctx)
     elif cmd in ("sweep", "ablation", "optimize"):
         from pokerlab.experiments import variants as mod
 
