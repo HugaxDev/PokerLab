@@ -8,11 +8,13 @@ est plafonnée à la bankroll restante (on ne peut pas perdre plus que ce qu'on 
 from __future__ import annotations
 
 import math
+from pathlib import Path
 from typing import Any
 
 import numpy as np
 import pandas as pd
 
+from pokerlab.config import PROJECT_ROOT
 from pokerlab.experiments import sessions as sessions_exp
 from pokerlab.experiments.base import ExperimentContext, save_outputs
 from pokerlab.report import charts, sections
@@ -71,6 +73,15 @@ def run(ctx: ExperimentContext, source_hands: pd.DataFrame | None = None, report
     n_traj = int(cfg.get("n_trajectories", 5000))
     max_sessions = int(cfg.get("max_sessions", 200))
     ruin_below = float(cfg.get("ruin_below_bb", 1.0))
+    if source_hands is None and cfg.get("sessions_dir"):
+        folder = Path(cfg["sessions_dir"])
+        folder = folder if folder.is_absolute() else PROJECT_ROOT / folder
+        pq = folder / "mains.parquet"
+        source_hands = pd.read_parquet(pq) if pq.exists() else pd.read_csv(folder / "mains.csv")
+        missing = [n for n in names if not (source_hands["strategy"].astype(str) == n).any()]
+        if missing:
+            raise ValueError(f"Pas de sessions pour {', '.join(missing)} dans {folder}")
+        ctx.log(f"bankroll : sessions lues dans {folder}")
     if source_hands is None:
         sub = dict(cfg.get("sessions", {}))
         n_sessions = int(sub.get("n_sessions", 2000))

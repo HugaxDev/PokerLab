@@ -32,6 +32,8 @@ DRAW_LABELS = ("", " + tirage faible", " + tirage")
 
 def situation_labels(dec: pd.DataFrame) -> pd.DataFrame:
     """Ajoute les libellés de situation (street, position, main, tableau, face à, action)."""
+    if "hand_label" in dec.columns and "net_after" in dec.columns:
+        return dec
     out = dec.copy()
     out["street_label"] = [STREET_NAMES[s] for s in out["street"].to_numpy(dtype=int)]
     hand_labels = []

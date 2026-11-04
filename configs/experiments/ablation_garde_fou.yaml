@@ -1,0 +1,9 @@
+# Ce que rapporte le garde-fou uniforme (face à un tapis ou une mise > 50 % du pot : deux paires+ ou QQ+).
+# Changer de stratégie : --set strategy=position (ou large, zero_bluff, bluff).
+experiment: ablation
+strategy: serre
+composition: micro_play_money
+decks: 2000
+ablations:
+  - {name: garde-fou, patch: {postflop.guardrail.enabled: false}}
+  - {name: exception overpair QQ+, patch: {postflop.guardrail.allow_overpair_from: null}}

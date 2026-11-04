@@ -9,6 +9,8 @@ autostop:
   max_hands_per_strategy: 200000   # par cellule (stratégie, composition)
   min_decks: 200
   metric: ev                       # ev = all-in adjusted
+  max_minutes: 120                 # au-delà : arrêt propre après le bloc en cours, résultats partiels
+                                   # (arrêt manuel : créer le fichier out/compare/STOP)
 test: t                            # t (test t apparié) ou bootstrap (par blocs)
 record_decisions: true
 decision_decks: 10000          # décisions enregistrées sur les 10 000 premiers decks (composition principale) : mémoire maîtrisée

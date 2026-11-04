@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import math
 import time
+from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
@@ -45,6 +46,8 @@ class Autostop:
     metric: str = "result_ev"
     decks: int = 200
     confidence: float = 0.95
+    max_minutes: float | None = None
+    stop_file: str | None = None
 
     @staticmethod
     def from_dict(data: dict[str, Any] | None, decks: int | None = None) -> "Autostop":
@@ -98,6 +101,11 @@ def run_cells(
     active = list(cells)
     max_decks = max(1, autostop.max_hands // n)
     round_no = 0
+    started = time.perf_counter()
+    total_played = 0
+    stop_path = Path(autostop.stop_file) if autostop.stop_file else None
+    if stop_path is not None and stop_path.exists():
+        stop_path.unlink()
     while active:
         round_no += 1
         t0 = time.perf_counter()
@@ -121,7 +129,10 @@ def run_cells(
             results[owner].merge(out)
             progress[owner].deck_means.extend(_deck_means(out, autostop.metric))
         played = sum(o.hands_played for o in outs)
-        log(f"  bloc {round_no} : {played} mains en {time.perf_counter() - t0:.1f} s")
+        total_played += played
+        elapsed = time.perf_counter() - started
+        log(f"  bloc {round_no} : {played} mains en {time.perf_counter() - t0:.1f} s — total {total_played} mains, "
+            f"{elapsed / 60:.1f} min, {played / max(time.perf_counter() - t0, 1e-9):.0f} mains/s, {len(active)} cellule(s) actives")
         next_active = []
         for c in active:
             prog = progress[c.key]
@@ -137,6 +148,17 @@ def run_cells(
                 next_active.append(c)
             log(f"    {c.key:40s} {prog.decks * n:>8d} mains  {prog.bb100():+8.1f} ± {hw:.1f} bb/100 {prog.stopped}")
         active = next_active
+        reason = ""
+        if active and autostop.max_minutes is not None and time.perf_counter() - started > autostop.max_minutes * 60:
+            reason = f"durée maximale atteinte ({autostop.max_minutes:g} min) : résultats partiels"
+        elif active and stop_path is not None and stop_path.exists():
+            reason = "arrêt demandé (fichier STOP) : résultats partiels"
+        if reason:
+            for c in active:
+                prog = progress[c.key]
+                prog.stopped = f"{reason} (± {prog.halfwidth(autostop.confidence):.2f} bb/100)"
+            log(f"  ARRÊT : {reason} ; {len(active)} cellule(s) interrompue(s)")
+            active = []
     return results, progress
 
 

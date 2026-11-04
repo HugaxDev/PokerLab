@@ -11,3 +11,4 @@ sessions:
   composition: micro_play_money
   n_sessions: 2000
   hands_per_session: 50
+# sessions_dir: out/sessions   # réutilise les sessions déjà simulées (sinon simulation ci-dessus)

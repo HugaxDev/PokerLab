@@ -76,9 +76,14 @@ def test_serre_postflop(lab) -> None:
     assert s.decide(flop_obs("AsQd", "Kc7h2s")).kind == "call"  # check
 
 
-def test_serre_guardrail(lab) -> None:
-    """Face à un tapis ou une mise/relance > 50 % du pot : deux paires+ ou overpair QQ+ seulement."""
-    s = build_strategy("serre", lab)
+SERRE_FAMILY = ("serre", "large", "zero_bluff", "position", "bluff")
+
+
+@pytest.mark.parametrize("name", SERRE_FAMILY)
+def test_guardrail_situations(lab, name: str) -> None:
+    """Garde-fou uniforme : face à un tapis ou une mise/relance > 50 % du pot, deux paires+ ou overpair QQ+."""
+    s = build_strategy(name, lab)
+    assert s.decide(flop_obs("AsKd", "Kc7h2s", facing=300)).kind == "call"    # 46 % du pot : top paire suffit
     assert s.decide(flop_obs("AsKd", "Kc7h2s", facing=400)).kind == "fold"    # top paire, mise de 62 % du pot
     assert s.decide(flop_obs("AsKd", "Kc7h2s", facing=9700)).kind == "fold"   # top paire face à un tapis
     assert s.decide(flop_obs("QsQd", "Jc7h2s", facing=9700)).kind == "call"   # overpair QQ
@@ -88,25 +93,53 @@ def test_serre_guardrail(lab) -> None:
     assert s.decide(flop_obs("Ks7d", "Kc7h2s", facing=9700)).kind in ("call", "raise")  # deux paires
 
 
-def test_serre_guardrail_in_play(lab) -> None:
-    """Propriété : sur des mains jouées, serré ne continue jamais face à un tapis ou une grosse mise
-    sans deux paires ou une overpair QQ+."""
+def test_guardrail_scope_unchanged(lab) -> None:
+    """joueur garde son garde-fou (avec exception d'équité) ; equity_bot et random_legal n'en ont pas."""
+    from pokerlab.config import load_strategy_config
+
+    ref = load_strategy_config("serre")["postflop"]["guardrail"]
+    for name in SERRE_FAMILY:
+        assert load_strategy_config(name)["postflop"]["guardrail"] == ref, name
+    assert ref["trigger_scope"] == "bet_or_raise"
+    joueur = load_strategy_config("joueur")["postflop"]["guardrail"]
+    assert joueur["equity_check"] is True and "allow_overpair_from" not in joueur
+    for name in ("equity_bot", "random_legal"):
+        assert "guardrail" not in (load_strategy_config(name).get("postflop") or {})
+
+
+@pytest.mark.parametrize("name", ("serre", "position"))
+def test_guardrail_can_be_ablated(lab, name: str) -> None:
+    """L'ablation « garde-fou » (postflop.guardrail.enabled: false) rend l'ancien comportement."""
+    from pokerlab.experiments.variants import variant
+    from pokerlab.strategies.registry import resolve_spec
+
+    ablated = variant(resolve_spec(name), {"postflop.guardrail.enabled": False}, "sans garde-fou")
+    s = build_strategy(ablated, lab)
+    assert s.decide(flop_obs("AsKd", "Kc7h2s", facing=9700)).kind == "call"   # top paire paie le tapis sans garde-fou
+    assert build_strategy(name, lab).decide(flop_obs("AsKd", "Kc7h2s", facing=9700)).kind == "fold"
+
+
+@pytest.mark.parametrize("name", SERRE_FAMILY)
+def test_guardrail_in_play(lab, name: str) -> None:
+    """Propriété : sur des mains jouées, aucune stratégie de la famille serré ne continue face à un tapis
+    ou une grosse mise sans deux paires ou une overpair QQ+."""
     from pokerlab.features.situation import facing_all_in, facing_fraction
 
-    serre = build_strategy("serre", lab)
+    strat = build_strategy(name, lab)
     seen: list[tuple[Observation, Action]] = []
 
     class Spy:
-        name = serre.name
+        def __init__(self) -> None:
+            self.name = strat.name
 
         def decide(self, obs: Observation) -> Action:
-            act = serre.decide(obs)
+            act = strat.decide(obs)
             seen.append((obs, act))
             return act
 
     comp = Composition.from_dict({"name": "t", "mode": "sample", "weights": {"maniac": 2, "LAG": 1, "calling_station": 1}})
     spy = Spy()
-    for d in range(6):
+    for d in range(3):
         opponents = [build_strategy(x, lab) for x in comp.opponents(lab.seed, d, 5)]
         seed = derive_seed(777, d)
         for r in range(6):

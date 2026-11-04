@@ -156,9 +156,9 @@ position).
 | Stratégie | Résumé |
 |---|---|
 | `serre` | 99+, AK, AQ, AJs, KQs. Ouvre 3 bb, 3-bet 3× QQ+/AK, paie ≤ 4 bb avec 99-JJ/AQ. Postflop : mise 2/3 pot avec top paire+, sinon check, se couche face à une mise sans top paire ; face à un tapis ou une mise > 50 % du pot, ne suit qu'avec deux paires+ ou une overpair QQ+. |
-| `large` | Paires, as, deux cartes ≥ T, assorties connectées 54s+. Ouvre 2 bb, paie ≤ 3 bb. Postflop : serré + paie les tirages couleur/quinte ouverte si la cote le justifie. |
+| `large` | Paires, as, deux cartes ≥ T, assorties connectées 54s+. Ouvre 2 bb, paie ≤ 3 bb. Postflop : serré (garde-fou compris) + paie les tirages couleur/quinte ouverte si la cote le justifie. |
 | `zero_bluff` | Préflop de large. Postflop : ne mise/relance jamais sans paire ; paie un tirage seulement avec la cote. |
-| `position` | BTN/CO : range large, ouvre 3 bb. Ailleurs : 99+, AK, AQ, AJ. Pas de bluff. BB : check gratuit, couché sans main de la range serrée. |
+| `position` | BTN/CO : range large, ouvre 3 bb. Ailleurs : 99+, AK, AQ, AJ. Pas de bluff. BB : check gratuit, couché sans main de la range serrée. Postflop de serré, garde-fou compris. |
 | `bluff` | Position + un bluff 1/2 pot au flop si relanceur préflop, un seul adversaire, flop sec. Un seul bluff par main. |
 | `joueur` | ≈ 35-40 % des mains. Ouvre 3 bb, paie ≤ 4/5 bb selon la main. Postflop : mise 1/3-1/2 avec paire ou tirage, c-bet 1/3, garde-fou face aux grosses mises. |
 | `equity_bot` | Référence « bon joueur » : équité Monte Carlo contre la range adverse estimée, cote du pot, tailles standard. |
@@ -336,7 +336,11 @@ Les règles décrites en français laissent des ambiguïtés. Elles sont tranch�
    avec deux paires ou mieux. **Garde-fou** : face à un tapis ou à une mise/relance > 50 % du pot
    (même lecture que pour joueur : toute mise ou relance, pas seulement les relances), ne suit qu'avec
    deux paires ou mieux, ou une overpair QQ+ (QQ, KK, AA au-dessus du tableau) ; jamais d'exception
-   à l'équité. `trigger_scope: raise_only` dans `serre.yaml` limite le garde-fou aux seules relances.
+   à l'équité. `trigger_scope: raise_only` limite le garde-fou aux seules relances. **Ce garde-fou
+   est uniforme** : large, zero_bluff, position et bluff, qui reprennent le postflop de serré, ont
+   exactement le même bloc (`postflop.guardrail`). joueur garde le sien (deux paires+, avec exception
+   d'équité contre la range estimée) ; equity_bot et random_legal n'en ont pas. Pour mesurer ce qu'il
+   rapporte : `python -m pokerlab ablation --config ablation_garde_fou` (`--set strategy=position`…).
 5. **large** : 3-bet QQ+/AK comme serré (non précisé) ; paie ≤ 3 bb avec toute sa range. « Tirage » =
    couleur ou quinte ouverte (double ventrale incluse). « Si la cote le justifie » : équité par les
    outs (1 carte ; 2 si la paie met à tapis au flop) ≥ à payer / (pot + à payer), sans cote implicite
@@ -344,8 +348,8 @@ Les règles décrites en français laissent des ambiguïtés. Elles sont tranch�
 6. **zero_bluff** : la différence avec large est qu'elle mise (2/3 pot) avec **toute** paire ; elle ne
    semi-bluffe jamais ; elle paie une mise avec top paire ou mieux comme large.
 7. **position** : au BTN/CO, paie ≤ 3 bb avec la range large (et ≤ 4 bb avec 99-JJ, AQ, AJ) ;
-   ailleurs et en BB, paie ≤ 4 bb avec 99-JJ, AQ, AJ, 3-bet QQ+/AK. Postflop identique à serré **sans
-   son garde-fou** (ajouté à serré seulement ; bluff, qui hérite de position, ne l'a pas non plus).
+   ailleurs et en BB, paie ≤ 4 bb avec 99-JJ, AQ, AJ, 3-bet QQ+/AK. Postflop identique à serré,
+   garde-fou compris (bluff l'hérite de position).
 8. **bluff** : flop sec = aucune paire de couleur, pas 3 rangs distincts dans un écart ≤ 4 (As haut ou
    bas), pas de paire « mouillée » (paire au tableau avec une autre carte à ≤ 2 rangs). Le bluff
    n'existe qu'au flop, ce qui garantit un seul bluff par main ; payé ou relancé sans main, la

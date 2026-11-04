@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 from pokerlab.analysis import decomposition as deco
-from pokerlab.analysis.leaks import find_leaks, format_ci, leak_examples, leak_title
+from pokerlab.analysis.leaks import find_leaks, format_ci, leak_examples, leak_title, situation_labels
 from pokerlab.analysis.player_stats import STAT_LABELS, stats_from_hands
 from pokerlab.analysis.stats import WinrateSummary, max_drawdown, summarize, z_value
 from pokerlab.cards.cards import CARD_STR
@@ -239,6 +239,7 @@ def add_leaks(
     """Fuites par stratégie, avec exemples de mains rejouées. Renvoie le nombre de fuites listées."""
     total = 0
     for name, dec in decisions.items():
+        dec = situation_labels(dec) if not dec.empty else dec
         leaks = find_leaks(dec, min_count=min_count, confidence_z=z_value(confidence), top=top)
         section.html(f"<h3>{esc(labels.get(name, name))}</h3>")
         if leaks.empty:

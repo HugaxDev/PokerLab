@@ -38,3 +38,11 @@ postflop:
   raise_vs_bet: {enabled: true, min_made: two_pair, multiplier: 3.0}
   call_vs_bet: {min_made: top_pair}
   call_draws: {enabled: false}
+  guardrail:                    # Garde-fou uniforme (identique à serré) : face à un tapis ou une mise/relance > 50 % du pot...
+    enabled: true
+    trigger_fraction: 0.5
+    trigger_all_in: true
+    trigger_scope: bet_or_raise # toute mise ou relance > 50 % du pot ; raise_only = relances seulement
+    min_made: two_pair          # ... ne suit qu'avec deux paires ou mieux
+    allow_overpair_from: Q      # ... ou une overpair QQ+
+    equity_check: false

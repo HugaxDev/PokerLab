@@ -30,3 +30,11 @@ postflop:
     draws: strong               # tirage couleur ou quinte ouverte
     use_pot_odds: true          # équité (règle des outs, 1 carte ; 2 si tapis au flop) >= cote du pot
     implied_odds_factor: 0.0    # 0 = cote directe uniquement
+  guardrail:                    # Garde-fou uniforme (identique à serré) : face à un tapis ou une mise/relance > 50 % du pot...
+    enabled: true
+    trigger_fraction: 0.5
+    trigger_all_in: true
+    trigger_scope: bet_or_raise # toute mise ou relance > 50 % du pot ; raise_only = relances seulement
+    min_made: two_pair          # ... ne suit qu'avec deux paires ou mieux
+    allow_overpair_from: Q      # ... ou une overpair QQ+
+    equity_check: false

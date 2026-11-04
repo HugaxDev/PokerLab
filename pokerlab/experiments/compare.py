@@ -44,6 +44,7 @@ def run(ctx: ExperimentContext) -> dict[str, Any]:
     strategies = cfg.get("strategies", [])
     compositions = cfg.get("compositions", ["micro_play_money"])
     auto = Autostop.from_dict(cfg.get("autostop"), cfg.get("decks"))
+    auto.stop_file = str(ctx.out_dir / "STOP")
     ctx.log(f"compare : {len(strategies)} stratégies x {len(compositions)} compositions, workers={ctx.workers}")
     cells = build_cells(strategies, compositions, cfg.get("decision_decks", 10_000))
     results, progress = run_cells(cells, ctx.lab, auto, ctx.workers, record_decisions=cfg.get("record_decisions", True), log=ctx.log)
@@ -81,6 +82,9 @@ def build_report(ctx, cells, hands, decisions, flags, progress, strategies, comp
     an = ctx.analysis
     report = Report("PokerLab — comparaison des stratégies", "Duplicate + all-in EV, mêmes decks pour toutes les stratégies")
     report.meta = {"mains jouées": f"{ctx.hands_played:,}".replace(",", " "), "graine": ctx.lab.seed, "compositions": ", ".join(compositions)}
+    partial = [k for k, p in progress.items() if "partiels" in p.stopped]
+    if partial:
+        report.meta["ATTENTION"] = f"campagne interrompue, {len(partial)} cellule(s) avec résultats partiels"
     main_comp = compositions[0]
     main = hands[hands["composition"] == main_comp]
     sec, summaries = comparison_block(report, f"Tableau comparatif — {main_comp}", main, names, colors, labels, conf)
