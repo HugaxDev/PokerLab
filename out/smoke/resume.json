@@ -1,6 +1,6 @@
 {
   "mains_par_experience": {
-    "compare": 144,
+    "compare": 192,
     "round_robin": 12,
     "sessions": 40,
     "bankroll": 0,
@@ -31,7 +31,8 @@
       "compositions": [
         "micro_play_money",
         "reguliers",
-        "mixte"
+        "mixte",
+        "humains_simules"
       ],
       "autostop": {
         "enabled": false
@@ -158,6 +159,6 @@
     },
     "site": {}
   },
-  "mains_jouees": 354,
-  "duree_s": 5.0
+  "mains_jouees": 402,
+  "duree_s": 4.7
 }
