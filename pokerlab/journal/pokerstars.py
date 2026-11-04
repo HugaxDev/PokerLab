@@ -63,6 +63,12 @@ class ParsedHand:
     raw: str = ""
 
 
+def _bb(value: float) -> str:
+    """Montant en bb à la française (une décimale si besoin)."""
+    txt = f"{value:.2f}".rstrip("0").rstrip(".") if abs(value - round(value)) > 1e-9 else f"{value:.0f}"
+    return txt.replace(".", ",") + " bb"
+
+
 def split_hands(text: str) -> list[str]:
     """Découpe un fichier en mains (lignes commençant par # ignorées)."""
     lines = [ln.rstrip("\r") for ln in text.splitlines() if not ln.lstrip().startswith("#")]
@@ -198,7 +204,7 @@ def replay_hand(hand: ParsedHand, strategy: Any | None, chips_per_bb: int = 100)
             stacks[i] -= add
             bets[i] += add
             history.append(ActionRecord(0, i, Kind.POST, add, bets[i], stacks[i] == 0, pot() - add))
-            steps.append({"street": 0, "seat": i, "text": f"poste {amount:g}", "pot": pot() / chips_per_bb, "board": []})
+            steps.append({"street": 0, "seat": i, "text": f"poste {_bb(add / chips_per_bb)}", "pot": pot() / chips_per_bb, "board": []})
         elif kind == "street":
             street, cards = data
             board.extend(cards)
@@ -264,12 +270,12 @@ def replay_hand(hand: ParsedHand, strategy: Any | None, chips_per_bb: int = 100)
             stacks[i] -= added
             bets[i] = new_to
             history.append(ActionRecord(street, i, k, added, new_to, all_in or stacks[i] == 0, pot() - added))
-            text = {Kind.FOLD: "se couche", Kind.CHECK: "check", Kind.CALL: f"paie {added / chips_per_bb:.1f} bb",
-                    Kind.BET: f"mise {new_to / chips_per_bb:.1f} bb", Kind.RAISE: f"relance à {new_to / chips_per_bb:.1f} bb"}[k]
+            text = {Kind.FOLD: "se couche", Kind.CHECK: "check", Kind.CALL: f"paie {_bb(added / chips_per_bb)}",
+                    Kind.BET: f"mise {_bb(new_to / chips_per_bb)}", Kind.RAISE: f"relance à {_bb(new_to / chips_per_bb)}"}[k]
             step = {"street": street, "seat": i, "text": text + (" (tapis)" if all_in else ""), "pot": pot() / chips_per_bb, "board": list(board)}
             if i == hero and rec_action is not None:
                 rk = rec_action["kind"]
-                step["fiche"] = {"fold": "se coucher", "call": "payer / checker", "raise": f"relancer ({rec_action['amount_bb']:.1f} bb)"}[rk]
+                step["fiche"] = {"fold": "se coucher", "call": "payer / checker", "raise": f"relancer ({_bb(rec_action['amount_bb'])})"}[rk]
                 step["respect"] = decisions[-1]["match"]
             steps.append(step)
             global_idx += 1

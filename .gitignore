@@ -21,3 +21,5 @@ out/sessions/mains.csv
 data/reel/
 data/a_importer/
 data/exemple/
+out/site/
+out/**/site/

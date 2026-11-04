@@ -72,4 +72,26 @@ def run(ctx: ExperimentContext) -> dict[str, Any]:
                          (), {"mains_par_experience": played, "budget": budget, "dans_le_budget": within})
     if fiche_path is not None:
         paths["fiche"] = fiche_path
+    if "site" in cfg:
+        paths["site"] = smoke_site(ctx, dict(cfg["site"] or {}))
     return {"report": combined, "paths": paths, "played": played, "total": total, "within_budget": within, "outputs": outputs}
+
+
+def smoke_site(ctx: ExperimentContext, opts: dict[str, Any]):
+    """Tableau de bord sur les résultats du smoke et les données d'exemple, puis vérifications (liens, Chromium)."""
+    from pokerlab.site.build import build_site, site_config
+    from pokerlab.site.check import full_check
+
+    cfg = site_config()
+    cfg.update({"campagnes": str(ctx.out_dir), "sortie": str(ctx.out_dir / "site"), "exclure": [],
+                "donnees_reelles": str(ctx.out_dir / "site" / "aucune_main_reelle"), "fiche_campagne": None})
+    cfg.update(opts)
+    site = build_site(cfg, lab=ctx.lab)
+    res = full_check(site)
+    ctx.log(f"--- smoke : site -> {site / 'index.html'} (liens cassés : {len(res['liens_casses'])}, références externes : "
+            f"{len(res['references_externes'])}, Chromium : {res['chromium']}, problèmes : {len(res['problemes_chromium'])})")
+    for msg in res["liens_casses"] + res["references_externes"] + res["problemes_chromium"]:
+        ctx.log(f"    ATTENTION {msg}")
+    if not res["ok"]:
+        raise RuntimeError("site du smoke : vérifications en échec (voir ATTENTION ci-dessus)")
+    return site / "index.html"

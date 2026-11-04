@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 
 import pandas as pd
 
@@ -66,13 +66,16 @@ def _raw_hands_needed(values, confidence: float) -> float:
     return (z_value(confidence) * sd / abs(mu)) ** 2
 
 
-def load_compare_cells(root: str | Path) -> pd.DataFrame:
+def load_compare_cells(root: str | Path, exclude: Iterable[Path] = ()) -> pd.DataFrame:
     """Toutes les cases des compare trouvés sous ``root`` (resume.json avec « resultats »).
 
     Si une même case apparaît dans plusieurs campagnes, on garde celle qui a le plus de mains."""
     root = Path(root)
+    skip = [Path(e).resolve() for e in exclude]
     rows: list[dict[str, Any]] = []
     for resume in sorted(root.glob("**/resume.json")):
+        if any(e in resume.resolve().parents for e in skip):
+            continue
         try:
             meta = json.loads(resume.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):

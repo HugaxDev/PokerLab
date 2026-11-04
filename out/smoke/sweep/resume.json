@@ -1,4 +1,6 @@
 {
+  "strategie": "bluff",
+  "composition": "micro_play_money",
   "variantes": [
     {
       "variante": "Bluff [ouverture_bb=2.5, freq_bluff=0.0]",
@@ -29,6 +31,64 @@
       "mains": 6
     }
   ],
+  "grille": {
+    "params": [
+      {
+        "path": "taille_ouverture",
+        "label": "ouverture_bb",
+        "values": [
+          2.5,
+          3.0
+        ]
+      },
+      {
+        "path": "frequence_bluff",
+        "label": "freq_bluff",
+        "values": [
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "points": [
+      {
+        "values": [
+          2.5,
+          0.0
+        ],
+        "bb100": -100.0,
+        "ci": Infinity,
+        "label": "Bluff [ouverture_bb=2.5, freq_bluff=0.0]"
+      },
+      {
+        "values": [
+          2.5,
+          1.0
+        ],
+        "bb100": -100.0,
+        "ci": Infinity,
+        "label": "Bluff [ouverture_bb=2.5, freq_bluff=1.0]"
+      },
+      {
+        "values": [
+          3.0,
+          0.0
+        ],
+        "bb100": -108.33333333333333,
+        "ci": Infinity,
+        "label": "Bluff [ouverture_bb=3.0, freq_bluff=0.0]"
+      },
+      {
+        "values": [
+          3.0,
+          1.0
+        ],
+        "bb100": -108.33333333333333,
+        "ci": Infinity,
+        "label": "Bluff [ouverture_bb=3.0, freq_bluff=1.0]"
+      }
+    ]
+  },
   "experience": "sweep",
   "config": {
     "strategy": "bluff",

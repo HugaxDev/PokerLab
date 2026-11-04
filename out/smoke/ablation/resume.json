@@ -1,8 +1,27 @@
 {
+  "strategie": "joueur",
+  "composition": "micro_play_money",
   "ablations": [
     "Joueur bat Joueur [sans garde-fou] : pas encore significatif (0.0 ± inf bb/100, p Holm = 1)",
     "Joueur bat Joueur [sans c-bet] : pas encore significatif (0.0 ± inf bb/100, p Holm = 1)"
   ],
+  "resultats": [
+    {
+      "regle": "garde-fou",
+      "apport_bb100": 0.0,
+      "ci": Infinity,
+      "p_holm": 1.0,
+      "significatif": false
+    },
+    {
+      "regle": "c-bet",
+      "apport_bb100": 0.0,
+      "ci": Infinity,
+      "p_holm": 1.0,
+      "significatif": false
+    }
+  ],
+  "base_bb100": -1416.166666666667,
   "experience": "ablation",
   "config": {
     "strategy": "joueur",

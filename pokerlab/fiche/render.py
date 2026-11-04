@@ -133,7 +133,8 @@ def expected_section(exp: Expected | None, source: str, strategy: str) -> str:
             f"(5e et 95e centiles, tirage de mains simulées avec les résultats réels). Source : {esc(source)}.</p>{warn}</div>")
 
 
-def render(meta: dict[str, Any], chart, sizes: list[SizeRow], stakes, rules: list[str], leaks_html: str, expected_html: str, raise_bb: float) -> str:
+def render(meta: dict[str, Any], chart, sizes: list[SizeRow], stakes, rules: list[str], leaks_html: str, expected_html: str, raise_bb: float,
+           nav_html: str = "", head_extra: str = "") -> str:
     stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
     swatch = f'<span class="sw" style="background:{esc(meta.get("color") or "#2a78d6")}"></span>'
     rules_html = "".join(f"<li>{esc(r)}</li>" for r in rules)
@@ -142,8 +143,8 @@ def render(meta: dict[str, Any], chart, sizes: list[SizeRow], stakes, rules: lis
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fiche {esc(meta['label'])}</title>
 <style>{CSS}{FICHE_CSS}</style>
-<script>{THEME_JS}</script>
-</head><body><main>
+<script>{THEME_JS}</script>{head_extra}
+</head><body>{nav_html}<main>
 <button class="theme" onclick="toggleTheme()" aria-label="Basculer clair/sombre">clair / sombre</button>
 <h1>{swatch}Fiche — {esc(meta['label'])}</h1>
 <p class="sub">{esc(meta.get('description', ''))}</p>

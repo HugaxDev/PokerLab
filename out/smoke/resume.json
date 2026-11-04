@@ -155,8 +155,9 @@
     },
     "fiche": {
       "strategy": "joueur"
-    }
+    },
+    "site": {}
   },
   "mains_jouees": 354,
-  "duree_s": 8.5
+  "duree_s": 5.0
 }

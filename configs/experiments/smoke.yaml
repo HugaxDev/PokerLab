@@ -60,3 +60,4 @@ journal:
   phases: journal/phases.yaml
 fiche:
   strategy: joueur          # fiche de démonstration remplie avec la campagne smoke (compare + audit)
+site: {}                    # tableau de bord sur out/smoke + données d'exemple, vérifié (liens, Chromium 390 px)

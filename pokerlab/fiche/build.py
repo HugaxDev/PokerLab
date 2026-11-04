@@ -15,6 +15,15 @@ from pokerlab.strategies.registry import build_strategy, resolve_spec
 _CHARTS: dict[tuple[str, float], dict] = {}
 
 
+def _display_path(path: str | Path) -> str:
+    """Chemin lisible : relatif au projet quand c'est possible."""
+    p = Path(path).resolve()
+    try:
+        return str(p.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(path)
+
+
 def fiche_config(path: str | Path | None = None) -> dict[str, Any]:
     return load_yaml(path or configs_root() / "fiche.yaml")
 
@@ -28,7 +37,8 @@ def chart_for(strategy: str, lab: LabConfig, raise_bb: float) -> dict:
 
 
 def build_fiche(strategy: str, lab: LabConfig, campaign: str | Path | None = None, out: str | Path | None = None,
-                composition: str | None = None, cfg: dict[str, Any] | None = None) -> dict[str, Any]:
+                composition: str | None = None, cfg: dict[str, Any] | None = None, nav_html: str = "",
+                head_extra: str = "") -> dict[str, Any]:
     """Écrit la fiche et renvoie son chemin et ce qui a pu être rempli."""
     cfg = cfg or fiche_config()
     spec = resolve_spec(strategy)
@@ -54,8 +64,8 @@ def build_fiche(strategy: str, lab: LabConfig, campaign: str | Path | None = Non
         filled["resultat"] = exp is not None
     source = f"configs/strategies/{name}.yaml" if name in list_strategies() else "configs/opponents/archetypes.yaml"
     meta = {"label": spec.get("label", name), "description": spec.get("description", ""), "color": spec.get("color"),
-            "source": source, "campaign": str(campaign) if campaign else ""}
-    html = render(meta, chart, sizes, list(cfg.get("stakes", [])), rules, leaks_html, expected_html, raise_bb)
+            "source": source, "campaign": _display_path(campaign) if campaign else ""}
+    html = render(meta, chart, sizes, list(cfg.get("stakes", [])), rules, leaks_html, expected_html, raise_bb, nav_html, head_extra)
     path = Path(out) if out else PROJECT_ROOT / "out" / f"fiche_{name}.html"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(html, encoding="utf-8")

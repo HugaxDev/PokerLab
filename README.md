@@ -74,6 +74,10 @@ Chaque expérience a une commande et une config YAML dans `configs/experiments/`
 | `journal` | Import de votre journal CSV réel et comparaison avec la stratégie simulée. | `journal.yaml` |
 | `smoke` | Toutes les expériences en miniature (≈ 350 mains) + rapport et fiche de démonstration. | `smoke.yaml` |
 | `fiche` | Fiche HTML d'une stratégie : grilles préflop par position, tailles de mise, règles postflop, interdits (audit) et résultat attendu (compare). | `fiche.yaml` |
+| `import` | Importe des historiques PokerStars (.txt) dans `data/reel` et compare chaque décision à la fiche. | `site.yaml` |
+| `site` | Génère le tableau de bord statique dans `out/site/`. | `site.yaml` |
+| `serve` | Génère et sert le tableau de bord sur http://localhost:8765, régénéré automatiquement. | `site.yaml` |
+| `robustesse` | Score de robustesse par stratégie sur toutes les compositions mesurées. | — |
 | `bench` | Mesure le débit réel (mains/s). | `bench.yaml` |
 | `precompute` | Calcule la table d'équité préflop 169×169. | `game.yaml` |
 | `replay` | Affiche l'historique texte d'une main de campagne. | — |
@@ -300,6 +304,50 @@ hors règle), liste les mains jouées hors de la fiche de la stratégie de la ph
 nombre de mains : « 18e centile, dans la distribution normale » ou « sous le 5e centile ».
 
 `journal/exemple_journal.csv` contient **10 mains inventées** pour montrer le format.
+
+## Tableau de bord local
+
+```bash
+python -m pokerlab serve
+```
+
+Ouvre http://localhost:8765 (serveur de la bibliothèque standard Python, lié à 127.0.0.1, aucune
+requête réseau : plotly est embarqué une seule fois dans `out/site/assets/plotly.js`). Le site se
+régénère tout seul quand un résultat de campagne apparaît ou change (`resume.json`, `rapport.html`
+sous `out/`) ou quand des mains réelles sont importées, et la page ouverte se recharge.
+`python -m pokerlab site` génère sans servir (fichiers ouvrables directement).
+
+Importer tes mains PokerStars : dépose les fichiers d'historique `.txt` (format anglais, dossier
+« Historique des mains » de PokerStars) dans `data/a_importer/` pendant que `serve` tourne
+(ils sont importés puis rangés dans `data/a_importer/importes/`), ou
+`python -m pokerlab import chemin/vers/historiques`. Les mains réelles vont dans `data/reel/`
+(jamais versionné). Ton pseudo et la stratégie suivie se règlent dans `configs/site.yaml`.
+
+Pages :
+
+- **Mon jeu** (accueil) : mains réelles, bb/100 réel ± IC 95 %, taux de décisions conformes à la
+  fiche, résultat en jetons ; gains cumulés sur le cône attendu de la stratégie (5e–95e et
+  25e–75e centiles, par tirage de mains simulées) avec le verdict « dans la variance normale » ou
+  « sous le 5e centile, à analyser » ; progression vers le nombre de mains nécessaire pour
+  distinguer le taux de gain de zéro ; dernières sessions ; résultats par position et grille 13×13 ;
+  tes stats face à la stratégie simulée ; tes 5 situations les plus perdantes avec lien vers les mains.
+  Sans données réelles : état vide qui explique l'import, et lien vers les données d'exemple
+  (`exemple.html`, marquées « EXEMPLE », mains inventées de `journal/exemple_pokerstars.txt`).
+- **Labo** : classement par composition (IC, meilleure valeur colorée de la couleur de la
+  stratégie), score de robustesse, carte stratégie × composition, sweeps et ablations, liste des
+  campagnes (date, paramètres, lien vers le rapport détaillé). `exclure` dans `site.yaml` écarte
+  des sous-dossiers (par défaut `smoke`).
+- **Mains** : liste filtrable (session, position, résultat, hors fiche) et recherche (cartes,
+  numéro, tableau) ; replay visuel (table vue de dessus, cartes, pot, actions street par street,
+  boutons précédent/suivant ou flèches du clavier) avec ce que la fiche recommandait à chaque
+  décision du héros.
+- **Fiche** : la fiche de la stratégie suivie, remplie avec les campagnes (`fiche_campagne` et
+  `fiche_composition` dans `site.yaml` pour choisir la source).
+
+Chaque stratégie garde la même couleur partout (celle de sa config). Clair/sombre suit le système,
+bouton pour basculer. `python -m pokerlab smoke` génère aussi le site sur ses propres résultats
+(`out/smoke/site/`) et le vérifie : liens, références externes et, si Node + Playwright sont
+installés, rendu Chromium à 390 px (erreurs, requêtes réseau, débordement horizontal, replay).
 
 ## Performance
 
