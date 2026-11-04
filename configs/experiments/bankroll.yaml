@@ -5,7 +5,8 @@ capital: 3.50            # en monnaie de la table
 currency_per_bb: 0.02    # blinds 0,01/0,02
 stop_loss_bb: 25         # stop-loss de session
 n_trajectories: 5000
-max_sessions: 200        # horizon : 200 sessions de 50 mains = 10 000 mains
+max_sessions: 200        # pour info : ancienne comparaison à nombre de sessions égal
+horizon_hands: 10000     # comparaison avec/sans stop-loss à nombre de MAINS égal
 ruin_below_bb: 1
 sessions:
   composition: micro_play_money

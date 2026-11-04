@@ -4,13 +4,27 @@
     {
       "stratégie": "Joueur",
       "bb/100 réel": 113.09451400000002,
-      "ruine en 200 sessions (sans stop) %": 41.5,
-      "ruine en 200 sessions (stop 25 bb) %": 48.58,
+      "ruine en 10000 mains (sans stop) %": 49.54,
+      "ruine en 10000 mains (stop 25 bb) %": 50.28,
       "ruine théorique (horizon infini) %": 59.496039497518424,
-      "bankroll finale médiane sans stop (bb)": 8936.479999999998,
-      "bankroll finale médiane avec stop (bb)": 2766.0600000000004
+      "bankroll médiane des non ruinés, sans stop (bb)": 11867.909999999993,
+      "bankroll médiane des non ruinés, avec stop (bb)": 11433.990000000005
     }
   ],
+  "stop_loss": {
+    "joueur": {
+      "horizon_mains": 10000,
+      "ruine_sans_stop": 0.4954,
+      "ruine_avec_stop": 0.5028,
+      "sessions coupées %": 64.86,
+      "mains par session sans stop": 50.0,
+      "mains par session avec stop": 27.2635,
+      "bb/100 sans stop": 113.09451399999999,
+      "bb/100 avec stop": 109.43264437801457,
+      "perte moyenne au déclenchement (bb)": -54.35420135676842,
+      "déclenchements à -100 bb ou pire %": 17.11378353376503
+    }
+  },
   "experience": "bankroll",
   "config": {
     "experiment": "bankroll",
@@ -22,6 +36,7 @@
     "stop_loss_bb": 25,
     "n_trajectories": 5000,
     "max_sessions": 200,
+    "horizon_hands": 10000,
     "ruin_below_bb": 1,
     "sessions": {
       "composition": "micro_play_money",
@@ -31,5 +46,5 @@
     "sessions_dir": "out/sessions"
   },
   "mains_jouees": 0,
-  "duree_s": 5.9
+  "duree_s": 11.1
 }
