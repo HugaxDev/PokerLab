@@ -1,0 +1,159 @@
+{
+  "cellules": {
+    "serre@micro_play_money": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 4.05 bb/100)",
+      "bb100_metric": 34.04775052976795
+    },
+    "large@micro_play_money": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 5.82 bb/100)",
+      "bb100_metric": 66.01224144191657
+    },
+    "zero_bluff@micro_play_money": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 6.88 bb/100)",
+      "bb100_metric": 47.29863270770513
+    },
+    "position@micro_play_money": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 4.98 bb/100)",
+      "bb100_metric": 47.433989696598346
+    },
+    "bluff@micro_play_money": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 4.99 bb/100)",
+      "bb100_metric": 48.39100290309405
+    },
+    "joueur@micro_play_money": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 8.43 bb/100)",
+      "bb100_metric": 92.23074455331006
+    },
+    "equity_bot@micro_play_money": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 6.19 bb/100)",
+      "bb100_metric": 86.27431366792013
+    },
+    "random_legal@micro_play_money": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 14.16 bb/100)",
+      "bb100_metric": -613.965148131621
+    },
+    "serre@reguliers": {
+      "decks": 11000,
+      "arret": "précision atteinte (± 2.99 bb/100)",
+      "bb100_metric": -1.5388619987756356
+    },
+    "large@reguliers": {
+      "decks": 24000,
+      "arret": "précision atteinte (± 2.99 bb/100)",
+      "bb100_metric": -0.9821005652629561
+    },
+    "zero_bluff@reguliers": {
+      "decks": 31000,
+      "arret": "précision atteinte (± 3.00 bb/100)",
+      "bb100_metric": -4.119001506103438
+    },
+    "position@reguliers": {
+      "decks": 16000,
+      "arret": "précision atteinte (± 3.00 bb/100)",
+      "bb100_metric": -2.8590666900962143
+    },
+    "bluff@reguliers": {
+      "decks": 16500,
+      "arret": "précision atteinte (± 2.96 bb/100)",
+      "bb100_metric": -2.158991597558863
+    },
+    "joueur@reguliers": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 4.14 bb/100)",
+      "bb100_metric": 6.973374425889969
+    },
+    "equity_bot@reguliers": {
+      "decks": 25000,
+      "arret": "précision atteinte (± 2.98 bb/100)",
+      "bb100_metric": 11.420743179480295
+    },
+    "random_legal@reguliers": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 10.87 bb/100)",
+      "bb100_metric": -331.291091386731
+    },
+    "serre@mixte": {
+      "decks": 31500,
+      "arret": "précision atteinte (± 2.99 bb/100)",
+      "bb100_metric": 18.01563134361332
+    },
+    "large@mixte": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 4.15 bb/100)",
+      "bb100_metric": 33.74936478910243
+    },
+    "zero_bluff@mixte": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 4.88 bb/100)",
+      "bb100_metric": 25.207930927794127
+    },
+    "position@mixte": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 3.64 bb/100)",
+      "bb100_metric": 25.39094149819523
+    },
+    "bluff@mixte": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 3.65 bb/100)",
+      "bb100_metric": 26.240479084480185
+    },
+    "joueur@mixte": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 6.22 bb/100)",
+      "bb100_metric": 49.886298992360885
+    },
+    "equity_bot@mixte": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 4.59 bb/100)",
+      "bb100_metric": 52.500208425617764
+    },
+    "random_legal@mixte": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 12.13 bb/100)",
+      "bb100_metric": -461.7625931861457
+    }
+  },
+  "corrections_actions": 0,
+  "experience": "compare",
+  "config": {
+    "experiment": "compare",
+    "strategies": [
+      "serre",
+      "large",
+      "zero_bluff",
+      "position",
+      "bluff",
+      "joueur",
+      "equity_bot",
+      "random_legal"
+    ],
+    "compositions": [
+      "micro_play_money",
+      "reguliers",
+      "mixte"
+    ],
+    "autostop": {
+      "enabled": true,
+      "block_decks": 500,
+      "ci_halfwidth_bb100": 3.0,
+      "max_hands_per_strategy": 200000,
+      "min_decks": 200,
+      "metric": "ev",
+      "max_minutes": 110
+    },
+    "test": "t",
+    "record_decisions": true,
+    "decision_decks": 10000,
+    "history_samples": 30
+  },
+  "mains_jouees": 4329966,
+  "duree_s": 1883.2
+}

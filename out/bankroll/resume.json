@@ -1,0 +1,35 @@
+{
+  "capital_bb": 175.0,
+  "lignes": [
+    {
+      "stratégie": "Joueur",
+      "bb/100 réel": 113.09451400000002,
+      "ruine en 200 sessions (sans stop) %": 41.5,
+      "ruine en 200 sessions (stop 25 bb) %": 48.58,
+      "ruine théorique (horizon infini) %": 59.496039497518424,
+      "bankroll finale médiane sans stop (bb)": 8936.479999999998,
+      "bankroll finale médiane avec stop (bb)": 2766.0600000000004
+    }
+  ],
+  "experience": "bankroll",
+  "config": {
+    "experiment": "bankroll",
+    "strategies": [
+      "joueur"
+    ],
+    "capital": 3.5,
+    "currency_per_bb": 0.02,
+    "stop_loss_bb": 25,
+    "n_trajectories": 5000,
+    "max_sessions": 200,
+    "ruin_below_bb": 1,
+    "sessions": {
+      "composition": "micro_play_money",
+      "n_sessions": 2000,
+      "hands_per_session": 50
+    },
+    "sessions_dir": "out/sessions"
+  },
+  "mains_jouees": 0,
+  "duree_s": 5.9
+}

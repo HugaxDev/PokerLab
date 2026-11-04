@@ -1,0 +1,29 @@
+{
+  "machine": "Linux-6.18.44-fc-v230-x86_64-with-glibc2.39",
+  "processeur": "x86_64",
+  "coeurs": 4,
+  "workers": 4,
+  "strategies": [
+    "serre",
+    "large",
+    "position",
+    "bluff",
+    "zero_bluff"
+  ],
+  "mono_processus": {
+    "mains": 600,
+    "secondes": 0.9,
+    "mains_par_s": 667.5
+  },
+  "multi_processus": {
+    "mains": 600,
+    "secondes": 0.26,
+    "mains_par_s": 2343.9,
+    "note": "workers déjà démarrés (échauffement exclu)"
+  },
+  "equity_bot_mono": {
+    "mains": 60,
+    "secondes": 0.11,
+    "mains_par_s": 540.5
+  }
+}

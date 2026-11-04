@@ -1,0 +1,30 @@
+{
+  "decisions_auditees": 2000,
+  "experience": "audit",
+  "config": {
+    "experiment": "audit",
+    "strategy": "joueur",
+    "composition": "micro_play_money",
+    "pool_decks": 1000,
+    "n_decisions": 2000,
+    "rollouts": 16,
+    "bet_sizes_pot": [
+      0.5,
+      1.0
+    ],
+    "include_allin": true,
+    "nontrivial_preflop_pct": 0.5,
+    "top_leaks": 15,
+    "range_model": {
+      "looseness": 1.3
+    },
+    "group_by": [
+      "street_label",
+      "hand_label",
+      "facing_label",
+      "action_label"
+    ]
+  },
+  "mains_jouees": 158064,
+  "duree_s": 75.2
+}

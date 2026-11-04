@@ -1,0 +1,17 @@
+{
+  "sessions": 10000,
+  "mains_par_session": 50,
+  "experience": "sessions",
+  "config": {
+    "experiment": "sessions",
+    "strategies": [
+      "joueur"
+    ],
+    "composition": "micro_play_money",
+    "n_sessions": 10000,
+    "hands_per_session": 50,
+    "stack_mode": "persistent"
+  },
+  "mains_jouees": 500000,
+  "duree_s": 264.6
+}

@@ -260,6 +260,8 @@ BEST_TEXT = {"se couche": "couche-toi", "paie": "paie", "check": "checke", "tapi
 
 def prohibition_text(row: pd.Series, best_action: str) -> str:
     verb = VERBS.get(row["action_label"], f"N'{row['action_label']} pas")
+    if str(best_action).split(" ")[0] == row["action_label"] and row["action_label"] in ("mise", "relance"):
+        verb += " à ta taille habituelle"
     facing = "" if row["facing_label"] == "rien à payer" else f" {row['facing_label']}"
     board = "" if row["street_label"] == "préflop" or "board_label" not in row else f", tableau {row['board_label']}"
     where = f" en {row['position']}" if "position" in row else ""

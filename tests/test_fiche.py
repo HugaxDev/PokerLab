@@ -96,7 +96,7 @@ def test_fiche_with_campaign(lab, tmp_path: Path) -> None:
     assert res["filled"] == {"interdits": True, "resultat": True}
     assert "Ne paie pas avec top paire face à une relance au turn : couche-toi." in html
     assert "Ne te couche pas avec paire moyenne (66-99) sans relance devant avant le flop : relance 3x." in html
-    assert "50 mains" in html and "200 mains" in html and "1000 mains" in html
+    assert "<td>50</td>" in html and "<td>200</td>" in html and "<td>1000</td>" in html and "9 fois sur 10" in html
     assert "Pas encore de chiffres" not in html
 
 
@@ -141,3 +141,11 @@ def test_audit_rollout_uses_hero_information_only(lab) -> None:
                        forced={**prefix, 3: Action.fold() if obs.legal.can_fold else Action.check_call()}, fork_after=3, fork_salt=1)
     voluntary = [a for a in original.history if a.kind != Kind.POST][:3]
     assert [(a.seat, a.kind, a.to) for a in replay.history if a.kind != Kind.POST][:3] == [(a.seat, a.kind, a.to) for a in voluntary]
+
+
+def test_prohibition_same_action_other_size() -> None:
+    from pokerlab.fiche.content import prohibition_text
+
+    row = pd.Series({"street_label": "turn", "hand_label": "couleur", "facing_label": "rien à payer", "action_label": "mise"})
+    assert prohibition_text(row, "mise 1 pot") == "Ne mise pas à ta taille habituelle avec couleur au turn : mise 1 pot."
+    assert prohibition_text(row, "check") == "Ne mise pas avec couleur au turn : checke."

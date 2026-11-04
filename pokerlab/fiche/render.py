@@ -33,6 +33,7 @@ ol.rules li,ul.forbid li{color:var(--ink);margin:.35rem 0}
 code{font-size:.85em;background:var(--page);padding:1px 4px;border-radius:4px;white-space:normal;word-break:break-word}
 .tag{font-size:.75rem;color:var(--muted)}
 td.l{text-align:left;white-space:normal}
+table.exp th{white-space:normal}table.exp td,table.exp th{padding:6px 4px}
 """
 
 THEME_JS = """function toggleTheme(){const r=document.documentElement;const dark=r.getAttribute('data-theme')==='dark'||
@@ -125,11 +126,11 @@ def expected_section(exp: Expected | None, source: str, strategy: str) -> str:
     warn = "" if exp.reliable else '<p class="tag">Échantillon faible : fourchettes indicatives, relance compare pour plus de mains.</p>'
     head = (f"<p>bb/100 all-in adjusted : <strong>{frs(exp.bb100_ev)}</strong> ± {fr(exp.ci_half)} (IC 95 %) · réel : {frs(exp.bb100_real)} · "
             f"écart type : {fr(exp.sd100, 0)} bb/100</p>")
-    rows = "".join(f"<tr><td>{int(r['mains'])} mains</td><td>{frs(r['moyenne'], 0)}</td><td>{frs(r['p5'], 0)} à {frs(r['p95'], 0)}</td></tr>" for r in exp.ranges)
-    table = ('<div class="tbl"><table><thead><tr><th>horizon</th><th>espérance (bb)</th><th>5e–95e centile (bb)</th></tr></thead>'
+    rows = "".join(f"<tr><td>{int(r['mains'])}</td><td>{frs(r['moyenne'], 0)}</td><td>{frs(r['p5'], 0)} à {frs(r['p95'], 0)}</td></tr>" for r in exp.ranges)
+    table = ('<div class="tbl"><table class="exp"><thead><tr><th>mains</th><th>moyenne (bb)</th><th>9 fois sur 10 (bb)</th></tr></thead>'
              f"<tbody>{rows}</tbody></table></div>")
-    return (f'<div class="card">{head}{table}<p class="legend-note">9 fois sur 10, ton résultat sur l\'horizon tombe entre les deux centiles '
-            f"(tirage de mains simulées avec les résultats réels). Source : {esc(source)}.</p>{warn}</div>")
+    return (f'<div class="card">{head}{table}<p class="legend-note">9 fois sur 10, ton résultat sur ce nombre de mains tombe dans la fourchette '
+            f"(5e et 95e centiles, tirage de mains simulées avec les résultats réels). Source : {esc(source)}.</p>{warn}</div>")
 
 
 def render(meta: dict[str, Any], chart, sizes: list[SizeRow], stakes, rules: list[str], leaks_html: str, expected_html: str, raise_bb: float) -> str:

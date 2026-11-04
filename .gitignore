@@ -1,6 +1,18 @@
 __pycache__/
 *.pyc
-out/
 cache/
 *.egg-info/
 .pytest_cache/
+
+# Arrêt manuel d'une campagne (fichier de contrôle)
+out/**/STOP
+
+# Premier audit, méthode biaisée (cartes adverses réelles) corrigée depuis : gardé en local seulement
+out/audit_v1_biaise/
+
+# Fichiers bruts de plus de 20 Mo : non versionnés.
+# Régénérables à l'identique (mêmes graines) : python -m pokerlab compare / sessions --set "strategies=[joueur]"
+out/compare/mains.csv
+out/compare/mains.parquet
+out/compare/decisions.csv
+out/sessions/mains.csv

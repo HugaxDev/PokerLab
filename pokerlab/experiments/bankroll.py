@@ -61,6 +61,21 @@ def analytic_ror(mu_hand: float, sd_hand: float, capital_bb: float) -> float:
     return float(math.exp(-2 * mu_hand * capital_bb / sd_hand ** 2))
 
 
+def stop_loss_verdict(rows: list[dict[str, Any]], stop: float, max_sessions: int) -> str:
+    """Conclusion chiffrée sur l'effet du stop-loss (et non une règle générale)."""
+    if not rows:
+        return "Pas de données de bankroll."
+    without = [r[f"ruine en {max_sessions} sessions (sans stop) %"] for r in rows]
+    with_sl = [r[f"ruine en {max_sessions} sessions (stop {stop:.0f} bb) %"] for r in rows]
+    worse = sum(b > a for a, b in zip(without, with_sl))
+    if worse == len(rows):
+        return (f"Le stop-loss de {stop:.0f} bb augmente le risque de ruine ici : il coupe aussi des sessions gagnantes "
+                "en moyenne et ne plafonne pas la perte (une seule main peut coûter plus que le seuil).")
+    if worse == 0:
+        return f"Le stop-loss de {stop:.0f} bb réduit le risque de ruine pour toutes les stratégies simulées."
+    return f"Le stop-loss de {stop:.0f} bb réduit la ruine pour certaines stratégies et l'augmente pour d'autres (voir le tableau)."
+
+
 def run(ctx: ExperimentContext, source_hands: pd.DataFrame | None = None, report: Report | None = None) -> dict[str, Any]:
     cfg = ctx.cfg
     specs = cfg.get("strategies", [])
@@ -123,7 +138,7 @@ def run(ctx: ExperimentContext, source_hands: pd.DataFrame | None = None, report
     sec.table(pd.DataFrame(rows), "Ruine = bankroll sous " + f"{ruin_below:g} bb. Trajectoires : sessions simulées tirées avec remise. "
               "Ruine théorique : exp(−2μB/σ²), sans plafond de perte ni stop-loss.")
     if own:
-        report.verdict = verdict[:4] + ["Le stop-loss ne change pas l'espérance par main : il coupe les sessions perdantes, ce qui réduit surtout la variance."]
+        report.verdict = verdict[:4] + [stop_loss_verdict(rows, stop, max_sessions)]
         paths = save_outputs(ctx, report, None, None, (), {"capital_bb": capital_bb, "lignes": rows})
     else:
         paths = {}

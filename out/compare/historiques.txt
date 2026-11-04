@@ -1,0 +1,1077 @@
+PokerLab Hand #0: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-serre (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-TAG (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-serre: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-serre [4h As]
+UTG-calling_station: calls €0.02
+MP-TAG: folds
+CO-calling_station: calls €0.02
+BTN-calling_station: calls €0.02
+SB-serre: folds
+BB-maniac: raises €0.10 to €0.12
+UTG-calling_station: calls €0.10
+CO-calling_station: calls €0.10
+BTN-calling_station: calls €0.10
+*** FLOP *** [Qc 9s Jd]
+BB-maniac: bets €0.44
+UTG-calling_station: folds
+CO-calling_station: calls €0.44
+BTN-calling_station: calls €0.44
+*** TURN *** [Qc 9s Jd] [7s]
+BB-maniac: bets €1.44 and is all-in
+CO-calling_station: folds
+BTN-calling_station: folds
+Uncalled bet (€1.44) returned to BB-maniac
+BB-maniac collected €1.81 from pot
+*** SUMMARY ***
+Total pot €1.81 | Rake €0.00
+Board [Qc 9s Jd 7s]
+Seat 1: SB-serre folded | résultat -0.50 bb
+Seat 2: BB-maniac won uncontested | résultat +62.62 bb
+Seat 3: UTG-calling_station folded | résultat -6.00 bb
+Seat 4: MP-TAG folded | résultat +0.00 bb
+Seat 5: CO-calling_station folded | résultat -28.06 bb
+Seat 6: BTN-calling_station folded | résultat -28.06 bb
+
+
+PokerLab Hand #1: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-serre (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-TAG (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-serre: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-serre [Jh Ks]
+UTG-maniac: raises €0.04 to €0.06
+MP-calling_station: calls €0.06
+CO-TAG: folds
+BTN-calling_station: calls €0.06
+SB-calling_station: calls €0.05
+BB-serre: folds
+*** FLOP *** [Qc 9s Jd]
+SB-calling_station: checks
+UTG-maniac: bets €0.23
+MP-calling_station: calls €0.23
+BTN-calling_station: calls €0.23
+SB-calling_station: calls €0.23
+*** TURN *** [Qc 9s Jd] [7s]
+SB-calling_station: bets €0.67
+UTG-maniac: calls €0.67
+MP-calling_station: calls €0.67
+BTN-calling_station: folds
+*** RIVER *** [Qc 9s Jd 7s] [6c]
+SB-calling_station: checks
+UTG-maniac: bets €1.04 and is all-in
+MP-calling_station: folds
+SB-calling_station: folds
+Uncalled bet (€1.04) returned to UTG-maniac
+UTG-maniac collected €3.18 from pot
+*** SUMMARY ***
+Total pot €3.18 | Rake €0.00
+Board [Qc 9s Jd 7s 6c]
+Seat 1: SB-calling_station folded | résultat -47.91 bb
+Seat 2: BB-serre folded | résultat -1.00 bb
+Seat 3: UTG-maniac won uncontested | résultat +111.29 bb
+Seat 4: MP-calling_station folded | résultat -47.91 bb
+Seat 5: CO-TAG folded | résultat +0.00 bb
+Seat 6: BTN-calling_station folded | résultat -14.47 bb
+
+
+PokerLab Hand #2: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-serre (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-TAG (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to UTG-serre [9c Ad]
+UTG-serre: folds
+MP-maniac: raises €0.04 to €0.06
+CO-calling_station: calls €0.06
+BTN-TAG: folds
+SB-calling_station: calls €0.05
+BB-calling_station: calls €0.04
+*** FLOP *** [Qc 9s Jd]
+SB-calling_station: checks
+BB-calling_station: checks
+MP-maniac: bets €0.24
+CO-calling_station: folds
+SB-calling_station: calls €0.24
+BB-calling_station: calls €0.24
+*** TURN *** [Qc 9s Jd] [7s]
+SB-calling_station: bets €0.55
+BB-calling_station: calls €0.55
+MP-maniac: folds
+*** RIVER *** [Qc 9s Jd 7s] [6c]
+SB-calling_station: checks
+BB-calling_station: checks
+*** SHOW DOWN ***
+SB-calling_station: shows [4h As]
+BB-calling_station: shows [Jh Ks]
+BB-calling_station collected €2.06 from pot
+*** SUMMARY ***
+Total pot €2.06 | Rake €0.00
+Board [Qc 9s Jd 7s 6c]
+Seat 1: SB-calling_station showed [4h As] | résultat -42.42 bb
+Seat 2: BB-calling_station showed [Jh Ks] | résultat +60.48 bb
+Seat 3: UTG-serre folded | résultat +0.00 bb
+Seat 4: MP-maniac folded | résultat -15.06 bb
+Seat 5: CO-calling_station folded | résultat -3.00 bb
+Seat 6: BTN-TAG folded | résultat +0.00 bb
+
+
+PokerLab Hand #3: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-TAG (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-serre (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-TAG: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to MP-serre [8h Kc]
+UTG-calling_station: calls €0.02
+MP-serre: folds
+CO-maniac: raises €0.06 to €0.08
+BTN-calling_station: calls €0.08
+SB-TAG: folds
+BB-calling_station: calls €0.06
+UTG-calling_station: calls €0.06
+*** FLOP *** [Qc 9s Jd]
+BB-calling_station: checks
+UTG-calling_station: bets €0.10
+CO-maniac: calls €0.10
+BTN-calling_station: calls €0.10
+BB-calling_station: calls €0.10
+*** TURN *** [Qc 9s Jd] [7s]
+BB-calling_station: checks
+UTG-calling_station: bets €0.29
+CO-maniac: calls €0.29
+BTN-calling_station: folds
+BB-calling_station: calls €0.29
+*** RIVER *** [Qc 9s Jd 7s] [6c]
+BB-calling_station: checks
+UTG-calling_station: bets €0.53
+CO-maniac: calls €0.53
+BB-calling_station: calls €0.53
+*** SHOW DOWN ***
+BB-calling_station: shows [Jh Ks]
+UTG-calling_station: shows [9c Ad]
+CO-maniac: shows [2h 2c]
+BB-calling_station collected €3.22 from pot
+*** SUMMARY ***
+Total pot €3.22 | Rake €0.00
+Board [Qc 9s Jd 7s 6c]
+Seat 1: SB-TAG folded | résultat -0.50 bb
+Seat 2: BB-calling_station showed [Jh Ks] | résultat +110.58 bb
+Seat 3: UTG-calling_station showed [9c Ad] | résultat -50.46 bb
+Seat 4: MP-serre folded | résultat +0.00 bb
+Seat 5: CO-maniac showed [2h 2c] | résultat -50.46 bb
+Seat 6: BTN-calling_station folded | résultat -9.16 bb
+
+
+PokerLab Hand #4: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-TAG (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-serre (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-TAG: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to CO-serre [2h 2c]
+UTG-calling_station: calls €0.02
+MP-calling_station: calls €0.02
+CO-serre: folds
+BTN-maniac: raises €0.08 to €0.10
+SB-calling_station: calls €0.09
+BB-TAG: folds
+UTG-calling_station: calls €0.08
+MP-calling_station: calls €0.08
+*** FLOP *** [Qc 9s Jd]
+SB-calling_station: checks
+UTG-calling_station: bets €0.13
+MP-calling_station: calls €0.13
+BTN-maniac: calls €0.13
+SB-calling_station: folds
+*** TURN *** [Qc 9s Jd] [7s]
+UTG-calling_station: bets €0.32
+MP-calling_station: calls €0.32
+BTN-maniac: folds
+*** RIVER *** [Qc 9s Jd 7s] [6c]
+UTG-calling_station: bets €0.48
+MP-calling_station: calls €0.48
+*** SHOW DOWN ***
+UTG-calling_station: shows [9c Ad]
+MP-calling_station: shows [8h Kc]
+UTG-calling_station collected €2.41 from pot
+*** SUMMARY ***
+Total pot €2.41 | Rake €0.00
+Board [Qc 9s Jd 7s 6c]
+Seat 1: SB-calling_station folded | résultat -5.00 bb
+Seat 2: BB-TAG folded | résultat -1.00 bb
+Seat 3: UTG-calling_station showed [9c Ad] | résultat +69.13 bb
+Seat 4: MP-calling_station showed [8h Kc] | résultat -51.56 bb
+Seat 5: CO-serre folded | résultat +0.00 bb
+Seat 6: BTN-maniac folded | résultat -11.57 bb
+
+
+PokerLab Hand #5: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-TAG (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-serre (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BTN-serre [Jc 8d]
+UTG-TAG: raises €0.04 to €0.06
+MP-calling_station: calls €0.06
+CO-calling_station: calls €0.06
+BTN-serre: folds
+SB-maniac: calls €0.05
+BB-calling_station: calls €0.04
+*** FLOP *** [Qc 9s Jd]
+SB-maniac: checks
+BB-calling_station: checks
+UTG-TAG: bets €0.19
+MP-calling_station: calls €0.19
+CO-calling_station: calls €0.19
+SB-maniac: calls €0.19
+BB-calling_station: calls €0.19
+*** TURN *** [Qc 9s Jd] [7s]
+SB-maniac: bets €1.75 and is all-in
+BB-calling_station: folds
+UTG-TAG: folds
+MP-calling_station: folds
+CO-calling_station: folds
+Uncalled bet (€1.75) returned to SB-maniac
+SB-maniac collected €1.27 from pot
+*** SUMMARY ***
+Total pot €1.27 | Rake €0.00
+Board [Qc 9s Jd 7s]
+Seat 1: SB-maniac won uncontested | résultat +50.80 bb
+Seat 2: BB-calling_station folded | résultat -12.70 bb
+Seat 3: UTG-TAG folded | résultat -12.70 bb
+Seat 4: MP-calling_station folded | résultat -12.70 bb
+Seat 5: CO-calling_station folded | résultat -12.70 bb
+Seat 6: BTN-serre folded | résultat +0.00 bb
+
+
+PokerLab Hand #6: Hold'em No Limit (€0.01/€0.02) - graine 6415081459346725889
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-serre (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-nit_trappeur (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-nit (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-serre: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-serre [6c Js]
+UTG-nit_trappeur: folds
+MP-maniac: folds
+CO-nit: folds
+BTN-maniac: raises €0.04 to €0.06
+SB-serre: folds
+BB-calling_station: folds
+Uncalled bet (€0.04) returned to BTN-maniac
+BTN-maniac collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Seat 1: SB-serre folded | résultat -0.50 bb
+Seat 2: BB-calling_station folded | résultat -1.00 bb
+Seat 3: UTG-nit_trappeur folded | résultat +0.00 bb
+Seat 4: MP-maniac folded | résultat +0.00 bb
+Seat 5: CO-nit folded | résultat +0.00 bb
+Seat 6: BTN-maniac won uncontested | résultat +1.50 bb
+
+
+PokerLab Hand #7: Hold'em No Limit (€0.01/€0.02) - graine 6415081459346725889
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-serre (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-nit_trappeur (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-nit (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-serre: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-serre [Jh 2d]
+UTG-calling_station: calls €0.02
+MP-nit_trappeur: folds
+CO-maniac: folds
+BTN-nit: raises €0.06 to €0.08
+SB-maniac: folds
+BB-serre: folds
+UTG-calling_station: folds
+Uncalled bet (€0.06) returned to BTN-nit
+BTN-nit collected €0.07 from pot
+*** SUMMARY ***
+Total pot €0.07 | Rake €0.00
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-serre folded | résultat -1.00 bb
+Seat 3: UTG-calling_station folded | résultat -1.00 bb
+Seat 4: MP-nit_trappeur folded | résultat +0.00 bb
+Seat 5: CO-maniac folded | résultat +0.00 bb
+Seat 6: BTN-nit won uncontested | résultat +2.50 bb
+
+
+PokerLab Hand #8: Hold'em No Limit (€0.01/€0.02) - graine 6415081459346725889
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-nit (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-serre (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-nit_trappeur (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-nit: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to UTG-serre [9d 7d]
+UTG-serre: folds
+MP-calling_station: folds
+CO-nit_trappeur: folds
+BTN-maniac: raises €0.04 to €0.06
+SB-nit: folds
+BB-maniac: folds
+Uncalled bet (€0.04) returned to BTN-maniac
+BTN-maniac collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Seat 1: SB-nit folded | résultat -0.50 bb
+Seat 2: BB-maniac folded | résultat -1.00 bb
+Seat 3: UTG-serre folded | résultat +0.00 bb
+Seat 4: MP-calling_station folded | résultat +0.00 bb
+Seat 5: CO-nit_trappeur folded | résultat +0.00 bb
+Seat 6: BTN-maniac won uncontested | résultat +1.50 bb
+
+
+PokerLab Hand #9: Hold'em No Limit (€0.01/€0.02) - graine 6415081459346725889
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-nit (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-serre (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-nit_trappeur (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-nit: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to MP-serre [4h 7s]
+UTG-maniac: calls €0.02
+MP-serre: folds
+CO-calling_station: folds
+BTN-nit_trappeur: raises €0.06 to €0.08
+SB-maniac: folds
+BB-nit: folds
+UTG-maniac: folds
+Uncalled bet (€0.06) returned to BTN-nit_trappeur
+BTN-nit_trappeur collected €0.07 from pot
+*** SUMMARY ***
+Total pot €0.07 | Rake €0.00
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-nit folded | résultat -1.00 bb
+Seat 3: UTG-maniac folded | résultat -1.00 bb
+Seat 4: MP-serre folded | résultat +0.00 bb
+Seat 5: CO-calling_station folded | résultat +0.00 bb
+Seat 6: BTN-nit_trappeur won uncontested | résultat +2.50 bb
+
+
+PokerLab Hand #10: Hold'em No Limit (€0.01/€0.02) - graine 6415081459346725889
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-nit_trappeur (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-nit (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-serre (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-nit_trappeur: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to CO-serre [2h 9c]
+UTG-nit: folds
+MP-maniac: folds
+CO-serre: folds
+BTN-calling_station: raises €0.04 to €0.06
+SB-nit_trappeur: folds
+BB-maniac: folds
+Uncalled bet (€0.04) returned to BTN-calling_station
+BTN-calling_station collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
+Seat 2: BB-maniac folded | résultat -1.00 bb
+Seat 3: UTG-nit folded | résultat +0.00 bb
+Seat 4: MP-maniac folded | résultat +0.00 bb
+Seat 5: CO-serre folded | résultat +0.00 bb
+Seat 6: BTN-calling_station won uncontested | résultat +1.50 bb
+
+
+PokerLab Hand #11: Hold'em No Limit (€0.01/€0.02) - graine 6415081459346725889
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-nit_trappeur (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-nit (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-serre (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-nit_trappeur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BTN-serre [8c 8h]
+UTG-maniac: calls €0.02
+MP-nit: folds
+CO-maniac: folds
+BTN-serre: folds
+SB-calling_station: folds
+BB-nit_trappeur: checks
+*** FLOP *** [Jd 3d 9s]
+BB-nit_trappeur: bets €0.03
+UTG-maniac: calls €0.03
+*** TURN *** [Jd 3d 9s] [Tc]
+BB-nit_trappeur: bets €0.07
+UTG-maniac: folds
+Uncalled bet (€0.07) returned to BB-nit_trappeur
+BB-nit_trappeur collected €0.10 from pot
+*** SUMMARY ***
+Total pot €0.10 | Rake €0.00
+Board [Jd 3d 9s Tc]
+Seat 1: SB-calling_station folded | résultat -0.50 bb
+Seat 2: BB-nit_trappeur won uncontested | résultat +2.80 bb
+Seat 3: UTG-maniac folded | résultat -2.30 bb
+Seat 4: MP-nit folded | résultat +0.00 bb
+Seat 5: CO-maniac folded | résultat +0.00 bb
+Seat 6: BTN-serre folded | résultat +0.00 bb
+
+
+PokerLab Hand #12: Hold'em No Limit (€0.01/€0.02) - graine 5578083848611347119
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-serre (€2.00 in chips)
+Seat 2: BB-nit_trappeur (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-TAG (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-serre: posts small blind €0.01
+BB-nit_trappeur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-serre [6c 7c]
+UTG-calling_station: folds
+MP-TAG: folds
+CO-calling_station: folds
+BTN-calling_station: folds
+SB-serre: folds
+Uncalled bet (€0.01) returned to BB-nit_trappeur
+BB-nit_trappeur collected €0.02 from pot
+*** SUMMARY ***
+Total pot €0.02 | Rake €0.00
+Seat 1: SB-serre folded | résultat -0.50 bb
+Seat 2: BB-nit_trappeur won uncontested | résultat +0.50 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-TAG folded | résultat +0.00 bb
+Seat 5: CO-calling_station folded | résultat +0.00 bb
+Seat 6: BTN-calling_station folded | résultat +0.00 bb
+
+
+PokerLab Hand #13: Hold'em No Limit (€0.01/€0.02) - graine 5578083848611347119
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-serre (€2.00 in chips)
+Seat 3: UTG-nit_trappeur (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-TAG (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-serre: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-serre [5d 4c]
+UTG-nit_trappeur: folds
+MP-calling_station: calls €0.02
+CO-TAG: folds
+BTN-calling_station: folds
+SB-calling_station: folds
+BB-serre: checks
+*** FLOP *** [Th 7h Qc]
+BB-serre: checks
+MP-calling_station: bets €0.03
+BB-serre: folds
+Uncalled bet (€0.03) returned to MP-calling_station
+MP-calling_station collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Board [Th 7h Qc]
+Seat 1: SB-calling_station folded | résultat -0.50 bb
+Seat 2: BB-serre folded | résultat -1.00 bb
+Seat 3: UTG-nit_trappeur folded | résultat +0.00 bb
+Seat 4: MP-calling_station won uncontested | résultat +1.50 bb
+Seat 5: CO-TAG folded | résultat +0.00 bb
+Seat 6: BTN-calling_station folded | résultat +0.00 bb
+
+
+PokerLab Hand #14: Hold'em No Limit (€0.01/€0.02) - graine 5578083848611347119
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-serre (€2.00 in chips)
+Seat 4: MP-nit_trappeur (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-TAG (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to UTG-serre [2d 8h]
+UTG-serre: folds
+MP-nit_trappeur: folds
+CO-calling_station: folds
+BTN-TAG: folds
+SB-calling_station: folds
+Uncalled bet (€0.01) returned to BB-calling_station
+BB-calling_station collected €0.02 from pot
+*** SUMMARY ***
+Total pot €0.02 | Rake €0.00
+Seat 1: SB-calling_station folded | résultat -0.50 bb
+Seat 2: BB-calling_station won uncontested | résultat +0.50 bb
+Seat 3: UTG-serre folded | résultat +0.00 bb
+Seat 4: MP-nit_trappeur folded | résultat +0.00 bb
+Seat 5: CO-calling_station folded | résultat +0.00 bb
+Seat 6: BTN-TAG folded | résultat +0.00 bb
+
+
+PokerLab Hand #15: Hold'em No Limit (€0.01/€0.02) - graine 5578083848611347119
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-TAG (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-serre (€2.00 in chips)
+Seat 5: CO-nit_trappeur (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-TAG: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to MP-serre [7d Td]
+UTG-calling_station: folds
+MP-serre: folds
+CO-nit_trappeur: folds
+BTN-calling_station: folds
+SB-TAG: folds
+Uncalled bet (€0.01) returned to BB-calling_station
+BB-calling_station collected €0.02 from pot
+*** SUMMARY ***
+Total pot €0.02 | Rake €0.00
+Seat 1: SB-TAG folded | résultat -0.50 bb
+Seat 2: BB-calling_station won uncontested | résultat +0.50 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-serre folded | résultat +0.00 bb
+Seat 5: CO-nit_trappeur folded | résultat +0.00 bb
+Seat 6: BTN-calling_station folded | résultat +0.00 bb
+
+
+PokerLab Hand #16: Hold'em No Limit (€0.01/€0.02) - graine 5578083848611347119
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-TAG (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-serre (€2.00 in chips)
+Seat 6: BTN-nit_trappeur (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-TAG: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to CO-serre [8d 3h]
+UTG-calling_station: folds
+MP-calling_station: calls €0.02
+CO-serre: folds
+BTN-nit_trappeur: folds
+SB-calling_station: folds
+BB-TAG: checks
+*** FLOP *** [Th 7h Qc]
+BB-TAG: checks
+MP-calling_station: bets €0.03
+BB-TAG: folds
+Uncalled bet (€0.03) returned to MP-calling_station
+MP-calling_station collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Board [Th 7h Qc]
+Seat 1: SB-calling_station folded | résultat -0.50 bb
+Seat 2: BB-TAG folded | résultat -1.00 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-calling_station won uncontested | résultat +1.50 bb
+Seat 5: CO-serre folded | résultat +0.00 bb
+Seat 6: BTN-nit_trappeur folded | résultat +0.00 bb
+
+
+PokerLab Hand #17: Hold'em No Limit (€0.01/€0.02) - graine 5578083848611347119
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-nit_trappeur (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-TAG (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-serre (€2.00 in chips)
+SB-nit_trappeur: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BTN-serre [9d 6d]
+UTG-TAG: folds
+MP-calling_station: calls €0.02
+CO-calling_station: folds
+BTN-serre: folds
+SB-nit_trappeur: folds
+BB-calling_station: checks
+*** FLOP *** [Th 7h Qc]
+BB-calling_station: checks
+MP-calling_station: bets €0.03
+BB-calling_station: folds
+Uncalled bet (€0.03) returned to MP-calling_station
+MP-calling_station collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Board [Th 7h Qc]
+Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
+Seat 2: BB-calling_station folded | résultat -1.00 bb
+Seat 3: UTG-TAG folded | résultat +0.00 bb
+Seat 4: MP-calling_station won uncontested | résultat +1.50 bb
+Seat 5: CO-calling_station folded | résultat +0.00 bb
+Seat 6: BTN-serre folded | résultat +0.00 bb
+
+
+PokerLab Hand #18: Hold'em No Limit (€0.01/€0.02) - graine 8272428578288055825
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-serre (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-LAG (€2.00 in chips)
+SB-serre: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-serre [3d Th]
+UTG-maniac: folds
+MP-calling_station: calls €0.02
+CO-maniac: raises €0.06 to €0.08
+BTN-LAG: folds
+SB-serre: folds
+BB-maniac: raises €0.16 to €0.24
+MP-calling_station: folds
+CO-maniac: calls €0.16
+*** FLOP *** [Jh 3s 9d]
+BB-maniac: bets €0.41
+CO-maniac: calls €0.41
+*** TURN *** [Jh 3s 9d] [Kc]
+BB-maniac: bets €1.35 and is all-in
+CO-maniac: folds
+Uncalled bet (€1.35) returned to BB-maniac
+BB-maniac collected €1.33 from pot
+*** SUMMARY ***
+Total pot €1.33 | Rake €0.00
+Board [Jh 3s 9d Kc]
+Seat 1: SB-serre folded | résultat -0.50 bb
+Seat 2: BB-maniac won uncontested | résultat +33.90 bb
+Seat 3: UTG-maniac folded | résultat +0.00 bb
+Seat 4: MP-calling_station folded | résultat -1.00 bb
+Seat 5: CO-maniac folded | résultat -32.40 bb
+Seat 6: BTN-LAG folded | résultat +0.00 bb
+
+
+PokerLab Hand #19: Hold'em No Limit (€0.01/€0.02) - graine 8272428578288055825
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-LAG (€2.00 in chips)
+Seat 2: BB-serre (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-LAG: posts small blind €0.01
+BB-serre: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-serre [Ac Jc]
+UTG-maniac: folds
+MP-maniac: raises €0.04 to €0.06
+CO-calling_station: calls €0.06
+BTN-maniac: folds
+SB-LAG: folds
+BB-serre: folds
+*** FLOP *** [Jh 3s 9d]
+MP-maniac: bets €0.14
+CO-calling_station: calls €0.14
+*** TURN *** [Jh 3s 9d] [Kc]
+MP-maniac: bets €0.39
+CO-calling_station: folds
+Uncalled bet (€0.39) returned to MP-maniac
+MP-maniac collected €0.44 from pot
+*** SUMMARY ***
+Total pot €0.44 | Rake €0.00
+Board [Jh 3s 9d Kc]
+Seat 1: SB-LAG folded | résultat -0.50 bb
+Seat 2: BB-serre folded | résultat -1.00 bb
+Seat 3: UTG-maniac folded | résultat +0.00 bb
+Seat 4: MP-maniac won uncontested | résultat +11.73 bb
+Seat 5: CO-calling_station folded | résultat -10.23 bb
+Seat 6: BTN-maniac folded | résultat +0.00 bb
+
+
+PokerLab Hand #20: Hold'em No Limit (€0.01/€0.02) - graine 8272428578288055825
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-LAG (€2.00 in chips)
+Seat 3: UTG-serre (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-LAG: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to UTG-serre [4s 6d]
+UTG-serre: folds
+MP-maniac: raises €0.04 to €0.06
+CO-maniac: raises €0.12 to €0.18
+BTN-calling_station: folds
+SB-maniac: folds
+BB-LAG: folds
+MP-maniac: calls €0.12
+*** FLOP *** [Jh 3s 9d]
+MP-maniac: checks
+CO-maniac: bets €0.22
+MP-maniac: folds
+Uncalled bet (€0.22) returned to CO-maniac
+CO-maniac collected €0.39 from pot
+*** SUMMARY ***
+Total pot €0.39 | Rake €0.00
+Board [Jh 3s 9d]
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-LAG folded | résultat -1.00 bb
+Seat 3: UTG-serre folded | résultat +0.00 bb
+Seat 4: MP-maniac folded | résultat -9.00 bb
+Seat 5: CO-maniac won uncontested | résultat +10.50 bb
+Seat 6: BTN-calling_station folded | résultat +0.00 bb
+
+
+PokerLab Hand #21: Hold'em No Limit (€0.01/€0.02) - graine 8272428578288055825
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-LAG (€2.00 in chips)
+Seat 4: MP-serre (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to MP-serre [8h Kd]
+UTG-LAG: folds
+MP-serre: folds
+CO-maniac: raises €0.04 to €0.06
+BTN-maniac: folds
+SB-calling_station: folds
+BB-maniac: raises €0.12 to €0.18
+CO-maniac: calls €0.12
+*** FLOP *** [Jh 3s 9d]
+BB-maniac: bets €0.30
+CO-maniac: calls €0.30
+*** TURN *** [Jh 3s 9d] [Kc]
+BB-maniac: bets €0.69
+CO-maniac: calls €0.69
+*** RIVER *** [Jh 3s 9d Kc] [Tc]
+BB-maniac: bets €0.83 and is all-in
+CO-maniac: folds
+Uncalled bet (€0.83) returned to BB-maniac
+BB-maniac collected €2.34 from pot
+*** SUMMARY ***
+Total pot €2.34 | Rake €0.00
+Board [Jh 3s 9d Kc Tc]
+Seat 1: SB-calling_station folded | résultat -0.50 bb
+Seat 2: BB-maniac won uncontested | résultat +58.87 bb
+Seat 3: UTG-LAG folded | résultat +0.00 bb
+Seat 4: MP-serre folded | résultat +0.00 bb
+Seat 5: CO-maniac folded | résultat -58.37 bb
+Seat 6: BTN-maniac folded | résultat +0.00 bb
+
+
+PokerLab Hand #22: Hold'em No Limit (€0.01/€0.02) - graine 8272428578288055825
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-LAG (€2.00 in chips)
+Seat 5: CO-serre (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to CO-serre [9s As]
+UTG-maniac: folds
+MP-LAG: folds
+CO-serre: folds
+BTN-maniac: calls €0.02
+SB-maniac: folds
+BB-calling_station: raises €0.06 to €0.08
+BTN-maniac: folds
+Uncalled bet (€0.06) returned to BB-calling_station
+BB-calling_station collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-calling_station won uncontested | résultat +1.50 bb
+Seat 3: UTG-maniac folded | résultat +0.00 bb
+Seat 4: MP-LAG folded | résultat +0.00 bb
+Seat 5: CO-serre folded | résultat +0.00 bb
+Seat 6: BTN-maniac folded | résultat -1.00 bb
+
+
+PokerLab Hand #23: Hold'em No Limit (€0.01/€0.02) - graine 8272428578288055825
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-LAG (€2.00 in chips)
+Seat 6: BTN-serre (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BTN-serre [9h 7c]
+UTG-calling_station: folds
+MP-maniac: raises €0.04 to €0.06
+CO-LAG: raises €0.12 to €0.18
+BTN-serre: folds
+SB-maniac: folds
+BB-maniac: raises €1.82 to €2.00 and is all-in
+MP-maniac: folds
+CO-LAG: folds
+Uncalled bet (€1.82) returned to BB-maniac
+BB-maniac collected €0.43 from pot
+*** SUMMARY ***
+Total pot €0.43 | Rake €0.00
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-maniac won uncontested | résultat +12.50 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-maniac folded | résultat -3.00 bb
+Seat 5: CO-LAG folded | résultat -9.00 bb
+Seat 6: BTN-serre folded | résultat +0.00 bb
+
+
+PokerLab Hand #24: Hold'em No Limit (€0.01/€0.02) - graine 854846001741855291
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-serre (€2.00 in chips)
+Seat 2: BB-LAG (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-serre: posts small blind €0.01
+BB-LAG: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-serre [Qd 7s]
+UTG-maniac: folds
+MP-maniac: folds
+CO-calling_station: raises €0.04 to €0.06
+BTN-maniac: raises €0.12 to €0.18
+SB-serre: folds
+BB-LAG: folds
+CO-calling_station: raises €1.82 to €2.00 and is all-in
+BTN-maniac: folds
+Uncalled bet (€1.82) returned to CO-calling_station
+CO-calling_station collected €0.39 from pot
+*** SUMMARY ***
+Total pot €0.39 | Rake €0.00
+Seat 1: SB-serre folded | résultat -0.50 bb
+Seat 2: BB-LAG folded | résultat -1.00 bb
+Seat 3: UTG-maniac folded | résultat +0.00 bb
+Seat 4: MP-maniac folded | résultat +0.00 bb
+Seat 5: CO-calling_station won uncontested | résultat +10.50 bb
+Seat 6: BTN-maniac folded | résultat -9.00 bb
+
+
+PokerLab Hand #25: Hold'em No Limit (€0.01/€0.02) - graine 854846001741855291
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-serre (€2.00 in chips)
+Seat 3: UTG-LAG (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-serre: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-serre [4d 5c]
+UTG-LAG: folds
+MP-maniac: folds
+CO-maniac: raises €0.04 to €0.06
+BTN-calling_station: calls €0.06
+SB-maniac: calls €0.05
+BB-serre: folds
+*** FLOP *** [Js 2h Kh]
+SB-maniac: bets €0.17
+CO-maniac: raises €0.35 to €0.52
+BTN-calling_station: calls €0.52
+SB-maniac: folds
+*** TURN *** [Js 2h Kh] [Ah]
+CO-maniac: bets €1.42 and is all-in
+BTN-calling_station: calls €1.42 and is all-in
+*** RIVER *** [Js 2h Kh Ah] [8d]
+*** SHOW DOWN ***
+CO-maniac: shows [Ks Kc]
+BTN-calling_station: shows [Jd Ac]
+CO-maniac collected €4.25 from pot
+*** SUMMARY ***
+Total pot €4.25 | Rake €0.00
+Board [Js 2h Kh Ah 8d]
+Seat 1: SB-maniac folded | résultat -11.67 bb | all-in EV -11.67 bb
+Seat 2: BB-serre folded | résultat -1.00 bb | all-in EV -1.00 bb
+Seat 3: UTG-LAG folded | résultat +0.00 bb | all-in EV +0.00 bb
+Seat 4: MP-maniac folded | résultat +0.00 bb | all-in EV +0.00 bb
+Seat 5: CO-maniac showed [Ks Kc] | résultat +112.67 bb | all-in EV +103.00 bb
+Seat 6: BTN-calling_station showed [Jd Ac] | résultat -100.00 bb | all-in EV -90.33 bb
+
+
+PokerLab Hand #26: Hold'em No Limit (€0.01/€0.02) - graine 854846001741855291
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-serre (€2.00 in chips)
+Seat 4: MP-LAG (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to UTG-serre [7c 6s]
+UTG-serre: folds
+MP-LAG: folds
+CO-maniac: raises €0.04 to €0.06
+BTN-maniac: raises €0.12 to €0.18
+SB-calling_station: folds
+BB-maniac: folds
+CO-maniac: raises €1.82 to €2.00 and is all-in
+BTN-maniac: folds
+Uncalled bet (€1.82) returned to CO-maniac
+CO-maniac collected €0.39 from pot
+*** SUMMARY ***
+Total pot €0.39 | Rake €0.00
+Seat 1: SB-calling_station folded | résultat -0.50 bb
+Seat 2: BB-maniac folded | résultat -1.00 bb
+Seat 3: UTG-serre folded | résultat +0.00 bb
+Seat 4: MP-LAG folded | résultat +0.00 bb
+Seat 5: CO-maniac won uncontested | résultat +10.50 bb
+Seat 6: BTN-maniac folded | résultat -9.00 bb
+
+
+PokerLab Hand #27: Hold'em No Limit (€0.01/€0.02) - graine 854846001741855291
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-serre (€2.00 in chips)
+Seat 5: CO-LAG (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to MP-serre [2c 7h]
+UTG-maniac: folds
+MP-serre: folds
+CO-LAG: raises €0.04 to €0.06
+BTN-maniac: raises €0.12 to €0.18
+SB-maniac: folds
+BB-calling_station: folds
+CO-LAG: raises €1.82 to €2.00 and is all-in
+BTN-maniac: folds
+Uncalled bet (€1.82) returned to CO-LAG
+CO-LAG collected €0.39 from pot
+*** SUMMARY ***
+Total pot €0.39 | Rake €0.00
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-calling_station folded | résultat -1.00 bb
+Seat 3: UTG-maniac folded | résultat +0.00 bb
+Seat 4: MP-serre folded | résultat +0.00 bb
+Seat 5: CO-LAG won uncontested | résultat +10.50 bb
+Seat 6: BTN-maniac folded | résultat -9.00 bb
+
+
+PokerLab Hand #28: Hold'em No Limit (€0.01/€0.02) - graine 854846001741855291
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-serre (€2.00 in chips)
+Seat 6: BTN-LAG (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to CO-serre [Ks Kc]
+UTG-calling_station: folds
+MP-maniac: folds
+CO-serre: raises €0.04 to €0.06
+BTN-LAG: raises €0.12 to €0.18
+SB-maniac: folds
+BB-maniac: folds
+CO-serre: raises €1.82 to €2.00 and is all-in
+BTN-LAG: folds
+Uncalled bet (€1.82) returned to CO-serre
+CO-serre collected €0.39 from pot
+*** SUMMARY ***
+Total pot €0.39 | Rake €0.00
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-maniac folded | résultat -1.00 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-maniac folded | résultat +0.00 bb
+Seat 5: CO-serre won uncontested | résultat +10.50 bb
+Seat 6: BTN-LAG folded | résultat -9.00 bb
+
+
+PokerLab Hand #29: Hold'em No Limit (€0.01/€0.02) - graine 854846001741855291
+Table 'micro_play_money' 6-max Seat #6 is the button
+Seat 1: SB-LAG (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-serre (€2.00 in chips)
+SB-LAG: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BTN-serre [Jd Ac]
+UTG-maniac: folds
+MP-calling_station: folds
+CO-maniac: raises €0.04 to €0.06
+BTN-serre: folds
+SB-LAG: folds
+BB-maniac: folds
+Uncalled bet (€0.04) returned to CO-maniac
+CO-maniac collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Seat 1: SB-LAG folded | résultat -0.50 bb
+Seat 2: BB-maniac folded | résultat -1.00 bb
+Seat 3: UTG-maniac folded | résultat +0.00 bb
+Seat 4: MP-calling_station folded | résultat +0.00 bb
+Seat 5: CO-maniac won uncontested | résultat +1.50 bb
+Seat 6: BTN-serre folded | résultat +0.00 bb
