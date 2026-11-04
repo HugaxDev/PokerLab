@@ -1,0 +1,10 @@
+name: humains_simules
+label: Humains simulés
+description: "Profils humains typiques des tables en jetons fictifs (débutants qui paient trop, prudents qui se couchent trop, agressifs, réguliers moyens, pousseurs de tapis), avec erreurs aléatoires. Modélisation PokerLab, à ajuster."
+mode: sample
+weights:
+  humain_debutant: 0.35
+  humain_prudent: 0.20
+  humain_agressif: 0.15
+  humain_regulier: 0.15
+  humain_tapis: 0.15

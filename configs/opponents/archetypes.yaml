@@ -146,3 +146,124 @@ nit_trappeur:
 equity_bot:
   label: Equity bot
   type: equity_ref           # résolu vers configs/strategies/equity_bot.yaml
+
+# ---------------------------------------------------------------------------------------------
+# Archétypes « humains simulés » (composition humains_simules). Modélisation PokerLab, à ajuster :
+# profils typiques des tables en jetons fictifs, avec des erreurs aléatoires (noise = probabilité
+# de jouer une action légale au hasard à une décision donnée).
+humain_debutant:
+  label: Humain débutant (trop de paies)
+  vpip: 0.45
+  pfr: 0.10
+  three_bet: 0.03
+  limp: true
+  cold_call_share: 0.8
+  call_cap_bb: 6.0
+  bb_defend_cap_bb: 5.0
+  fold_to_3bet: 0.35
+  aggression: 0.4
+  cbet: 0.45
+  fold_to_cbet: 0.3
+  bluff: 0.06
+  semi_bluff: 0.3
+  thin_value: 0.2
+  call_weak: 0.75
+  float: 0.25
+  raise_value: 0.2
+  check_raise: 0.15
+  bluff_raise: 0.03
+  bet_size_pot: 0.55
+  stackoff_min_made: top_pair
+  big_bet_fraction: 1.2
+  noise: 0.06
+
+humain_prudent:
+  label: Humain prudent (trop de couchés)
+  vpip: 0.18
+  pfr: 0.11
+  three_bet: 0.03
+  cold_call_share: 0.5
+  call_cap_bb: 3.5
+  fold_to_3bet: 0.65
+  aggression: 0.45
+  cbet: 0.55
+  fold_to_cbet: 0.65
+  bluff: 0.03
+  semi_bluff: 0.2
+  thin_value: 0.1
+  call_weak: 0.2
+  float: 0.03
+  raise_value: 0.3
+  bet_size_pot: 0.6
+  stackoff_min_made: two_pair
+  noise: 0.03
+
+humain_agressif:
+  label: Humain agressif (bluffe beaucoup)
+  vpip: 0.35
+  pfr: 0.26
+  three_bet: 0.12
+  cold_call_share: 0.55
+  call_cap_bb: 6.0
+  fold_to_3bet: 0.3
+  aggression: 0.8
+  cbet: 0.85
+  fold_to_cbet: 0.3
+  bluff: 0.3
+  semi_bluff: 0.7
+  thin_value: 0.4
+  call_weak: 0.5
+  float: 0.2
+  raise_value: 0.5
+  check_raise: 0.2
+  bluff_raise: 0.1
+  bet_size_pot: 0.85
+  stackoff_min_made: top_pair
+  noise: 0.05
+
+humain_regulier:
+  label: Humain régulier (correct avec fuites)
+  vpip: 0.25
+  pfr: 0.19
+  three_bet: 0.07
+  cold_call_share: 0.5
+  call_cap_bb: 4.0
+  fold_to_3bet: 0.5
+  aggression: 0.65
+  cbet: 0.7
+  fold_to_cbet: 0.45
+  bluff: 0.12
+  semi_bluff: 0.5
+  thin_value: 0.3
+  call_weak: 0.45
+  float: 0.1
+  raise_value: 0.4
+  check_raise: 0.25
+  bluff_raise: 0.04
+  bet_size_pot: 0.66
+  stackoff_min_made: overpair
+  noise: 0.02
+
+humain_tapis:
+  label: Humain « tapis » (pousse souvent préflop)
+  vpip: 0.30
+  pfr: 0.20
+  three_bet: 0.15
+  four_bet: 0.08
+  open_size_bb: 100.0        # ouvre à tapis
+  cold_call_share: 0.6
+  call_cap_bb: 8.0
+  fold_to_3bet: 0.2
+  aggression: 0.7
+  cbet: 0.6
+  fold_to_cbet: 0.35
+  bluff: 0.25
+  semi_bluff: 0.6
+  call_weak: 0.6
+  float: 0.2
+  raise_value: 0.5
+  bluff_raise: 0.1
+  bet_size_pot: 1.5
+  stackoff_min_made: weak_pair
+  big_bet_fraction: 2.0
+  noise: 0.05

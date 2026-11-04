@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 from pokerlab.engine.history import format_hand
+from pokerlab.analysis.robustness import cell_summaries, robustness_table
 from pokerlab.experiments.base import ExperimentContext, apply_holm, composition_dict, pairwise_tests, save_outputs
 from pokerlab.experiments.common import replay_duplicate_hand
 from pokerlab.experiments.duplicate import Autostop, Cell, collect, run_cells
@@ -53,6 +54,7 @@ def run(ctx: ExperimentContext) -> dict[str, Any]:
     report = build_report(ctx, cells, hands, decisions, flags, progress, strategies, compositions)
     histories = sample_histories(ctx, cells, hands, int(cfg.get("history_samples", 20)))
     summary = {"cellules": {k: {"decks": p.decks, "arret": p.stopped, "bb100_metric": p.bb100()} for k, p in progress.items()},
+               "resultats": cell_summaries(hands, ctx.confidence),
                "corrections_actions": corrections}
     paths = save_outputs(ctx, report, hands, decisions, histories, summary)
     return {"report": report, "paths": paths, "hands": hands, "decisions": decisions, "flags": flags, "cells": cells}
@@ -103,6 +105,17 @@ def build_report(ctx, cells, hands, decisions, flags, progress, strategies, comp
     for j, comp in enumerate(compositions):
         mtable[comp] = [f"{matrix[i, j]:+.1f} ± {halfs[i, j]:.1f}" if np.isfinite(matrix[i, j]) else "–" for i in range(len(names))]
     sec.table(mtable, "Table de lecture de la matrice (IC 95 %).")
+    if len(compositions) > 1:
+        rob = robustness_table(pd.DataFrame(cell_summaries(hands, conf)))
+        rob_view = pd.DataFrame({
+            "stratégie": [labels.get(x, x) for x in rob["strategy"]],
+            "score de robustesse (bb/100)": rob["score_robustesse"],
+            "pire composition": rob["pire_composition"],
+            "rang moyen": rob["rang_moyen"],
+            "bb/100 moyen": rob["bb100_moyen"],
+        })
+        sec.table(rob_view, "Score de robustesse = pire borne basse de l'IC 95 % sur les compositions : "
+                  "le gain garanti quelle que soit la table.")
     # Tests appariés
     tests = []
     for comp in compositions:

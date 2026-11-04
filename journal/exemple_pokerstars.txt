@@ -1,0 +1,3872 @@
+# EXEMPLE INVENTÉ : mains simulées par PokerLab au format PokerStars (jetons fictifs). Ce ne sont PAS de vraies mains.
+
+
+PokerStars Hand #250000000001:  Hold'em No Limit (50/100) - 2026/10/20 21:00:00 CET
+Table 'Exemple 1' 6-max Seat #1 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (10000 in chips)
+Seat 5: Joueur04 (10000 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur01: posts small blind 50
+Joueur02: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9d Ah]
+Joueur03: folds
+Joueur04: folds
+Joueur05: folds
+Hero: raises 200 to 300
+Joueur01: calls 250
+Joueur02: folds
+*** FLOP *** [8s 6d 6s]
+Joueur01: checks
+Hero: bets 231
+Joueur01: folds
+Uncalled bet (231) returned to Hero
+Hero collected 700 from pot
+*** SUMMARY ***
+Total pot 700 | Rake 0
+Board [8s 6d 6s]
+
+
+PokerStars Hand #250000000002:  Hold'em No Limit (50/100) - 2026/10/20 21:00:55 CET
+Table 'Exemple 1' 6-max Seat #2 is the button
+Seat 1: Hero (10400 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (10000 in chips)
+Seat 5: Joueur04 (10000 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur02: posts small blind 50
+Joueur03: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9h 5s]
+Joueur04: raises 200 to 300
+Joueur05: folds
+Hero: folds
+Joueur01: folds
+Joueur02: folds
+Joueur03: folds
+Uncalled bet (200) returned to Joueur04
+Joueur04 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+
+
+PokerStars Hand #250000000003:  Hold'em No Limit (50/100) - 2026/10/20 21:01:50 CET
+Table 'Exemple 1' 6-max Seat #3 is the button
+Seat 1: Hero (10400 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (10000 in chips)
+Seat 5: Joueur04 (10150 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur03: posts small blind 50
+Joueur04: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8c 4d]
+Joueur05: raises 200 to 300
+Hero: folds
+Joueur01: calls 300
+Joueur02: folds
+Joueur03: folds
+Joueur04: calls 200
+*** FLOP *** [Jh Js 2d]
+Joueur04: checks
+Joueur05: bets 744
+Joueur01: folds
+Joueur04: folds
+Uncalled bet (744) returned to Joueur05
+Joueur05 collected 950 from pot
+*** SUMMARY ***
+Total pot 950 | Rake 0
+Board [Jh Js 2d]
+
+
+PokerStars Hand #250000000004:  Hold'em No Limit (50/100) - 2026/10/20 21:02:45 CET
+Table 'Exemple 1' 6-max Seat #4 is the button
+Seat 1: Hero (10400 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (10000 in chips)
+Seat 5: Joueur04 (10000 in chips)
+Seat 6: Joueur05 (10650 in chips)
+Joueur04: posts small blind 50
+Joueur05: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8c Ks]
+Hero: folds
+Joueur01: calls 100
+Joueur02: folds
+Joueur03: calls 100
+Joueur04: calls 50
+Joueur05: checks
+*** FLOP *** [3s Jc Ac]
+Joueur04: checks
+Joueur05: checks
+Joueur01: checks
+Joueur03: checks
+*** TURN *** [3s Jc Ac] [5d]
+Joueur04: bets 340
+Joueur05: calls 340
+Joueur01: calls 340
+Joueur03: calls 340
+*** RIVER *** [3s Jc Ac 5d] [2c]
+Joueur04: bets 1806
+Joueur05: calls 1806
+Joueur01: calls 1806
+Joueur03: calls 1806
+*** SHOW DOWN ***
+Joueur04: shows [Qd 4c]
+Joueur05: shows [4h Jd]
+Joueur01: shows [Kh 3d]
+Joueur03: shows [8h Qc]
+Joueur04 collected 4492 from pot
+Joueur05 collected 4492 from pot
+*** SUMMARY ***
+Total pot 8984 | Rake 0
+Board [3s Jc Ac 5d 2c]
+
+
+PokerStars Hand #250000000005:  Hold'em No Limit (50/100) - 2026/10/20 21:03:40 CET
+Table 'Exemple 1' 6-max Seat #5 is the button
+Seat 1: Hero (10400 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (10000 in chips)
+Seat 5: Joueur04 (12246 in chips)
+Seat 6: Joueur05 (12896 in chips)
+Joueur05: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ah Ks]
+Joueur01: folds
+Joueur02: folds
+Joueur03: calls 100
+Joueur04: raises 300 to 400
+Joueur05: folds
+Hero: raises 800 to 1200
+Joueur03: folds
+Joueur04: calls 800
+*** FLOP *** [2h 3s Ad]
+Hero: bets 1275
+Joueur04: calls 1275
+*** TURN *** [2h 3s Ad] [9c]
+Hero: bets 2550
+Joueur04: calls 2550
+*** RIVER *** [2h 3s Ad 9c] [3c]
+Hero: bets 5375 and is all-in
+Joueur04: calls 5375
+*** SHOW DOWN ***
+Hero: shows [Ah Ks]
+Joueur04: shows [5d Ac]
+Hero collected 20950 from pot
+*** SUMMARY ***
+Total pot 20950 | Rake 0
+Board [2h 3s Ad 9c 3c]
+
+
+PokerStars Hand #250000000006:  Hold'em No Limit (50/100) - 2026/10/20 21:04:35 CET
+Table 'Exemple 1' 6-max Seat #6 is the button
+Seat 1: Hero (20950 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (10000 in chips)
+Seat 5: Joueur04 (10000 in chips)
+Seat 6: Joueur05 (12846 in chips)
+Hero: posts small blind 50
+Joueur01: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ks Js]
+Joueur02: folds
+Joueur03: folds
+Joueur04: folds
+Joueur05: raises 200 to 300
+Hero: calls 250
+Joueur01: folds
+*** FLOP *** [4s As 9d]
+Hero: bets 231
+Joueur05: folds
+Uncalled bet (231) returned to Hero
+Hero collected 700 from pot
+*** SUMMARY ***
+Total pot 700 | Rake 0
+Board [4s As 9d]
+
+
+PokerStars Hand #250000000007:  Hold'em No Limit (50/100) - 2026/10/20 21:05:30 CET
+Table 'Exemple 1' 6-max Seat #1 is the button
+Seat 1: Hero (21350 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (10000 in chips)
+Seat 5: Joueur04 (10000 in chips)
+Seat 6: Joueur05 (12546 in chips)
+Joueur01: posts small blind 50
+Joueur02: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9d Kd]
+Joueur03: calls 100
+Joueur04: raises 300 to 400
+Joueur05: folds
+Hero: calls 400
+Joueur01: folds
+Joueur02: folds
+Joueur03: calls 300
+*** FLOP *** [6c Ac Th]
+Joueur03: checks
+Joueur04: bets 1076
+Hero: folds
+Joueur03: calls 1076
+*** TURN *** [6c Ac Th] [2d]
+Joueur03: checks
+Joueur04: bets 2380
+Joueur03: calls 2380
+*** RIVER *** [6c Ac Th 2d] [8s]
+Joueur03: checks
+Joueur04: bets 6144 and is all-in
+Joueur03: calls 6144 and is all-in
+*** SHOW DOWN ***
+Joueur03: shows [Ah 3s]
+Joueur04: shows [Jd 6d]
+Joueur03 collected 20550 from pot
+*** SUMMARY ***
+Total pot 20550 | Rake 0
+Board [6c Ac Th 2d 8s]
+
+
+PokerStars Hand #250000000008:  Hold'em No Limit (50/100) - 2026/10/20 21:06:25 CET
+Table 'Exemple 1' 6-max Seat #2 is the button
+Seat 1: Hero (20950 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (20550 in chips)
+Seat 5: Joueur04 (10000 in chips)
+Seat 6: Joueur05 (12546 in chips)
+Joueur02: posts small blind 50
+Joueur03: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Th 3s]
+Joueur04: raises 200 to 300
+Joueur05: folds
+Hero: folds
+Joueur01: calls 300
+Joueur02: folds
+Joueur03: calls 200
+*** FLOP *** [8c 4c Ah]
+Joueur03: checks
+Joueur04: bets 824
+Joueur01: calls 824
+Joueur03: calls 824
+*** TURN *** [8c 4c Ah] [Ad]
+Joueur03: checks
+Joueur04: bets 1862
+Joueur01: folds
+Joueur03: calls 1862
+*** RIVER *** [8c 4c Ah Ad] [6c]
+Joueur03: checks
+Joueur04: bets 7014 and is all-in
+Joueur03: folds
+Uncalled bet (7014) returned to Joueur04
+Joueur04 collected 7146 from pot
+*** SUMMARY ***
+Total pot 7146 | Rake 0
+Board [8c 4c Ah Ad 6c]
+
+
+PokerStars Hand #250000000009:  Hold'em No Limit (50/100) - 2026/10/20 21:07:20 CET
+Table 'Exemple 1' 6-max Seat #3 is the button
+Seat 1: Hero (20950 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (17564 in chips)
+Seat 5: Joueur04 (14160 in chips)
+Seat 6: Joueur05 (12546 in chips)
+Joueur03: posts small blind 50
+Joueur04: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [4h Jc]
+Joueur05: raises 200 to 300
+Hero: folds
+Joueur01: folds
+Joueur02: folds
+Joueur03: calls 250
+Joueur04: folds
+*** FLOP *** [4s 9s 5d]
+Joueur03: checks
+Joueur05: checks
+*** TURN *** [4s 9s 5d] [3s]
+Joueur03: checks
+Joueur05: bets 461
+Joueur03: calls 461
+*** RIVER *** [4s 9s 5d 3s] [Qs]
+Joueur03: checks
+Joueur05: checks
+*** SHOW DOWN ***
+Joueur03: shows [7h Kd]
+Joueur05: shows [Ad 6d]
+Joueur05 collected 1622 from pot
+*** SUMMARY ***
+Total pot 1622 | Rake 0
+Board [4s 9s 5d 3s Qs]
+
+
+PokerStars Hand #250000000010:  Hold'em No Limit (50/100) - 2026/10/20 21:08:15 CET
+Table 'Exemple 1' 6-max Seat #4 is the button
+Seat 1: Hero (20950 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16803 in chips)
+Seat 5: Joueur04 (14060 in chips)
+Seat 6: Joueur05 (13407 in chips)
+Joueur04: posts small blind 50
+Joueur05: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Jd Tc]
+Hero: raises 200 to 300
+Joueur01: folds
+Joueur02: folds
+Joueur03: folds
+Joueur04: raises 600 to 900
+Joueur05: folds
+Hero: folds
+Uncalled bet (600) returned to Joueur04
+Joueur04 collected 700 from pot
+*** SUMMARY ***
+Total pot 700 | Rake 0
+
+
+PokerStars Hand #250000000011:  Hold'em No Limit (50/100) - 2026/10/20 21:09:10 CET
+Table 'Exemple 1' 6-max Seat #5 is the button
+Seat 1: Hero (20650 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16803 in chips)
+Seat 5: Joueur04 (14460 in chips)
+Seat 6: Joueur05 (13307 in chips)
+Joueur05: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [3h 5d]
+Joueur01: folds
+Joueur02: folds
+Joueur03: folds
+Joueur04: folds
+Joueur05: folds
+Uncalled bet (50) returned to Hero
+Hero collected 100 from pot
+*** SUMMARY ***
+Total pot 100 | Rake 0
+
+
+PokerStars Hand #250000000012:  Hold'em No Limit (50/100) - 2026/10/20 21:10:05 CET
+Table 'Exemple 1' 6-max Seat #6 is the button
+Seat 1: Hero (20700 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16803 in chips)
+Seat 5: Joueur04 (14460 in chips)
+Seat 6: Joueur05 (13257 in chips)
+Hero: posts small blind 50
+Joueur01: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ts Jh]
+Joueur02: folds
+Joueur03: folds
+Joueur04: folds
+Joueur05: folds
+Hero: raises 200 to 300
+Joueur01: folds
+Uncalled bet (200) returned to Hero
+Hero collected 200 from pot
+*** SUMMARY ***
+Total pot 200 | Rake 0
+
+
+PokerStars Hand #250000000013:  Hold'em No Limit (50/100) - 2026/10/20 21:11:00 CET
+Table 'Exemple 1' 6-max Seat #1 is the button
+Seat 1: Hero (20800 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16803 in chips)
+Seat 5: Joueur04 (14460 in chips)
+Seat 6: Joueur05 (13257 in chips)
+Joueur01: posts small blind 50
+Joueur02: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7s 3h]
+Joueur03: folds
+Joueur04: raises 200 to 300
+Joueur05: folds
+Hero: folds
+Joueur01: folds
+Joueur02: folds
+Uncalled bet (200) returned to Joueur04
+Joueur04 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+
+
+PokerStars Hand #250000000014:  Hold'em No Limit (50/100) - 2026/10/20 21:11:55 CET
+Table 'Exemple 1' 6-max Seat #2 is the button
+Seat 1: Hero (20800 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16803 in chips)
+Seat 5: Joueur04 (14610 in chips)
+Seat 6: Joueur05 (13257 in chips)
+Joueur02: posts small blind 50
+Joueur03: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Tc Ah]
+Joueur04: raises 200 to 300
+Joueur05: folds
+Hero: calls 300
+Joueur01: calls 300
+Joueur02: folds
+Joueur03: folds
+*** FLOP *** [9s Ad Jd]
+Joueur04: bets 1029
+Hero: calls 1029
+Joueur01: folds
+*** TURN *** [9s Ad Jd] [2d]
+Joueur04: bets 2126
+Hero: folds
+Uncalled bet (2126) returned to Joueur04
+Joueur04 collected 3108 from pot
+*** SUMMARY ***
+Total pot 3108 | Rake 0
+Board [9s Ad Jd 2d]
+
+
+PokerStars Hand #250000000015:  Hold'em No Limit (50/100) - 2026/10/20 21:12:50 CET
+Table 'Exemple 1' 6-max Seat #3 is the button
+Seat 1: Hero (19471 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16703 in chips)
+Seat 5: Joueur04 (16389 in chips)
+Seat 6: Joueur05 (13257 in chips)
+Joueur03: posts small blind 50
+Joueur04: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8s 5c]
+Joueur05: folds
+Hero: folds
+Joueur01: folds
+Joueur02: folds
+Joueur03: folds
+Uncalled bet (50) returned to Joueur04
+Joueur04 collected 100 from pot
+*** SUMMARY ***
+Total pot 100 | Rake 0
+
+
+PokerStars Hand #250000000016:  Hold'em No Limit (50/100) - 2026/10/20 21:13:45 CET
+Table 'Exemple 1' 6-max Seat #4 is the button
+Seat 1: Hero (19471 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16653 in chips)
+Seat 5: Joueur04 (16439 in chips)
+Seat 6: Joueur05 (13257 in chips)
+Joueur04: posts small blind 50
+Joueur05: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [5c 2h]
+Hero: folds
+Joueur01: calls 100
+Joueur02: folds
+Joueur03: calls 100
+Joueur04: raises 400 to 500
+Joueur05: folds
+Joueur01: calls 400
+Joueur03: folds
+*** FLOP *** [3d 6h 7d]
+Joueur04: bets 1219
+Joueur01: folds
+Uncalled bet (1219) returned to Joueur04
+Joueur04 collected 1200 from pot
+*** SUMMARY ***
+Total pot 1200 | Rake 0
+Board [3d 6h 7d]
+
+
+PokerStars Hand #250000000017:  Hold'em No Limit (50/100) - 2026/10/20 21:14:40 CET
+Table 'Exemple 1' 6-max Seat #5 is the button
+Seat 1: Hero (19471 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16553 in chips)
+Seat 5: Joueur04 (17139 in chips)
+Seat 6: Joueur05 (13157 in chips)
+Joueur05: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Jh 7d]
+Joueur01: folds
+Joueur02: folds
+Joueur03: folds
+Joueur04: calls 100
+Joueur05: raises 300 to 400
+Hero: folds
+Joueur04: folds
+Uncalled bet (300) returned to Joueur05
+Joueur05 collected 300 from pot
+*** SUMMARY ***
+Total pot 300 | Rake 0
+
+
+PokerStars Hand #250000000018:  Hold'em No Limit (50/100) - 2026/10/20 21:15:35 CET
+Table 'Exemple 1' 6-max Seat #6 is the button
+Seat 1: Hero (19371 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16553 in chips)
+Seat 5: Joueur04 (17039 in chips)
+Seat 6: Joueur05 (13357 in chips)
+Hero: posts small blind 50
+Joueur01: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Jd 3h]
+Joueur02: folds
+Joueur03: calls 100
+Joueur04: raises 300 to 400
+Joueur05: folds
+Hero: folds
+Joueur01: folds
+Joueur03: calls 300
+*** FLOP *** [9s 6d Ac]
+Joueur03: bets 437
+Joueur04: folds
+Uncalled bet (437) returned to Joueur03
+Joueur03 collected 950 from pot
+*** SUMMARY ***
+Total pot 950 | Rake 0
+Board [9s 6d Ac]
+
+
+PokerStars Hand #250000000019:  Hold'em No Limit (50/100) - 2026/10/20 21:16:30 CET
+Table 'Exemple 1' 6-max Seat #1 is the button
+Seat 1: Hero (19321 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (17103 in chips)
+Seat 5: Joueur04 (16639 in chips)
+Seat 6: Joueur05 (13357 in chips)
+Joueur01: posts small blind 50
+Joueur02: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2d Tc]
+Joueur03: folds
+Joueur04: raises 200 to 300
+Joueur05: folds
+Hero: folds
+Joueur01: calls 250
+Joueur02: folds
+*** FLOP *** [Kh 8h 9s]
+Joueur01: checks
+Joueur04: bets 595
+Joueur01: calls 595
+*** TURN *** [Kh 8h 9s] [5c]
+Joueur01: checks
+Joueur04: bets 1583
+Joueur01: calls 1583
+*** RIVER *** [Kh 8h 9s 5c] [7s]
+Joueur01: bets 2647
+Joueur04: raises 5294 to 7941
+Joueur01: calls 4875 and is all-in
+Uncalled bet (419) returned to Joueur04
+*** SHOW DOWN ***
+Joueur01: shows [Kc Qc]
+Joueur04: shows [Kd 8s]
+Joueur04 collected 20100 from pot
+*** SUMMARY ***
+Total pot 20100 | Rake 0
+Board [Kh 8h 9s 5c 7s]
+
+
+PokerStars Hand #250000000020:  Hold'em No Limit (50/100) - 2026/10/20 21:17:25 CET
+Table 'Exemple 1' 6-max Seat #2 is the button
+Seat 1: Hero (19321 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (17103 in chips)
+Seat 5: Joueur04 (26739 in chips)
+Seat 6: Joueur05 (13357 in chips)
+Joueur02: posts small blind 50
+Joueur03: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ac 3d]
+Joueur04: raises 200 to 300
+Joueur05: folds
+Hero: calls 300
+Joueur01: folds
+Joueur02: folds
+Joueur03: calls 200
+*** FLOP *** [8h 4d Jc]
+Joueur03: checks
+Joueur04: checks
+Hero: checks
+*** TURN *** [8h 4d Jc] [Ts]
+Joueur03: checks
+Joueur04: bets 782
+Hero: folds
+Joueur03: calls 782
+*** RIVER *** [8h 4d Jc Ts] [8c]
+Joueur03: checks
+Joueur04: bets 2339
+Joueur03: folds
+Uncalled bet (2339) returned to Joueur04
+Joueur04 collected 2514 from pot
+*** SUMMARY ***
+Total pot 2514 | Rake 0
+Board [8h 4d Jc Ts 8c]
+
+
+PokerStars Hand #250000000021:  Hold'em No Limit (50/100) - 2026/10/20 21:18:20 CET
+Table 'Exemple 1' 6-max Seat #3 is the button
+Seat 1: Hero (19021 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16021 in chips)
+Seat 5: Joueur04 (28171 in chips)
+Seat 6: Joueur05 (13357 in chips)
+Joueur03: posts small blind 50
+Joueur04: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Td Jc]
+Joueur05: raises 200 to 300
+Hero: calls 300
+Joueur01: calls 300
+Joueur02: calls 300
+Joueur03: calls 250
+Joueur04: calls 200
+*** FLOP *** [4d 4h 7h]
+Joueur03: checks
+Joueur04: bets 1646
+Joueur05: folds
+Hero: folds
+Joueur01: folds
+Joueur02: folds
+Joueur03: calls 1646
+*** TURN *** [4d 4h 7h] [3d]
+Joueur03: checks
+Joueur04: checks
+*** RIVER *** [4d 4h 7h 3d] [Tc]
+Joueur03: checks
+Joueur04: bets 4991
+Joueur03: calls 4991
+*** SHOW DOWN ***
+Joueur03: shows [Qs Jh]
+Joueur04: shows [Jd 8h]
+Joueur03 collected 15074 from pot
+*** SUMMARY ***
+Total pot 15074 | Rake 0
+Board [4d 4h 7h 3d Tc]
+
+
+PokerStars Hand #250000000022:  Hold'em No Limit (50/100) - 2026/10/20 21:19:15 CET
+Table 'Exemple 1' 6-max Seat #4 is the button
+Seat 1: Hero (18721 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (24158 in chips)
+Seat 5: Joueur04 (21234 in chips)
+Seat 6: Joueur05 (13057 in chips)
+Joueur04: posts small blind 50
+Joueur05: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [3c Js]
+Hero: folds
+Joueur01: calls 100
+Joueur02: raises 300 to 400
+Joueur03: folds
+Joueur04: calls 350
+Joueur05: folds
+Joueur01: calls 300
+*** FLOP *** [5d Qd 5s]
+Joueur04: checks
+Joueur01: checks
+Joueur02: checks
+*** TURN *** [5d Qd 5s] [6h]
+Joueur04: checks
+Joueur01: checks
+Joueur02: bets 694
+Joueur04: raises 1388 to 2082
+Joueur01: folds
+Joueur02: folds
+Uncalled bet (1388) returned to Joueur04
+Joueur04 collected 2688 from pot
+*** SUMMARY ***
+Total pot 2688 | Rake 0
+Board [5d Qd 5s 6h]
+
+
+PokerStars Hand #250000000023:  Hold'em No Limit (50/100) - 2026/10/20 21:20:10 CET
+Table 'Exemple 1' 6-max Seat #5 is the button
+Seat 1: Hero (18721 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (24158 in chips)
+Seat 5: Joueur04 (22828 in chips)
+Seat 6: Joueur05 (12957 in chips)
+Joueur05: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8h 3h]
+Joueur01: calls 100
+Joueur02: folds
+Joueur03: calls 100
+Joueur04: folds
+Joueur05: folds
+Hero: checks
+*** FLOP *** [Kh 7s 2s]
+Hero: checks
+Joueur01: checks
+Joueur03: checks
+*** TURN *** [Kh 7s 2s] [Th]
+Hero: bets 116
+Joueur01: calls 116
+Joueur03: calls 116
+*** RIVER *** [Kh 7s 2s Th] [Ah]
+Hero: bets 349
+Joueur01: folds
+Joueur03: calls 349
+*** SHOW DOWN ***
+Hero: shows [8h 3h]
+Joueur03: shows [Kd 5s]
+Hero collected 1396 from pot
+*** SUMMARY ***
+Total pot 1396 | Rake 0
+Board [Kh 7s 2s Th Ah]
+
+
+PokerStars Hand #250000000024:  Hold'em No Limit (50/100) - 2026/10/20 21:21:05 CET
+Table 'Exemple 1' 6-max Seat #6 is the button
+Seat 1: Hero (19552 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (23593 in chips)
+Seat 5: Joueur04 (22828 in chips)
+Seat 6: Joueur05 (12907 in chips)
+Hero: posts small blind 50
+Joueur01: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9d Ac]
+Joueur02: folds
+Joueur03: folds
+Joueur04: raises 200 to 300
+Joueur05: folds
+Hero: calls 250
+Joueur01: folds
+*** FLOP *** [2d 6s 8s]
+Hero: checks
+Joueur04: checks
+*** TURN *** [2d 6s 8s] [Kc]
+Hero: checks
+Joueur04: checks
+*** RIVER *** [2d 6s 8s Kc] [5d]
+Hero: checks
+Joueur04: bets 715
+Hero: folds
+Uncalled bet (715) returned to Joueur04
+Joueur04 collected 700 from pot
+*** SUMMARY ***
+Total pot 700 | Rake 0
+Board [2d 6s 8s Kc 5d]
+
+
+PokerStars Hand #250000000025:  Hold'em No Limit (50/100) - 2026/10/20 21:22:00 CET
+Table 'Exemple 1' 6-max Seat #1 is the button
+Seat 1: Hero (19252 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (23593 in chips)
+Seat 5: Joueur04 (23228 in chips)
+Seat 6: Joueur05 (12907 in chips)
+Joueur01: posts small blind 50
+Joueur02: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Kc 4s]
+Joueur03: calls 100
+Joueur04: folds
+Joueur05: folds
+Hero: folds
+Joueur01: calls 50
+Joueur02: checks
+*** FLOP *** [Td 2h 7d]
+Joueur01: bets 157
+Joueur02: folds
+Joueur03: folds
+Uncalled bet (157) returned to Joueur01
+Joueur01 collected 300 from pot
+*** SUMMARY ***
+Total pot 300 | Rake 0
+Board [Td 2h 7d]
+
+
+PokerStars Hand #250000000026:  Hold'em No Limit (50/100) - 2026/10/20 21:22:55 CET
+Table 'Exemple 1' 6-max Seat #2 is the button
+Seat 1: Hero (19252 in chips)
+Seat 2: Joueur01 (10200 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (23493 in chips)
+Seat 5: Joueur04 (23228 in chips)
+Seat 6: Joueur05 (12907 in chips)
+Joueur02: posts small blind 50
+Joueur03: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [5s Ks]
+Joueur04: folds
+Joueur05: folds
+Hero: raises 200 to 300
+Joueur01: folds
+Joueur02: folds
+Joueur03: folds
+Uncalled bet (200) returned to Hero
+Hero collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+
+
+PokerStars Hand #250000000027:  Hold'em No Limit (50/100) - 2026/10/20 21:23:50 CET
+Table 'Exemple 1' 6-max Seat #3 is the button
+Seat 1: Hero (19402 in chips)
+Seat 2: Joueur01 (10200 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (23393 in chips)
+Seat 5: Joueur04 (23228 in chips)
+Seat 6: Joueur05 (12907 in chips)
+Joueur03: posts small blind 50
+Joueur04: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7d As]
+Joueur05: raises 200 to 300
+Hero: calls 300
+Joueur01: folds
+Joueur02: folds
+Joueur03: calls 250
+Joueur04: raises 600 to 900
+Joueur05: calls 600
+Hero: folds
+Joueur03: folds
+*** FLOP *** [4h 6c 8h]
+Joueur04: bets 2470
+Joueur05: calls 2470
+*** TURN *** [4h 6c 8h] [8d]
+Joueur04: bets 6124
+Joueur05: calls 6124
+*** RIVER *** [4h 6c 8h 8d] [5h]
+Joueur04: bets 13734 and is all-in
+Joueur05: calls 3413 and is all-in
+Uncalled bet (10321) returned to Joueur04
+*** SHOW DOWN ***
+Joueur04: shows [Ah Jh]
+Joueur05: shows [9d 9h]
+Joueur04 collected 26414 from pot
+*** SUMMARY ***
+Total pot 26414 | Rake 0
+Board [4h 6c 8h 8d 5h]
+
+
+PokerStars Hand #250000000028:  Hold'em No Limit (50/100) - 2026/10/20 21:24:45 CET
+Table 'Exemple 1' 6-max Seat #4 is the button
+Seat 1: Hero (19102 in chips)
+Seat 2: Joueur01 (10200 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (23093 in chips)
+Seat 5: Joueur04 (36735 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur04: posts small blind 50
+Joueur05: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7s 4h]
+Hero: folds
+Joueur01: folds
+Joueur02: folds
+Joueur03: folds
+Joueur04: raises 200 to 300
+Joueur05: folds
+Uncalled bet (200) returned to Joueur04
+Joueur04 collected 200 from pot
+*** SUMMARY ***
+Total pot 200 | Rake 0
+
+
+PokerStars Hand #250000000029:  Hold'em No Limit (50/100) - 2026/10/20 21:25:40 CET
+Table 'Exemple 1' 6-max Seat #5 is the button
+Seat 1: Hero (19102 in chips)
+Seat 2: Joueur01 (10200 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (23093 in chips)
+Seat 5: Joueur04 (36835 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur05: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [5s 3s]
+Joueur01: raises 200 to 300
+Joueur02: folds
+Joueur03: folds
+Joueur04: raises 600 to 900
+Joueur05: folds
+Hero: folds
+Joueur01: raises 9300 to 10200 and is all-in
+Joueur04: folds
+Uncalled bet (9300) returned to Joueur01
+Joueur01 collected 1950 from pot
+*** SUMMARY ***
+Total pot 1950 | Rake 0
+
+
+PokerStars Hand #250000000030:  Hold'em No Limit (50/100) - 2026/10/20 21:26:35 CET
+Table 'Exemple 1' 6-max Seat #6 is the button
+Seat 1: Hero (19002 in chips)
+Seat 2: Joueur01 (11250 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (23093 in chips)
+Seat 5: Joueur04 (35935 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Hero: posts small blind 50
+Joueur01: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ts 9h]
+Joueur02: folds
+Joueur03: calls 100
+Joueur04: raises 300 to 400
+Joueur05: folds
+Hero: folds
+Joueur01: calls 300
+Joueur03: folds
+*** FLOP *** [4c 6s 5s]
+Joueur01: checks
+Joueur04: bets 921
+Joueur01: calls 921
+*** TURN *** [4c 6s 5s] [Jh]
+Joueur01: checks
+Joueur04: checks
+*** RIVER *** [4c 6s 5s Jh] [5h]
+Joueur01: checks
+Joueur04: bets 2284
+Joueur01: folds
+Uncalled bet (2284) returned to Joueur04
+Joueur04 collected 2792 from pot
+*** SUMMARY ***
+Total pot 2792 | Rake 0
+Board [4c 6s 5s Jh 5h]
+
+
+PokerStars Hand #250000000031:  Hold'em No Limit (50/100) - 2026/10/20 21:27:30 CET
+Table 'Exemple 1' 6-max Seat #1 is the button
+Seat 1: Hero (18952 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (22993 in chips)
+Seat 5: Joueur04 (37406 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur01: posts small blind 50
+Joueur02: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ah 8d]
+Joueur03: folds
+Joueur04: raises 200 to 300
+Joueur05: folds
+Hero: calls 300
+Joueur01: folds
+Joueur02: folds
+*** FLOP *** [5h 2s 5s]
+Joueur04: checks
+Hero: checks
+*** TURN *** [5h 2s 5s] [Qd]
+Joueur04: checks
+Hero: checks
+*** RIVER *** [5h 2s 5s Qd] [Kd]
+Joueur04: checks
+Hero: checks
+*** SHOW DOWN ***
+Joueur04: shows [Ac 9d]
+Hero: shows [Ah 8d]
+Joueur04 collected 375 from pot
+Hero collected 375 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+Board [5h 2s 5s Qd Kd]
+
+
+PokerStars Hand #250000000032:  Hold'em No Limit (50/100) - 2026/10/20 21:28:25 CET
+Table 'Exemple 1' 6-max Seat #2 is the button
+Seat 1: Hero (19027 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (22993 in chips)
+Seat 5: Joueur04 (37481 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur02: posts small blind 50
+Joueur03: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Jh Kd]
+Joueur04: calls 100
+Joueur05: folds
+Hero: raises 300 to 400
+Joueur01: calls 400
+Joueur02: folds
+Joueur03: calls 300
+Joueur04: folds
+*** FLOP *** [6s Ts Ks]
+Joueur03: checks
+Hero: bets 675
+Joueur01: calls 675
+Joueur03: calls 675
+*** TURN *** [6s Ts Ks] [Qc]
+Joueur03: checks
+Hero: bets 1688
+Joueur01: calls 1688
+Joueur03: calls 1688
+*** RIVER *** [6s Ts Ks Qc] [Ac]
+Joueur03: checks
+Hero: bets 4220
+Joueur01: calls 4220
+Joueur03: calls 4220
+*** SHOW DOWN ***
+Joueur03: shows [7h Ah]
+Hero: shows [Jh Kd]
+Joueur01: shows [8d 8s]
+Hero collected 21099 from pot
+*** SUMMARY ***
+Total pot 21099 | Rake 0
+Board [6s Ts Ks Qc Ac]
+
+
+PokerStars Hand #250000000033:  Hold'em No Limit (50/100) - 2026/10/20 21:29:20 CET
+Table 'Exemple 1' 6-max Seat #3 is the button
+Seat 1: Hero (33143 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (16010 in chips)
+Seat 5: Joueur04 (37381 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur03: posts small blind 50
+Joueur04: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [3d 7c]
+Joueur05: folds
+Hero: folds
+Joueur01: raises 200 to 300
+Joueur02: folds
+Joueur03: calls 250
+Joueur04: calls 200
+*** FLOP *** [Ah 7h 2c]
+Joueur03: bets 388
+Joueur04: folds
+Joueur01: calls 388
+*** TURN *** [Ah 7h 2c] [Kc]
+Joueur03: bets 889
+Joueur01: calls 889
+*** RIVER *** [Ah 7h 2c Kc] [8s]
+Joueur03: bets 1372
+Joueur01: calls 1372
+*** SHOW DOWN ***
+Joueur03: shows [Ac 9d]
+Joueur01: shows [Qh Qc]
+Joueur03 collected 6198 from pot
+*** SUMMARY ***
+Total pot 6198 | Rake 0
+Board [Ah 7h 2c Kc 8s]
+
+
+PokerStars Hand #250000000034:  Hold'em No Limit (50/100) - 2026/10/20 21:30:15 CET
+Table 'Exemple 1' 6-max Seat #4 is the button
+Seat 1: Hero (33143 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (19259 in chips)
+Seat 5: Joueur04 (37081 in chips)
+Seat 6: Joueur05 (10000 in chips)
+Joueur04: posts small blind 50
+Joueur05: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8c 2h]
+Hero: folds
+Joueur01: folds
+Joueur02: folds
+Joueur03: folds
+Joueur04: raises 200 to 300
+Joueur05: calls 200
+*** FLOP *** [2c Ts 9d]
+Joueur04: bets 589
+Joueur05: calls 589
+*** TURN *** [2c Ts 9d] [6s]
+Joueur04: checks
+Joueur05: bets 842
+Joueur04: calls 842
+*** RIVER *** [2c Ts 9d 6s] [2d]
+Joueur04: bets 3476
+Joueur05: calls 3476
+*** SHOW DOWN ***
+Joueur04: shows [8h Ac]
+Joueur05: shows [Qd Tc]
+Joueur05 collected 10414 from pot
+*** SUMMARY ***
+Total pot 10414 | Rake 0
+Board [2c Ts 9d 6s 2d]
+
+
+PokerStars Hand #250000000035:  Hold'em No Limit (50/100) - 2026/10/20 21:31:10 CET
+Table 'Exemple 1' 6-max Seat #5 is the button
+Seat 1: Hero (33143 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (19259 in chips)
+Seat 5: Joueur04 (31874 in chips)
+Seat 6: Joueur05 (15207 in chips)
+Joueur05: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ac 5c]
+Joueur01: calls 100
+Joueur02: folds
+Joueur03: folds
+Joueur04: raises 300 to 400
+Joueur05: folds
+Hero: calls 300
+Joueur01: folds
+*** FLOP *** [3h 2h 4h]
+Hero: bets 100
+Joueur04: calls 100
+*** TURN *** [3h 2h 4h] [3s]
+Hero: bets 575
+Joueur04: raises 1150 to 1725
+Hero: raises 1150 to 2875
+Joueur04: calls 1150
+*** RIVER *** [3h 2h 4h 3s] [4s]
+Hero: bets 3450
+Joueur04: calls 3450
+*** SHOW DOWN ***
+Hero: shows [Ac 5c]
+Joueur04: shows [9h Th]
+Joueur04 collected 13800 from pot
+*** SUMMARY ***
+Total pot 13800 | Rake 0
+Board [3h 2h 4h 3s 4s]
+
+
+PokerStars Hand #250000000036:  Hold'em No Limit (50/100) - 2026/10/20 21:32:05 CET
+Table 'Exemple 1' 6-max Seat #6 is the button
+Seat 1: Hero (26318 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (19259 in chips)
+Seat 5: Joueur04 (38849 in chips)
+Seat 6: Joueur05 (15157 in chips)
+Hero: posts small blind 50
+Joueur01: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Qs 2d]
+Joueur02: folds
+Joueur03: calls 100
+Joueur04: raises 300 to 400
+Joueur05: raises 800 to 1200
+Hero: folds
+Joueur01: folds
+Joueur03: folds
+Joueur04: calls 800
+*** FLOP *** [3d Tc Qh]
+Joueur04: checks
+Joueur05: checks
+*** TURN *** [3d Tc Qh] [6d]
+Joueur04: bets 1852
+Joueur05: calls 1852
+*** RIVER *** [3d Tc Qh 6d] [7d]
+Joueur04: bets 5679
+Joueur05: raises 6426 to 12105 and is all-in
+Joueur04: folds
+Uncalled bet (6426) returned to Joueur05
+Joueur05 collected 17712 from pot
+*** SUMMARY ***
+Total pot 17712 | Rake 0
+Board [3d Tc Qh 6d 7d]
+
+
+PokerStars Hand #250000000037:  Hold'em No Limit (50/100) - 2026/10/20 21:33:00 CET
+Table 'Exemple 1' 6-max Seat #1 is the button
+Seat 1: Hero (26268 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (19159 in chips)
+Seat 5: Joueur04 (30118 in chips)
+Seat 6: Joueur05 (24138 in chips)
+Joueur01: posts small blind 50
+Joueur02: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7d 3h]
+Joueur03: folds
+Joueur04: folds
+Joueur05: folds
+Hero: folds
+Joueur01: folds
+Uncalled bet (50) returned to Joueur02
+Joueur02 collected 100 from pot
+*** SUMMARY ***
+Total pot 100 | Rake 0
+
+
+PokerStars Hand #250000000038:  Hold'em No Limit (50/100) - 2026/10/20 21:33:55 CET
+Table 'Exemple 1' 6-max Seat #2 is the button
+Seat 1: Hero (26268 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10050 in chips)
+Seat 4: Joueur03 (19159 in chips)
+Seat 5: Joueur04 (30118 in chips)
+Seat 6: Joueur05 (24138 in chips)
+Joueur02: posts small blind 50
+Joueur03: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [5c 9c]
+Joueur04: folds
+Joueur05: folds
+Hero: folds
+Joueur01: calls 100
+Joueur02: folds
+Joueur03: checks
+*** FLOP *** [9s 4c Ts]
+Joueur03: checks
+Joueur01: checks
+*** TURN *** [9s 4c Ts] [2d]
+Joueur03: checks
+Joueur01: checks
+*** RIVER *** [9s 4c Ts 2d] [8h]
+Joueur03: checks
+Joueur01: checks
+*** SHOW DOWN ***
+Joueur03: shows [4s Ad]
+Joueur01: shows [9h Jc]
+Joueur01 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+Board [9s 4c Ts 2d 8h]
+
+
+PokerStars Hand #250000000039:  Hold'em No Limit (50/100) - 2026/10/20 21:34:50 CET
+Table 'Exemple 1' 6-max Seat #3 is the button
+Seat 1: Hero (26268 in chips)
+Seat 2: Joueur01 (10150 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (19059 in chips)
+Seat 5: Joueur04 (30118 in chips)
+Seat 6: Joueur05 (24138 in chips)
+Joueur03: posts small blind 50
+Joueur04: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8s 8c]
+Joueur05: folds
+Hero: raises 200 to 300
+Joueur01: calls 300
+Joueur02: folds
+Joueur03: calls 250
+Joueur04: calls 200
+*** FLOP *** [7c 6c Tc]
+Joueur03: bets 401
+Joueur04: raises 802 to 1203
+Hero: folds
+Joueur01: calls 1203
+Joueur03: calls 802
+*** TURN *** [7c 6c Tc] [Jh]
+Joueur03: checks
+Joueur04: bets 3898
+Joueur01: calls 3898
+Joueur03: calls 3898
+*** RIVER *** [7c 6c Tc Jh] [8h]
+Joueur03: checks
+Joueur04: bets 13519
+Joueur01: calls 4749 and is all-in
+Joueur03: calls 13519
+*** SHOW DOWN ***
+Joueur03: shows [7s As]
+Joueur04: shows [8d 9c]
+Joueur01: shows [5d 5s]
+Joueur04 collected 48290 from pot
+*** SUMMARY ***
+Total pot 48290 | Rake 0
+Board [7c 6c Tc Jh 8h]
+
+
+PokerStars Hand #250000000040:  Hold'em No Limit (50/100) - 2026/10/20 21:35:45 CET
+Table 'Exemple 1' 6-max Seat #4 is the button
+Seat 1: Hero (25968 in chips)
+Seat 2: Joueur01 (10000 in chips)
+Seat 3: Joueur02 (10000 in chips)
+Seat 4: Joueur03 (10000 in chips)
+Seat 5: Joueur04 (59488 in chips)
+Seat 6: Joueur05 (24138 in chips)
+Joueur04: posts small blind 50
+Joueur05: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [4h 6d]
+Hero: folds
+Joueur01: folds
+Joueur02: folds
+Joueur03: calls 100
+Joueur04: folds
+Joueur05: raises 300 to 400
+Joueur03: calls 300
+*** FLOP *** [3c Kc 3h]
+Joueur05: bets 571
+Joueur03: calls 571
+*** TURN *** [3c Kc 3h] [2s]
+Joueur05: checks
+Joueur03: checks
+*** RIVER *** [3c Kc 3h 2s] [7h]
+Joueur05: checks
+Joueur03: checks
+*** SHOW DOWN ***
+Joueur05: shows [As Th]
+Joueur03: shows [Jc Kh]
+Joueur03 collected 1992 from pot
+*** SUMMARY ***
+Total pot 1992 | Rake 0
+Board [3c Kc 3h 2s 7h]
+
+
+PokerStars Hand #250000000041:  Hold'em No Limit (50/100) - 2026/10/21 21:00:00 CET
+Table 'Exemple 2' 6-max Seat #2 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (10000 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur12: posts small blind 50
+Joueur13: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [As 9c]
+Joueur14: folds
+Joueur15: calls 100
+Hero: calls 100
+Joueur11: folds
+Joueur12: raises 400 to 500
+Joueur13: folds
+Joueur15: folds
+Hero: folds
+Uncalled bet (400) returned to Joueur12
+Joueur12 collected 400 from pot
+*** SUMMARY ***
+Total pot 400 | Rake 0
+
+
+PokerStars Hand #250000000042:  Hold'em No Limit (50/100) - 2026/10/21 21:00:55 CET
+Table 'Exemple 2' 6-max Seat #3 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10300 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (10000 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur13: posts small blind 50
+Joueur14: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [6d 6s]
+Joueur15: raises 200 to 300
+Hero: calls 300
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: raises 600 to 900
+Joueur15: calls 600
+Hero: folds
+*** FLOP *** [Ks 6c 4h]
+Joueur14: bets 1647
+Joueur15: folds
+Uncalled bet (1647) returned to Joueur14
+Joueur14 collected 2150 from pot
+*** SUMMARY ***
+Total pot 2150 | Rake 0
+Board [Ks 6c 4h]
+
+
+PokerStars Hand #250000000043:  Hold'em No Limit (50/100) - 2026/10/21 21:01:50 CET
+Table 'Exemple 2' 6-max Seat #4 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10300 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (11250 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur14: posts small blind 50
+Joueur15: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ac Kc]
+Hero: raises 200 to 300
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: folds
+Joueur15: calls 200
+*** FLOP *** [Kd 4c 7d]
+Joueur15: bets 654
+Hero: calls 654
+*** TURN *** [Kd 4c 7d] [Jc]
+Joueur15: checks
+Hero: bets 979
+Joueur15: folds
+Uncalled bet (979) returned to Hero
+Hero collected 1958 from pot
+*** SUMMARY ***
+Total pot 1958 | Rake 0
+Board [Kd 4c 7d Jc]
+
+
+PokerStars Hand #250000000044:  Hold'em No Limit (50/100) - 2026/10/21 21:02:45 CET
+Table 'Exemple 2' 6-max Seat #5 is the button
+Seat 1: Hero (11004 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10300 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (11200 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur15: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Js Ts]
+Joueur11: folds
+Joueur12: raises 200 to 300
+Joueur13: folds
+Joueur14: calls 300
+Joueur15: folds
+Hero: calls 200
+*** FLOP *** [Jc 6h 2s]
+Hero: bets 475
+Joueur12: folds
+Joueur14: folds
+Uncalled bet (475) returned to Hero
+Hero collected 950 from pot
+*** SUMMARY ***
+Total pot 950 | Rake 0
+Board [Jc 6h 2s]
+
+
+PokerStars Hand #250000000045:  Hold'em No Limit (50/100) - 2026/10/21 21:03:40 CET
+Table 'Exemple 2' 6-max Seat #6 is the button
+Seat 1: Hero (11654 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (10900 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Hero: posts small blind 50
+Joueur11: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [5s 6s]
+Joueur12: raises 200 to 300
+Joueur13: folds
+Joueur14: raises 600 to 900
+Joueur15: folds
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Uncalled bet (600) returned to Joueur14
+Joueur14 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+
+
+PokerStars Hand #250000000046:  Hold'em No Limit (50/100) - 2026/10/21 21:04:35 CET
+Table 'Exemple 2' 6-max Seat #1 is the button
+Seat 1: Hero (11604 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (11350 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur11: posts small blind 50
+Joueur12: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ts 3d]
+Joueur13: folds
+Joueur14: folds
+Joueur15: raises 200 to 300
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Uncalled bet (200) returned to Joueur15
+Joueur15 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+
+
+PokerStars Hand #250000000047:  Hold'em No Limit (50/100) - 2026/10/21 21:05:30 CET
+Table 'Exemple 2' 6-max Seat #2 is the button
+Seat 1: Hero (11604 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (11350 in chips)
+Seat 6: Joueur15 (10150 in chips)
+Joueur12: posts small blind 50
+Joueur13: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [4s As]
+Joueur14: raises 200 to 300
+Joueur15: folds
+Hero: calls 300
+Joueur11: folds
+Joueur12: raises 600 to 900
+Joueur13: folds
+Joueur14: calls 600
+Hero: folds
+*** FLOP *** [7d 7c Ts]
+Joueur12: checks
+Joueur14: checks
+*** TURN *** [7d 7c Ts] [Qs]
+Joueur12: checks
+Joueur14: bets 1787
+Joueur12: calls 1787
+*** RIVER *** [7d 7c Ts Qs] [2d]
+Joueur12: checks
+Joueur14: bets 4612
+Joueur12: calls 4612
+*** SHOW DOWN ***
+Joueur12: shows [Ac Jh]
+Joueur14: shows [Qh 9d]
+Joueur14 collected 14998 from pot
+*** SUMMARY ***
+Total pot 14998 | Rake 0
+Board [7d 7c Ts Qs 2d]
+
+
+PokerStars Hand #250000000048:  Hold'em No Limit (50/100) - 2026/10/21 21:06:25 CET
+Table 'Exemple 2' 6-max Seat #3 is the button
+Seat 1: Hero (11304 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (19049 in chips)
+Seat 6: Joueur15 (10150 in chips)
+Joueur13: posts small blind 50
+Joueur14: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Jh Kd]
+Joueur15: calls 100
+Hero: raises 300 to 400
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 300
+Joueur15: folds
+*** FLOP *** [6c 4c 7s]
+Joueur14: checks
+Hero: bets 314
+Joueur14: calls 314
+*** TURN *** [6c 4c 7s] [Ts]
+Joueur14: bets 1394
+Hero: folds
+Uncalled bet (1394) returned to Joueur14
+Joueur14 collected 1578 from pot
+*** SUMMARY ***
+Total pot 1578 | Rake 0
+Board [6c 4c 7s Ts]
+
+
+PokerStars Hand #250000000049:  Hold'em No Limit (50/100) - 2026/10/21 21:07:20 CET
+Table 'Exemple 2' 6-max Seat #4 is the button
+Seat 1: Hero (10590 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (19913 in chips)
+Seat 6: Joueur15 (10050 in chips)
+Joueur14: posts small blind 50
+Joueur15: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [5c Th]
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 50
+Joueur15: checks
+*** FLOP *** [Qc Kd 4c]
+Joueur14: checks
+Joueur15: bets 180
+Joueur14: folds
+Uncalled bet (180) returned to Joueur15
+Joueur15 collected 200 from pot
+*** SUMMARY ***
+Total pot 200 | Rake 0
+Board [Qc Kd 4c]
+
+
+PokerStars Hand #250000000050:  Hold'em No Limit (50/100) - 2026/10/21 21:08:15 CET
+Table 'Exemple 2' 6-max Seat #5 is the button
+Seat 1: Hero (10590 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (19813 in chips)
+Seat 6: Joueur15 (10150 in chips)
+Joueur15: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Td 7s]
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 100
+Joueur15: raises 300 to 400
+Hero: folds
+Joueur14: calls 300
+*** FLOP *** [5s 3h 8d]
+Joueur15: bets 894
+Joueur14: calls 894
+*** TURN *** [5s 3h 8d] [Ks]
+Joueur15: checks
+Joueur14: checks
+*** RIVER *** [5s 3h 8d Ks] [Tc]
+Joueur15: bets 2303
+Joueur14: calls 2303
+*** SHOW DOWN ***
+Joueur15: shows [7d Qh]
+Joueur14: shows [8c 9c]
+Joueur14 collected 7294 from pot
+*** SUMMARY ***
+Total pot 7294 | Rake 0
+Board [5s 3h 8d Ks Tc]
+
+
+PokerStars Hand #250000000051:  Hold'em No Limit (50/100) - 2026/10/21 21:09:10 CET
+Table 'Exemple 2' 6-max Seat #6 is the button
+Seat 1: Hero (10490 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (23510 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Hero: posts small blind 50
+Joueur11: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [6s 8s]
+Joueur12: folds
+Joueur13: folds
+Joueur14: folds
+Joueur15: calls 100
+Hero: raises 300 to 400
+Joueur11: folds
+Joueur15: calls 300
+*** FLOP *** [4h 3c 9s]
+Hero: bets 297
+Joueur15: calls 297
+*** TURN *** [4h 3c 9s] [Ac]
+Hero: checks
+Joueur15: bets 922
+Hero: raises 922 to 1844
+Joueur15: calls 922
+*** RIVER *** [4h 3c 9s Ac] [Jc]
+Hero: checks
+Joueur15: bets 3137
+Hero: folds
+Uncalled bet (3137) returned to Joueur15
+Joueur15 collected 5182 from pot
+*** SUMMARY ***
+Total pot 5182 | Rake 0
+Board [4h 3c 9s Ac Jc]
+
+
+PokerStars Hand #250000000052:  Hold'em No Limit (50/100) - 2026/10/21 21:10:05 CET
+Table 'Exemple 2' 6-max Seat #1 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (23510 in chips)
+Seat 6: Joueur15 (12641 in chips)
+Joueur11: posts small blind 50
+Joueur12: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Qs Kd]
+Joueur13: folds
+Joueur14: folds
+Joueur15: raises 200 to 300
+Hero: calls 300
+Joueur11: folds
+Joueur12: calls 200
+*** FLOP *** [Jh 9c 4h]
+Joueur12: checks
+Joueur15: bets 762
+Hero: folds
+Joueur12: folds
+Uncalled bet (762) returned to Joueur15
+Joueur15 collected 950 from pot
+*** SUMMARY ***
+Total pot 950 | Rake 0
+Board [Jh 9c 4h]
+
+
+PokerStars Hand #250000000053:  Hold'em No Limit (50/100) - 2026/10/21 21:11:00 CET
+Table 'Exemple 2' 6-max Seat #2 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (23510 in chips)
+Seat 6: Joueur15 (13291 in chips)
+Joueur12: posts small blind 50
+Joueur13: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2d 5h]
+Joueur14: raises 200 to 300
+Joueur15: calls 300
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+*** FLOP *** [8h 5s Ac]
+Joueur14: bets 731
+Joueur15: calls 731
+*** TURN *** [8h 5s Ac] [7h]
+Joueur14: bets 2134
+Joueur15: calls 2134
+*** RIVER *** [8h 5s Ac 7h] [4c]
+Joueur14: bets 6699
+Joueur15: folds
+Uncalled bet (6699) returned to Joueur14
+Joueur14 collected 6480 from pot
+*** SUMMARY ***
+Total pot 6480 | Rake 0
+Board [8h 5s Ac 7h 4c]
+
+
+PokerStars Hand #250000000054:  Hold'em No Limit (50/100) - 2026/10/21 21:11:55 CET
+Table 'Exemple 2' 6-max Seat #3 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (10000 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (26825 in chips)
+Seat 6: Joueur15 (10126 in chips)
+Joueur13: posts small blind 50
+Joueur14: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8s 5s]
+Joueur15: calls 100
+Hero: folds
+Joueur11: raises 300 to 400
+Joueur12: calls 400
+Joueur13: folds
+Joueur14: folds
+Joueur15: folds
+*** FLOP *** [9d Js Ks]
+Joueur11: bets 686
+Joueur12: calls 686
+*** TURN *** [9d Js Ks] [8h]
+Joueur11: bets 1651
+Joueur12: raises 3302 to 4953
+Joueur11: raises 3961 to 8914 and is all-in
+Joueur12: calls 3961 and is all-in
+*** RIVER *** [9d Js Ks 8h] [7d]
+*** SHOW DOWN ***
+Joueur11: shows [Qd Td]
+Joueur12: shows [Kh Jd]
+Joueur11 collected 20250 from pot
+*** SUMMARY ***
+Total pot 20250 | Rake 0
+Board [9d Js Ks 8h 7d]
+
+
+PokerStars Hand #250000000055:  Hold'em No Limit (50/100) - 2026/10/21 21:12:50 CET
+Table 'Exemple 2' 6-max Seat #4 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (20250 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (26725 in chips)
+Seat 6: Joueur15 (10026 in chips)
+Joueur14: posts small blind 50
+Joueur15: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ad Qs]
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 50
+Joueur15: raises 300 to 400
+Joueur14: folds
+Uncalled bet (300) returned to Joueur15
+Joueur15 collected 200 from pot
+*** SUMMARY ***
+Total pot 200 | Rake 0
+
+
+PokerStars Hand #250000000056:  Hold'em No Limit (50/100) - 2026/10/21 21:13:45 CET
+Table 'Exemple 2' 6-max Seat #5 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (20250 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (26625 in chips)
+Seat 6: Joueur15 (10126 in chips)
+Joueur15: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Jd Qh]
+Joueur11: raises 200 to 300
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 300
+Joueur15: folds
+Hero: calls 200
+*** FLOP *** [3h 7c 7d]
+Hero: checks
+Joueur11: bets 630
+Joueur14: folds
+Hero: folds
+Uncalled bet (630) returned to Joueur11
+Joueur11 collected 950 from pot
+*** SUMMARY ***
+Total pot 950 | Rake 0
+Board [3h 7c 7d]
+
+
+PokerStars Hand #250000000057:  Hold'em No Limit (50/100) - 2026/10/21 21:14:40 CET
+Table 'Exemple 2' 6-max Seat #6 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (20900 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (26325 in chips)
+Seat 6: Joueur15 (10076 in chips)
+Hero: posts small blind 50
+Joueur11: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Kh 7c]
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 100
+Joueur15: raises 300 to 400
+Hero: calls 350
+Joueur11: folds
+Joueur14: folds
+*** FLOP *** [Kd 3d 2d]
+Hero: bets 500
+Joueur15: folds
+Uncalled bet (500) returned to Hero
+Hero collected 1000 from pot
+*** SUMMARY ***
+Total pot 1000 | Rake 0
+Board [Kd 3d 2d]
+
+
+PokerStars Hand #250000000058:  Hold'em No Limit (50/100) - 2026/10/21 21:15:35 CET
+Table 'Exemple 2' 6-max Seat #1 is the button
+Seat 1: Hero (10600 in chips)
+Seat 2: Joueur11 (20800 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (26225 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur11: posts small blind 50
+Joueur12: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2h Qd]
+Joueur13: folds
+Joueur14: raises 200 to 300
+Joueur15: raises 600 to 900
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Joueur14: calls 600
+*** FLOP *** [Tc 3s Kh]
+Joueur14: bets 1406
+Joueur15: calls 1406
+*** TURN *** [Tc 3s Kh] [4s]
+Joueur14: checks
+Joueur15: checks
+*** RIVER *** [Tc 3s Kh 4s] [5s]
+Joueur14: bets 3851
+Joueur15: folds
+Uncalled bet (3851) returned to Joueur14
+Joueur14 collected 4762 from pot
+*** SUMMARY ***
+Total pot 4762 | Rake 0
+Board [Tc 3s Kh 4s 5s]
+
+
+PokerStars Hand #250000000059:  Hold'em No Limit (50/100) - 2026/10/21 21:16:30 CET
+Table 'Exemple 2' 6-max Seat #2 is the button
+Seat 1: Hero (10600 in chips)
+Seat 2: Joueur11 (20750 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (28681 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur12: posts small blind 50
+Joueur13: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [4c 9h]
+Joueur14: raises 200 to 300
+Joueur15: folds
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Uncalled bet (200) returned to Joueur14
+Joueur14 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+
+
+PokerStars Hand #250000000060:  Hold'em No Limit (50/100) - 2026/10/21 21:17:25 CET
+Table 'Exemple 2' 6-max Seat #3 is the button
+Seat 1: Hero (10600 in chips)
+Seat 2: Joueur11 (20750 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (28831 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur13: posts small blind 50
+Joueur14: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [6d 3s]
+Joueur15: calls 100
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: checks
+*** FLOP *** [Tc Qd 6h]
+Joueur14: bets 194
+Joueur15: folds
+Uncalled bet (194) returned to Joueur14
+Joueur14 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+Board [Tc Qd 6h]
+
+
+PokerStars Hand #250000000061:  Hold'em No Limit (50/100) - 2026/10/21 21:18:20 CET
+Table 'Exemple 2' 6-max Seat #4 is the button
+Seat 1: Hero (10600 in chips)
+Seat 2: Joueur11 (20750 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (28981 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur14: posts small blind 50
+Joueur15: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [3h 3c]
+Hero: raises 200 to 300
+Joueur11: folds
+Joueur12: raises 600 to 900
+Joueur13: folds
+Joueur14: folds
+Joueur15: folds
+Hero: folds
+Uncalled bet (600) returned to Joueur12
+Joueur12 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+
+
+PokerStars Hand #250000000062:  Hold'em No Limit (50/100) - 2026/10/21 21:19:15 CET
+Table 'Exemple 2' 6-max Seat #5 is the button
+Seat 1: Hero (10300 in chips)
+Seat 2: Joueur11 (20750 in chips)
+Seat 3: Joueur12 (10450 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (28931 in chips)
+Seat 6: Joueur15 (10000 in chips)
+Joueur15: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2d Tc]
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 100
+Joueur15: raises 300 to 400
+Hero: calls 300
+Joueur14: folds
+*** FLOP *** [3d Qh Ts]
+Joueur15: bets 776
+Hero: calls 776
+*** TURN *** [3d Qh Ts] [7s]
+Joueur15: bets 2152
+Hero: folds
+Uncalled bet (2152) returned to Joueur15
+Joueur15 collected 2452 from pot
+*** SUMMARY ***
+Total pot 2452 | Rake 0
+Board [3d Qh Ts 7s]
+
+
+PokerStars Hand #250000000063:  Hold'em No Limit (50/100) - 2026/10/21 21:20:10 CET
+Table 'Exemple 2' 6-max Seat #6 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (20750 in chips)
+Seat 3: Joueur12 (10450 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (28831 in chips)
+Seat 6: Joueur15 (11276 in chips)
+Hero: posts small blind 50
+Joueur11: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2d Qs]
+Joueur12: raises 200 to 300
+Joueur13: folds
+Joueur14: calls 300
+Joueur15: folds
+Hero: folds
+Joueur11: calls 200
+*** FLOP *** [5s 8c Kd]
+Joueur11: bets 582
+Joueur12: folds
+Joueur14: calls 582
+*** TURN *** [5s 8c Kd] [7h]
+Joueur11: bets 1320
+Joueur14: calls 1320
+*** RIVER *** [5s 8c Kd 7h] [Kc]
+Joueur11: bets 3033
+Joueur14: folds
+Uncalled bet (3033) returned to Joueur11
+Joueur11 collected 4754 from pot
+*** SUMMARY ***
+Total pot 4754 | Rake 0
+Board [5s 8c Kd 7h Kc]
+
+
+PokerStars Hand #250000000064:  Hold'em No Limit (50/100) - 2026/10/21 21:21:05 CET
+Table 'Exemple 2' 6-max Seat #1 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (23302 in chips)
+Seat 3: Joueur12 (10150 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (26629 in chips)
+Seat 6: Joueur15 (11276 in chips)
+Joueur11: posts small blind 50
+Joueur12: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9h Jc]
+Joueur13: folds
+Joueur14: folds
+Joueur15: raises 200 to 300
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Uncalled bet (200) returned to Joueur15
+Joueur15 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+
+
+PokerStars Hand #250000000065:  Hold'em No Limit (50/100) - 2026/10/21 21:22:00 CET
+Table 'Exemple 2' 6-max Seat #2 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (23252 in chips)
+Seat 3: Joueur12 (10050 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (26629 in chips)
+Seat 6: Joueur15 (11426 in chips)
+Joueur12: posts small blind 50
+Joueur13: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Qc Kc]
+Joueur14: folds
+Joueur15: calls 100
+Hero: raises 300 to 400
+Joueur11: calls 400
+Joueur12: folds
+Joueur13: folds
+Joueur15: folds
+*** FLOP *** [5d Tc 3d]
+Hero: bets 346
+Joueur11: folds
+Uncalled bet (346) returned to Hero
+Hero collected 1050 from pot
+*** SUMMARY ***
+Total pot 1050 | Rake 0
+Board [5d Tc 3d]
+
+
+PokerStars Hand #250000000066:  Hold'em No Limit (50/100) - 2026/10/21 21:22:55 CET
+Table 'Exemple 2' 6-max Seat #3 is the button
+Seat 1: Hero (10650 in chips)
+Seat 2: Joueur11 (22852 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (26629 in chips)
+Seat 6: Joueur15 (11326 in chips)
+Joueur13: posts small blind 50
+Joueur14: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ks 5c]
+Joueur15: calls 100
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: raises 300 to 400
+Joueur15: calls 300
+*** FLOP *** [4s 7d Js]
+Joueur14: bets 856
+Joueur15: calls 856
+*** TURN *** [4s 7d Js] [6d]
+Joueur14: bets 2330
+Joueur15: calls 2330
+*** RIVER *** [4s 7d Js 6d] [4c]
+Joueur14: bets 7185
+Joueur15: raises 555 to 7740 and is all-in
+Joueur14: calls 555
+*** SHOW DOWN ***
+Joueur14: shows [8s Jh]
+Joueur15: shows [Jc 7h]
+Joueur15 collected 22702 from pot
+*** SUMMARY ***
+Total pot 22702 | Rake 0
+Board [4s 7d Js 6d 4c]
+
+
+PokerStars Hand #250000000067:  Hold'em No Limit (50/100) - 2026/10/21 21:23:50 CET
+Table 'Exemple 2' 6-max Seat #4 is the button
+Seat 1: Hero (10650 in chips)
+Seat 2: Joueur11 (22852 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (15303 in chips)
+Seat 6: Joueur15 (22702 in chips)
+Joueur14: posts small blind 50
+Joueur15: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [3h 9d]
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 50
+Joueur15: checks
+*** FLOP *** [Th 8s Jd]
+Joueur14: bets 139
+Joueur15: calls 139
+*** TURN *** [Th 8s Jd] [5d]
+Joueur14: bets 260
+Joueur15: calls 260
+*** RIVER *** [Th 8s Jd 5d] [4d]
+Joueur14: bets 646
+Joueur15: folds
+Uncalled bet (646) returned to Joueur14
+Joueur14 collected 998 from pot
+*** SUMMARY ***
+Total pot 998 | Rake 0
+Board [Th 8s Jd 5d 4d]
+
+
+PokerStars Hand #250000000068:  Hold'em No Limit (50/100) - 2026/10/21 21:24:45 CET
+Table 'Exemple 2' 6-max Seat #5 is the button
+Seat 1: Hero (10650 in chips)
+Seat 2: Joueur11 (22852 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (15802 in chips)
+Seat 6: Joueur15 (22203 in chips)
+Joueur15: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8c 5d]
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: raises 200 to 300
+Joueur15: calls 250
+Hero: raises 200 to 500
+Joueur14: calls 200
+Joueur15: folds
+*** FLOP *** [Jh Qs 3h]
+Hero: bets 429
+Joueur14: calls 429
+*** TURN *** [Jh Qs 3h] [Ts]
+Hero: checks
+Joueur14: bets 1462
+Hero: calls 1462
+*** RIVER *** [Jh Qs 3h Ts] [6h]
+Hero: checks
+Joueur14: bets 4905
+Hero: folds
+Uncalled bet (4905) returned to Joueur14
+Joueur14 collected 5082 from pot
+*** SUMMARY ***
+Total pot 5082 | Rake 0
+Board [Jh Qs 3h Ts 6h]
+
+
+PokerStars Hand #250000000069:  Hold'em No Limit (50/100) - 2026/10/21 21:25:40 CET
+Table 'Exemple 2' 6-max Seat #6 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (22852 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (18493 in chips)
+Seat 6: Joueur15 (21903 in chips)
+Hero: posts small blind 50
+Joueur11: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9d 5s]
+Joueur12: raises 200 to 300
+Joueur13: folds
+Joueur14: raises 600 to 900
+Joueur15: folds
+Hero: folds
+Joueur11: folds
+Joueur12: folds
+Uncalled bet (600) returned to Joueur14
+Joueur14 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+
+
+PokerStars Hand #250000000070:  Hold'em No Limit (50/100) - 2026/10/21 21:26:35 CET
+Table 'Exemple 2' 6-max Seat #1 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (22752 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (18943 in chips)
+Seat 6: Joueur15 (21903 in chips)
+Joueur11: posts small blind 50
+Joueur12: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [4c 6c]
+Joueur13: folds
+Joueur14: calls 100
+Joueur15: raises 300 to 400
+Hero: calls 400
+Joueur11: raises 800 to 1200
+Joueur12: folds
+Joueur14: folds
+Joueur15: calls 800
+Hero: folds
+*** FLOP *** [Qh Ks 7c]
+Joueur11: bets 1806
+Joueur15: calls 1806
+*** TURN *** [Qh Ks 7c] [Kc]
+Joueur11: bets 4566
+Joueur15: calls 4566
+*** RIVER *** [Qh Ks 7c Kc] [5h]
+Joueur11: bets 15180 and is all-in
+Joueur15: folds
+Uncalled bet (15180) returned to Joueur11
+Joueur11 collected 15744 from pot
+*** SUMMARY ***
+Total pot 15744 | Rake 0
+Board [Qh Ks 7c Kc 5h]
+
+
+PokerStars Hand #250000000071:  Hold'em No Limit (50/100) - 2026/10/21 21:27:30 CET
+Table 'Exemple 2' 6-max Seat #2 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (30924 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (18843 in chips)
+Seat 6: Joueur15 (14331 in chips)
+Joueur12: posts small blind 50
+Joueur13: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8c 7c]
+Joueur14: folds
+Joueur15: folds
+Hero: raises 200 to 300
+Joueur11: raises 600 to 900
+Joueur12: folds
+Joueur13: folds
+Hero: folds
+Uncalled bet (600) returned to Joueur11
+Joueur11 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+
+
+PokerStars Hand #250000000072:  Hold'em No Limit (50/100) - 2026/10/21 21:28:25 CET
+Table 'Exemple 2' 6-max Seat #3 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (31374 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (18843 in chips)
+Seat 6: Joueur15 (14331 in chips)
+Joueur13: posts small blind 50
+Joueur14: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7c 5c]
+Joueur15: folds
+Hero: raises 200 to 300
+Joueur11: calls 300
+Joueur12: folds
+Joueur13: folds
+Joueur14: raises 600 to 900
+Hero: folds
+Joueur11: folds
+Uncalled bet (600) returned to Joueur14
+Joueur14 collected 950 from pot
+*** SUMMARY ***
+Total pot 950 | Rake 0
+
+
+PokerStars Hand #250000000073:  Hold'em No Limit (50/100) - 2026/10/21 21:29:20 CET
+Table 'Exemple 2' 6-max Seat #4 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (31074 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (19493 in chips)
+Seat 6: Joueur15 (14331 in chips)
+Joueur14: posts small blind 50
+Joueur15: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [3c 2h]
+Hero: folds
+Joueur11: folds
+Joueur12: raises 200 to 300
+Joueur13: calls 300
+Joueur14: calls 250
+Joueur15: calls 200
+*** FLOP *** [Ac Jh Kd]
+Joueur14: checks
+Joueur15: bets 696
+Joueur12: calls 696
+Joueur13: folds
+Joueur14: calls 696
+*** TURN *** [Ac Jh Kd] [3s]
+Joueur14: bets 2104
+Joueur15: calls 2104
+Joueur12: calls 2104
+*** RIVER *** [Ac Jh Kd 3s] [Qc]
+Joueur14: bets 5487
+Joueur15: calls 5487
+Joueur12: calls 5487
+*** SHOW DOWN ***
+Joueur14: shows [8s Kh]
+Joueur15: shows [Js Th]
+Joueur12: shows [4d As]
+Joueur15 collected 26061 from pot
+*** SUMMARY ***
+Total pot 26061 | Rake 0
+Board [Ac Jh Kd 3s Qc]
+
+
+PokerStars Hand #250000000074:  Hold'em No Limit (50/100) - 2026/10/21 21:30:15 CET
+Table 'Exemple 2' 6-max Seat #5 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (31074 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (10906 in chips)
+Seat 6: Joueur15 (31805 in chips)
+Joueur15: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [As 6h]
+Joueur11: raises 200 to 300
+Joueur12: calls 300
+Joueur13: folds
+Joueur14: folds
+Joueur15: raises 600 to 900
+Hero: folds
+Joueur11: raises 30174 to 31074 and is all-in
+Joueur12: folds
+Joueur15: folds
+Uncalled bet (30174) returned to Joueur11
+Joueur11 collected 2200 from pot
+*** SUMMARY ***
+Total pot 2200 | Rake 0
+
+
+PokerStars Hand #250000000075:  Hold'em No Limit (50/100) - 2026/10/21 21:31:10 CET
+Table 'Exemple 2' 6-max Seat #6 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (32374 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (10906 in chips)
+Seat 6: Joueur15 (30905 in chips)
+Hero: posts small blind 50
+Joueur11: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Kd 5d]
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 100
+Joueur15: raises 300 to 400
+Hero: calls 350
+Joueur11: folds
+Joueur14: folds
+*** FLOP *** [7d Th 7h]
+Hero: checks
+Joueur15: bets 797
+Hero: folds
+Uncalled bet (797) returned to Joueur15
+Joueur15 collected 1000 from pot
+*** SUMMARY ***
+Total pot 1000 | Rake 0
+Board [7d Th 7h]
+
+
+PokerStars Hand #250000000076:  Hold'em No Limit (50/100) - 2026/10/21 21:32:05 CET
+Table 'Exemple 2' 6-max Seat #1 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (32274 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (10806 in chips)
+Seat 6: Joueur15 (31505 in chips)
+Joueur11: posts small blind 50
+Joueur12: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Qc Ks]
+Joueur13: folds
+Joueur14: raises 200 to 300
+Joueur15: folds
+Hero: calls 300
+Joueur11: folds
+Joueur12: folds
+*** FLOP *** [Qh 8h Ad]
+Joueur14: bets 667
+Hero: folds
+Uncalled bet (667) returned to Joueur14
+Joueur14 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+Board [Qh 8h Ad]
+
+
+PokerStars Hand #250000000077:  Hold'em No Limit (50/100) - 2026/10/21 21:33:00 CET
+Table 'Exemple 2' 6-max Seat #2 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (32224 in chips)
+Seat 3: Joueur12 (10000 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (11256 in chips)
+Seat 6: Joueur15 (31505 in chips)
+Joueur12: posts small blind 50
+Joueur13: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8d 9c]
+Joueur14: folds
+Joueur15: folds
+Hero: folds
+Joueur11: folds
+Joueur12: raises 200 to 300
+Joueur13: folds
+Uncalled bet (200) returned to Joueur12
+Joueur12 collected 200 from pot
+*** SUMMARY ***
+Total pot 200 | Rake 0
+
+
+PokerStars Hand #250000000078:  Hold'em No Limit (50/100) - 2026/10/21 21:33:55 CET
+Table 'Exemple 2' 6-max Seat #3 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur11 (32224 in chips)
+Seat 3: Joueur12 (10100 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (11256 in chips)
+Seat 6: Joueur15 (31505 in chips)
+Joueur13: posts small blind 50
+Joueur14: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Kc Ad]
+Joueur15: folds
+Hero: raises 200 to 300
+Joueur11: folds
+Joueur12: folds
+Joueur13: folds
+Joueur14: calls 200
+*** FLOP *** [5h 6s Ts]
+Joueur14: checks
+Hero: checks
+*** TURN *** [5h 6s Ts] [Kh]
+Joueur14: checks
+Hero: bets 325
+Joueur14: calls 325
+*** RIVER *** [5h 6s Ts Kh] [7s]
+Joueur14: checks
+Hero: bets 650
+Joueur14: folds
+Uncalled bet (650) returned to Hero
+Hero collected 1300 from pot
+*** SUMMARY ***
+Total pot 1300 | Rake 0
+Board [5h 6s Ts Kh 7s]
+
+
+PokerStars Hand #250000000079:  Hold'em No Limit (50/100) - 2026/10/21 21:34:50 CET
+Table 'Exemple 2' 6-max Seat #4 is the button
+Seat 1: Hero (10675 in chips)
+Seat 2: Joueur11 (32224 in chips)
+Seat 3: Joueur12 (10100 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (10631 in chips)
+Seat 6: Joueur15 (31505 in chips)
+Joueur14: posts small blind 50
+Joueur15: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8h 7h]
+Hero: folds
+Joueur11: raises 200 to 300
+Joueur12: folds
+Joueur13: folds
+Joueur14: raises 600 to 900
+Joueur15: folds
+Joueur11: calls 600
+*** FLOP *** [Qd 3s Jc]
+Joueur14: bets 1576
+Joueur11: calls 1576
+*** TURN *** [Qd 3s Jc] [Th]
+Joueur14: bets 4042
+Joueur11: calls 4042
+*** RIVER *** [Qd 3s Jc Th] [3d]
+Joueur14: bets 4113 and is all-in
+Joueur11: folds
+Uncalled bet (4113) returned to Joueur14
+Joueur14 collected 13136 from pot
+*** SUMMARY ***
+Total pot 13136 | Rake 0
+Board [Qd 3s Jc Th 3d]
+
+
+PokerStars Hand #250000000080:  Hold'em No Limit (50/100) - 2026/10/21 21:35:45 CET
+Table 'Exemple 2' 6-max Seat #5 is the button
+Seat 1: Hero (10675 in chips)
+Seat 2: Joueur11 (25706 in chips)
+Seat 3: Joueur12 (10100 in chips)
+Seat 4: Joueur13 (10000 in chips)
+Seat 5: Joueur14 (17249 in chips)
+Seat 6: Joueur15 (31405 in chips)
+Joueur15: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8s Tc]
+Joueur11: folds
+Joueur12: raises 200 to 300
+Joueur13: folds
+Joueur14: calls 300
+Joueur15: folds
+Hero: folds
+*** FLOP *** [Kh Kc 7s]
+Joueur12: bets 568
+Joueur14: folds
+Uncalled bet (568) returned to Joueur12
+Joueur12 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+Board [Kh Kc 7s]
+
+
+PokerStars Hand #250000000081:  Hold'em No Limit (50/100) - 2026/10/22 21:00:00 CET
+Table 'Exemple 3' 6-max Seat #3 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur21 (10000 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (10000 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur23: posts small blind 50
+Joueur24: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [6h Ah]
+Joueur25: folds
+Hero: raises 200 to 300
+Joueur21: calls 300
+Joueur22: calls 300
+Joueur23: calls 250
+Joueur24: folds
+*** FLOP *** [2d 9h Kd]
+Joueur23: checks
+Hero: checks
+Joueur21: checks
+Joueur22: bets 1072
+Joueur23: folds
+Hero: folds
+Joueur21: folds
+Uncalled bet (1072) returned to Joueur22
+Joueur22 collected 1300 from pot
+*** SUMMARY ***
+Total pot 1300 | Rake 0
+Board [2d 9h Kd]
+
+
+PokerStars Hand #250000000082:  Hold'em No Limit (50/100) - 2026/10/22 21:00:55 CET
+Table 'Exemple 3' 6-max Seat #4 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur21 (10000 in chips)
+Seat 3: Joueur22 (11000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (10000 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur24: posts small blind 50
+Joueur25: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [3s 2d]
+Hero: folds
+Joueur21: calls 100
+Joueur22: raises 300 to 400
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Joueur21: calls 300
+*** FLOP *** [6c 9s 3d]
+Joueur21: checks
+Joueur22: bets 827
+Joueur21: calls 827
+*** TURN *** [6c 9s 3d] [Kd]
+Joueur21: checks
+Joueur22: bets 2171
+Joueur21: calls 2171
+*** RIVER *** [6c 9s 3d Kd] [Ac]
+Joueur21: checks
+Joueur22: bets 5012
+Joueur21: calls 5012
+*** SHOW DOWN ***
+Joueur21: shows [Ad Jh]
+Joueur22: shows [Qc Ks]
+Joueur21 collected 16970 from pot
+*** SUMMARY ***
+Total pot 16970 | Rake 0
+Board [6c 9s 3d Kd Ac]
+
+
+PokerStars Hand #250000000083:  Hold'em No Limit (50/100) - 2026/10/22 21:01:50 CET
+Table 'Exemple 3' 6-max Seat #5 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur21 (18560 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (10000 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur25: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [6d 8c]
+Joueur21: folds
+Joueur22: raises 200 to 300
+Joueur23: folds
+Joueur24: calls 300
+Joueur25: folds
+Hero: folds
+*** FLOP *** [8h 9h 5c]
+Joueur22: bets 671
+Joueur24: calls 671
+*** TURN *** [8h 9h 5c] [Qs]
+Joueur22: bets 1851
+Joueur24: calls 1851
+*** RIVER *** [8h 9h 5c Qs] [Kc]
+Joueur22: checks
+Joueur24: bets 4807
+Joueur22: folds
+Uncalled bet (4807) returned to Joueur24
+Joueur24 collected 5794 from pot
+*** SUMMARY ***
+Total pot 5794 | Rake 0
+Board [8h 9h 5c Qs Kc]
+
+
+PokerStars Hand #250000000084:  Hold'em No Limit (50/100) - 2026/10/22 21:02:45 CET
+Table 'Exemple 3' 6-max Seat #6 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur21 (18560 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (12972 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Hero: posts small blind 50
+Joueur21: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [4h Ts]
+Joueur22: calls 100
+Joueur23: calls 100
+Joueur24: calls 100
+Joueur25: raises 500 to 600
+Hero: folds
+Joueur21: folds
+Joueur22: folds
+Joueur23: calls 500
+Joueur24: calls 500
+*** FLOP *** [Qd 2c Th]
+Joueur23: checks
+Joueur24: bets 1277
+Joueur25: folds
+Joueur23: calls 1277
+*** TURN *** [Qd 2c Th] [Qs]
+Joueur23: checks
+Joueur24: bets 2871
+Joueur23: calls 2871
+*** RIVER *** [Qd 2c Th Qs] [9h]
+Joueur23: bets 5252 and is all-in
+Joueur24: calls 5252
+*** SHOW DOWN ***
+Joueur23: shows [4c 4s]
+Joueur24: shows [9s Td]
+Joueur24 collected 20850 from pot
+*** SUMMARY ***
+Total pot 20850 | Rake 0
+Board [Qd 2c Th Qs 9h]
+
+
+PokerStars Hand #250000000085:  Hold'em No Limit (50/100) - 2026/10/22 21:03:40 CET
+Table 'Exemple 3' 6-max Seat #1 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur21 (18460 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (23822 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur21: posts small blind 50
+Joueur22: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Qd 3d]
+Joueur23: folds
+Joueur24: calls 100
+Joueur25: raises 300 to 400
+Hero: calls 400
+Joueur21: folds
+Joueur22: calls 300
+Joueur24: folds
+*** FLOP *** [Ah Ks 4c]
+Joueur22: checks
+Joueur25: bets 870
+Hero: folds
+Joueur22: folds
+Uncalled bet (870) returned to Joueur25
+Joueur25 collected 1350 from pot
+*** SUMMARY ***
+Total pot 1350 | Rake 0
+Board [Ah Ks 4c]
+
+
+PokerStars Hand #250000000086:  Hold'em No Limit (50/100) - 2026/10/22 21:04:35 CET
+Table 'Exemple 3' 6-max Seat #2 is the button
+Seat 1: Hero (10000 in chips)
+Seat 2: Joueur21 (18410 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (23722 in chips)
+Seat 6: Joueur25 (10950 in chips)
+Joueur22: posts small blind 50
+Joueur23: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ts 9s]
+Joueur24: raises 200 to 300
+Joueur25: folds
+Hero: calls 300
+Joueur21: calls 300
+Joueur22: folds
+Joueur23: folds
+*** FLOP *** [8s 7h 3h]
+Joueur24: bets 885
+Hero: calls 885
+Joueur21: calls 885
+*** TURN *** [8s 7h 3h] [6c]
+Joueur24: checks
+Hero: bets 1852
+Joueur21: calls 1852
+Joueur24: folds
+*** RIVER *** [8s 7h 3h 6c] [Qc]
+Hero: bets 3704
+Joueur21: calls 3704
+*** SHOW DOWN ***
+Hero: shows [Ts 9s]
+Joueur21: shows [8c 9c]
+Hero collected 14817 from pot
+*** SUMMARY ***
+Total pot 14817 | Rake 0
+Board [8s 7h 3h 6c Qc]
+
+
+PokerStars Hand #250000000087:  Hold'em No Limit (50/100) - 2026/10/22 21:05:30 CET
+Table 'Exemple 3' 6-max Seat #3 is the button
+Seat 1: Hero (18076 in chips)
+Seat 2: Joueur21 (11669 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (22537 in chips)
+Seat 6: Joueur25 (10950 in chips)
+Joueur23: posts small blind 50
+Joueur24: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8h 9c]
+Joueur25: folds
+Hero: folds
+Joueur21: raises 200 to 300
+Joueur22: folds
+Joueur23: calls 250
+Joueur24: folds
+*** FLOP *** [7d Js Qd]
+Joueur23: checks
+Joueur21: bets 336
+Joueur23: calls 336
+*** TURN *** [7d Js Qd] [5s]
+Joueur23: checks
+Joueur21: checks
+*** RIVER *** [7d Js Qd 5s] [8c]
+Joueur23: checks
+Joueur21: checks
+*** SHOW DOWN ***
+Joueur23: shows [Ad Jd]
+Joueur21: shows [Ks Kc]
+Joueur21 collected 1372 from pot
+*** SUMMARY ***
+Total pot 1372 | Rake 0
+Board [7d Js Qd 5s 8c]
+
+
+PokerStars Hand #250000000088:  Hold'em No Limit (50/100) - 2026/10/22 21:06:25 CET
+Table 'Exemple 3' 6-max Seat #4 is the button
+Seat 1: Hero (18076 in chips)
+Seat 2: Joueur21 (12405 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (22437 in chips)
+Seat 6: Joueur25 (10950 in chips)
+Joueur24: posts small blind 50
+Joueur25: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ah 7c]
+Hero: raises 200 to 300
+Joueur21: raises 600 to 900
+Joueur22: folds
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Hero: folds
+Uncalled bet (600) returned to Joueur21
+Joueur21 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+
+
+PokerStars Hand #250000000089:  Hold'em No Limit (50/100) - 2026/10/22 21:07:20 CET
+Table 'Exemple 3' 6-max Seat #5 is the button
+Seat 1: Hero (17776 in chips)
+Seat 2: Joueur21 (12855 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (22387 in chips)
+Seat 6: Joueur25 (10850 in chips)
+Joueur25: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Kd 7c]
+Joueur21: raises 200 to 300
+Joueur22: folds
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Hero: calls 200
+*** FLOP *** [9s 5c 8h]
+Hero: checks
+Joueur21: checks
+*** TURN *** [9s 5c 8h] [Tc]
+Hero: bets 214
+Joueur21: calls 214
+*** RIVER *** [9s 5c 8h Tc] [2d]
+Hero: checks
+Joueur21: checks
+*** SHOW DOWN ***
+Hero: shows [Kd 7c]
+Joueur21: shows [Kh Ac]
+Joueur21 collected 1078 from pot
+*** SUMMARY ***
+Total pot 1078 | Rake 0
+Board [9s 5c 8h Tc 2d]
+
+
+PokerStars Hand #250000000090:  Hold'em No Limit (50/100) - 2026/10/22 21:08:15 CET
+Table 'Exemple 3' 6-max Seat #6 is the button
+Seat 1: Hero (17262 in chips)
+Seat 2: Joueur21 (13419 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (22387 in chips)
+Seat 6: Joueur25 (10800 in chips)
+Hero: posts small blind 50
+Joueur21: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ah 7s]
+Joueur22: raises 200 to 300
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Hero: calls 250
+Joueur21: calls 200
+*** FLOP *** [Kc 6c 2d]
+Hero: checks
+Joueur21: checks
+Joueur22: bets 702
+Hero: folds
+Joueur21: folds
+Uncalled bet (702) returned to Joueur22
+Joueur22 collected 900 from pot
+*** SUMMARY ***
+Total pot 900 | Rake 0
+Board [Kc 6c 2d]
+
+
+PokerStars Hand #250000000091:  Hold'em No Limit (50/100) - 2026/10/22 21:09:10 CET
+Table 'Exemple 3' 6-max Seat #1 is the button
+Seat 1: Hero (16962 in chips)
+Seat 2: Joueur21 (13119 in chips)
+Seat 3: Joueur22 (10600 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (22387 in chips)
+Seat 6: Joueur25 (10800 in chips)
+Joueur21: posts small blind 50
+Joueur22: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8h Qd]
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Hero: folds
+Joueur21: folds
+Uncalled bet (50) returned to Joueur22
+Joueur22 collected 100 from pot
+*** SUMMARY ***
+Total pot 100 | Rake 0
+
+
+PokerStars Hand #250000000092:  Hold'em No Limit (50/100) - 2026/10/22 21:10:05 CET
+Table 'Exemple 3' 6-max Seat #2 is the button
+Seat 1: Hero (16962 in chips)
+Seat 2: Joueur21 (13069 in chips)
+Seat 3: Joueur22 (10650 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (22387 in chips)
+Seat 6: Joueur25 (10800 in chips)
+Joueur22: posts small blind 50
+Joueur23: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [3h 5c]
+Joueur24: folds
+Joueur25: folds
+Hero: folds
+Joueur21: calls 100
+Joueur22: calls 50
+Joueur23: checks
+*** FLOP *** [2h 4h Jh]
+Joueur22: bets 285
+Joueur23: calls 285
+Joueur21: folds
+*** TURN *** [2h 4h Jh] [Kd]
+Joueur22: bets 843
+Joueur23: calls 843
+*** RIVER *** [2h 4h Jh Kd] [3s]
+Joueur22: checks
+Joueur23: bets 1247
+Joueur22: folds
+Uncalled bet (1247) returned to Joueur23
+Joueur23 collected 2556 from pot
+*** SUMMARY ***
+Total pot 2556 | Rake 0
+Board [2h 4h Jh Kd 3s]
+
+
+PokerStars Hand #250000000093:  Hold'em No Limit (50/100) - 2026/10/22 21:11:00 CET
+Table 'Exemple 3' 6-max Seat #3 is the button
+Seat 1: Hero (16962 in chips)
+Seat 2: Joueur21 (12969 in chips)
+Seat 3: Joueur22 (10000 in chips)
+Seat 4: Joueur23 (11328 in chips)
+Seat 5: Joueur24 (22387 in chips)
+Seat 6: Joueur25 (10800 in chips)
+Joueur23: posts small blind 50
+Joueur24: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2h 8h]
+Joueur25: raises 200 to 300
+Hero: calls 300
+Joueur21: folds
+Joueur22: calls 300
+Joueur23: folds
+Joueur24: calls 200
+*** FLOP *** [8d Qc 5h]
+Joueur24: checks
+Joueur25: bets 840
+Hero: folds
+Joueur22: raises 1680 to 2520
+Joueur24: calls 2520
+Joueur25: folds
+*** TURN *** [8d Qc 5h] [3c]
+Joueur24: bets 6123
+Joueur22: calls 6123
+*** RIVER *** [8d Qc 5h 3c] [4h]
+Joueur24: checks
+Joueur22: bets 1057 and is all-in
+Joueur24: folds
+Uncalled bet (1057) returned to Joueur22
+Joueur22 collected 19376 from pot
+*** SUMMARY ***
+Total pot 19376 | Rake 0
+Board [8d Qc 5h 3c 4h]
+
+
+PokerStars Hand #250000000094:  Hold'em No Limit (50/100) - 2026/10/22 21:11:55 CET
+Table 'Exemple 3' 6-max Seat #4 is the button
+Seat 1: Hero (16662 in chips)
+Seat 2: Joueur21 (12969 in chips)
+Seat 3: Joueur22 (20433 in chips)
+Seat 4: Joueur23 (11278 in chips)
+Seat 5: Joueur24 (13444 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur24: posts small blind 50
+Joueur25: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ah Ac]
+Hero: raises 200 to 300
+Joueur21: folds
+Joueur22: raises 600 to 900
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Hero: raises 15762 to 16662 and is all-in
+Joueur22: folds
+Uncalled bet (15762) returned to Hero
+Hero collected 1950 from pot
+*** SUMMARY ***
+Total pot 1950 | Rake 0
+
+
+PokerStars Hand #250000000095:  Hold'em No Limit (50/100) - 2026/10/22 21:12:50 CET
+Table 'Exemple 3' 6-max Seat #5 is the button
+Seat 1: Hero (17712 in chips)
+Seat 2: Joueur21 (12969 in chips)
+Seat 3: Joueur22 (19533 in chips)
+Seat 4: Joueur23 (11278 in chips)
+Seat 5: Joueur24 (13394 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur25: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Kd 5s]
+Joueur21: folds
+Joueur22: folds
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Uncalled bet (50) returned to Hero
+Hero collected 100 from pot
+*** SUMMARY ***
+Total pot 100 | Rake 0
+
+
+PokerStars Hand #250000000096:  Hold'em No Limit (50/100) - 2026/10/22 21:13:45 CET
+Table 'Exemple 3' 6-max Seat #6 is the button
+Seat 1: Hero (17762 in chips)
+Seat 2: Joueur21 (12969 in chips)
+Seat 3: Joueur22 (19533 in chips)
+Seat 4: Joueur23 (11278 in chips)
+Seat 5: Joueur24 (13394 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Hero: posts small blind 50
+Joueur21: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Jh 3h]
+Joueur22: calls 100
+Joueur23: folds
+Joueur24: raises 300 to 400
+Joueur25: folds
+Hero: calls 350
+Joueur21: folds
+Joueur22: folds
+*** FLOP *** [Tc 4c 8c]
+Hero: checks
+Joueur24: bets 897
+Hero: folds
+Uncalled bet (897) returned to Joueur24
+Joueur24 collected 1000 from pot
+*** SUMMARY ***
+Total pot 1000 | Rake 0
+Board [Tc 4c 8c]
+
+
+PokerStars Hand #250000000097:  Hold'em No Limit (50/100) - 2026/10/22 21:14:40 CET
+Table 'Exemple 3' 6-max Seat #1 is the button
+Seat 1: Hero (17362 in chips)
+Seat 2: Joueur21 (12869 in chips)
+Seat 3: Joueur22 (19433 in chips)
+Seat 4: Joueur23 (11278 in chips)
+Seat 5: Joueur24 (13994 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur21: posts small blind 50
+Joueur22: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [5c 5d]
+Joueur23: folds
+Joueur24: raises 200 to 300
+Joueur25: folds
+Hero: calls 300
+Joueur21: folds
+Joueur22: calls 200
+*** FLOP *** [2h 3h 5s]
+Joueur22: bets 808
+Joueur24: folds
+Hero: raises 1616 to 2424
+Joueur22: folds
+Uncalled bet (1616) returned to Hero
+Hero collected 2566 from pot
+*** SUMMARY ***
+Total pot 2566 | Rake 0
+Board [2h 3h 5s]
+
+
+PokerStars Hand #250000000098:  Hold'em No Limit (50/100) - 2026/10/22 21:15:35 CET
+Table 'Exemple 3' 6-max Seat #2 is the button
+Seat 1: Hero (18820 in chips)
+Seat 2: Joueur21 (12819 in chips)
+Seat 3: Joueur22 (18325 in chips)
+Seat 4: Joueur23 (11278 in chips)
+Seat 5: Joueur24 (13694 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur22: posts small blind 50
+Joueur23: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Kc Jh]
+Joueur24: raises 200 to 300
+Joueur25: folds
+Hero: calls 300
+Joueur21: folds
+Joueur22: calls 250
+Joueur23: calls 200
+*** FLOP *** [9h 4h 8h]
+Joueur22: bets 788
+Joueur23: calls 788
+Joueur24: folds
+Hero: calls 788
+*** TURN *** [9h 4h 8h] [6s]
+Joueur22: bets 2107
+Joueur23: folds
+Hero: calls 2107
+*** RIVER *** [9h 4h 8h 6s] [7c]
+Joueur22: bets 4925
+Hero: folds
+Uncalled bet (4925) returned to Joueur22
+Joueur22 collected 7778 from pot
+*** SUMMARY ***
+Total pot 7778 | Rake 0
+Board [9h 4h 8h 6s 7c]
+
+
+PokerStars Hand #250000000099:  Hold'em No Limit (50/100) - 2026/10/22 21:16:30 CET
+Table 'Exemple 3' 6-max Seat #3 is the button
+Seat 1: Hero (15625 in chips)
+Seat 2: Joueur21 (12819 in chips)
+Seat 3: Joueur22 (22908 in chips)
+Seat 4: Joueur23 (10190 in chips)
+Seat 5: Joueur24 (13394 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur23: posts small blind 50
+Joueur24: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [4h 3h]
+Joueur25: raises 200 to 300
+Hero: calls 300
+Joueur21: folds
+Joueur22: raises 600 to 900
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Hero: folds
+Uncalled bet (600) returned to Joueur22
+Joueur22 collected 1050 from pot
+*** SUMMARY ***
+Total pot 1050 | Rake 0
+
+
+PokerStars Hand #250000000100:  Hold'em No Limit (50/100) - 2026/10/22 21:17:25 CET
+Table 'Exemple 3' 6-max Seat #4 is the button
+Seat 1: Hero (15325 in chips)
+Seat 2: Joueur21 (12819 in chips)
+Seat 3: Joueur22 (23658 in chips)
+Seat 4: Joueur23 (10140 in chips)
+Seat 5: Joueur24 (13294 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur24: posts small blind 50
+Joueur25: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9c Kh]
+Hero: folds
+Joueur21: folds
+Joueur22: raises 200 to 300
+Joueur23: calls 300
+Joueur24: folds
+Joueur25: folds
+*** FLOP *** [7c 9h Jc]
+Joueur22: bets 771
+Joueur23: folds
+Uncalled bet (771) returned to Joueur22
+Joueur22 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+Board [7c 9h Jc]
+
+
+PokerStars Hand #250000000101:  Hold'em No Limit (50/100) - 2026/10/22 21:18:20 CET
+Table 'Exemple 3' 6-max Seat #5 is the button
+Seat 1: Hero (15325 in chips)
+Seat 2: Joueur21 (12819 in chips)
+Seat 3: Joueur22 (24108 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (13244 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Joueur25: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8d 7c]
+Joueur21: calls 100
+Joueur22: raises 300 to 400
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Hero: folds
+Joueur21: calls 300
+*** FLOP *** [6h 2c Kc]
+Joueur21: checks
+Joueur22: bets 777
+Joueur21: calls 777
+*** TURN *** [6h 2c Kc] [8c]
+Joueur21: checks
+Joueur22: bets 2150
+Joueur21: folds
+Uncalled bet (2150) returned to Joueur22
+Joueur22 collected 2504 from pot
+*** SUMMARY ***
+Total pot 2504 | Rake 0
+Board [6h 2c Kc 8c]
+
+
+PokerStars Hand #250000000102:  Hold'em No Limit (50/100) - 2026/10/22 21:19:15 CET
+Table 'Exemple 3' 6-max Seat #6 is the button
+Seat 1: Hero (15225 in chips)
+Seat 2: Joueur21 (11642 in chips)
+Seat 3: Joueur22 (25435 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (13244 in chips)
+Seat 6: Joueur25 (10000 in chips)
+Hero: posts small blind 50
+Joueur21: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9c 8d]
+Joueur22: calls 100
+Joueur23: folds
+Joueur24: calls 100
+Joueur25: raises 400 to 500
+Hero: folds
+Joueur21: folds
+Joueur22: calls 400
+Joueur24: calls 400
+*** FLOP *** [3c 2d As]
+Joueur22: bets 1696
+Joueur24: calls 1696
+Joueur25: calls 1696
+*** TURN *** [3c 2d As] [2c]
+Joueur22: checks
+Joueur24: checks
+Joueur25: bets 5010
+Joueur22: raises 10020 to 15030
+Joueur24: folds
+Joueur25: calls 2794 and is all-in
+*** RIVER *** [3c 2d As 2c] [Jc]
+Uncalled bet (7226) returned to Joueur22
+*** SHOW DOWN ***
+Joueur22: shows [5h Qs]
+Joueur25: shows [4s Ac]
+Joueur25 collected 22346 from pot
+*** SUMMARY ***
+Total pot 22346 | Rake 0
+Board [3c 2d As 2c Jc]
+
+
+PokerStars Hand #250000000103:  Hold'em No Limit (50/100) - 2026/10/22 21:20:10 CET
+Table 'Exemple 3' 6-max Seat #1 is the button
+Seat 1: Hero (15175 in chips)
+Seat 2: Joueur21 (11542 in chips)
+Seat 3: Joueur22 (15435 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (11048 in chips)
+Seat 6: Joueur25 (22346 in chips)
+Joueur21: posts small blind 50
+Joueur22: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2d 8c]
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Hero: folds
+Joueur21: folds
+Uncalled bet (50) returned to Joueur22
+Joueur22 collected 100 from pot
+*** SUMMARY ***
+Total pot 100 | Rake 0
+
+
+PokerStars Hand #250000000104:  Hold'em No Limit (50/100) - 2026/10/22 21:21:05 CET
+Table 'Exemple 3' 6-max Seat #2 is the button
+Seat 1: Hero (15175 in chips)
+Seat 2: Joueur21 (11492 in chips)
+Seat 3: Joueur22 (15485 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (11048 in chips)
+Seat 6: Joueur25 (22346 in chips)
+Joueur22: posts small blind 50
+Joueur23: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [6s 2c]
+Joueur24: raises 200 to 300
+Joueur25: raises 600 to 900
+Hero: folds
+Joueur21: folds
+Joueur22: folds
+Joueur23: folds
+Joueur24: calls 600
+*** FLOP *** [Qd Kc 4h]
+Joueur24: bets 1654
+Joueur25: calls 1654
+*** TURN *** [Qd Kc 4h] [Ks]
+Joueur24: bets 4541
+Joueur25: folds
+Uncalled bet (4541) returned to Joueur24
+Joueur24 collected 5258 from pot
+*** SUMMARY ***
+Total pot 5258 | Rake 0
+Board [Qd Kc 4h Ks]
+
+
+PokerStars Hand #250000000105:  Hold'em No Limit (50/100) - 2026/10/22 21:22:00 CET
+Table 'Exemple 3' 6-max Seat #3 is the button
+Seat 1: Hero (15175 in chips)
+Seat 2: Joueur21 (11492 in chips)
+Seat 3: Joueur22 (15435 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (13752 in chips)
+Seat 6: Joueur25 (19792 in chips)
+Joueur23: posts small blind 50
+Joueur24: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2s 6d]
+Joueur25: raises 200 to 300
+Hero: folds
+Joueur21: calls 300
+Joueur22: raises 600 to 900
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Joueur21: folds
+Uncalled bet (600) returned to Joueur22
+Joueur22 collected 1050 from pot
+*** SUMMARY ***
+Total pot 1050 | Rake 0
+
+
+PokerStars Hand #250000000106:  Hold'em No Limit (50/100) - 2026/10/22 21:22:55 CET
+Table 'Exemple 3' 6-max Seat #4 is the button
+Seat 1: Hero (15175 in chips)
+Seat 2: Joueur21 (11192 in chips)
+Seat 3: Joueur22 (16185 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (13652 in chips)
+Seat 6: Joueur25 (19492 in chips)
+Joueur24: posts small blind 50
+Joueur25: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7d 3d]
+Hero: folds
+Joueur21: raises 200 to 300
+Joueur22: raises 600 to 900
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+Joueur21: folds
+Uncalled bet (600) returned to Joueur22
+Joueur22 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+
+
+PokerStars Hand #250000000107:  Hold'em No Limit (50/100) - 2026/10/22 21:23:50 CET
+Table 'Exemple 3' 6-max Seat #5 is the button
+Seat 1: Hero (15175 in chips)
+Seat 2: Joueur21 (10892 in chips)
+Seat 3: Joueur22 (16635 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (13602 in chips)
+Seat 6: Joueur25 (19392 in chips)
+Joueur25: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9c 3c]
+Joueur21: calls 100
+Joueur22: folds
+Joueur23: folds
+Joueur24: folds
+Joueur25: raises 300 to 400
+Hero: calls 300
+Joueur21: calls 300
+*** FLOP *** [6c Qd 2s]
+Joueur25: bets 867
+Hero: raises 867 to 1734
+Joueur21: calls 1734
+Joueur25: calls 867
+*** TURN *** [6c Qd 2s] [8d]
+Joueur25: bets 5048
+Hero: folds
+Joueur21: calls 5048
+*** RIVER *** [6c Qd 2s 8d] [9s]
+Joueur25: bets 12210 and is all-in
+Joueur21: calls 3710 and is all-in
+Uncalled bet (8500) returned to Joueur25
+*** SHOW DOWN ***
+Joueur25: shows [Qh Kd]
+Joueur21: shows [Ks Qc]
+Joueur25 collected 11959 from pot
+Joueur21 collected 11959 from pot
+*** SUMMARY ***
+Total pot 23918 | Rake 0
+Board [6c Qd 2s 8d 9s]
+
+
+PokerStars Hand #250000000108:  Hold'em No Limit (50/100) - 2026/10/22 21:24:45 CET
+Table 'Exemple 3' 6-max Seat #6 is the button
+Seat 1: Hero (13041 in chips)
+Seat 2: Joueur21 (11959 in chips)
+Seat 3: Joueur22 (16635 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (13602 in chips)
+Seat 6: Joueur25 (20459 in chips)
+Hero: posts small blind 50
+Joueur21: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9h 6d]
+Joueur22: raises 200 to 300
+Joueur23: folds
+Joueur24: calls 300
+Joueur25: folds
+Hero: folds
+Joueur21: folds
+*** FLOP *** [Ts Ks 8d]
+Joueur22: bets 685
+Joueur24: folds
+Uncalled bet (685) returned to Joueur22
+Joueur22 collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | Rake 0
+Board [Ts Ks 8d]
+
+
+PokerStars Hand #250000000109:  Hold'em No Limit (50/100) - 2026/10/22 21:25:40 CET
+Table 'Exemple 3' 6-max Seat #1 is the button
+Seat 1: Hero (12991 in chips)
+Seat 2: Joueur21 (11859 in chips)
+Seat 3: Joueur22 (17085 in chips)
+Seat 4: Joueur23 (10000 in chips)
+Seat 5: Joueur24 (13302 in chips)
+Seat 6: Joueur25 (20459 in chips)
+Joueur21: posts small blind 50
+Joueur22: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7s Qs]
+Joueur23: calls 100
+Joueur24: raises 300 to 400
+Joueur25: folds
+Hero: calls 400
+Joueur21: folds
+Joueur22: folds
+Joueur23: calls 300
+*** FLOP *** [Js Ad 8c]
+Joueur23: checks
+Joueur24: checks
+Hero: checks
+*** TURN *** [Js Ad 8c] [Jd]
+Joueur23: checks
+Joueur24: bets 1159
+Hero: folds
+Joueur23: calls 1159
+*** RIVER *** [Js Ad 8c Jd] [2h]
+Joueur23: checks
+Joueur24: bets 3624
+Joueur23: calls 3624
+*** SHOW DOWN ***
+Joueur23: shows [Jc Kc]
+Joueur24: shows [Qd 6d]
+Joueur23 collected 10916 from pot
+*** SUMMARY ***
+Total pot 10916 | Rake 0
+Board [Js Ad 8c Jd 2h]
+
+
+PokerStars Hand #250000000110:  Hold'em No Limit (50/100) - 2026/10/22 21:26:35 CET
+Table 'Exemple 3' 6-max Seat #2 is the button
+Seat 1: Hero (12591 in chips)
+Seat 2: Joueur21 (11809 in chips)
+Seat 3: Joueur22 (16985 in chips)
+Seat 4: Joueur23 (15733 in chips)
+Seat 5: Joueur24 (10000 in chips)
+Seat 6: Joueur25 (20459 in chips)
+Joueur22: posts small blind 50
+Joueur23: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Jd 8s]
+Joueur24: raises 200 to 300
+Joueur25: folds
+Hero: folds
+Joueur21: folds
+Joueur22: folds
+Joueur23: folds
+Uncalled bet (200) returned to Joueur24
+Joueur24 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | Rake 0
+
+
+PokerStars Hand #250000000111:  Hold'em No Limit (50/100) - 2026/10/22 21:27:30 CET
+Table 'Exemple 3' 6-max Seat #3 is the button
+Seat 1: Hero (12591 in chips)
+Seat 2: Joueur21 (11809 in chips)
+Seat 3: Joueur22 (16935 in chips)
+Seat 4: Joueur23 (15633 in chips)
+Seat 5: Joueur24 (10150 in chips)
+Seat 6: Joueur25 (20459 in chips)
+Joueur23: posts small blind 50
+Joueur24: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [7d 3h]
+Joueur25: folds
+Hero: folds
+Joueur21: calls 100
+Joueur22: folds
+Joueur23: calls 50
+Joueur24: checks
+*** FLOP *** [6c 3s 4c]
+Joueur23: checks
+Joueur24: bets 246
+Joueur21: calls 246
+Joueur23: calls 246
+*** TURN *** [6c 3s 4c] [5c]
+Joueur23: checks
+Joueur24: bets 933
+Joueur21: folds
+Joueur23: folds
+Uncalled bet (933) returned to Joueur24
+Joueur24 collected 1038 from pot
+*** SUMMARY ***
+Total pot 1038 | Rake 0
+Board [6c 3s 4c 5c]
+
+
+PokerStars Hand #250000000112:  Hold'em No Limit (50/100) - 2026/10/22 21:28:25 CET
+Table 'Exemple 3' 6-max Seat #4 is the button
+Seat 1: Hero (12591 in chips)
+Seat 2: Joueur21 (11463 in chips)
+Seat 3: Joueur22 (16935 in chips)
+Seat 4: Joueur23 (15287 in chips)
+Seat 5: Joueur24 (10842 in chips)
+Seat 6: Joueur25 (20459 in chips)
+Joueur24: posts small blind 50
+Joueur25: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [8h Th]
+Hero: raises 200 to 300
+Joueur21: folds
+Joueur22: folds
+Joueur23: folds
+Joueur24: calls 250
+Joueur25: calls 200
+*** FLOP *** [8s 5d 6c]
+Joueur24: checks
+Joueur25: checks
+Hero: bets 450
+Joueur24: folds
+Joueur25: folds
+Uncalled bet (450) returned to Hero
+Hero collected 900 from pot
+*** SUMMARY ***
+Total pot 900 | Rake 0
+Board [8s 5d 6c]
+
+
+PokerStars Hand #250000000113:  Hold'em No Limit (50/100) - 2026/10/22 21:29:20 CET
+Table 'Exemple 3' 6-max Seat #5 is the button
+Seat 1: Hero (13191 in chips)
+Seat 2: Joueur21 (11463 in chips)
+Seat 3: Joueur22 (16935 in chips)
+Seat 4: Joueur23 (15287 in chips)
+Seat 5: Joueur24 (10542 in chips)
+Seat 6: Joueur25 (20159 in chips)
+Joueur25: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Th 2s]
+Joueur21: folds
+Joueur22: calls 100
+Joueur23: calls 100
+Joueur24: folds
+Joueur25: folds
+Hero: checks
+*** FLOP *** [7c 7s Kc]
+Hero: checks
+Joueur22: checks
+Joueur23: checks
+*** TURN *** [7c 7s Kc] [2c]
+Hero: bets 116
+Joueur22: calls 116
+Joueur23: folds
+*** RIVER *** [7c 7s Kc 2c] [6d]
+Hero: bets 100
+Joueur22: raises 200 to 300
+Hero: calls 200
+*** SHOW DOWN ***
+Hero: shows [Th 2s]
+Joueur22: shows [Tc 9h]
+Hero collected 1182 from pot
+*** SUMMARY ***
+Total pot 1182 | Rake 0
+Board [7c 7s Kc 2c 6d]
+
+
+PokerStars Hand #250000000114:  Hold'em No Limit (50/100) - 2026/10/22 21:30:15 CET
+Table 'Exemple 3' 6-max Seat #6 is the button
+Seat 1: Hero (13857 in chips)
+Seat 2: Joueur21 (11463 in chips)
+Seat 3: Joueur22 (16419 in chips)
+Seat 4: Joueur23 (15187 in chips)
+Seat 5: Joueur24 (10542 in chips)
+Seat 6: Joueur25 (20109 in chips)
+Hero: posts small blind 50
+Joueur21: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Qs Jh]
+Joueur22: calls 100
+Joueur23: calls 100
+Joueur24: calls 100
+Joueur25: raises 500 to 600
+Hero: folds
+Joueur21: calls 500
+Joueur22: folds
+Joueur23: calls 500
+Joueur24: folds
+*** FLOP *** [Kd 8h 5s]
+Joueur21: checks
+Joueur23: checks
+Joueur25: bets 1238
+Joueur21: folds
+Joueur23: folds
+Uncalled bet (1238) returned to Joueur25
+Joueur25 collected 2050 from pot
+*** SUMMARY ***
+Total pot 2050 | Rake 0
+Board [Kd 8h 5s]
+
+
+PokerStars Hand #250000000115:  Hold'em No Limit (50/100) - 2026/10/22 21:31:10 CET
+Table 'Exemple 3' 6-max Seat #1 is the button
+Seat 1: Hero (13807 in chips)
+Seat 2: Joueur21 (10863 in chips)
+Seat 3: Joueur22 (16319 in chips)
+Seat 4: Joueur23 (14587 in chips)
+Seat 5: Joueur24 (10442 in chips)
+Seat 6: Joueur25 (21559 in chips)
+Joueur21: posts small blind 50
+Joueur22: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Th Js]
+Joueur23: calls 100
+Joueur24: raises 300 to 400
+Joueur25: raises 800 to 1200
+Hero: folds
+Joueur21: folds
+Joueur22: folds
+Joueur23: folds
+Joueur24: raises 9242 to 10442 and is all-in
+Joueur25: folds
+Uncalled bet (9242) returned to Joueur24
+Joueur24 collected 2650 from pot
+*** SUMMARY ***
+Total pot 2650 | Rake 0
+
+
+PokerStars Hand #250000000116:  Hold'em No Limit (50/100) - 2026/10/22 21:32:05 CET
+Table 'Exemple 3' 6-max Seat #2 is the button
+Seat 1: Hero (13807 in chips)
+Seat 2: Joueur21 (10813 in chips)
+Seat 3: Joueur22 (16219 in chips)
+Seat 4: Joueur23 (14487 in chips)
+Seat 5: Joueur24 (11892 in chips)
+Seat 6: Joueur25 (20359 in chips)
+Joueur22: posts small blind 50
+Joueur23: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [6s 7h]
+Joueur24: calls 100
+Joueur25: folds
+Hero: folds
+Joueur21: folds
+Joueur22: raises 300 to 400
+Joueur23: calls 300
+Joueur24: calls 300
+*** FLOP *** [4s 8c 6h]
+Joueur22: bets 966
+Joueur23: folds
+Joueur24: folds
+Uncalled bet (966) returned to Joueur22
+Joueur22 collected 1200 from pot
+*** SUMMARY ***
+Total pot 1200 | Rake 0
+Board [4s 8c 6h]
+
+
+PokerStars Hand #250000000117:  Hold'em No Limit (50/100) - 2026/10/22 21:33:00 CET
+Table 'Exemple 3' 6-max Seat #3 is the button
+Seat 1: Hero (13807 in chips)
+Seat 2: Joueur21 (10813 in chips)
+Seat 3: Joueur22 (17019 in chips)
+Seat 4: Joueur23 (14087 in chips)
+Seat 5: Joueur24 (11492 in chips)
+Seat 6: Joueur25 (20359 in chips)
+Joueur23: posts small blind 50
+Joueur24: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [9c 9s]
+Joueur25: folds
+Hero: raises 200 to 300
+Joueur21: calls 300
+Joueur22: calls 300
+Joueur23: calls 250
+Joueur24: calls 200
+*** FLOP *** [Ts 8h 4d]
+Joueur23: checks
+Joueur24: bets 1552
+Hero: folds
+Joueur21: folds
+Joueur22: calls 1552
+Joueur23: calls 1552
+*** TURN *** [Ts 8h 4d] [3s]
+Joueur23: bets 1849
+Joueur24: calls 1849
+Joueur22: folds
+*** RIVER *** [Ts 8h 4d 3s] [7s]
+Joueur23: bets 4551
+Joueur24: calls 4551
+*** SHOW DOWN ***
+Joueur23: shows [Th Qd]
+Joueur24: shows [Jd 3h]
+Joueur23 collected 18956 from pot
+*** SUMMARY ***
+Total pot 18956 | Rake 0
+Board [Ts 8h 4d 3s 7s]
+
+
+PokerStars Hand #250000000118:  Hold'em No Limit (50/100) - 2026/10/22 21:33:55 CET
+Table 'Exemple 3' 6-max Seat #4 is the button
+Seat 1: Hero (13507 in chips)
+Seat 2: Joueur21 (10513 in chips)
+Seat 3: Joueur22 (15167 in chips)
+Seat 4: Joueur23 (24791 in chips)
+Seat 5: Joueur24 (10000 in chips)
+Seat 6: Joueur25 (20359 in chips)
+Joueur24: posts small blind 50
+Joueur25: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Ac Ts]
+Hero: raises 200 to 300
+Joueur21: calls 300
+Joueur22: calls 300
+Joueur23: folds
+Joueur24: folds
+Joueur25: folds
+*** FLOP *** [7h Jd Jh]
+Hero: checks
+Joueur21: checks
+Joueur22: checks
+*** TURN *** [7h Jd Jh] [6h]
+Hero: checks
+Joueur21: checks
+Joueur22: bets 974
+Hero: folds
+Joueur21: calls 974
+*** RIVER *** [7h Jd Jh 6h] [2h]
+Joueur21: bets 1681
+Joueur22: calls 1681
+*** SHOW DOWN ***
+Joueur21: shows [Qh Kd]
+Joueur22: shows [Qc 9h]
+Joueur21 collected 6360 from pot
+*** SUMMARY ***
+Total pot 6360 | Rake 0
+Board [7h Jd Jh 6h 2h]
+
+
+PokerStars Hand #250000000119:  Hold'em No Limit (50/100) - 2026/10/22 21:34:50 CET
+Table 'Exemple 3' 6-max Seat #5 is the button
+Seat 1: Hero (13207 in chips)
+Seat 2: Joueur21 (13918 in chips)
+Seat 3: Joueur22 (12212 in chips)
+Seat 4: Joueur23 (24791 in chips)
+Seat 5: Joueur24 (10000 in chips)
+Seat 6: Joueur25 (20259 in chips)
+Joueur25: posts small blind 50
+Hero: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [2d As]
+Joueur21: calls 100
+Joueur22: raises 300 to 400
+Joueur23: folds
+Joueur24: folds
+Joueur25: calls 350
+Hero: calls 300
+Joueur21: calls 300
+*** FLOP *** [Js 8h 8d]
+Joueur25: checks
+Hero: checks
+Joueur21: checks
+Joueur22: bets 1449
+Joueur25: folds
+Hero: raises 1449 to 2898
+Joueur21: calls 2898
+Joueur22: folds
+*** TURN *** [Js 8h 8d] [9c]
+Hero: checks
+Joueur21: checks
+*** RIVER *** [Js 8h 8d 9c] [6h]
+Hero: checks
+Joueur21: checks
+*** SHOW DOWN ***
+Hero: shows [2d As]
+Joueur21: shows [3h Ks]
+Hero collected 8845 from pot
+*** SUMMARY ***
+Total pot 8845 | Rake 0
+Board [Js 8h 8d 9c 6h]
+
+
+PokerStars Hand #250000000120:  Hold'em No Limit (50/100) - 2026/10/22 21:35:45 CET
+Table 'Exemple 3' 6-max Seat #6 is the button
+Seat 1: Hero (18754 in chips)
+Seat 2: Joueur21 (10620 in chips)
+Seat 3: Joueur22 (10363 in chips)
+Seat 4: Joueur23 (24791 in chips)
+Seat 5: Joueur24 (10000 in chips)
+Seat 6: Joueur25 (19859 in chips)
+Hero: posts small blind 50
+Joueur21: posts big blind 100
+*** HOLE CARDS ***
+Dealt to Hero [Tc 7c]
+Joueur22: raises 200 to 300
+Joueur23: calls 300
+Joueur24: raises 600 to 900
+Joueur25: folds
+Hero: folds
+Joueur21: folds
+Joueur22: folds
+Joueur23: folds
+Uncalled bet (600) returned to Joueur24
+Joueur24 collected 1050 from pot
+*** SUMMARY ***
+Total pot 1050 | Rake 0

@@ -104,7 +104,13 @@ def run_sweep(ctx: ExperimentContext) -> dict[str, Any]:
         f"{len(configs)} variantes, {int(cfg.get('decks', 200))} decks chacune (x6 rotations).",
         "Un écart non significatif veut dire : le paramètre compte peu à cet échantillon, pas qu'il est sans effet.",
     ]
-    paths = save_outputs(ctx, report, hands, None, (), {"variantes": table.to_dict("records")})
+    grid = {
+        "params": [{"path": p["path"], "label": str(p.get("label", p["path"])), "values": list(p["values"])} for p in params],
+        "points": [{"values": list(combo), "bb100": summ[c["name"]].ev.bb100, "ci": summ[c["name"]].ev.ci_half,
+                    "label": c["label"]} for combo, c in zip(combos, configs)],
+    }
+    paths = save_outputs(ctx, report, hands, None, (), {"strategie": base["name"], "composition": comp,
+                                                         "variantes": table.to_dict("records"), "grille": grid})
     return {"report": report, "paths": paths, "table": table, "hands": hands}
 
 
@@ -139,7 +145,12 @@ def run_ablation(ctx: ExperimentContext, report: Report | None = None) -> dict[s
         lines = [f"{n} : {'rapporte' if t.diff_bb100 > 0 else 'coûte'} {abs(t.diff_bb100):.1f} ± {t.ci_half:.1f} bb/100 "
                  f"({'significatif' if t.significant else 'pas encore significatif'})." for n, t in zip(names, tests)]
         report.verdict = lines[:5]
-        paths = save_outputs(ctx, report, hands, None, (), {"ablations": [t.verdict() for t in tests]})
+        paths = save_outputs(ctx, report, hands, None, (), {
+            "strategie": base["name"], "composition": comp, "ablations": [t.verdict() for t in tests],
+            "resultats": [{"regle": n, "apport_bb100": t.diff_bb100, "ci": t.ci_half, "p_holm": t.p_holm, "significatif": t.significant}
+                          for n, t in zip(names, tests)],
+            "base_bb100": _bb100(hands, base_cfg["name"], ctx.confidence).ev.bb100,
+        })
     else:
         paths = {}
     return {"report": report, "paths": paths, "tests": tests, "hands": hands}

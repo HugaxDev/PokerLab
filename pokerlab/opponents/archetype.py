@@ -56,6 +56,7 @@ PARAM_DEFAULTS: dict[str, Any] = {
     "call_size_ref": 0.75,
     "allin_call_factor": 0.3,
     "min_bet_pot": 0.2,
+    "noise": 0.0,
 }
 
 
@@ -165,7 +166,26 @@ class Archetype:
             return make_raise(obs, p["raise_multiplier"] * max(obs.bets), self.shove_fraction, "bluff-raise")
         return Action.fold("fold")
 
+    def _noisy(self, obs: Observation) -> Action | None:
+        """Erreur « humaine » : avec la probabilité ``noise``, une action légale au hasard."""
+        noise = float(self.p["noise"])
+        if noise <= 0:
+            return None
+        rng = decision_rng(obs, 0x4E015E)
+        if rng.random() >= noise:
+            return None
+        options = ["call"] + (["fold"] if obs.legal.can_fold else []) + (["raise"] if obs.legal.can_raise else [])
+        choice = options[int(rng.random() * len(options))]
+        if choice == "fold":
+            return Action.fold("erreur")
+        if choice == "raise":
+            return make_raise(obs, pot_bet(obs, 0.5 + rng.random()) if obs.to_call == 0 else 2.5 * max(obs.bets), self.shove_fraction, "erreur")
+        return Action.check_call("erreur")
+
     def decide(self, observation: Observation) -> Action:
+        mistake = self._noisy(observation)
+        if mistake is not None:
+            return mistake
         if observation.street == 0:
             return self._preflop(observation)
         return self._postflop(observation)

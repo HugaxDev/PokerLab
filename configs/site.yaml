@@ -1,0 +1,14 @@
+# Tableau de bord local (python -m pokerlab site / serve).
+strategie_suivie: joueur              # stratégie dont tu suis la fiche
+composition_reference: micro_play_money  # cône attendu et stats simulées (humains_simules si tu le préfères)
+campagnes: out                        # dossier racine des campagnes (compare, audit, sweep, ablation...)
+donnees_reelles: data/reel            # mains réelles importées (non versionnées)
+dossier_import: data/a_importer       # dépose ici tes historiques PokerStars (.txt) : import automatique avec serve
+exemple: data/exemple                 # données d'exemple (mains simulées, marquées « exemple »)
+exemple_source: journal/exemple_pokerstars.txt
+sortie: out/site
+port: 8765
+hero: null                            # ton pseudo PokerStars (sinon : le joueur qui reçoit « Dealt to »)
+pause_session_minutes: 30             # nouvelle session après une pause plus longue
+cone_tirages: 2000                    # trajectoires simulées pour le cône attendu
+intervalle_surveillance_s: 3          # serve : fréquence de vérification des nouveaux résultats

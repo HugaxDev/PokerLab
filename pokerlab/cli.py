@@ -48,6 +48,16 @@ def _parser() -> argparse.ArgumentParser:
     rp.add_argument("--rot", type=int, default=0)
     rp.add_argument("--seed", type=int)
     sub.add_parser("strategies", help="liste les stratégies disponibles")
+    im = sub.add_parser("import", help="importe des historiques PokerStars (.txt ou dossiers)")
+    im.add_argument("chemins", nargs="+")
+    im.add_argument("--strategie", help="stratégie suivie (défaut : configs/site.yaml)")
+    im.add_argument("--hero", help="ton pseudo PokerStars")
+    im.add_argument("--dest", help="dossier de stockage (défaut : data/reel)")
+    sub.add_parser("site", help="génère le tableau de bord statique dans out/site")
+    sv = sub.add_parser("serve", help="génère et sert le tableau de bord sur http://localhost:8765 (régénération automatique)")
+    sv.add_argument("--port", type=int)
+    rb = sub.add_parser("robustesse", help="score de robustesse sur toutes les compositions mesurées (compare)")
+    rb.add_argument("--campaign", default="out", help="dossier contenant une ou plusieurs campagnes compare")
     fi = sub.add_parser("fiche", help="fiche HTML d'une stratégie (grilles, tailles, règles, interdits, résultat attendu)")
     fi.add_argument("--strategy", required=True)
     fi.add_argument("--campaign", help="dossier de campagne contenant compare et audit (ex. out ou out/smoke)")
@@ -85,6 +95,37 @@ def main(argv: list[str] | None = None) -> int:
         table = build_table(eq, verbose=True)
         save_table(table, eq.table_path(), eq.seed)
         print(f"Table écrite : {eq.table_path()} ({eq.preflop_sims_per_matchup} simulations par confrontation)")
+        return 0
+    if cmd == "import":
+        from pokerlab.config import load_yaml, configs_root
+        from pokerlab.journal.store import import_paths
+
+        site_cfg = load_yaml(configs_root() / "site.yaml")
+        lab = LabConfig.load()
+        res = import_paths(args.chemins, lab, args.strategie or site_cfg.get("strategie_suivie", "joueur"),
+                           args.dest or site_cfg.get("donnees_reelles", "data/reel"), args.hero or site_cfg.get("hero"),
+                           float(site_cfg.get("pause_session_minutes", 30)))
+        print(f"{res['lues']} mains importées, {res['ignorees']} ignorées, {res['total']} au total dans {res['dossier']}")
+        return 0
+    if cmd in ("site", "serve"):
+        from pokerlab.site.build import build_site
+        from pokerlab.site.serve import serve
+
+        if cmd == "site":
+            out = build_site()
+            print(f"Site généré : {out / 'index.html'}")
+            return 0
+        return serve(args.port)
+    if cmd == "robustesse":
+        from pokerlab.analysis.robustness import load_compare_cells, robustness_table
+
+        cells = load_compare_cells(args.campaign)
+        if cells.empty:
+            print("Aucun compare avec résultats par case : lance python -m pokerlab compare")
+            return 1
+        table = robustness_table(cells)
+        print(f"Compositions : {', '.join(sorted(cells['composition'].unique()))}")
+        print(table.to_string(index=False, float_format=lambda v: f"{v:.1f}"))
         return 0
     if cmd == "fiche":
         from pokerlab.fiche.build import build_fiche, fiche_config
