@@ -1,0 +1,48 @@
+{
+  "strategie": "serre",
+  "composition": "micro_play_money",
+  "ablations": [
+    "Serré [sans garde-fou] bat Serré : significatif (8.8 ± 1.7 bb/100, p Holm = 2.78e-23)",
+    "Serré bat Serré [sans exception overpair QQ+] : significatif (7.4 ± 1.4 bb/100, p Holm = 7.32e-26)"
+  ],
+  "resultats": [
+    {
+      "regle": "garde-fou",
+      "apport_bb100": -8.782478808696629,
+      "ci": 1.7308535451798355,
+      "p_holm": 2.780444379068964e-23,
+      "significatif": true
+    },
+    {
+      "regle": "exception overpair QQ+",
+      "apport_bb100": 7.413646115124109,
+      "ci": 1.3725562139357737,
+      "p_holm": 7.323111881062679e-26,
+      "significatif": true
+    }
+  ],
+  "base_bb100": 34.163788458438205,
+  "experience": "ablation",
+  "config": {
+    "experiment": "ablation",
+    "strategy": "serre",
+    "composition": "micro_play_money",
+    "decks": 50000,
+    "ablations": [
+      {
+        "name": "garde-fou",
+        "patch": {
+          "postflop.guardrail.enabled": false
+        }
+      },
+      {
+        "name": "exception overpair QQ+",
+        "patch": {
+          "postflop.guardrail.allow_overpair_from": null
+        }
+      }
+    ]
+  },
+  "mains_jouees": 900000,
+  "duree_s": 381.9
+}

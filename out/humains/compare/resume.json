@@ -1,0 +1,271 @@
+{
+  "cellules": {
+    "serre@humains_simules": {
+      "decks": 27000,
+      "arret": "précision atteinte (± 2.99 bb/100)",
+      "bb100_metric": 17.544809077672255
+    },
+    "large@humains_simules": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 3.58 bb/100)",
+      "bb100_metric": 23.42412547316268
+    },
+    "zero_bluff@humains_simules": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 4.11 bb/100)",
+      "bb100_metric": 14.563826529264151
+    },
+    "position@humains_simules": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 3.13 bb/100)",
+      "bb100_metric": 19.822327290565433
+    },
+    "bluff@humains_simules": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 3.13 bb/100)",
+      "bb100_metric": 20.795674069487767
+    },
+    "joueur@humains_simules": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 5.18 bb/100)",
+      "bb100_metric": 43.544037395899224
+    },
+    "equity_bot@humains_simules": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 3.94 bb/100)",
+      "bb100_metric": 41.52173832766802
+    },
+    "random_legal@humains_simules": {
+      "decks": 33333,
+      "arret": "maximum de mains atteint (± 12.14 bb/100)",
+      "bb100_metric": -520.2113116108048
+    }
+  },
+  "resultats": [
+    {
+      "strategy": "bluff",
+      "composition": "humains_simules",
+      "bb100": 20.795674069487767,
+      "ci": 3.130077442461046,
+      "bb100_reel": 21.08913589135891,
+      "ci_reel": 3.954941270028594,
+      "sd_main_bb100": 98.52318888657608,
+      "mains": 199998,
+      "mains_necessaires_duplicate": 4530.955678014112,
+      "mains_necessaires_reelles": 8384.082280560651,
+      "moyenne_main": 0.21089135891358918,
+      "ecart_type_main": 9.852318888657608,
+      "stats": {
+        "VPIP": 12.639626396263962,
+        "PFR": 9.85609856098561,
+        "3bet": 1.9367084355158397,
+        "AF": 10.127849355797819,
+        "WTSD": 29.27049476345251,
+        "W$SD": 59.11474398519432,
+        "cbet": 48.865420293991725,
+        "fold_cbet": 93.48522605909577
+      }
+    },
+    {
+      "strategy": "equity_bot",
+      "composition": "humains_simules",
+      "bb100": 41.52173832766802,
+      "ci": 3.9361090632043316,
+      "bb100_reel": 41.71857218572186,
+      "ci_reel": 4.815564970989348,
+      "sd_main_bb100": 123.65214793988469,
+      "mains": 199998,
+      "mains_necessaires_duplicate": 1797.2514613220078,
+      "mains_necessaires_reelles": 3374.742485936328,
+      "moyenne_main": 0.4171857218572186,
+      "ecart_type_main": 12.365214793988468,
+      "stats": {
+        "VPIP": 19.59269592695927,
+        "PFR": 14.405144051440514,
+        "3bet": 0.932240400443444,
+        "AF": 3.038317617123185,
+        "WTSD": 29.03692103836656,
+        "W$SD": 56.316116988176724,
+        "cbet": 68.35418295543393,
+        "fold_cbet": 71.59803654213253
+      }
+    },
+    {
+      "strategy": "joueur",
+      "composition": "humains_simules",
+      "bb100": 43.544037395899224,
+      "ci": 5.176788469973694,
+      "bb100_reel": 42.83694836948369,
+      "ci_reel": 5.708545612936038,
+      "sd_main_bb100": 149.023334795122,
+      "mains": 199998,
+      "mains_necessaires_duplicate": 2826.761080330167,
+      "mains_necessaires_reelles": 4649.087152806327,
+      "moyenne_main": 0.428369483694837,
+      "ecart_type_main": 14.9023334795122,
+      "stats": {
+        "VPIP": 35.288852888528886,
+        "PFR": 23.34723347233472,
+        "3bet": 1.9367084355158397,
+        "AF": 4.872823841841251,
+        "WTSD": 26.51265784906338,
+        "W$SD": 43.544018058690746,
+        "cbet": 87.95400519652827,
+        "fold_cbet": 74.43285766556897
+      }
+    },
+    {
+      "strategy": "large",
+      "composition": "humains_simules",
+      "bb100": 23.42412547316268,
+      "ci": 3.578221269144059,
+      "bb100_reel": 23.707837078370787,
+      "ci_reel": 4.325385496992646,
+      "sd_main_bb100": 109.117101102637,
+      "mains": 199998,
+      "mains_necessaires_duplicate": 4666.951278079884,
+      "mains_necessaires_reelles": 8137.630254489727,
+      "moyenne_main": 0.23707837078370783,
+      "ecart_type_main": 10.9117101102637,
+      "stats": {
+        "VPIP": 25.387253872538725,
+        "PFR": 19.85119851198512,
+        "3bet": 1.9367084355158397,
+        "AF": 10.40670859538784,
+        "WTSD": 29.167378066131693,
+        "W$SD": 58.72195121951219,
+        "cbet": 26.176202267691906,
+        "fold_cbet": 96.01816276632903
+      }
+    },
+    {
+      "strategy": "position",
+      "composition": "humains_simules",
+      "bb100": 19.822327290565433,
+      "ci": 3.1265240418788003,
+      "bb100_reel": 20.145556455564556,
+      "ci_reel": 3.953201967980271,
+      "sd_main_bb100": 98.48225525801239,
+      "mains": 199998,
+      "mains_necessaires_duplicate": 4975.536456513989,
+      "mains_necessaires_reelles": 9180.23116509993,
+      "moyenne_main": 0.2014555645556456,
+      "ecart_type_main": 9.848225525801238,
+      "stats": {
+        "VPIP": 12.639626396263962,
+        "PFR": 9.85609856098561,
+        "3bet": 1.9367084355158397,
+        "AF": 9.102261553588987,
+        "WTSD": 31.23420007222824,
+        "W$SD": 60.080936551524786,
+        "cbet": 32.82431853860425,
+        "fold_cbet": 93.48522605909577
+      }
+    },
+    {
+      "strategy": "random_legal",
+      "composition": "humains_simules",
+      "bb100": -520.2113116108048,
+      "ci": 12.14107014877163,
+      "bb100_reel": -520.829438294383,
+      "ci_reel": 16.598030717968335,
+      "sd_main_bb100": 348.52148644637055,
+      "mains": 199998,
+      "mains_necessaires_duplicate": 108.93815274978365,
+      "mains_necessaires_reelles": 172.01418039011963,
+      "moyenne_main": -5.208294382943829,
+      "ecart_type_main": 34.852148644637055,
+      "stats": {
+        "VPIP": 63.24413244132441,
+        "PFR": 33.86433864338643,
+        "3bet": 26.735535546154967,
+        "AF": 3.4090546363781455,
+        "WTSD": 39.626772829061956,
+        "W$SD": 31.184854954163004,
+        "cbet": 50.33650176923611,
+        "fold_cbet": 34.51143451143451
+      }
+    },
+    {
+      "strategy": "serre",
+      "composition": "humains_simules",
+      "bb100": 17.544809077672255,
+      "ci": 2.9874834485073563,
+      "bb100_reel": 17.5355987654321,
+      "ci_reel": 4.010243738416312,
+      "sd_main_bb100": 90.03793411519442,
+      "mains": 162000,
+      "mains_necessaires_duplicate": 4697.088435731067,
+      "mains_necessaires_reelles": 10127.588010558471,
+      "moyenne_main": 0.17535598765432098,
+      "ecart_type_main": 9.003793411519442,
+      "stats": {
+        "VPIP": 5.167901234567902,
+        "PFR": 4.431481481481481,
+        "3bet": 1.9519270617488604,
+        "AF": 9.613019891500905,
+        "WTSD": 36.13201559524889,
+        "W$SD": 59.69887076537014,
+        "cbet": 47.26158559938721,
+        "fold_cbet": 89.67611336032388
+      }
+    },
+    {
+      "strategy": "zero_bluff",
+      "composition": "humains_simules",
+      "bb100": 14.563826529264151,
+      "ci": 4.112183111057583,
+      "bb100_reel": 14.70862208622086,
+      "ci_reel": 4.756011680375793,
+      "sd_main_bb100": 120.30682998628018,
+      "mains": 199998,
+      "mains_necessaires_duplicate": 15944.81732756926,
+      "mains_necessaires_reelles": 25699.979083247374,
+      "moyenne_main": 0.14708622086220866,
+      "ecart_type_main": 12.030682998628018,
+      "stats": {
+        "VPIP": 25.387253872538725,
+        "PFR": 19.85119851198512,
+        "3bet": 1.9367084355158397,
+        "AF": 17.862853204686424,
+        "WTSD": 27.289283478458824,
+        "W$SD": 49.76016684045881,
+        "cbet": 46.3834223901994,
+        "fold_cbet": 95.43157469173237
+      }
+    }
+  ],
+  "corrections_actions": 0,
+  "experience": "compare",
+  "config": {
+    "experiment": "compare",
+    "strategies": [
+      "serre",
+      "large",
+      "zero_bluff",
+      "position",
+      "bluff",
+      "joueur",
+      "equity_bot",
+      "random_legal"
+    ],
+    "compositions": [
+      "humains_simules"
+    ],
+    "autostop": {
+      "enabled": true,
+      "block_decks": 500,
+      "ci_halfwidth_bb100": 3.0,
+      "max_hands_per_strategy": 200000,
+      "min_decks": 200,
+      "metric": "ev",
+      "max_minutes": 120
+    },
+    "test": "t",
+    "record_decisions": true,
+    "decision_decks": 10000,
+    "history_samples": 30
+  },
+  "mains_jouees": 1561986,
+  "duree_s": 627.1
+}

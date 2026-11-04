@@ -23,3 +23,10 @@ data/a_importer/
 data/exemple/
 out/site/
 out/**/site/
+
+# Campagnes humains_simules et ablations du garde-fou : fichiers bruts de plus de 20 Mo (régénérables)
+out/humains/**/mains.csv
+out/humains/**/mains.parquet
+out/humains/**/decisions.csv
+out/ablation_garde_fou/**/mains.csv
+out/ablation_garde_fou/**/mains.parquet
