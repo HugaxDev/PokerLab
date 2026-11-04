@@ -1,0 +1,18 @@
+{
+  "decisions_auditees": 8,
+  "experience": "audit",
+  "config": {
+    "strategy": "joueur",
+    "composition": "micro_play_money",
+    "pool_decks": 1,
+    "n_decisions": 8,
+    "rollouts": 2,
+    "bet_sizes_pot": [
+      0.5,
+      1.0
+    ],
+    "include_allin": true
+  },
+  "mains_jouees": 86,
+  "duree_s": 0.2
+}

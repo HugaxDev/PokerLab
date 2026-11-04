@@ -1,0 +1,53 @@
+{
+  "candidats": [
+    {
+      "candidat": "Joueur [base]",
+      "taille_ouverture": 3.0,
+      "taille_cbet": 0.33,
+      "entraînement bb/100": 0.0,
+      "validation bb/100": 564.0791666666668,
+      "écart": -564.0791666666668
+    },
+    {
+      "candidat": "Joueur [essai 1]",
+      "taille_ouverture": 2.0,
+      "taille_cbet": 0.35,
+      "entraînement bb/100": 0.0,
+      "validation bb/100": 564.0791666666668,
+      "écart": -564.0791666666668
+    },
+    {
+      "candidat": "Joueur [essai 2]",
+      "taille_ouverture": 3.5,
+      "taille_cbet": 0.3,
+      "entraînement bb/100": 0.0,
+      "validation bb/100": NaN,
+      "écart": NaN
+    }
+  ],
+  "experience": "optimize",
+  "config": {
+    "strategy": "joueur",
+    "composition": "micro_play_money",
+    "n_trials": 2,
+    "train_decks": 1,
+    "validation_decks": 1,
+    "top_k": 1,
+    "space": [
+      {
+        "path": "taille_ouverture",
+        "low": 2.0,
+        "high": 4.0,
+        "step": 0.5
+      },
+      {
+        "path": "taille_cbet",
+        "low": 0.25,
+        "high": 0.75,
+        "step": 0.05
+      }
+    ]
+  },
+  "mains_jouees": 30,
+  "duree_s": 0.1
+}

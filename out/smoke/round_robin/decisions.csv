@@ -1,0 +1,128 @@
+table,deck,rot,hand_id,strategy,composition,lineup,seat,idx,street,position,hand_class,level,draw,board_label,facing,kind,tag,amount_bb,to_bb,to_call_bb,pot_bb,stack_bb,n_opp,invested_bb,can_fold,can_raise,min_to_bb,max_to_bb,result,result_ev,street_nom,action,classe
+0,0,0,0,serre,table 0,serre|large|zero_bluff|position|joueur|random_legal,0,4,0,SB,130,-1,0,préflop,2,0,fold,0.0,0.5,1.5,7.5,99.5,4,0.5,True,True,3.0,100.0,-0.5,-0.5,préflop,se couche,A4o
+0,0,0,0,large,table 0,serre|large|zero_bluff|position|joueur|random_legal,1,5,0,BB,40,-1,0,préflop,2,2,call,1.0,2.0,1.0,7.5,99.0,3,1.0,True,True,3.0,100.0,-2.0,-2.0,préflop,paie,KJo
+0,0,0,0,large,table 0,serre|large|zero_bluff|position|joueur|random_legal,1,6,1,BB,40,2,1,connecté,0,1,check,0.0,0.0,0.0,8.5,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,flop,check,KJo
+0,0,0,0,large,table 0,serre|large|zero_bluff|position|joueur|random_legal,1,10,1,BB,40,2,1,connecté,2,0,fold,0.0,0.0,11.34,25.51,98.0,2,2.0,True,True,17.01,98.0,-2.0,-2.0,flop,se couche,KJo
+0,0,0,0,zero_bluff,table 0,serre|large|zero_bluff|position|joueur|random_legal,2,0,0,UTG,65,-1,0,préflop,1,4,open,2.0,2.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,-7.67,-7.67,préflop,relance,A9o
+0,0,0,0,zero_bluff,table 0,serre|large|zero_bluff|position|joueur|random_legal,2,7,1,UTG,65,1,0,connecté,0,3,value,5.67,5.67,0.0,8.5,98.0,3,2.0,False,True,1.0,98.0,-7.67,-7.67,flop,mise,A9o
+0,0,0,0,zero_bluff,table 0,serre|large|zero_bluff|position|joueur|random_legal,2,11,1,UTG,65,1,0,connecté,2,0,fold,0.0,5.67,5.67,25.51,92.33,1,7.67,True,True,17.01,98.0,-7.67,-7.67,flop,se couche,A9o
+0,0,0,0,position,table 0,serre|large|zero_bluff|position|joueur|random_legal,3,1,0,MP,79,-1,0,préflop,2,0,fold,0.0,0.0,2.0,3.5,100.0,5,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,K8o
+0,0,0,0,joueur,table 0,serre|large|zero_bluff|position|joueur|random_legal,4,2,0,CO,168,-1,0,préflop,2,2,call,2.0,2.0,2.0,3.5,100.0,4,0.0,True,True,3.0,100.0,-2.0,-2.0,préflop,paie,22
+0,0,0,0,joueur,table 0,serre|large|zero_bluff|position|joueur|random_legal,4,8,1,CO,168,1,0,connecté,1,0,fold,0.0,0.0,5.67,14.17,98.0,3,2.0,True,True,11.34,98.0,-2.0,-2.0,flop,se couche,22
+0,0,0,0,random_legal,table 0,serre|large|zero_bluff|position|joueur|random_legal,5,3,0,BTN,81,-1,0,préflop,2,2,random,2.0,2.0,2.0,5.5,100.0,4,0.0,True,True,3.0,100.0,12.17,12.17,préflop,paie,J8o
+0,0,0,0,random_legal,table 0,serre|large|zero_bluff|position|joueur|random_legal,5,9,1,BTN,81,2,1,connecté,1,4,random,11.34,11.34,5.67,14.17,98.0,2,2.0,True,True,11.34,98.0,12.17,12.17,flop,relance,J8o
+0,0,1,1,random_legal,table 0,random_legal|serre|large|zero_bluff|position|joueur,0,4,0,SB,130,-1,0,préflop,2,0,random,0.0,0.5,1.5,5.5,99.5,3,0.5,True,True,3.0,100.0,-0.5,-0.5,préflop,se couche,A4o
+0,0,1,1,serre,table 0,random_legal|serre|large|zero_bluff|position|joueur,1,5,0,BB,40,-1,0,préflop,2,0,fold,0.0,1.0,1.0,5.5,99.0,2,1.0,True,True,3.0,100.0,-1.0,-1.0,préflop,se couche,KJo
+0,0,1,1,large,table 0,random_legal|serre|large|zero_bluff|position|joueur,2,0,0,UTG,65,-1,0,préflop,1,4,open,2.0,2.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,3.5,3.5,préflop,relance,A9o
+0,0,1,1,large,table 0,random_legal|serre|large|zero_bluff|position|joueur,2,6,1,UTG,65,1,0,connecté,0,1,check,0.0,0.0,0.0,5.5,98.0,1,2.0,False,True,1.0,98.0,3.5,3.5,flop,check,A9o
+0,0,1,1,large,table 0,random_legal|serre|large|zero_bluff|position|joueur,2,8,2,UTG,65,1,0,connecté,0,1,check,0.0,0.0,0.0,5.5,98.0,1,2.0,False,True,1.0,98.0,3.5,3.5,turn,check,A9o
+0,0,1,1,large,table 0,random_legal|serre|large|zero_bluff|position|joueur,2,10,3,UTG,65,1,0,connecté,0,1,check,0.0,0.0,0.0,5.5,98.0,1,2.0,False,True,1.0,98.0,3.5,3.5,river,check,A9o
+0,0,1,1,zero_bluff,table 0,random_legal|serre|large|zero_bluff|position|joueur,3,1,0,MP,79,-1,0,préflop,2,0,fold,0.0,0.0,2.0,3.5,100.0,5,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,K8o
+0,0,1,1,position,table 0,random_legal|serre|large|zero_bluff|position|joueur,4,2,0,CO,168,-1,0,préflop,2,2,call,2.0,2.0,2.0,3.5,100.0,4,0.0,True,True,3.0,100.0,-2.0,-2.0,préflop,paie,22
+0,0,1,1,position,table 0,random_legal|serre|large|zero_bluff|position|joueur,4,7,1,CO,168,1,0,connecté,0,1,check,0.0,0.0,0.0,5.5,98.0,1,2.0,False,True,1.0,98.0,-2.0,-2.0,flop,check,22
+0,0,1,1,position,table 0,random_legal|serre|large|zero_bluff|position|joueur,4,9,2,CO,168,1,0,connecté,0,1,check,0.0,0.0,0.0,5.5,98.0,1,2.0,False,True,1.0,98.0,-2.0,-2.0,turn,check,22
+0,0,1,1,position,table 0,random_legal|serre|large|zero_bluff|position|joueur,4,11,3,CO,168,1,0,connecté,0,1,check,0.0,0.0,0.0,5.5,98.0,1,2.0,False,True,1.0,98.0,-2.0,-2.0,river,check,22
+0,0,1,1,joueur,table 0,random_legal|serre|large|zero_bluff|position|joueur,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,2.0,5.5,100.0,4,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,J8o
+0,0,2,2,joueur,table 0,joueur|random_legal|serre|large|zero_bluff|position,0,4,0,SB,130,-1,0,préflop,2,2,call,1.5,2.0,1.5,3.5,99.5,2,0.5,True,True,3.0,100.0,-2.0,-2.0,préflop,paie,A4o
+0,0,2,2,joueur,table 0,joueur|random_legal|serre|large|zero_bluff|position,0,7,0,SB,130,-1,0,préflop,4,0,fold,0.0,2.0,1.0,7.0,98.0,1,2.0,True,True,4.0,100.0,-2.0,-2.0,préflop,se couche,A4o
+0,0,2,2,random_legal,table 0,joueur|random_legal|serre|large|zero_bluff|position,1,5,0,BB,40,-1,0,préflop,2,4,random,2.0,3.0,1.0,5.0,99.0,2,1.0,True,True,3.0,100.0,4.0,4.0,préflop,relance,KJo
+0,0,2,2,serre,table 0,joueur|random_legal|serre|large|zero_bluff|position,2,0,0,UTG,65,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,A9o
+0,0,2,2,large,table 0,joueur|random_legal|serre|large|zero_bluff|position,3,1,0,MP,79,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,4,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,K8o
+0,0,2,2,zero_bluff,table 0,joueur|random_legal|serre|large|zero_bluff|position,4,2,0,CO,168,-1,0,préflop,1,4,open,2.0,2.0,1.0,1.5,100.0,3,0.0,True,True,2.0,100.0,-2.0,-2.0,préflop,relance,22
+0,0,2,2,zero_bluff,table 0,joueur|random_legal|serre|large|zero_bluff|position,4,6,0,CO,168,-1,0,préflop,4,0,fold,0.0,2.0,1.0,7.0,98.0,2,2.0,True,True,4.0,100.0,-2.0,-2.0,préflop,se couche,22
+0,0,2,2,position,table 0,joueur|random_legal|serre|large|zero_bluff|position,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,2.0,3.5,100.0,3,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,J8o
+0,0,3,3,position,table 0,position|joueur|random_legal|serre|large|zero_bluff,0,4,0,SB,130,-1,0,préflop,2,0,fold,0.0,0.5,1.5,5.5,99.5,3,0.5,True,True,3.0,100.0,-0.5,-0.5,préflop,se couche,A4o
+0,0,3,3,joueur,table 0,position|joueur|random_legal|serre|large|zero_bluff,1,5,0,BB,40,-1,0,préflop,2,2,call,1.0,2.0,1.0,5.5,99.0,2,1.0,True,True,3.0,100.0,16.11,16.11,préflop,paie,KJo
+0,0,3,3,joueur,table 0,position|joueur|random_legal|serre|large|zero_bluff,1,6,1,BB,40,2,1,connecté,0,3,value,2.14,2.14,0.0,6.5,98.0,2,2.0,False,True,1.0,98.0,16.11,16.11,flop,mise,KJo
+0,0,3,3,joueur,table 0,position|joueur|random_legal|serre|large|zero_bluff,1,9,2,BB,40,2,1,connecté,0,3,value,3.56,3.56,0.0,10.78,95.86,1,4.14,False,True,1.0,95.86,16.11,16.11,turn,mise,KJo
+0,0,3,3,joueur,table 0,position|joueur|random_legal|serre|large|zero_bluff,1,11,3,BB,40,2,0,connecté,0,3,value,5.91,5.91,0.0,17.9,92.3,1,7.7,False,True,1.0,92.3,16.11,16.11,river,mise,KJo
+0,0,3,3,random_legal,table 0,position|joueur|random_legal|serre|large|zero_bluff,2,0,0,UTG,65,-1,0,préflop,1,4,random,2.0,2.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,-13.61,-13.61,préflop,relance,A9o
+0,0,3,3,random_legal,table 0,position|joueur|random_legal|serre|large|zero_bluff,2,7,1,UTG,65,1,0,connecté,1,2,random,2.14,2.14,2.14,8.64,98.0,2,2.0,True,True,4.28,98.0,-13.61,-13.61,flop,paie,A9o
+0,0,3,3,random_legal,table 0,position|joueur|random_legal|serre|large|zero_bluff,2,10,2,UTG,65,1,0,connecté,1,2,random,3.56,3.56,3.56,14.34,95.86,1,4.14,True,True,7.12,95.86,-13.61,-13.61,turn,paie,A9o
+0,0,3,3,random_legal,table 0,position|joueur|random_legal|serre|large|zero_bluff,2,12,3,UTG,65,1,0,connecté,1,2,random,5.91,5.91,5.91,23.81,92.3,1,7.7,True,True,11.82,92.3,-13.61,-13.61,river,paie,A9o
+0,0,3,3,serre,table 0,position|joueur|random_legal|serre|large|zero_bluff,3,1,0,MP,79,-1,0,préflop,2,0,fold,0.0,0.0,2.0,3.5,100.0,5,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,K8o
+0,0,3,3,large,table 0,position|joueur|random_legal|serre|large|zero_bluff,4,2,0,CO,168,-1,0,préflop,2,2,call,2.0,2.0,2.0,3.5,100.0,4,0.0,True,True,3.0,100.0,-2.0,-2.0,préflop,paie,22
+0,0,3,3,large,table 0,position|joueur|random_legal|serre|large|zero_bluff,4,8,1,CO,168,1,0,connecté,1,0,fold,0.0,0.0,2.14,10.78,98.0,2,2.0,True,True,4.28,98.0,-2.0,-2.0,flop,se couche,22
+0,0,3,3,zero_bluff,table 0,position|joueur|random_legal|serre|large|zero_bluff,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,2.0,5.5,100.0,4,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,J8o
+0,0,4,4,zero_bluff,table 0,zero_bluff|position|joueur|random_legal|serre|large,0,4,0,SB,130,-1,0,préflop,2,2,call,2.5,3.0,2.5,7.5,99.5,3,0.5,True,True,5.0,100.0,-3.0,-3.0,préflop,paie,A4o
+0,0,4,4,zero_bluff,table 0,zero_bluff|position|joueur|random_legal|serre|large,0,6,1,SB,130,0,0,connecté,0,1,check,0.0,0.0,0.0,10.0,97.0,2,3.0,False,True,1.0,97.0,-3.0,-3.0,flop,check,A4o
+0,0,4,4,zero_bluff,table 0,zero_bluff|position|joueur|random_legal|serre|large,0,9,1,SB,130,0,0,connecté,2,0,fold,0.0,0.0,36.72,50.02,97.0,2,3.0,True,True,70.14,97.0,-3.0,-3.0,flop,se couche,A4o
+0,0,4,4,position,table 0,zero_bluff|position|joueur|random_legal|serre|large,1,5,0,BB,40,-1,0,préflop,2,0,fold,0.0,1.0,2.0,10.0,99.0,3,1.0,True,True,5.0,100.0,-1.0,-1.0,préflop,se couche,KJo
+0,0,4,4,joueur,table 0,zero_bluff|position|joueur|random_legal|serre|large,2,0,0,UTG,65,-1,0,préflop,1,4,open,3.0,3.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,-6.3,-6.3,préflop,relance,A9o
+0,0,4,4,joueur,table 0,zero_bluff|position|joueur|random_legal|serre|large,2,7,1,UTG,65,1,0,connecté,0,3,value,3.3,3.3,0.0,10.0,97.0,2,3.0,False,True,1.0,97.0,-6.3,-6.3,flop,mise,A9o
+0,0,4,4,joueur,table 0,zero_bluff|position|joueur|random_legal|serre|large,2,10,1,UTG,65,1,0,connecté,2,0,fold,0.0,3.3,33.42,50.02,93.7,1,6.3,True,True,70.14,97.0,-6.3,-6.3,flop,se couche,A9o
+0,0,4,4,random_legal,table 0,zero_bluff|position|joueur|random_legal|serre|large,3,1,0,MP,79,-1,0,préflop,2,2,random,3.0,3.0,3.0,4.5,100.0,5,0.0,True,True,5.0,100.0,10.3,10.3,préflop,paie,K8o
+0,0,4,4,random_legal,table 0,zero_bluff|position|joueur|random_legal|serre|large,3,8,1,MP,79,0,1,connecté,1,4,random,36.72,36.72,3.3,13.3,97.0,2,3.0,True,True,6.6,97.0,10.3,10.3,flop,relance,K8o
+0,0,4,4,serre,table 0,zero_bluff|position|joueur|random_legal|serre|large,4,2,0,CO,168,-1,0,préflop,2,0,fold,0.0,0.0,3.0,7.5,100.0,5,0.0,True,True,5.0,100.0,0.0,0.0,préflop,se couche,22
+0,0,4,4,large,table 0,zero_bluff|position|joueur|random_legal|serre|large,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,3.0,7.5,100.0,4,0.0,True,True,5.0,100.0,0.0,0.0,préflop,se couche,J8o
+0,0,5,5,large,table 0,large|zero_bluff|position|joueur|random_legal|serre,0,4,0,SB,130,-1,0,préflop,1,4,open,1.5,2.0,0.5,1.5,99.5,1,0.5,True,True,2.0,100.0,-2.0,-2.0,préflop,relance,A4o
+0,0,5,5,large,table 0,large|zero_bluff|position|joueur|random_legal|serre,0,6,1,SB,130,0,0,connecté,0,1,check,0.0,0.0,0.0,4.0,98.0,1,2.0,False,True,1.0,98.0,-2.0,-2.0,flop,check,A4o
+0,0,5,5,large,table 0,large|zero_bluff|position|joueur|random_legal|serre,0,8,1,SB,130,0,0,connecté,1,0,fold,0.0,0.0,2.67,6.67,98.0,1,2.0,True,True,5.34,98.0,-2.0,-2.0,flop,se couche,A4o
+0,0,5,5,zero_bluff,table 0,large|zero_bluff|position|joueur|random_legal|serre,1,5,0,BB,40,-1,0,préflop,2,2,call,1.0,2.0,1.0,3.0,99.0,1,1.0,True,True,3.0,100.0,2.0,2.0,préflop,paie,KJo
+0,0,5,5,zero_bluff,table 0,large|zero_bluff|position|joueur|random_legal|serre,1,7,1,BB,40,2,1,connecté,0,3,value,2.67,2.67,0.0,4.0,98.0,1,2.0,False,True,1.0,98.0,2.0,2.0,flop,mise,KJo
+0,0,5,5,position,table 0,large|zero_bluff|position|joueur|random_legal|serre,2,0,0,UTG,65,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,A9o
+0,0,5,5,joueur,table 0,large|zero_bluff|position|joueur|random_legal|serre,3,1,0,MP,79,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,4,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,K8o
+0,0,5,5,random_legal,table 0,large|zero_bluff|position|joueur|random_legal|serre,4,2,0,CO,168,-1,0,préflop,1,0,random,0.0,0.0,1.0,1.5,100.0,3,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,22
+0,0,5,5,serre,table 0,large|zero_bluff|position|joueur|random_legal|serre,5,3,0,BTN,81,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,2,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,J8o
+1,0,0,0,serre,table 1,serre|large|bluff|joueur|equity_bot|random_legal,0,4,0,SB,130,-1,0,préflop,1,0,fold,0.0,0.5,0.5,2.5,99.5,2,0.5,True,True,2.0,100.0,-0.5,-0.5,préflop,se couche,A4o
+1,0,0,0,large,table 1,serre|large|bluff|joueur|equity_bot|random_legal,1,5,0,BB,40,-1,0,préflop,0,4,open,2.0,3.0,0.0,2.5,99.0,1,1.0,False,True,2.0,100.0,-3.0,-3.0,préflop,relance,KJo
+1,0,0,0,large,table 1,serre|large|bluff|joueur|equity_bot|random_legal,1,7,0,BB,40,-1,0,préflop,4,0,fold,0.0,3.0,2.0,8.5,97.0,1,3.0,True,True,7.0,100.0,-3.0,-3.0,préflop,se couche,KJo
+1,0,0,0,bluff,table 1,serre|large|bluff|joueur|equity_bot|random_legal,2,0,0,UTG,65,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,A9o
+1,0,0,0,joueur,table 1,serre|large|bluff|joueur|equity_bot|random_legal,3,1,0,MP,79,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,4,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,K8o
+1,0,0,0,equity_bot,table 1,serre|large|bluff|joueur|equity_bot|random_legal,4,2,0,CO,168,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,3,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,22
+1,0,0,0,random_legal,table 1,serre|large|bluff|joueur|equity_bot|random_legal,5,3,0,BTN,81,-1,0,préflop,1,2,random,1.0,1.0,1.0,1.5,100.0,2,0.0,True,True,2.0,100.0,3.5,3.5,préflop,paie,J8o
+1,0,0,0,random_legal,table 1,serre|large|bluff|joueur|equity_bot|random_legal,5,6,0,BTN,81,-1,0,préflop,2,4,random,4.0,5.0,2.0,4.5,99.0,1,1.0,True,True,5.0,100.0,3.5,3.5,préflop,relance,J8o
+1,0,1,1,random_legal,table 1,random_legal|serre|large|bluff|joueur|equity_bot,0,4,0,SB,130,-1,0,préflop,2,0,random,0.0,0.5,1.5,5.5,99.5,3,0.5,True,True,3.0,100.0,-0.5,-0.5,préflop,se couche,A4o
+1,0,1,1,serre,table 1,random_legal|serre|large|bluff|joueur|equity_bot,1,5,0,BB,40,-1,0,préflop,2,0,fold,0.0,1.0,1.0,5.5,99.0,2,1.0,True,True,3.0,100.0,-1.0,-1.0,préflop,se couche,KJo
+1,0,1,1,large,table 1,random_legal|serre|large|bluff|joueur|equity_bot,2,0,0,UTG,65,-1,0,préflop,1,4,open,2.0,2.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,-2.0,-2.0,préflop,relance,A9o
+1,0,1,1,large,table 1,random_legal|serre|large|bluff|joueur|equity_bot,2,6,1,UTG,65,1,0,connecté,0,1,check,0.0,0.0,0.0,5.5,98.0,1,2.0,False,True,1.0,98.0,-2.0,-2.0,flop,check,A9o
+1,0,1,1,large,table 1,random_legal|serre|large|bluff|joueur|equity_bot,2,8,1,UTG,65,1,0,connecté,1,0,fold,0.0,0.0,1.82,7.32,98.0,1,2.0,True,True,3.64,98.0,-2.0,-2.0,flop,se couche,A9o
+1,0,1,1,bluff,table 1,random_legal|serre|large|bluff|joueur|equity_bot,3,1,0,MP,79,-1,0,préflop,2,0,fold,0.0,0.0,2.0,3.5,100.0,5,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,K8o
+1,0,1,1,joueur,table 1,random_legal|serre|large|bluff|joueur|equity_bot,4,2,0,CO,168,-1,0,préflop,2,2,call,2.0,2.0,2.0,3.5,100.0,4,0.0,True,True,3.0,100.0,3.5,3.5,préflop,paie,22
+1,0,1,1,joueur,table 1,random_legal|serre|large|bluff|joueur|equity_bot,4,7,1,CO,168,1,0,connecté,0,3,value,1.82,1.82,0.0,5.5,98.0,1,2.0,False,True,1.0,98.0,3.5,3.5,flop,mise,22
+1,0,1,1,equity_bot,table 1,random_legal|serre|large|bluff|joueur|equity_bot,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,2.0,5.5,100.0,4,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,J8o
+1,0,2,2,equity_bot,table 1,equity_bot|random_legal|serre|large|bluff|joueur,0,4,0,SB,130,-1,0,préflop,2,0,fold,0.0,0.5,2.5,4.5,99.5,2,0.5,True,True,5.0,100.0,-0.5,-0.5,préflop,se couche,A4o
+1,0,2,2,random_legal,table 1,equity_bot|random_legal|serre|large|bluff|joueur,1,5,0,BB,40,-1,0,préflop,2,4,random,4.0,5.0,2.0,4.5,99.0,1,1.0,True,True,5.0,100.0,3.5,3.5,préflop,relance,KJo
+1,0,2,2,serre,table 1,equity_bot|random_legal|serre|large|bluff|joueur,2,0,0,UTG,65,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,A9o
+1,0,2,2,large,table 1,equity_bot|random_legal|serre|large|bluff|joueur,3,1,0,MP,79,-1,0,préflop,1,0,fold,0.0,0.0,1.0,1.5,100.0,4,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,K8o
+1,0,2,2,bluff,table 1,equity_bot|random_legal|serre|large|bluff|joueur,4,2,0,CO,168,-1,0,préflop,1,4,open,3.0,3.0,1.0,1.5,100.0,3,0.0,True,True,2.0,100.0,-3.0,-3.0,préflop,relance,22
+1,0,2,2,bluff,table 1,equity_bot|random_legal|serre|large|bluff|joueur,4,6,0,CO,168,-1,0,préflop,4,0,fold,0.0,3.0,2.0,8.5,97.0,1,3.0,True,True,7.0,100.0,-3.0,-3.0,préflop,se couche,22
+1,0,2,2,joueur,table 1,equity_bot|random_legal|serre|large|bluff|joueur,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,3.0,4.5,100.0,3,0.0,True,True,5.0,100.0,0.0,0.0,préflop,se couche,J8o
+1,0,3,3,joueur,table 1,joueur|equity_bot|random_legal|serre|large|bluff,0,4,0,SB,130,-1,0,préflop,2,2,call,1.5,2.0,1.5,5.5,99.5,3,0.5,True,True,3.0,100.0,-2.0,-2.0,préflop,paie,A4o
+1,0,3,3,joueur,table 1,joueur|equity_bot|random_legal|serre|large|bluff,0,6,1,SB,130,0,0,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,flop,check,A4o
+1,0,3,3,joueur,table 1,joueur|equity_bot|random_legal|serre|large|bluff,0,10,2,SB,130,0,0,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,turn,check,A4o
+1,0,3,3,joueur,table 1,joueur|equity_bot|random_legal|serre|large|bluff,0,14,3,SB,130,0,0,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,river,check,A4o
+1,0,3,3,equity_bot,table 1,joueur|equity_bot|random_legal|serre|large|bluff,1,5,0,BB,40,-1,0,préflop,2,2,call,1.0,2.0,1.0,7.0,99.0,3,1.0,True,True,3.0,100.0,6.0,6.0,préflop,paie,KJo
+1,0,3,3,equity_bot,table 1,joueur|equity_bot|random_legal|serre|large|bluff,1,7,1,BB,40,2,1,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,6.0,6.0,flop,check,KJo
+1,0,3,3,equity_bot,table 1,joueur|equity_bot|random_legal|serre|large|bluff,1,11,2,BB,40,2,1,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,6.0,6.0,turn,check,KJo
+1,0,3,3,equity_bot,table 1,joueur|equity_bot|random_legal|serre|large|bluff,1,15,3,BB,40,2,0,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,6.0,6.0,river,check,KJo
+1,0,3,3,random_legal,table 1,joueur|equity_bot|random_legal|serre|large|bluff,2,0,0,UTG,65,-1,0,préflop,1,4,random,2.0,2.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,-2.0,-2.0,préflop,relance,A9o
+1,0,3,3,random_legal,table 1,joueur|equity_bot|random_legal|serre|large|bluff,2,8,1,UTG,65,1,0,connecté,0,1,random,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,flop,check,A9o
+1,0,3,3,random_legal,table 1,joueur|equity_bot|random_legal|serre|large|bluff,2,12,2,UTG,65,1,0,connecté,0,1,random,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,turn,check,A9o
+1,0,3,3,random_legal,table 1,joueur|equity_bot|random_legal|serre|large|bluff,2,16,3,UTG,65,1,0,connecté,0,1,random,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,river,check,A9o
+1,0,3,3,serre,table 1,joueur|equity_bot|random_legal|serre|large|bluff,3,1,0,MP,79,-1,0,préflop,2,0,fold,0.0,0.0,2.0,3.5,100.0,5,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,K8o
+1,0,3,3,large,table 1,joueur|equity_bot|random_legal|serre|large|bluff,4,2,0,CO,168,-1,0,préflop,2,2,call,2.0,2.0,2.0,3.5,100.0,4,0.0,True,True,3.0,100.0,-2.0,-2.0,préflop,paie,22
+1,0,3,3,large,table 1,joueur|equity_bot|random_legal|serre|large|bluff,4,9,1,CO,168,1,0,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,flop,check,22
+1,0,3,3,large,table 1,joueur|equity_bot|random_legal|serre|large|bluff,4,13,2,CO,168,1,0,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,turn,check,22
+1,0,3,3,large,table 1,joueur|equity_bot|random_legal|serre|large|bluff,4,17,3,CO,168,1,0,connecté,0,1,check,0.0,0.0,0.0,8.0,98.0,3,2.0,False,True,1.0,98.0,-2.0,-2.0,river,check,22
+1,0,3,3,bluff,table 1,joueur|equity_bot|random_legal|serre|large|bluff,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,2.0,5.5,100.0,4,0.0,True,True,3.0,100.0,0.0,0.0,préflop,se couche,J8o
+1,0,4,4,bluff,table 1,bluff|joueur|equity_bot|random_legal|serre|large,0,4,0,SB,130,-1,0,préflop,2,0,fold,0.0,0.5,2.0,6.5,99.5,3,0.5,True,True,4.0,100.0,-0.5,-0.5,préflop,se couche,A4o
+1,0,4,4,joueur,table 1,bluff|joueur|equity_bot|random_legal|serre|large,1,5,0,BB,40,-1,0,préflop,2,2,call,1.5,2.5,1.5,6.5,99.0,2,1.0,True,True,4.0,100.0,-5.14,-5.14,préflop,paie,KJo
+1,0,4,4,joueur,table 1,bluff|joueur|equity_bot|random_legal|serre|large,1,6,1,BB,40,2,1,connecté,0,3,value,2.64,2.64,0.0,8.0,97.5,2,2.5,False,True,1.0,97.5,-5.14,-5.14,flop,mise,KJo
+1,0,4,4,joueur,table 1,bluff|joueur|equity_bot|random_legal|serre|large,1,9,1,BB,40,2,1,connecté,2,0,fold,0.0,2.64,32.76,48.68,94.86,2,5.14,True,True,68.16,97.5,-5.14,-5.14,flop,se couche,KJo
+1,0,4,4,equity_bot,table 1,bluff|joueur|equity_bot|random_legal|serre|large,2,0,0,UTG,65,-1,0,préflop,1,4,open,2.5,2.5,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,-5.14,-5.14,préflop,relance,A9o
+1,0,4,4,equity_bot,table 1,bluff|joueur|equity_bot|random_legal|serre|large,2,7,1,UTG,65,1,0,connecté,1,2,call-equity,2.64,2.64,2.64,10.64,97.5,2,2.5,True,True,5.28,97.5,-5.14,-5.14,flop,paie,A9o
+1,0,4,4,equity_bot,table 1,bluff|joueur|equity_bot|random_legal|serre|large,2,10,1,UTG,65,1,0,connecté,2,0,fold,0.0,2.64,32.76,48.68,94.86,1,5.14,True,True,68.16,97.5,-5.14,-5.14,flop,se couche,A9o
+1,0,4,4,random_legal,table 1,bluff|joueur|equity_bot|random_legal|serre|large,3,1,0,MP,79,-1,0,préflop,2,2,random,2.5,2.5,2.5,4.0,100.0,5,0.0,True,True,4.0,100.0,10.78,10.78,préflop,paie,K8o
+1,0,4,4,random_legal,table 1,bluff|joueur|equity_bot|random_legal|serre|large,3,8,1,MP,79,0,1,connecté,1,4,random,35.4,35.4,2.64,13.28,97.5,2,2.5,True,True,5.28,97.5,10.78,10.78,flop,relance,K8o
+1,0,4,4,serre,table 1,bluff|joueur|equity_bot|random_legal|serre|large,4,2,0,CO,168,-1,0,préflop,2,0,fold,0.0,0.0,2.5,6.5,100.0,5,0.0,True,True,4.0,100.0,0.0,0.0,préflop,se couche,22
+1,0,4,4,large,table 1,bluff|joueur|equity_bot|random_legal|serre|large,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,2.5,6.5,100.0,4,0.0,True,True,4.0,100.0,0.0,0.0,préflop,se couche,J8o
+1,0,5,5,large,table 1,large|bluff|joueur|equity_bot|random_legal|serre,0,4,0,SB,130,-1,0,préflop,2,2,call,2.5,3.0,2.5,4.5,99.5,2,0.5,True,True,5.0,100.0,-3.0,-3.0,préflop,paie,A4o
+1,0,5,5,large,table 1,large|bluff|joueur|equity_bot|random_legal|serre,0,6,1,SB,130,0,0,connecté,0,1,check,0.0,0.0,0.0,7.0,97.0,1,3.0,False,True,1.0,97.0,-3.0,-3.0,flop,check,A4o
+1,0,5,5,large,table 1,large|bluff|joueur|equity_bot|random_legal|serre,0,8,1,SB,130,0,0,connecté,1,0,fold,0.0,0.0,2.31,9.31,97.0,1,3.0,True,True,4.62,97.0,-3.0,-3.0,flop,se couche,A4o
+1,0,5,5,bluff,table 1,large|bluff|joueur|equity_bot|random_legal|serre,1,5,0,BB,40,-1,0,préflop,2,0,fold,0.0,1.0,2.0,7.0,99.0,2,1.0,True,True,5.0,100.0,-1.0,-1.0,préflop,se couche,KJo
+1,0,5,5,joueur,table 1,large|bluff|joueur|equity_bot|random_legal|serre,2,0,0,UTG,65,-1,0,préflop,1,4,open,3.0,3.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,4.0,4.0,préflop,relance,A9o
+1,0,5,5,joueur,table 1,large|bluff|joueur|equity_bot|random_legal|serre,2,7,1,UTG,65,1,0,connecté,0,3,value,2.31,2.31,0.0,7.0,97.0,1,3.0,False,True,1.0,97.0,4.0,4.0,flop,mise,A9o
+1,0,5,5,equity_bot,table 1,large|bluff|joueur|equity_bot|random_legal|serre,3,1,0,MP,79,-1,0,préflop,2,0,fold,0.0,0.0,3.0,4.5,100.0,5,0.0,True,True,5.0,100.0,0.0,0.0,préflop,se couche,K8o
+1,0,5,5,random_legal,table 1,large|bluff|joueur|equity_bot|random_legal|serre,4,2,0,CO,168,-1,0,préflop,2,0,random,0.0,0.0,3.0,4.5,100.0,4,0.0,True,True,5.0,100.0,0.0,0.0,préflop,se couche,22
+1,0,5,5,serre,table 1,large|bluff|joueur|equity_bot|random_legal|serre,5,3,0,BTN,81,-1,0,préflop,2,0,fold,0.0,0.0,3.0,4.5,100.0,3,0.0,True,True,5.0,100.0,0.0,0.0,préflop,se couche,J8o

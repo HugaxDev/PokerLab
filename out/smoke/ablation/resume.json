@@ -1,0 +1,28 @@
+{
+  "ablations": [
+    "Joueur bat Joueur [sans garde-fou] : pas encore significatif (0.0 ± inf bb/100, p Holm = 1)",
+    "Joueur bat Joueur [sans c-bet] : pas encore significatif (0.0 ± inf bb/100, p Holm = 1)"
+  ],
+  "experience": "ablation",
+  "config": {
+    "strategy": "joueur",
+    "composition": "micro_play_money",
+    "decks": 1,
+    "ablations": [
+      {
+        "name": "garde-fou",
+        "patch": {
+          "postflop.guardrail.enabled": false
+        }
+      },
+      {
+        "name": "c-bet",
+        "patch": {
+          "postflop.cbet.enabled": false
+        }
+      }
+    ]
+  },
+  "mains_jouees": 18,
+  "duree_s": 0.1
+}

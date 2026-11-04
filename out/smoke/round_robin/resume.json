@@ -1,0 +1,38 @@
+{
+  "tables": [
+    [
+      "serre",
+      "large",
+      "zero_bluff",
+      "position",
+      "joueur",
+      "random_legal"
+    ],
+    [
+      "serre",
+      "large",
+      "bluff",
+      "joueur",
+      "equity_bot",
+      "random_legal"
+    ]
+  ],
+  "corrections_actions": 0,
+  "experience": "round_robin",
+  "config": {
+    "strategies": [
+      "serre",
+      "large",
+      "zero_bluff",
+      "position",
+      "bluff",
+      "joueur",
+      "equity_bot",
+      "random_legal"
+    ],
+    "tables": 2,
+    "decks_per_table": 1
+  },
+  "mains_jouees": 12,
+  "duree_s": 1.3
+}

@@ -1,0 +1,423 @@
+PokerLab Hand #0: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 0' 6-max Seat #6 is the button
+Seat 1: SB-serre (€2.00 in chips)
+Seat 2: BB-large (€2.00 in chips)
+Seat 3: UTG-zero_bluff (€2.00 in chips)
+Seat 4: MP-position (€2.00 in chips)
+Seat 5: CO-joueur (€2.00 in chips)
+Seat 6: BTN-random_legal (€2.00 in chips)
+SB-serre: posts small blind €0.01
+BB-large: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-serre [4h As]
+Dealt to BB-large [Jh Ks]
+Dealt to UTG-zero_bluff [9c Ad]
+Dealt to MP-position [8h Kc]
+Dealt to CO-joueur [2h 2c]
+Dealt to BTN-random_legal [Jc 8d]
+UTG-zero_bluff: raises €0.02 to €0.04
+MP-position: folds
+CO-joueur: calls €0.04
+BTN-random_legal: calls €0.04
+SB-serre: folds
+BB-large: calls €0.02
+*** FLOP *** [Qc 9s Jd]
+BB-large: checks
+UTG-zero_bluff: bets €0.11
+CO-joueur: folds
+BTN-random_legal: raises €0.11 to €0.23
+BB-large: folds
+UTG-zero_bluff: folds
+Uncalled bet (€0.11) returned to BTN-random_legal
+BTN-random_legal collected €0.40 from pot
+*** SUMMARY ***
+Total pot €0.40 | Rake €0.00
+Board [Qc 9s Jd]
+Seat 1: SB-serre folded | résultat -0.50 bb
+Seat 2: BB-large folded | résultat -2.00 bb
+Seat 3: UTG-zero_bluff folded | résultat -7.67 bb
+Seat 4: MP-position folded | résultat +0.00 bb
+Seat 5: CO-joueur folded | résultat -2.00 bb
+Seat 6: BTN-random_legal won uncontested | résultat +12.17 bb
+
+
+PokerLab Hand #1: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 0' 6-max Seat #6 is the button
+Seat 1: SB-random_legal (€2.00 in chips)
+Seat 2: BB-serre (€2.00 in chips)
+Seat 3: UTG-large (€2.00 in chips)
+Seat 4: MP-zero_bluff (€2.00 in chips)
+Seat 5: CO-position (€2.00 in chips)
+Seat 6: BTN-joueur (€2.00 in chips)
+SB-random_legal: posts small blind €0.01
+BB-serre: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-random_legal [4h As]
+Dealt to BB-serre [Jh Ks]
+Dealt to UTG-large [9c Ad]
+Dealt to MP-zero_bluff [8h Kc]
+Dealt to CO-position [2h 2c]
+Dealt to BTN-joueur [Jc 8d]
+UTG-large: raises €0.02 to €0.04
+MP-zero_bluff: folds
+CO-position: calls €0.04
+BTN-joueur: folds
+SB-random_legal: folds
+BB-serre: folds
+*** FLOP *** [Qc 9s Jd]
+UTG-large: checks
+CO-position: checks
+*** TURN *** [Qc 9s Jd] [7s]
+UTG-large: checks
+CO-position: checks
+*** RIVER *** [Qc 9s Jd 7s] [6c]
+UTG-large: checks
+CO-position: checks
+*** SHOW DOWN ***
+UTG-large: shows [9c Ad]
+CO-position: shows [2h 2c]
+UTG-large collected €0.11 from pot
+*** SUMMARY ***
+Total pot €0.11 | Rake €0.00
+Board [Qc 9s Jd 7s 6c]
+Seat 1: SB-random_legal folded | résultat -0.50 bb
+Seat 2: BB-serre folded | résultat -1.00 bb
+Seat 3: UTG-large showed [9c Ad] | résultat +3.50 bb
+Seat 4: MP-zero_bluff folded | résultat +0.00 bb
+Seat 5: CO-position showed [2h 2c] | résultat -2.00 bb
+Seat 6: BTN-joueur folded | résultat +0.00 bb
+
+
+PokerLab Hand #2: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 0' 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-random_legal (€2.00 in chips)
+Seat 3: UTG-serre (€2.00 in chips)
+Seat 4: MP-large (€2.00 in chips)
+Seat 5: CO-zero_bluff (€2.00 in chips)
+Seat 6: BTN-position (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-random_legal: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [4h As]
+Dealt to BB-random_legal [Jh Ks]
+Dealt to UTG-serre [9c Ad]
+Dealt to MP-large [8h Kc]
+Dealt to CO-zero_bluff [2h 2c]
+Dealt to BTN-position [Jc 8d]
+UTG-serre: folds
+MP-large: folds
+CO-zero_bluff: raises €0.02 to €0.04
+BTN-position: folds
+SB-joueur: calls €0.03
+BB-random_legal: raises €0.02 to €0.06
+CO-zero_bluff: folds
+SB-joueur: folds
+Uncalled bet (€0.02) returned to BB-random_legal
+BB-random_legal collected €0.12 from pot
+*** SUMMARY ***
+Total pot €0.12 | Rake €0.00
+Seat 1: SB-joueur folded | résultat -2.00 bb
+Seat 2: BB-random_legal won uncontested | résultat +4.00 bb
+Seat 3: UTG-serre folded | résultat +0.00 bb
+Seat 4: MP-large folded | résultat +0.00 bb
+Seat 5: CO-zero_bluff folded | résultat -2.00 bb
+Seat 6: BTN-position folded | résultat +0.00 bb
+
+
+PokerLab Hand #3: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 0' 6-max Seat #6 is the button
+Seat 1: SB-position (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-random_legal (€2.00 in chips)
+Seat 4: MP-serre (€2.00 in chips)
+Seat 5: CO-large (€2.00 in chips)
+Seat 6: BTN-zero_bluff (€2.00 in chips)
+SB-position: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-position [4h As]
+Dealt to BB-joueur [Jh Ks]
+Dealt to UTG-random_legal [9c Ad]
+Dealt to MP-serre [8h Kc]
+Dealt to CO-large [2h 2c]
+Dealt to BTN-zero_bluff [Jc 8d]
+UTG-random_legal: raises €0.02 to €0.04
+MP-serre: folds
+CO-large: calls €0.04
+BTN-zero_bluff: folds
+SB-position: folds
+BB-joueur: calls €0.02
+*** FLOP *** [Qc 9s Jd]
+BB-joueur: bets €0.04
+UTG-random_legal: calls €0.04
+CO-large: folds
+*** TURN *** [Qc 9s Jd] [7s]
+BB-joueur: bets €0.07
+UTG-random_legal: calls €0.07
+*** RIVER *** [Qc 9s Jd 7s] [6c]
+BB-joueur: bets €0.12
+UTG-random_legal: calls €0.12
+*** SHOW DOWN ***
+BB-joueur: shows [Jh Ks]
+UTG-random_legal: shows [9c Ad]
+BB-joueur collected €0.59 from pot
+*** SUMMARY ***
+Total pot €0.59 | Rake €0.00
+Board [Qc 9s Jd 7s 6c]
+Seat 1: SB-position folded | résultat -0.50 bb
+Seat 2: BB-joueur showed [Jh Ks] | résultat +16.11 bb
+Seat 3: UTG-random_legal showed [9c Ad] | résultat -13.61 bb
+Seat 4: MP-serre folded | résultat +0.00 bb
+Seat 5: CO-large folded | résultat -2.00 bb
+Seat 6: BTN-zero_bluff folded | résultat +0.00 bb
+
+
+PokerLab Hand #4: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 0' 6-max Seat #6 is the button
+Seat 1: SB-zero_bluff (€2.00 in chips)
+Seat 2: BB-position (€2.00 in chips)
+Seat 3: UTG-joueur (€2.00 in chips)
+Seat 4: MP-random_legal (€2.00 in chips)
+Seat 5: CO-serre (€2.00 in chips)
+Seat 6: BTN-large (€2.00 in chips)
+SB-zero_bluff: posts small blind €0.01
+BB-position: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-zero_bluff [4h As]
+Dealt to BB-position [Jh Ks]
+Dealt to UTG-joueur [9c Ad]
+Dealt to MP-random_legal [8h Kc]
+Dealt to CO-serre [2h 2c]
+Dealt to BTN-large [Jc 8d]
+UTG-joueur: raises €0.04 to €0.06
+MP-random_legal: calls €0.06
+CO-serre: folds
+BTN-large: folds
+SB-zero_bluff: calls €0.05
+BB-position: folds
+*** FLOP *** [Qc 9s Jd]
+SB-zero_bluff: checks
+UTG-joueur: bets €0.07
+MP-random_legal: raises €0.67 to €0.73
+SB-zero_bluff: folds
+UTG-joueur: folds
+Uncalled bet (€0.67) returned to MP-random_legal
+MP-random_legal collected €0.33 from pot
+*** SUMMARY ***
+Total pot €0.33 | Rake €0.00
+Board [Qc 9s Jd]
+Seat 1: SB-zero_bluff folded | résultat -3.00 bb
+Seat 2: BB-position folded | résultat -1.00 bb
+Seat 3: UTG-joueur folded | résultat -6.30 bb
+Seat 4: MP-random_legal won uncontested | résultat +10.30 bb
+Seat 5: CO-serre folded | résultat +0.00 bb
+Seat 6: BTN-large folded | résultat +0.00 bb
+
+
+PokerLab Hand #5: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 0' 6-max Seat #6 is the button
+Seat 1: SB-large (€2.00 in chips)
+Seat 2: BB-zero_bluff (€2.00 in chips)
+Seat 3: UTG-position (€2.00 in chips)
+Seat 4: MP-joueur (€2.00 in chips)
+Seat 5: CO-random_legal (€2.00 in chips)
+Seat 6: BTN-serre (€2.00 in chips)
+SB-large: posts small blind €0.01
+BB-zero_bluff: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-large [4h As]
+Dealt to BB-zero_bluff [Jh Ks]
+Dealt to UTG-position [9c Ad]
+Dealt to MP-joueur [8h Kc]
+Dealt to CO-random_legal [2h 2c]
+Dealt to BTN-serre [Jc 8d]
+UTG-position: folds
+MP-joueur: folds
+CO-random_legal: folds
+BTN-serre: folds
+SB-large: raises €0.02 to €0.04
+BB-zero_bluff: calls €0.02
+*** FLOP *** [Qc 9s Jd]
+SB-large: checks
+BB-zero_bluff: bets €0.05
+SB-large: folds
+Uncalled bet (€0.05) returned to BB-zero_bluff
+BB-zero_bluff collected €0.08 from pot
+*** SUMMARY ***
+Total pot €0.08 | Rake €0.00
+Board [Qc 9s Jd]
+Seat 1: SB-large folded | résultat -2.00 bb
+Seat 2: BB-zero_bluff won uncontested | résultat +2.00 bb
+Seat 3: UTG-position folded | résultat +0.00 bb
+Seat 4: MP-joueur folded | résultat +0.00 bb
+Seat 5: CO-random_legal folded | résultat +0.00 bb
+Seat 6: BTN-serre folded | résultat +0.00 bb
+
+
+PokerLab Hand #0: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 1' 6-max Seat #6 is the button
+Seat 1: SB-serre (€2.00 in chips)
+Seat 2: BB-large (€2.00 in chips)
+Seat 3: UTG-bluff (€2.00 in chips)
+Seat 4: MP-joueur (€2.00 in chips)
+Seat 5: CO-equity_bot (€2.00 in chips)
+Seat 6: BTN-random_legal (€2.00 in chips)
+SB-serre: posts small blind €0.01
+BB-large: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-serre [4h As]
+Dealt to BB-large [Jh Ks]
+Dealt to UTG-bluff [9c Ad]
+Dealt to MP-joueur [8h Kc]
+Dealt to CO-equity_bot [2h 2c]
+Dealt to BTN-random_legal [Jc 8d]
+UTG-bluff: folds
+MP-joueur: folds
+CO-equity_bot: folds
+BTN-random_legal: calls €0.02
+SB-serre: folds
+BB-large: raises €0.04 to €0.06
+BTN-random_legal: raises €0.04 to €0.10
+BB-large: folds
+Uncalled bet (€0.04) returned to BTN-random_legal
+BTN-random_legal collected €0.13 from pot
+*** SUMMARY ***
+Total pot €0.13 | Rake €0.00
+Seat 1: SB-serre folded | résultat -0.50 bb
+Seat 2: BB-large folded | résultat -3.00 bb
+Seat 3: UTG-bluff folded | résultat +0.00 bb
+Seat 4: MP-joueur folded | résultat +0.00 bb
+Seat 5: CO-equity_bot folded | résultat +0.00 bb
+Seat 6: BTN-random_legal won uncontested | résultat +3.50 bb
+
+
+PokerLab Hand #1: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 1' 6-max Seat #6 is the button
+Seat 1: SB-random_legal (€2.00 in chips)
+Seat 2: BB-serre (€2.00 in chips)
+Seat 3: UTG-large (€2.00 in chips)
+Seat 4: MP-bluff (€2.00 in chips)
+Seat 5: CO-joueur (€2.00 in chips)
+Seat 6: BTN-equity_bot (€2.00 in chips)
+SB-random_legal: posts small blind €0.01
+BB-serre: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-random_legal [4h As]
+Dealt to BB-serre [Jh Ks]
+Dealt to UTG-large [9c Ad]
+Dealt to MP-bluff [8h Kc]
+Dealt to CO-joueur [2h 2c]
+Dealt to BTN-equity_bot [Jc 8d]
+UTG-large: raises €0.02 to €0.04
+MP-bluff: folds
+CO-joueur: calls €0.04
+BTN-equity_bot: folds
+SB-random_legal: folds
+BB-serre: folds
+*** FLOP *** [Qc 9s Jd]
+UTG-large: checks
+CO-joueur: bets €0.04
+UTG-large: folds
+Uncalled bet (€0.04) returned to CO-joueur
+CO-joueur collected €0.11 from pot
+*** SUMMARY ***
+Total pot €0.11 | Rake €0.00
+Board [Qc 9s Jd]
+Seat 1: SB-random_legal folded | résultat -0.50 bb
+Seat 2: BB-serre folded | résultat -1.00 bb
+Seat 3: UTG-large folded | résultat -2.00 bb
+Seat 4: MP-bluff folded | résultat +0.00 bb
+Seat 5: CO-joueur won uncontested | résultat +3.50 bb
+Seat 6: BTN-equity_bot folded | résultat +0.00 bb
+
+
+PokerLab Hand #2: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 1' 6-max Seat #6 is the button
+Seat 1: SB-equity_bot (€2.00 in chips)
+Seat 2: BB-random_legal (€2.00 in chips)
+Seat 3: UTG-serre (€2.00 in chips)
+Seat 4: MP-large (€2.00 in chips)
+Seat 5: CO-bluff (€2.00 in chips)
+Seat 6: BTN-joueur (€2.00 in chips)
+SB-equity_bot: posts small blind €0.01
+BB-random_legal: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-equity_bot [4h As]
+Dealt to BB-random_legal [Jh Ks]
+Dealt to UTG-serre [9c Ad]
+Dealt to MP-large [8h Kc]
+Dealt to CO-bluff [2h 2c]
+Dealt to BTN-joueur [Jc 8d]
+UTG-serre: folds
+MP-large: folds
+CO-bluff: raises €0.04 to €0.06
+BTN-joueur: folds
+SB-equity_bot: folds
+BB-random_legal: raises €0.04 to €0.10
+CO-bluff: folds
+Uncalled bet (€0.04) returned to BB-random_legal
+BB-random_legal collected €0.13 from pot
+*** SUMMARY ***
+Total pot €0.13 | Rake €0.00
+Seat 1: SB-equity_bot folded | résultat -0.50 bb
+Seat 2: BB-random_legal won uncontested | résultat +3.50 bb
+Seat 3: UTG-serre folded | résultat +0.00 bb
+Seat 4: MP-large folded | résultat +0.00 bb
+Seat 5: CO-bluff folded | résultat -3.00 bb
+Seat 6: BTN-joueur folded | résultat +0.00 bb
+
+
+PokerLab Hand #3: Hold'em No Limit (€0.01/€0.02) - graine 8309839222257160841
+Table 'round robin table 1' 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-equity_bot (€2.00 in chips)
+Seat 3: UTG-random_legal (€2.00 in chips)
+Seat 4: MP-serre (€2.00 in chips)
+Seat 5: CO-large (€2.00 in chips)
+Seat 6: BTN-bluff (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-equity_bot: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [4h As]
+Dealt to BB-equity_bot [Jh Ks]
+Dealt to UTG-random_legal [9c Ad]
+Dealt to MP-serre [8h Kc]
+Dealt to CO-large [2h 2c]
+Dealt to BTN-bluff [Jc 8d]
+UTG-random_legal: raises €0.02 to €0.04
+MP-serre: folds
+CO-large: calls €0.04
+BTN-bluff: folds
+SB-joueur: calls €0.03
+BB-equity_bot: calls €0.02
+*** FLOP *** [Qc 9s Jd]
+SB-joueur: checks
+BB-equity_bot: checks
+UTG-random_legal: checks
+CO-large: checks
+*** TURN *** [Qc 9s Jd] [7s]
+SB-joueur: checks
+BB-equity_bot: checks
+UTG-random_legal: checks
+CO-large: checks
+*** RIVER *** [Qc 9s Jd 7s] [6c]
+SB-joueur: checks
+BB-equity_bot: checks
+UTG-random_legal: checks
+CO-large: checks
+*** SHOW DOWN ***
+SB-joueur: shows [4h As]
+BB-equity_bot: shows [Jh Ks]
+UTG-random_legal: shows [9c Ad]
+CO-large: shows [2h 2c]
+BB-equity_bot collected €0.16 from pot
+*** SUMMARY ***
+Total pot €0.16 | Rake €0.00
+Board [Qc 9s Jd 7s 6c]
+Seat 1: SB-joueur showed [4h As] | résultat -2.00 bb
+Seat 2: BB-equity_bot showed [Jh Ks] | résultat +6.00 bb
+Seat 3: UTG-random_legal showed [9c Ad] | résultat -2.00 bb
+Seat 4: MP-serre folded | résultat +0.00 bb
+Seat 5: CO-large showed [2h 2c] | résultat -2.00 bb
+Seat 6: BTN-bluff folded | résultat +0.00 bb

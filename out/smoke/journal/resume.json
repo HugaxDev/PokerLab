@@ -1,0 +1,35 @@
+{
+  "phases": [
+    {
+      "phase": "1",
+      "stratégie": "Serré",
+      "mains": 5,
+      "mon résultat (bb)": -7.499999999999995,
+      "centile simulé": 0.0,
+      "verdict": "sous le 5e centile",
+      "mon VPIP %": 60.0,
+      "VPIP simulé %": 5.0,
+      "mon PFR %": 60.0,
+      "PFR simulé %": 5.0
+    },
+    {
+      "phase": "2",
+      "stratégie": "Joueur",
+      "mains": 5,
+      "mon résultat (bb)": 103.0,
+      "centile simulé": 100.0,
+      "verdict": "au-dessus du 95e centile",
+      "mon VPIP %": 80.0,
+      "VPIP simulé %": 35.0,
+      "mon PFR %": 60.0,
+      "PFR simulé %": 25.0
+    }
+  ],
+  "experience": "journal",
+  "config": {
+    "csv": "/home/user/pokerlab/journal/exemple_journal.csv",
+    "phases": "/home/user/pokerlab/journal/phases.yaml"
+  },
+  "mains_jouees": 0,
+  "duree_s": 0.1
+}

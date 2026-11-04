@@ -1,0 +1,150 @@
+{
+  "cellules": {
+    "serre@micro_play_money": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -25.0
+    },
+    "large@micro_play_money": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -233.33333333333334
+    },
+    "zero_bluff@micro_play_money": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": 2466.8333333333335
+    },
+    "position@micro_play_money": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -108.33333333333333
+    },
+    "bluff@micro_play_money": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -108.33333333333333
+    },
+    "joueur@micro_play_money": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -1416.166666666667
+    },
+    "equity_bot@micro_play_money": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -320.5
+    },
+    "random_legal@micro_play_money": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -505.33333333333337
+    },
+    "serre@reguliers": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": 0.0
+    },
+    "large@reguliers": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -125.0
+    },
+    "zero_bluff@reguliers": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -564.0
+    },
+    "position@reguliers": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -50.0
+    },
+    "bluff@reguliers": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -50.0
+    },
+    "joueur@reguliers": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -385.16666666666663
+    },
+    "equity_bot@reguliers": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -87.5
+    },
+    "random_legal@reguliers": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -901.4999999999999
+    },
+    "serre@mixte": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -25.0
+    },
+    "large@mixte": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -183.33333333333331
+    },
+    "zero_bluff@mixte": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -183.33333333333331
+    },
+    "position@mixte": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -75.0
+    },
+    "bluff@mixte": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -75.0
+    },
+    "joueur@mixte": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -388.83333333333337
+    },
+    "equity_bot@mixte": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -244.99999999999997
+    },
+    "random_legal@mixte": {
+      "decks": 1,
+      "arret": "nombre de decks fixé (1)",
+      "bb100_metric": -3353.666666666667
+    }
+  },
+  "corrections_actions": 0,
+  "experience": "compare",
+  "config": {
+    "strategies": [
+      "serre",
+      "large",
+      "zero_bluff",
+      "position",
+      "bluff",
+      "joueur",
+      "equity_bot",
+      "random_legal"
+    ],
+    "compositions": [
+      "micro_play_money",
+      "reguliers",
+      "mixte"
+    ],
+    "autostop": {
+      "enabled": false
+    },
+    "decks": 1,
+    "history_samples": 5
+  },
+  "mains_jouees": 144,
+  "duree_s": 3.2
+}

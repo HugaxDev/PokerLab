@@ -1,0 +1,16 @@
+{
+  "sessions": 2,
+  "mains_par_session": 10,
+  "experience": "sessions",
+  "config": {
+    "strategies": [
+      "serre",
+      "joueur"
+    ],
+    "composition": "micro_play_money",
+    "n_sessions": 2,
+    "hands_per_session": 10
+  },
+  "mains_jouees": 40,
+  "duree_s": 1.0
+}

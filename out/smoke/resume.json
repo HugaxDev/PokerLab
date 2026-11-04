@@ -1,0 +1,162 @@
+{
+  "mains_par_experience": {
+    "compare": 144,
+    "round_robin": 12,
+    "sessions": 40,
+    "bankroll": 0,
+    "sweep": 24,
+    "ablation": 18,
+    "optimize": 30,
+    "audit": 86,
+    "journal": 0,
+    "fiche": 0
+  },
+  "budget": 2000,
+  "dans_le_budget": true,
+  "experience": "smoke",
+  "config": {
+    "experiment": "smoke",
+    "max_hands": 2000,
+    "compare": {
+      "strategies": [
+        "serre",
+        "large",
+        "zero_bluff",
+        "position",
+        "bluff",
+        "joueur",
+        "equity_bot",
+        "random_legal"
+      ],
+      "compositions": [
+        "micro_play_money",
+        "reguliers",
+        "mixte"
+      ],
+      "autostop": {
+        "enabled": false
+      },
+      "decks": 1,
+      "history_samples": 5
+    },
+    "round_robin": {
+      "strategies": [
+        "serre",
+        "large",
+        "zero_bluff",
+        "position",
+        "bluff",
+        "joueur",
+        "equity_bot",
+        "random_legal"
+      ],
+      "tables": 2,
+      "decks_per_table": 1
+    },
+    "sessions": {
+      "strategies": [
+        "serre",
+        "joueur"
+      ],
+      "composition": "micro_play_money",
+      "n_sessions": 2,
+      "hands_per_session": 10
+    },
+    "bankroll": {
+      "strategies": [
+        "serre",
+        "joueur"
+      ],
+      "capital": 3.5,
+      "currency_per_bb": 0.02,
+      "stop_loss_bb": 25,
+      "n_trajectories": 500,
+      "max_sessions": 50
+    },
+    "sweep": {
+      "strategy": "bluff",
+      "composition": "micro_play_money",
+      "decks": 1,
+      "params": [
+        {
+          "path": "taille_ouverture",
+          "label": "ouverture_bb",
+          "values": [
+            2.5,
+            3.0
+          ]
+        },
+        {
+          "path": "frequence_bluff",
+          "label": "freq_bluff",
+          "values": [
+            0.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    "ablation": {
+      "strategy": "joueur",
+      "composition": "micro_play_money",
+      "decks": 1,
+      "ablations": [
+        {
+          "name": "garde-fou",
+          "patch": {
+            "postflop.guardrail.enabled": false
+          }
+        },
+        {
+          "name": "c-bet",
+          "patch": {
+            "postflop.cbet.enabled": false
+          }
+        }
+      ]
+    },
+    "optimize": {
+      "strategy": "joueur",
+      "composition": "micro_play_money",
+      "n_trials": 2,
+      "train_decks": 1,
+      "validation_decks": 1,
+      "top_k": 1,
+      "space": [
+        {
+          "path": "taille_ouverture",
+          "low": 2.0,
+          "high": 4.0,
+          "step": 0.5
+        },
+        {
+          "path": "taille_cbet",
+          "low": 0.25,
+          "high": 0.75,
+          "step": 0.05
+        }
+      ]
+    },
+    "audit": {
+      "strategy": "joueur",
+      "composition": "micro_play_money",
+      "pool_decks": 1,
+      "n_decisions": 8,
+      "rollouts": 2,
+      "bet_sizes_pot": [
+        0.5,
+        1.0
+      ],
+      "include_allin": true
+    },
+    "journal": {
+      "csv": "journal/exemple_journal.csv",
+      "phases": "journal/phases.yaml"
+    },
+    "fiche": {
+      "strategy": "joueur"
+    }
+  },
+  "mains_jouees": 354,
+  "duree_s": 8.5
+}

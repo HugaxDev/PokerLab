@@ -1,0 +1,58 @@
+{
+  "variantes": [
+    {
+      "variante": "Bluff [ouverture_bb=2.5, freq_bluff=0.0]",
+      "bb/100 EV": -100.0,
+      "IC ±": Infinity,
+      "bb/100 réel": -100.0,
+      "mains": 6
+    },
+    {
+      "variante": "Bluff [ouverture_bb=2.5, freq_bluff=1.0]",
+      "bb/100 EV": -100.0,
+      "IC ±": Infinity,
+      "bb/100 réel": -100.0,
+      "mains": 6
+    },
+    {
+      "variante": "Bluff [ouverture_bb=3.0, freq_bluff=0.0]",
+      "bb/100 EV": -108.33333333333333,
+      "IC ±": Infinity,
+      "bb/100 réel": -108.33333333333333,
+      "mains": 6
+    },
+    {
+      "variante": "Bluff [ouverture_bb=3.0, freq_bluff=1.0]",
+      "bb/100 EV": -108.33333333333333,
+      "IC ±": Infinity,
+      "bb/100 réel": -108.33333333333333,
+      "mains": 6
+    }
+  ],
+  "experience": "sweep",
+  "config": {
+    "strategy": "bluff",
+    "composition": "micro_play_money",
+    "decks": 1,
+    "params": [
+      {
+        "path": "taille_ouverture",
+        "label": "ouverture_bb",
+        "values": [
+          2.5,
+          3.0
+        ]
+      },
+      {
+        "path": "frequence_bluff",
+        "label": "freq_bluff",
+        "values": [
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  "mains_jouees": 24,
+  "duree_s": 0.1
+}

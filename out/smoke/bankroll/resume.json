@@ -1,0 +1,37 @@
+{
+  "capital_bb": 175.0,
+  "lignes": [
+    {
+      "stratégie": "Serré",
+      "bb/100 réel": 45.0,
+      "ruine en 50 sessions (sans stop) %": 0.0,
+      "ruine en 50 sessions (stop 25 bb) %": 0.0,
+      "ruine théorique (horizon infini) %": 1.926616467580297e-06,
+      "bankroll finale médiane sans stop (bb)": 400.0,
+      "bankroll finale médiane avec stop (bb)": 400.0
+    },
+    {
+      "stratégie": "Joueur",
+      "bb/100 réel": -290.5,
+      "ruine en 50 sessions (sans stop) %": 100.0,
+      "ruine en 50 sessions (stop 25 bb) %": 100.0,
+      "ruine théorique (horizon infini) %": 100.0,
+      "bankroll finale médiane sans stop (bb)": 0.0,
+      "bankroll finale médiane avec stop (bb)": 0.0
+    }
+  ],
+  "experience": "bankroll",
+  "config": {
+    "strategies": [
+      "serre",
+      "joueur"
+    ],
+    "capital": 3.5,
+    "currency_per_bb": 0.02,
+    "stop_loss_bb": 25,
+    "n_trajectories": 500,
+    "max_sessions": 50
+  },
+  "mains_jouees": 0,
+  "duree_s": 0.0
+}
