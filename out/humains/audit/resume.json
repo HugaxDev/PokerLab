@@ -1,5 +1,5 @@
 {
-  "decisions_auditees": 4994,
+  "decisions_auditees": 5000,
   "experience": "audit",
   "config": {
     "experiment": "audit",
@@ -25,6 +25,6 @@
       "action_label"
     ]
   },
-  "mains_jouees": 420452,
-  "duree_s": 216.5
+  "mains_jouees": 422244,
+  "duree_s": 215.6
 }

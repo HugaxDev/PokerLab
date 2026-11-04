@@ -3665,45 +3665,11 @@ document.addEventListener('DOMContentLoaded', renderAll);
 </head><body><main>
 <button class="theme" onclick="toggleTheme()" aria-label="Basculer clair/sombre">clair / sombre</button>
 <h1>PokerLab — audit contrefactuel de Joueur</h1>
-<p class="sub">4994 décisions, 16 rollouts par action — généré le 2026-11-04 22:59</p>
+<p class="sub">5000 décisions, 16 rollouts par action — généré le 2026-11-04 23:30</p>
 <p class="sub"></p>
-<div class="card verdict"><h3>Verdict</h3><ol><li>EV perdue moyenne : 0.539 bb par décision auditée (4994 décisions).</li><li>Perte totale estimée sur l&#x27;échantillon : 2693.0 bb.</li><li>Fuite : préflop · paire haute (TT+) · face à un tapis → se couche — 38.29 bb par décision (7 cas).</li><li>Fuite : préflop · paire haute (TT+) · sans relance devant → relance — 3.99 bb par décision (65 cas).</li><li>Fuite : river · quinte · rien à payer → mise — 16.59 bb par décision (14 cas).</li></ol></div>
+<div class="card verdict"><h3>Verdict</h3><ol><li>EV perdue moyenne : 0.503 bb par décision auditée (5000 décisions).</li><li>Perte totale estimée sur l&#x27;échantillon : 2515.8 bb.</li><li>Fuite : préflop · paire haute (TT+) · face à un tapis → se couche — 33.01 bb par décision (6 cas).</li><li>Fuite : river · petite paire · rien à payer → mise — 3.89 bb par décision (48 cas).</li><li>Fuite : préflop · paire haute (TT+) · sans relance devant → relance — 2.66 bb par décision (68 cas).</li></ol></div>
 <nav><a href="#s0">Audit contrefactuel — Joueur</a></nav>
-<section id="s0"><h2>Audit contrefactuel — Joueur</h2><div class="card"><div id="fig1" class="fig"></div><p class="legend-note">EV perdue = EV de la meilleure alternative − EV de l&#x27;action prise (validation croisée sur les rollouts).</p><script type="application/json" class="figdata" data-target="fig1">{"data":[{"type":"bar","marker":{"color":"#008300","line":{"color":"#fcfcfb","width":2}},"name":"bb","orientation":"h","y":["pr\u00e9flop \u00b7 paire haute (TT+) \u00b7 face \u00e0 un tapis \u2192 se couche","pr\u00e9flop \u00b7 paire haute (TT+) \u00b7 sans relance devant \u2192 relance","river \u00b7 quinte \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 As fort (AT+) \u00b7 sans relance devant \u2192 relance","river \u00b7 couleur \u00b7 rien \u00e0 payer \u2192 mise","turn \u00b7 quinte \u00b7 rien \u00e0 payer \u2192 mise","river \u00b7 brelan \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 As fort (AT+) \u00b7 face \u00e0 une sur-relance \u2192 paie","turn \u00b7 petite paire \u00b7 face \u00e0 une mise \u2192 paie","flop \u00b7 brelan \u00b7 rien \u00e0 payer \u2192 mise","river \u00b7 petite paire \u00b7 face \u00e0 une relance \u2192 paie","river \u00b7 paire moyenne \u00b7 rien \u00e0 payer \u2192 mise","turn \u00b7 rien \u00b7 face \u00e0 une mise \u2192 se couche","flop \u00b7 top paire \u00b7 face \u00e0 une relance \u2192 paie","river \u00b7 petite paire \u00b7 rien \u00e0 payer \u2192 mise"],"x":[38.28854972718254,3.9876340054043173,16.58986607142857,1.3006673600589227,14.503489583333334,8.16442722259358,7.003059210526317,6.744930314659755,14.23542297979798,4.847222370249261,14.672187499999998,3.3346875000000002,2.7892357954545455,13.767886160845372,2.1374142156862743],"error_x":{"type":"data","array":[11.482021374629594,2.4112949448653564,8.157617103791688,0.8930393538946563,11.29527635815413,6.1598455534112855,5.097117150273069,4.809383102464204,8.126499607841753,3.7070050356988284,8.565214475853548,3.3667498595819083,3.2587648573410983,17.81540305594553,2.758313888563663],"color":"#52514e","thickness":1.5,"width":4},"hovertemplate":"%{y}<br>%{x:.2f} bb<extra><\/extra>"}],"layout":{"template":"none","height":630,"margin":{"l":56,"r":16,"t":40,"b":56},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#52514e","size":12},"title":{"text":"EV perdue par d\u00e9cision, situations les plus co\u00fbteuses (class\u00e9es par perte totale)","font":{"color":"#0b0b0b","size":14},"x":0.01},"xaxis":{"gridcolor":"#e1e0d9","linecolor":"#c3c2b7","zerolinecolor":"#c3c2b7","automargin":true,"title":{"text":"bb"}},"yaxis":{"gridcolor":"#e1e0d9","linecolor":"#c3c2b7","zerolinecolor":"#c3c2b7","automargin":true,"autorange":"reversed"},"legend":{"orientation":"h","y":-0.2,"x":0,"font":{"color":"#52514e"}},"hoverlabel":{"bgcolor":"#fcfcfb","font":{"color":"#0b0b0b"},"bordercolor":"#c3c2b7"},"hovermode":"closest","showlegend":false}}</script></div><div class="card tbl"><table><thead><tr><th>situation</th><th>décisions</th><th>EV perdue / décision (bb)</th><th>IC ±</th><th>perte totale (bb)</th></tr></thead><tbody><tr><td>préflop · paire haute (TT+) · face à un tapis → se couche</td><td>7</td><td>38.289</td><td>11.482</td><td>268.020</td></tr><tr><td>préflop · paire haute (TT+) · sans relance devant → relance</td><td>65</td><td>3.988</td><td>2.411</td><td>259.196</td></tr><tr><td>river · quinte · rien à payer → mise</td><td>14</td><td>16.590</td><td>8.158</td><td>232.258</td></tr><tr><td>préflop · As fort (AT+) · sans relance devant → relance</td><td>150</td><td>1.301</td><td>0.893</td><td>195.100</td></tr><tr><td>river · couleur · rien à payer → mise</td><td>12</td><td>14.503</td><td>11.295</td><td>174.042</td></tr><tr><td>turn · quinte · rien à payer → mise</td><td>17</td><td>8.164</td><td>6.160</td><td>138.795</td></tr><tr><td>river · brelan · rien à payer → mise</td><td>19</td><td>7.003</td><td>5.097</td><td>133.058</td></tr><tr><td>préflop · As fort (AT+) · face à une sur-relance → paie</td><td>19</td><td>6.745</td><td>4.809</td><td>128.154</td></tr><tr><td>turn · petite paire · face à une mise → paie</td><td>9</td><td>14.235</td><td>8.126</td><td>128.119</td></tr><tr><td>flop · brelan · rien à payer → mise</td><td>26</td><td>4.847</td><td>3.707</td><td>126.028</td></tr><tr><td>river · petite paire · face à une relance → paie</td><td>8</td><td>14.672</td><td>8.565</td><td>117.377</td></tr><tr><td>river · paire moyenne · rien à payer → mise</td><td>34</td><td>3.335</td><td>3.367</td><td>113.379</td></tr><tr><td>turn · rien · face à une mise → se couche</td><td>40</td><td>2.789</td><td>3.259</td><td>111.569</td></tr><tr><td>flop · top paire · face à une relance → paie</td><td>8</td><td>13.768</td><td>17.815</td><td>110.143</td></tr><tr><td>river · petite paire · rien à payer → mise</td><td>51</td><td>2.137</td><td>2.758</td><td>109.008</td></tr></tbody></table></div><div class="card tbl"><table><thead><tr><th>street</th><th>décisions</th><th>EV perdue moy. (bb)</th><th>total (bb)</th></tr></thead><tbody><tr><td>flop</td><td>1 232</td><td>0.147</td><td>180.958</td></tr><tr><td>préflop</td><td>2 787</td><td>0.237</td><td>660.262</td></tr><tr><td>river</td><td>403</td><td>3.081</td><td>1 241.809</td></tr><tr><td>turn</td><td>572</td><td>1.066</td><td>609.968</td></tr></tbody></table><p class="legend-note">Par street.</p></div><details><summary>Exemples : préflop · paire haute (TT+) · face à un tapis → se couche</summary><p>Décision n° 3 (préflop) : prise = se couche, meilleure = paie, EV perdue ≈ 62.47 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +62.47 bb</p><pre>PokerLab Hand #9695: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5093680020792929629
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_agressif (€2.00 in chips)
-Seat 2: BB-humain_regulier (€2.00 in chips)
-Seat 3: UTG-humain_tapis (€2.00 in chips)
-Seat 4: MP-humain_debutant (€2.00 in chips)
-Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-joueur (€2.00 in chips)
-SB-humain_agressif: posts small blind €0.01
-BB-humain_regulier: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BTN-joueur [Ts Tc]
-UTG-humain_tapis: raises €1.98 to €2.00 and is all-in
-MP-humain_debutant: folds
-CO-humain_debutant: calls €2.00 and is all-in
-BTN-joueur: folds
-SB-humain_agressif: folds
-BB-humain_regulier: folds
-*** FLOP *** [2s 2d 3s]
-*** TURN *** [2s 2d 3s] [6s]
-*** RIVER *** [2s 2d 3s 6s] [Ad]
-*** SHOW DOWN ***
-UTG-humain_tapis: shows [5h Kc]
-CO-humain_debutant: shows [8s Ks]
-CO-humain_debutant collected €4.03 from pot
-*** SUMMARY ***
-Total pot €4.03 | Rake €0.00
-Board [2s 2d 3s 6s Ad]
-Seat 1: SB-humain_agressif folded | résultat -0.50 bb | all-in EV -0.50 bb
-Seat 2: BB-humain_regulier folded | résultat -1.00 bb | all-in EV -1.00 bb
-Seat 3: UTG-humain_tapis showed [5h Kc] | résultat -100.00 bb | all-in EV -36.66 bb
-Seat 4: MP-humain_debutant folded | résultat +0.00 bb | all-in EV +0.00 bb
-Seat 5: CO-humain_debutant showed [8s Ks] | résultat +101.50 bb | all-in EV +38.16 bb
-Seat 6: BTN-joueur folded | résultat +0.00 bb | all-in EV +0.00 bb
-</pre><p>Décision n° 4 (préflop) : prise = se couche, meilleure = paie, EV perdue ≈ 51.92 bb</p><p class='legend-note'>se couche : -0.50 bb · paie : +51.42 bb</p><pre>PokerLab Hand #13944: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7112095635012355904
+<section id="s0"><h2>Audit contrefactuel — Joueur</h2><div class="card"><div id="fig1" class="fig"></div><p class="legend-note">EV perdue = EV de la meilleure alternative − EV de l&#x27;action prise (validation croisée sur les rollouts).</p><script type="application/json" class="figdata" data-target="fig1">{"data":[{"type":"bar","marker":{"color":"#008300","line":{"color":"#fcfcfb","width":2}},"name":"bb","orientation":"h","y":["pr\u00e9flop \u00b7 paire haute (TT+) \u00b7 face \u00e0 un tapis \u2192 se couche","river \u00b7 petite paire \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 paire haute (TT+) \u00b7 sans relance devant \u2192 relance","river \u00b7 brelan \u00b7 rien \u00e0 payer \u2192 mise","river \u00b7 couleur \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 paire moyenne (66-99) \u00b7 face \u00e0 un tapis \u2192 se couche","river \u00b7 paire moyenne \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 autres \u00b7 face \u00e0 une relance \u2192 paie","river \u00b7 full ou mieux \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 paire moyenne (66-99) \u00b7 face \u00e0 une sur-relance \u2192 se couche","turn \u00b7 quinte \u00b7 rien \u00e0 payer \u2192 mise","turn \u00b7 rien + tirage \u00b7 face \u00e0 une mise \u2192 se couche","flop \u00b7 brelan \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 As fort (AT+) \u00b7 face \u00e0 un tapis \u2192 se couche","pr\u00e9flop \u00b7 As fort (AT+) \u00b7 sans relance devant \u2192 relance"],"x":[33.00990407986111,3.8886328124999996,2.6640227736928104,13.304427083333335,17.507890624999998,15.509304783950617,4.8193981481481485,0.6410296976582258,8.044732142857143,5.289659338225835,8.52520541958042,9.953512396694215,3.5254061177200464,9.520060570987653,0.6379246828752642],"error_x":{"type":"data","array":[11.628691155613538,3.274614776431056,2.247152477097422,6.148682311521148,12.161492788529825,6.992924261695958,3.3072579000927065,0.7139606709869947,5.839154981615913,4.320773298288208,7.9561526603437445,6.268694262300498,3.5897431136990896,7.691613169887745,1.0586946366429326],"color":"#52514e","thickness":1.5,"width":4},"hovertemplate":"%{y}<br>%{x:.2f} bb<extra><\/extra>"}],"layout":{"template":"none","height":630,"margin":{"l":56,"r":16,"t":40,"b":56},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#52514e","size":12},"title":{"text":"EV perdue par d\u00e9cision, situations les plus co\u00fbteuses (class\u00e9es par perte totale)","font":{"color":"#0b0b0b","size":14},"x":0.01},"xaxis":{"gridcolor":"#e1e0d9","linecolor":"#c3c2b7","zerolinecolor":"#c3c2b7","automargin":true,"title":{"text":"bb"}},"yaxis":{"gridcolor":"#e1e0d9","linecolor":"#c3c2b7","zerolinecolor":"#c3c2b7","automargin":true,"autorange":"reversed"},"legend":{"orientation":"h","y":-0.2,"x":0,"font":{"color":"#52514e"}},"hoverlabel":{"bgcolor":"#fcfcfb","font":{"color":"#0b0b0b"},"bordercolor":"#c3c2b7"},"hovermode":"closest","showlegend":false}}</script></div><div class="card tbl"><table><thead><tr><th>situation</th><th>décisions</th><th>EV perdue / décision (bb)</th><th>IC ±</th><th>perte totale (bb)</th></tr></thead><tbody><tr><td>préflop · paire haute (TT+) · face à un tapis → se couche</td><td>6</td><td>33.010</td><td>11.629</td><td>198.059</td></tr><tr><td>river · petite paire · rien à payer → mise</td><td>48</td><td>3.889</td><td>3.275</td><td>186.654</td></tr><tr><td>préflop · paire haute (TT+) · sans relance devant → relance</td><td>68</td><td>2.664</td><td>2.247</td><td>181.154</td></tr><tr><td>river · brelan · rien à payer → mise</td><td>12</td><td>13.304</td><td>6.149</td><td>159.653</td></tr><tr><td>river · couleur · rien à payer → mise</td><td>8</td><td>17.508</td><td>12.161</td><td>140.063</td></tr><tr><td>préflop · paire moyenne (66-99) · face à un tapis → se couche</td><td>9</td><td>15.509</td><td>6.993</td><td>139.584</td></tr><tr><td>river · paire moyenne · rien à payer → mise</td><td>27</td><td>4.819</td><td>3.307</td><td>130.124</td></tr><tr><td>préflop · autres · face à une relance → paie</td><td>186</td><td>0.641</td><td>0.714</td><td>119.232</td></tr><tr><td>river · full ou mieux · rien à payer → mise</td><td>14</td><td>8.045</td><td>5.839</td><td>112.626</td></tr><tr><td>préflop · paire moyenne (66-99) · face à une sur-relance → se couche</td><td>21</td><td>5.290</td><td>4.321</td><td>111.083</td></tr><tr><td>turn · quinte · rien à payer → mise</td><td>13</td><td>8.525</td><td>7.956</td><td>110.828</td></tr><tr><td>turn · rien + tirage · face à une mise → se couche</td><td>11</td><td>9.954</td><td>6.269</td><td>109.489</td></tr><tr><td>flop · brelan · rien à payer → mise</td><td>29</td><td>3.525</td><td>3.590</td><td>102.237</td></tr><tr><td>préflop · As fort (AT+) · face à un tapis → se couche</td><td>9</td><td>9.520</td><td>7.692</td><td>85.681</td></tr><tr><td>préflop · As fort (AT+) · sans relance devant → relance</td><td>129</td><td>0.638</td><td>1.059</td><td>82.292</td></tr></tbody></table></div><div class="card tbl"><table><thead><tr><th>street</th><th>décisions</th><th>EV perdue moy. (bb)</th><th>total (bb)</th></tr></thead><tbody><tr><td>flop</td><td>1 229</td><td>0.136</td><td>166.678</td></tr><tr><td>préflop</td><td>2 840</td><td>0.280</td><td>796.375</td></tr><tr><td>river</td><td>360</td><td>3.166</td><td>1 139.688</td></tr><tr><td>turn</td><td>571</td><td>0.723</td><td>413.018</td></tr></tbody></table><p class="legend-note">Par street.</p></div><details><summary>Exemples : préflop · paire haute (TT+) · face à un tapis → se couche</summary><p>Décision n° 4 (préflop) : prise = se couche, meilleure = paie, EV perdue ≈ 51.92 bb</p><p class='legend-note'>se couche : -0.50 bb · paie : +51.42 bb</p><pre>PokerLab Hand #13944: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7112095635012355904
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
 Seat 1: SB-joueur (€2.00 in chips)
 Seat 2: BB-humain_debutant (€2.00 in chips)
@@ -3772,86 +3738,178 @@ Seat 3: UTG-humain_tapis showed [Ad 5d] | résultat +200.00 bb | all-in EV +26.4
 Seat 4: MP-joueur folded | résultat +0.00 bb | all-in EV +0.00 bb
 Seat 5: CO-humain_tapis folded | résultat +0.00 bb | all-in EV +0.00 bb
 Seat 6: BTN-humain_regulier folded | résultat +0.00 bb | all-in EV +0.00 bb
-</pre></details><details><summary>Exemples : préflop · paire haute (TT+) · sans relance devant → relance</summary><p>Décision n° 3 (préflop) : prise = action prise, meilleure = paie, EV perdue ≈ 37.18 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +60.90 bb · relance min : +32.26 bb · relance 3x : +36.59 bb · tapis : +41.32 bb · action prise : +23.73 bb</p><pre>PokerLab Hand #287: Hold&#x27;em No Limit (€0.01/€0.02) - graine 1692567563620015025
+</pre><p>Décision n° 3 (préflop) : prise = se couche, meilleure = paie, EV perdue ≈ 41.95 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +41.95 bb</p><pre>PokerLab Hand #13577: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3759426515260321048
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_agressif (€2.00 in chips)
-Seat 2: BB-humain_tapis (€2.00 in chips)
-Seat 3: UTG-humain_debutant (€2.00 in chips)
-Seat 4: MP-humain_tapis (€2.00 in chips)
-Seat 5: CO-humain_debutant (€2.00 in chips)
+Seat 1: SB-humain_prudent (€2.00 in chips)
+Seat 2: BB-humain_prudent (€2.00 in chips)
+Seat 3: UTG-humain_regulier (€2.00 in chips)
+Seat 4: MP-humain_debutant (€2.00 in chips)
+Seat 5: CO-humain_tapis (€2.00 in chips)
 Seat 6: BTN-joueur (€2.00 in chips)
-SB-humain_agressif: posts small blind €0.01
-BB-humain_tapis: posts big blind €0.02
+SB-humain_prudent: posts small blind €0.01
+BB-humain_prudent: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to BTN-joueur [As Ah]
-UTG-humain_debutant: calls €0.02
-MP-humain_tapis: folds
-CO-humain_debutant: calls €0.02
-BTN-joueur: raises €0.08 to €0.10
-SB-humain_agressif: calls €0.09
-BB-humain_tapis: folds
-UTG-humain_debutant: folds
-CO-humain_debutant: folds
-*** FLOP *** [Qd Ks 8h]
-SB-humain_agressif: bets €0.21
-BTN-joueur: calls €0.21
-*** TURN *** [Qd Ks 8h] [6d]
-SB-humain_agressif: bets €0.55
-BTN-joueur: calls €0.55
-*** RIVER *** [Qd Ks 8h 6d] [7c]
-SB-humain_agressif: bets €1.15 and is all-in
-BTN-joueur: calls €1.15 and is all-in
+Dealt to BTN-joueur [Jc Jd]
+UTG-humain_regulier: folds
+MP-humain_debutant: calls €0.02
+CO-humain_tapis: raises €1.98 to €2.00 and is all-in
+BTN-joueur: folds
+SB-humain_prudent: folds
+BB-humain_prudent: calls €1.98 and is all-in
+MP-humain_debutant: folds
+*** FLOP *** [4d Tc 5s]
+*** TURN *** [4d Tc 5s] [7h]
+*** RIVER *** [4d Tc 5s 7h] [Ts]
 *** SHOW DOWN ***
-SB-humain_agressif: shows [8c Kd]
-BTN-joueur: shows [As Ah]
-SB-humain_agressif collected €4.06 from pot
+BB-humain_prudent: shows [Ac 9h]
+CO-humain_tapis: shows [Qd Qh]
+CO-humain_tapis collected €4.03 from pot
 *** SUMMARY ***
-Total pot €4.06 | Rake €0.00
-Board [Qd Ks 8h 6d 7c]
-Seat 1: SB-humain_agressif showed [8c Kd] | résultat +103.00 bb
-Seat 2: BB-humain_tapis folded | résultat -1.00 bb
-Seat 3: UTG-humain_debutant folded | résultat -1.00 bb
-Seat 4: MP-humain_tapis folded | résultat +0.00 bb
-Seat 5: CO-humain_debutant folded | résultat -1.00 bb
-Seat 6: BTN-joueur showed [As Ah] | résultat -100.00 bb
-</pre><p>Décision n° 1 (préflop) : prise = action prise, meilleure = paie, EV perdue ≈ 36.39 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +42.10 bb · relance min : +3.25 bb · relance 3x : +4.48 bb · tapis : +22.65 bb · action prise : +5.71 bb</p><pre>PokerLab Hand #10029: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3382817955990186150
+Total pot €4.03 | Rake €0.00
+Board [4d Tc 5s 7h Ts]
+Seat 1: SB-humain_prudent folded | résultat -0.50 bb | all-in EV -0.50 bb
+Seat 2: BB-humain_prudent showed [Ac 9h] | résultat -100.00 bb | all-in EV -44.82 bb
+Seat 3: UTG-humain_regulier folded | résultat +0.00 bb | all-in EV +0.00 bb
+Seat 4: MP-humain_debutant folded | résultat -1.00 bb | all-in EV -1.00 bb
+Seat 5: CO-humain_tapis showed [Qd Qh] | résultat +101.50 bb | all-in EV +46.32 bb
+Seat 6: BTN-joueur folded | résultat +0.00 bb | all-in EV +0.00 bb
+</pre></details><details><summary>Exemples : river · petite paire · rien à payer → mise</summary><p>Décision n° 18 (river) : prise = action prise, meilleure = mise 1 pot, EV perdue ≈ 49.59 bb</p><p class='legend-note'>check : -36.14 bb · mise 0.5 pot : -91.85 bb · mise 1 pot : -23.32 bb · action prise : -72.91 bb</p><pre>PokerLab Hand #5397: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5560641650594169576
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_tapis (€2.00 in chips)
-Seat 2: BB-humain_tapis (€2.00 in chips)
+Seat 1: SB-humain_prudent (€2.00 in chips)
+Seat 2: BB-humain_debutant (€2.00 in chips)
 Seat 3: UTG-humain_debutant (€2.00 in chips)
 Seat 4: MP-joueur (€2.00 in chips)
 Seat 5: CO-humain_regulier (€2.00 in chips)
-Seat 6: BTN-humain_tapis (€2.00 in chips)
-SB-humain_tapis: posts small blind €0.01
+Seat 6: BTN-humain_debutant (€2.00 in chips)
+SB-humain_prudent: posts small blind €0.01
+BB-humain_debutant: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to MP-joueur [2d 2c]
+UTG-humain_debutant: folds
+MP-joueur: raises €0.04 to €0.06
+CO-humain_regulier: folds
+BTN-humain_debutant: calls €0.06
+SB-humain_prudent: calls €0.05
+BB-humain_debutant: calls €0.04
+*** FLOP *** [8d 8s 4h]
+SB-humain_prudent: checks
+BB-humain_debutant: checks
+MP-joueur: bets €0.08
+BTN-humain_debutant: calls €0.08
+SB-humain_prudent: calls €0.08
+BB-humain_debutant: folds
+*** TURN *** [8d 8s 4h] [5s]
+SB-humain_prudent: bets €0.23
+MP-joueur: calls €0.23
+BTN-humain_debutant: raises €0.35 to €0.58
+SB-humain_prudent: calls €0.35
+MP-joueur: calls €0.35
+*** RIVER *** [8d 8s 4h 5s] [Qh]
+SB-humain_prudent: checks
+MP-joueur: bets €0.74
+BTN-humain_debutant: calls €0.74
+SB-humain_prudent: folds
+*** SHOW DOWN ***
+MP-joueur: shows [2d 2c]
+BTN-humain_debutant: shows [Th Qd]
+BTN-humain_debutant collected €3.70 from pot
+*** SUMMARY ***
+Total pot €3.70 | Rake €0.00
+Board [8d 8s 4h 5s Qh]
+Seat 1: SB-humain_prudent folded | résultat -36.14 bb
+Seat 2: BB-humain_debutant folded | résultat -3.00 bb
+Seat 3: UTG-humain_debutant folded | résultat +0.00 bb
+Seat 4: MP-joueur showed [2d 2c] | résultat -72.91 bb
+Seat 5: CO-humain_regulier folded | résultat +0.00 bb
+Seat 6: BTN-humain_debutant showed [Th Qd] | résultat +112.05 bb
+</pre><p>Décision n° 13 (river) : prise = action prise, meilleure = mise 1 pot, EV perdue ≈ 26.01 bb</p><p class='legend-note'>check : -12.97 bb · mise 0.5 pot : -19.50 bb · mise 1 pot : +10.95 bb · tapis : +4.69 bb · action prise : -15.06 bb</p><pre>PokerLab Hand #15839: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5657049917894340133
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_debutant (€2.00 in chips)
+Seat 2: BB-humain_tapis (€2.00 in chips)
+Seat 3: UTG-humain_prudent (€2.00 in chips)
+Seat 4: MP-humain_debutant (€2.00 in chips)
+Seat 5: CO-humain_debutant (€2.00 in chips)
+Seat 6: BTN-joueur (€2.00 in chips)
+SB-humain_debutant: posts small blind €0.01
 BB-humain_tapis: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to MP-joueur [Qd Qc]
-UTG-humain_debutant: calls €0.02
-MP-joueur: raises €0.06 to €0.08
-CO-humain_regulier: raises €0.16 to €0.24
-BTN-humain_tapis: folds
-SB-humain_tapis: folds
+Dealt to BTN-joueur [4c 7c]
+UTG-humain_prudent: raises €0.04 to €0.06
+MP-humain_debutant: folds
+CO-humain_debutant: calls €0.06
+BTN-joueur: calls €0.06
+SB-humain_debutant: folds
 BB-humain_tapis: folds
-UTG-humain_debutant: folds
-MP-joueur: raises €1.76 to €2.00 and is all-in
-CO-humain_regulier: calls €1.76 and is all-in
-*** FLOP *** [7d 7h Kc]
-*** TURN *** [7d 7h Kc] [4c]
-*** RIVER *** [7d 7h Kc 4c] [3h]
-*** SHOW DOWN ***
-MP-joueur: shows [Qd Qc]
-CO-humain_regulier: shows [9c 9h]
-MP-joueur collected €4.05 from pot
+*** FLOP *** [4s 8h Jc]
+UTG-humain_prudent: bets €0.10
+CO-humain_debutant: folds
+BTN-joueur: calls €0.10
+*** TURN *** [4s 8h Jc] [Td]
+UTG-humain_prudent: checks
+BTN-joueur: bets €0.14
+UTG-humain_prudent: calls €0.14
+*** RIVER *** [4s 8h Jc Td] [6d]
+UTG-humain_prudent: checks
+BTN-joueur: bets €0.23
+UTG-humain_prudent: folds
+Uncalled bet (€0.23) returned to BTN-joueur
+BTN-joueur collected €0.70 from pot
 *** SUMMARY ***
-Total pot €4.05 | Rake €0.00
-Board [7d 7h Kc 4c 3h]
-Seat 1: SB-humain_tapis folded | résultat -0.50 bb | all-in EV -0.50 bb
-Seat 2: BB-humain_tapis folded | résultat -1.00 bb | all-in EV -1.00 bb
-Seat 3: UTG-humain_debutant folded | résultat -1.00 bb | all-in EV -1.00 bb
-Seat 4: MP-joueur showed [Qd Qc] | résultat +102.50 bb | all-in EV +65.17 bb
-Seat 5: CO-humain_regulier showed [9c 9h] | résultat -100.00 bb | all-in EV -62.67 bb
-Seat 6: BTN-humain_tapis folded | résultat +0.00 bb | all-in EV +0.00 bb
-</pre><p>Décision n° 1 (préflop) : prise = relance 3x, meilleure = tapis, EV perdue ≈ 23.89 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +29.94 bb · relance min : +8.78 bb · relance 3x : +11.80 bb · tapis : +35.69 bb</p><pre>PokerLab Hand #17769: Hold&#x27;em No Limit (€0.01/€0.02) - graine 9178172295378757632
+Total pot €0.70 | Rake €0.00
+Board [4s 8h Jc Td 6d]
+Seat 1: SB-humain_debutant folded | résultat -0.50 bb
+Seat 2: BB-humain_tapis folded | résultat -1.00 bb
+Seat 3: UTG-humain_prudent folded | résultat -15.15 bb
+Seat 4: MP-humain_debutant folded | résultat +0.00 bb
+Seat 5: CO-humain_debutant folded | résultat -3.00 bb
+Seat 6: BTN-joueur won uncontested | résultat +19.65 bb
+</pre><p>Décision n° 14 (river) : prise = action prise, meilleure = check, EV perdue ≈ 20.53 bb</p><p class='legend-note'>check : -20.74 bb · mise 0.5 pot : -51.85 bb · mise 1 pot : -82.96 bb · tapis : -100.00 bb · action prise : -41.27 bb</p><pre>PokerLab Hand #7314: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4312518617724203265
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-humain_agressif (€2.00 in chips)
+Seat 3: UTG-humain_tapis (€2.00 in chips)
+Seat 4: MP-humain_debutant (€2.00 in chips)
+Seat 5: CO-humain_prudent (€2.00 in chips)
+Seat 6: BTN-humain_agressif (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-humain_agressif: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [2s 4s]
+UTG-humain_tapis: folds
+MP-humain_debutant: raises €0.04 to €0.06
+CO-humain_prudent: folds
+BTN-humain_agressif: folds
+SB-joueur: calls €0.05
+BB-humain_agressif: calls €0.04
+*** FLOP *** [8s 9d Ts]
+SB-joueur: bets €0.06
+BB-humain_agressif: calls €0.06
+MP-humain_debutant: raises €0.09 to €0.15
+SB-joueur: calls €0.09
+BB-humain_agressif: calls €0.09
+*** TURN *** [8s 9d Ts] [8c]
+SB-joueur: bets €0.21
+BB-humain_agressif: calls €0.21
+MP-humain_debutant: calls €0.21
+*** RIVER *** [8s 9d Ts 8c] [2c]
+SB-joueur: bets €0.41
+BB-humain_agressif: calls €0.41
+MP-humain_debutant: calls €0.41
+*** SHOW DOWN ***
+SB-joueur: shows [2s 4s]
+BB-humain_agressif: shows [2h Th]
+MP-humain_debutant: shows [Kd Qd]
+BB-humain_agressif collected €2.48 from pot
+*** SUMMARY ***
+Total pot €2.48 | Rake €0.00
+Board [8s 9d Ts 8c 2c]
+Seat 1: SB-joueur showed [2s 4s] | résultat -41.27 bb
+Seat 2: BB-humain_agressif showed [2h Th] | résultat +82.54 bb
+Seat 3: UTG-humain_tapis folded | résultat +0.00 bb
+Seat 4: MP-humain_debutant showed [Kd Qd] | résultat -41.27 bb
+Seat 5: CO-humain_prudent folded | résultat +0.00 bb
+Seat 6: BTN-humain_agressif folded | résultat +0.00 bb
+</pre></details><details><summary>Exemples : préflop · paire haute (TT+) · sans relance devant → relance</summary><p>Décision n° 1 (préflop) : prise = relance 3x, meilleure = tapis, EV perdue ≈ 27.57 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +29.94 bb · relance min : +4.36 bb · relance 3x : +8.12 bb · tapis : +35.69 bb</p><pre>PokerLab Hand #17769: Hold&#x27;em No Limit (€0.01/€0.02) - graine 9178172295378757632
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
 Seat 1: SB-humain_tapis (€2.00 in chips)
 Seat 2: BB-humain_regulier (€2.00 in chips)
@@ -3883,550 +3941,159 @@ Seat 3: UTG-humain_debutant folded | résultat +0.00 bb
 Seat 4: MP-joueur won uncontested | résultat +4.50 bb
 Seat 5: CO-humain_tapis folded | résultat +0.00 bb
 Seat 6: BTN-humain_debutant folded | résultat -3.00 bb
-</pre></details><details><summary>Exemples : river · quinte · rien à payer → mise</summary><p>Décision n° 10 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 40.62 bb</p><p class='legend-note'>check : +18.71 bb · mise 0.5 pot : +17.14 bb · mise 1 pot : +21.62 bb · tapis : +57.76 bb</p><pre>PokerLab Hand #12079: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5625239187996375304
+</pre><p>Décision n° 1 (préflop) : prise = action prise, meilleure = paie, EV perdue ≈ 25.07 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +28.26 bb · relance min : +8.91 bb · relance 3x : +4.66 bb · tapis : +14.04 bb · action prise : +3.19 bb</p><pre>PokerLab Hand #315: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8146325981202940973
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
 Seat 1: SB-humain_tapis (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-humain_debutant (€2.00 in chips)
-Seat 4: MP-humain_prudent (€2.00 in chips)
-Seat 5: CO-humain_prudent (€2.00 in chips)
-Seat 6: BTN-humain_regulier (€2.00 in chips)
-SB-humain_tapis: posts small blind €0.01
-BB-joueur: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BB-joueur [As 2c]
-UTG-humain_debutant: folds
-MP-humain_prudent: folds
-CO-humain_prudent: raises €0.04 to €0.06
-BTN-humain_regulier: folds
-SB-humain_tapis: folds
-BB-joueur: calls €0.04
-*** FLOP *** [Tc 2s Js]
-BB-joueur: bets €0.04
-CO-humain_prudent: calls €0.04
-*** TURN *** [Tc 2s Js] [Qc]
-BB-joueur: bets €0.07
-CO-humain_prudent: calls €0.07
-*** RIVER *** [Tc 2s Js Qc] [Kd]
-BB-joueur: bets €0.18
-CO-humain_prudent: calls €0.18
-*** SHOW DOWN ***
-BB-joueur: shows [As 2c]
-CO-humain_prudent: shows [Jc Jh]
-BB-joueur collected €0.72 from pot
-*** SUMMARY ***
-Total pot €0.72 | Rake €0.00
-Board [Tc 2s Js Qc Kd]
-Seat 1: SB-humain_tapis folded | résultat -0.50 bb
-Seat 2: BB-joueur showed [As 2c] | résultat +18.15 bb
-Seat 3: UTG-humain_debutant folded | résultat +0.00 bb
-Seat 4: MP-humain_prudent folded | résultat +0.00 bb
-Seat 5: CO-humain_prudent showed [Jc Jh] | résultat -17.65 bb
-Seat 6: BTN-humain_regulier folded | résultat +0.00 bb
-</pre><p>Décision n° 11 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 33.44 bb</p><p class='legend-note'>check : +29.27 bb · mise 0.5 pot : +17.56 bb · mise 1 pot : +26.90 bb · tapis : +51.01 bb</p><pre>PokerLab Hand #15648: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7887252001792803672
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
 Seat 2: BB-humain_debutant (€2.00 in chips)
-Seat 3: UTG-humain_agressif (€2.00 in chips)
-Seat 4: MP-humain_tapis (€2.00 in chips)
-Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-humain_tapis (€2.00 in chips)
-SB-joueur: posts small blind €0.01
+Seat 3: UTG-humain_debutant (€2.00 in chips)
+Seat 4: MP-joueur (€2.00 in chips)
+Seat 5: CO-humain_prudent (€2.00 in chips)
+Seat 6: BTN-humain_debutant (€2.00 in chips)
+SB-humain_tapis: posts small blind €0.01
 BB-humain_debutant: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to SB-joueur [4h 6h]
-UTG-humain_agressif: folds
-MP-humain_tapis: folds
-CO-humain_debutant: calls €0.02
-BTN-humain_tapis: folds
-SB-joueur: raises €0.06 to €0.08
-BB-humain_debutant: calls €0.06
-CO-humain_debutant: folds
-*** FLOP *** [5c Ad 3d]
-SB-joueur: bets €0.06
-BB-humain_debutant: calls €0.06
-*** TURN *** [5c Ad 3d] [2d]
-SB-joueur: bets €0.15
-BB-humain_debutant: calls €0.15
-*** RIVER *** [5c Ad 3d 2d] [3c]
-SB-joueur: bets €0.30
-BB-humain_debutant: calls €0.30
-*** SHOW DOWN ***
-SB-joueur: shows [4h 6h]
-BB-humain_debutant: shows [Td Ah]
-SB-joueur collected €1.20 from pot
+Dealt to MP-joueur [Kc Kh]
+UTG-humain_debutant: calls €0.02
+MP-joueur: raises €0.06 to €0.08
+CO-humain_prudent: folds
+BTN-humain_debutant: folds
+SB-humain_tapis: raises €0.16 to €0.24
+BB-humain_debutant: raises €0.36 to €0.60
+UTG-humain_debutant: folds
+MP-joueur: calls €0.52
+SB-humain_tapis: folds
+*** FLOP *** [2d Ad 5c]
+BB-humain_debutant: checks
+MP-joueur: bets €0.48
+BB-humain_debutant: folds
+Uncalled bet (€0.48) returned to MP-joueur
+MP-joueur collected €1.46 from pot
 *** SUMMARY ***
-Total pot €1.20 | Rake €0.00
-Board [5c Ad 3d 2d 3c]
-Seat 1: SB-joueur showed [4h 6h] | résultat +30.38 bb
-Seat 2: BB-humain_debutant showed [Td Ah] | résultat -29.38 bb
-Seat 3: UTG-humain_agressif folded | résultat +0.00 bb
-Seat 4: MP-humain_tapis folded | résultat +0.00 bb
-Seat 5: CO-humain_debutant folded | résultat -1.00 bb
-Seat 6: BTN-humain_tapis folded | résultat +0.00 bb
-</pre><p>Décision n° 10 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 32.41 bb</p><p class='legend-note'>check : +48.84 bb · mise 0.5 pot : +33.87 bb · mise 1 pot : +36.56 bb · tapis : +66.28 bb</p><pre>PokerLab Hand #16303: Hold&#x27;em No Limit (€0.01/€0.02) - graine 2527665273475687641
+Total pot €1.46 | Rake €0.00
+Board [2d Ad 5c]
+Seat 1: SB-humain_tapis folded | résultat -12.00 bb
+Seat 2: BB-humain_debutant folded | résultat -30.00 bb
+Seat 3: UTG-humain_debutant folded | résultat -1.00 bb
+Seat 4: MP-joueur won uncontested | résultat +43.00 bb
+Seat 5: CO-humain_prudent folded | résultat +0.00 bb
+Seat 6: BTN-humain_debutant folded | résultat +0.00 bb
+</pre><p>Décision n° 0 (préflop) : prise = relance 3x, meilleure = tapis, EV perdue ≈ 24.10 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +24.04 bb · relance min : +10.81 bb · relance 3x : +12.31 bb · tapis : +36.41 bb</p><pre>PokerLab Hand #13532: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8690592733298439850
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_regulier (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-humain_prudent (€2.00 in chips)
+Seat 1: SB-humain_prudent (€2.00 in chips)
+Seat 2: BB-humain_regulier (€2.00 in chips)
+Seat 3: UTG-joueur (€2.00 in chips)
 Seat 4: MP-humain_debutant (€2.00 in chips)
 Seat 5: CO-humain_prudent (€2.00 in chips)
-Seat 6: BTN-humain_agressif (€2.00 in chips)
-SB-humain_regulier: posts small blind €0.01
-BB-joueur: posts big blind €0.02
+Seat 6: BTN-humain_tapis (€2.00 in chips)
+SB-humain_prudent: posts small blind €0.01
+BB-humain_regulier: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to BB-joueur [Th 8h]
-UTG-humain_prudent: folds
+Dealt to UTG-joueur [Ac Ad]
+UTG-joueur: raises €0.04 to €0.06
 MP-humain_debutant: folds
 CO-humain_prudent: folds
-BTN-humain_agressif: raises €0.04 to €0.06
-SB-humain_regulier: folds
-BB-joueur: calls €0.04
-*** FLOP *** [Ad Js Qc]
-BB-joueur: bets €0.04
-BTN-humain_agressif: calls €0.04
-*** TURN *** [Ad Js Qc] [Kh]
-BB-joueur: bets €0.11
-BTN-humain_agressif: calls €0.11
-*** RIVER *** [Ad Js Qc Kh] [6h]
-BB-joueur: bets €0.22
-BTN-humain_agressif: calls €0.22
-*** SHOW DOWN ***
-BB-joueur: shows [Th 8h]
-BTN-humain_agressif: shows [As Kd]
-BB-joueur collected €0.86 from pot
+BTN-humain_tapis: calls €0.06
+SB-humain_prudent: folds
+BB-humain_regulier: folds
+*** FLOP *** [Qc 8d 9s]
+UTG-joueur: bets €0.07
+BTN-humain_tapis: raises €0.11 to €0.19
+UTG-joueur: calls €0.11
+*** TURN *** [Qc 8d 9s] [9c]
+UTG-joueur: bets €0.26
+BTN-humain_tapis: folds
+Uncalled bet (€0.26) returned to UTG-joueur
+UTG-joueur collected €0.53 from pot
 *** SUMMARY ***
-Total pot €0.86 | Rake €0.00
-Board [Ad Js Qc Kh 6h]
-Seat 1: SB-humain_regulier folded | résultat -0.50 bb
-Seat 2: BB-joueur showed [Th 8h] | résultat +21.81 bb
-Seat 3: UTG-humain_prudent folded | résultat +0.00 bb
+Total pot €0.53 | Rake €0.00
+Board [Qc 8d 9s 9c]
+Seat 1: SB-humain_prudent folded | résultat -0.50 bb
+Seat 2: BB-humain_regulier folded | résultat -1.00 bb
+Seat 3: UTG-joueur won uncontested | résultat +13.88 bb
 Seat 4: MP-humain_debutant folded | résultat +0.00 bb
 Seat 5: CO-humain_prudent folded | résultat +0.00 bb
-Seat 6: BTN-humain_agressif showed [As Kd] | résultat -21.31 bb
-</pre></details><details><summary>Exemples : préflop · As fort (AT+) · sans relance devant → relance</summary><p>Décision n° 2 (préflop) : prise = relance 3x, meilleure = tapis, EV perdue ≈ 16.80 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : -5.79 bb · relance min : -2.89 bb · relance 3x : -4.58 bb · tapis : +12.22 bb</p><pre>PokerLab Hand #6760: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8258314350986764696
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_debutant (€2.00 in chips)
-Seat 2: BB-humain_tapis (€2.00 in chips)
-Seat 3: UTG-humain_regulier (€2.00 in chips)
-Seat 4: MP-humain_tapis (€2.00 in chips)
-Seat 5: CO-joueur (€2.00 in chips)
-Seat 6: BTN-humain_agressif (€2.00 in chips)
-SB-humain_debutant: posts small blind €0.01
-BB-humain_tapis: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to CO-joueur [Ad Qd]
-UTG-humain_regulier: folds
-MP-humain_tapis: folds
-CO-joueur: raises €0.04 to €0.06
-BTN-humain_agressif: folds
-SB-humain_debutant: folds
-BB-humain_tapis: raises €0.12 to €0.18
-CO-joueur: calls €0.12
-*** FLOP *** [2h Jd 7s]
-BB-humain_tapis: bets €0.55
-CO-joueur: folds
-Uncalled bet (€0.55) returned to BB-humain_tapis
-BB-humain_tapis collected €0.37 from pot
-*** SUMMARY ***
-Total pot €0.37 | Rake €0.00
-Board [2h Jd 7s]
-Seat 1: SB-humain_debutant folded | résultat -0.50 bb
-Seat 2: BB-humain_tapis won uncontested | résultat +9.50 bb
-Seat 3: UTG-humain_regulier folded | résultat +0.00 bb
-Seat 4: MP-humain_tapis folded | résultat +0.00 bb
-Seat 5: CO-joueur folded | résultat -9.00 bb
-Seat 6: BTN-humain_agressif folded | résultat +0.00 bb
-</pre><p>Décision n° 4 (préflop) : prise = action prise, meilleure = paie, EV perdue ≈ 16.57 bb</p><p class='legend-note'>se couche : -0.50 bb · paie : +14.74 bb · relance min : +5.75 bb · relance 3x : +9.27 bb · tapis : +6.71 bb · action prise : -10.29 bb</p><pre>PokerLab Hand #15306: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7134924264900565256
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-humain_agressif (€2.00 in chips)
-Seat 3: UTG-humain_agressif (€2.00 in chips)
-Seat 4: MP-humain_debutant (€2.00 in chips)
-Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-humain_regulier (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-humain_agressif: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to SB-joueur [Qs As]
-UTG-humain_agressif: calls €0.02
-MP-humain_debutant: folds
-CO-humain_debutant: calls €0.02
-BTN-humain_regulier: folds
-SB-joueur: raises €0.08 to €0.10
-BB-humain_agressif: folds
-UTG-humain_agressif: raises €0.20 to €0.30
-CO-humain_debutant: folds
-SB-joueur: folds
-Uncalled bet (€0.20) returned to UTG-humain_agressif
-UTG-humain_agressif collected €0.24 from pot
-*** SUMMARY ***
-Total pot €0.24 | Rake €0.00
-Seat 1: SB-joueur folded | résultat -5.00 bb
-Seat 2: BB-humain_agressif folded | résultat -1.00 bb
-Seat 3: UTG-humain_agressif won uncontested | résultat +7.00 bb
-Seat 4: MP-humain_debutant folded | résultat +0.00 bb
-Seat 5: CO-humain_debutant folded | résultat -1.00 bb
-Seat 6: BTN-humain_regulier folded | résultat +0.00 bb
-</pre><p>Décision n° 1 (préflop) : prise = relance 3x, meilleure = tapis, EV perdue ≈ 15.06 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : -2.21 bb · relance min : -7.69 bb · relance 3x : -9.09 bb · tapis : +5.97 bb</p><pre>PokerLab Hand #4803: Hold&#x27;em No Limit (€0.01/€0.02) - graine 1708862327251462503
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_debutant (€2.00 in chips)
-Seat 2: BB-humain_agressif (€2.00 in chips)
-Seat 3: UTG-humain_prudent (€2.00 in chips)
-Seat 4: MP-joueur (€2.00 in chips)
-Seat 5: CO-humain_tapis (€2.00 in chips)
-Seat 6: BTN-humain_tapis (€2.00 in chips)
-SB-humain_debutant: posts small blind €0.01
-BB-humain_agressif: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to MP-joueur [As Js]
-UTG-humain_prudent: folds
-MP-joueur: raises €0.04 to €0.06
-CO-humain_tapis: folds
-BTN-humain_tapis: folds
-SB-humain_debutant: folds
-BB-humain_agressif: folds
-Uncalled bet (€0.04) returned to MP-joueur
-MP-joueur collected €0.05 from pot
-*** SUMMARY ***
-Total pot €0.05 | Rake €0.00
-Seat 1: SB-humain_debutant folded | résultat -0.50 bb
-Seat 2: BB-humain_agressif folded | résultat -1.00 bb
-Seat 3: UTG-humain_prudent folded | résultat +0.00 bb
-Seat 4: MP-joueur won uncontested | résultat +1.50 bb
-Seat 5: CO-humain_tapis folded | résultat +0.00 bb
-Seat 6: BTN-humain_tapis folded | résultat +0.00 bb
-</pre></details><details><summary>Exemples : river · couleur · rien à payer → mise</summary><p>Décision n° 10 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 61.76 bb</p><p class='legend-note'>check : +39.20 bb · mise 0.5 pot : +20.50 bb · mise 1 pot : +27.21 bb · tapis : +82.26 bb</p><pre>PokerLab Hand #14365: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8546017784297370975
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_debutant (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-humain_agressif (€2.00 in chips)
-Seat 4: MP-humain_prudent (€2.00 in chips)
-Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-humain_debutant (€2.00 in chips)
-SB-humain_debutant: posts small blind €0.01
-BB-joueur: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BB-joueur [Jh Jd]
-UTG-humain_agressif: folds
-MP-humain_prudent: folds
-CO-humain_debutant: raises €0.04 to €0.06
-BTN-humain_debutant: folds
-SB-humain_debutant: folds
-BB-joueur: calls €0.04
-*** FLOP *** [3h 6d Ah]
-BB-joueur: bets €0.04
-CO-humain_debutant: calls €0.04
-*** TURN *** [3h 6d Ah] [Th]
-BB-joueur: bets €0.07
-CO-humain_debutant: calls €0.07
-*** RIVER *** [3h 6d Ah Th] [Kh]
-BB-joueur: bets €0.18
-CO-humain_debutant: raises €0.36 to €0.54
-BB-joueur: raises €1.29 to €1.83 and is all-in
-CO-humain_debutant: calls €1.29 and is all-in
-*** SHOW DOWN ***
-BB-joueur: shows [Jh Jd]
-CO-humain_debutant: shows [7h 7d]
-BB-joueur collected €4.01 from pot
-*** SUMMARY ***
-Total pot €4.01 | Rake €0.00
-Board [3h 6d Ah Th Kh]
-Seat 1: SB-humain_debutant folded | résultat -0.50 bb
-Seat 2: BB-joueur showed [Jh Jd] | résultat +100.50 bb
-Seat 3: UTG-humain_agressif folded | résultat +0.00 bb
-Seat 4: MP-humain_prudent folded | résultat +0.00 bb
-Seat 5: CO-humain_debutant showed [7h 7d] | résultat -100.00 bb
-Seat 6: BTN-humain_debutant folded | résultat +0.00 bb
-</pre><p>Décision n° 13 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 31.88 bb</p><p class='legend-note'>check : +20.15 bb · mise 0.5 pot : +27.12 bb · mise 1 pot : +34.62 bb · tapis : +59.00 bb</p><pre>PokerLab Hand #2808: Hold&#x27;em No Limit (€0.01/€0.02) - graine 1437322286722552725
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-humain_agressif (€2.00 in chips)
-Seat 3: UTG-humain_debutant (€2.00 in chips)
-Seat 4: MP-humain_agressif (€2.00 in chips)
-Seat 5: CO-humain_tapis (€2.00 in chips)
-Seat 6: BTN-humain_agressif (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-humain_agressif: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to SB-joueur [5d As]
-UTG-humain_debutant: calls €0.02
-MP-humain_agressif: folds
-CO-humain_tapis: folds
-BTN-humain_agressif: folds
-SB-joueur: raises €0.06 to €0.08
-BB-humain_agressif: calls €0.06
-UTG-humain_debutant: calls €0.06
-*** FLOP *** [3s 7s 6c]
-SB-joueur: checks
-BB-humain_agressif: checks
-UTG-humain_debutant: checks
-*** TURN *** [3s 7s 6c] [4s]
-SB-joueur: bets €0.12
-BB-humain_agressif: folds
-UTG-humain_debutant: calls €0.12
-*** RIVER *** [3s 7s 6c 4s] [9s]
-SB-joueur: bets €0.24
-UTG-humain_debutant: folds
-Uncalled bet (€0.24) returned to SB-joueur
-SB-joueur collected €0.48 from pot
-*** SUMMARY ***
-Total pot €0.48 | Rake €0.00
-Board [3s 7s 6c 4s 9s]
-Seat 1: SB-joueur won uncontested | résultat +14.00 bb
-Seat 2: BB-humain_agressif folded | résultat -4.00 bb
-Seat 3: UTG-humain_debutant folded | résultat -10.00 bb
-Seat 4: MP-humain_agressif folded | résultat +0.00 bb
-Seat 5: CO-humain_tapis folded | résultat +0.00 bb
-Seat 6: BTN-humain_agressif folded | résultat +0.00 bb
-</pre><p>Décision n° 10 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 28.94 bb</p><p class='legend-note'>check : +4.77 bb · mise 0.5 pot : +4.19 bb · mise 1 pot : +5.31 bb · tapis : +33.12 bb</p><pre>PokerLab Hand #14503: Hold&#x27;em No Limit (€0.01/€0.02) - graine 409903819624840308
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_debutant (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-humain_debutant (€2.00 in chips)
-Seat 4: MP-humain_agressif (€2.00 in chips)
-Seat 5: CO-humain_regulier (€2.00 in chips)
-Seat 6: BTN-humain_prudent (€2.00 in chips)
-SB-humain_debutant: posts small blind €0.01
-BB-joueur: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BB-joueur [Qs 5s]
-UTG-humain_debutant: calls €0.02
-MP-humain_agressif: folds
-CO-humain_regulier: folds
-BTN-humain_prudent: folds
-SB-humain_debutant: folds
-BB-joueur: checks
-*** FLOP *** [6c 9s 4c]
-BB-joueur: checks
-UTG-humain_debutant: checks
-*** TURN *** [6c 9s 4c] [3s]
-BB-joueur: bets €0.02
-UTG-humain_debutant: calls €0.02
-*** RIVER *** [6c 9s 4c 3s] [8s]
-BB-joueur: bets €0.04
-UTG-humain_debutant: folds
-Uncalled bet (€0.04) returned to BB-joueur
-BB-joueur collected €0.09 from pot
-*** SUMMARY ***
-Total pot €0.09 | Rake €0.00
-Board [6c 9s 4c 3s 8s]
-Seat 1: SB-humain_debutant folded | résultat -0.50 bb
-Seat 2: BB-joueur won uncontested | résultat +2.50 bb
-Seat 3: UTG-humain_debutant folded | résultat -2.00 bb
-Seat 4: MP-humain_agressif folded | résultat +0.00 bb
-Seat 5: CO-humain_regulier folded | résultat +0.00 bb
-Seat 6: BTN-humain_prudent folded | résultat +0.00 bb
-</pre></details><details><summary>Exemples : turn · quinte · rien à payer → mise</summary><p>Décision n° 9 (turn) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 36.90 bb</p><p class='legend-note'>check : +77.92 bb · mise 0.5 pot : +41.02 bb · mise 1 pot : +56.87 bb · tapis : +50.55 bb</p><pre>PokerLab Hand #16536: Hold&#x27;em No Limit (€0.01/€0.02) - graine 2588864404781929040
+Seat 6: BTN-humain_tapis folded | résultat -12.38 bb
+</pre></details><details><summary>Exemples : river · brelan · rien à payer → mise</summary><p>Décision n° 11 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 32.91 bb</p><p class='legend-note'>check : +40.44 bb · mise 0.5 pot : +32.49 bb · mise 1 pot : +43.69 bb · tapis : +65.40 bb</p><pre>PokerLab Hand #8526: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8166725148650964835
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
 Seat 1: SB-joueur (€2.00 in chips)
 Seat 2: BB-humain_debutant (€2.00 in chips)
-Seat 3: UTG-humain_tapis (€2.00 in chips)
-Seat 4: MP-humain_debutant (€2.00 in chips)
+Seat 3: UTG-humain_regulier (€2.00 in chips)
+Seat 4: MP-humain_prudent (€2.00 in chips)
 Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-humain_debutant (€2.00 in chips)
+Seat 6: BTN-humain_prudent (€2.00 in chips)
 SB-joueur: posts small blind €0.01
 BB-humain_debutant: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to SB-joueur [8h 9h]
-UTG-humain_tapis: folds
-MP-humain_debutant: raises €0.04 to €0.06
+Dealt to SB-joueur [Kc 5c]
+UTG-humain_regulier: raises €0.04 to €0.06
+MP-humain_prudent: folds
 CO-humain_debutant: calls €0.06
-BTN-humain_debutant: folds
+BTN-humain_prudent: folds
 SB-joueur: calls €0.05
 BB-humain_debutant: folds
-*** FLOP *** [Jc 3s Ts]
+*** FLOP *** [5d 3c 8h]
 SB-joueur: bets €0.07
-MP-humain_debutant: calls €0.07
+UTG-humain_regulier: folds
 CO-humain_debutant: calls €0.07
-*** TURN *** [Jc 3s Ts] [Qh]
-SB-joueur: bets €0.20
-MP-humain_debutant: calls €0.20
-CO-humain_debutant: calls €0.20
-*** RIVER *** [Jc 3s Ts Qh] [Ah]
-SB-joueur: bets €0.50
-MP-humain_debutant: raises €1.18 to €1.68 and is all-in
-CO-humain_debutant: calls €1.68 and is all-in
-SB-joueur: calls €1.18 and is all-in
+*** TURN *** [5d 3c 8h] [As]
+SB-joueur: bets €0.11
+CO-humain_debutant: calls €0.11
+*** RIVER *** [5d 3c 8h As] [5h]
+SB-joueur: bets €0.28
+CO-humain_debutant: calls €0.28
 *** SHOW DOWN ***
-SB-joueur: shows [8h 9h]
-MP-humain_debutant: shows [Ad Kc]
-CO-humain_debutant: shows [Kd 4h]
-MP-humain_debutant collected €3.01 from pot
-CO-humain_debutant collected €3.01 from pot
+SB-joueur: shows [Kc 5c]
+CO-humain_debutant: shows [Ad 6s]
+SB-joueur collected €1.10 from pot
 *** SUMMARY ***
-Total pot €6.02 | Rake €0.00
-Board [Jc 3s Ts Qh Ah]
-Seat 1: SB-joueur showed [8h 9h] | résultat -100.00 bb
+Total pot €1.10 | Rake €0.00
+Board [5d 3c 8h As 5h]
+Seat 1: SB-joueur showed [Kc 5c] | résultat +29.56 bb
 Seat 2: BB-humain_debutant folded | résultat -1.00 bb
-Seat 3: UTG-humain_tapis folded | résultat +0.00 bb
-Seat 4: MP-humain_debutant showed [Ad Kc] | résultat +50.50 bb
-Seat 5: CO-humain_debutant showed [Kd 4h] | résultat +50.50 bb
-Seat 6: BTN-humain_debutant folded | résultat +0.00 bb
-</pre><p>Décision n° 9 (turn) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 24.98 bb</p><p class='legend-note'>check : +65.06 bb · mise 0.5 pot : +40.08 bb · mise 1 pot : +35.41 bb · tapis : +44.40 bb</p><pre>PokerLab Hand #1800: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3684342408824695823
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-humain_tapis (€2.00 in chips)
-Seat 3: UTG-humain_debutant (€2.00 in chips)
-Seat 4: MP-humain_tapis (€2.00 in chips)
-Seat 5: CO-humain_agressif (€2.00 in chips)
-Seat 6: BTN-humain_debutant (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-humain_tapis: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to SB-joueur [Kc Jd]
-UTG-humain_debutant: folds
-MP-humain_tapis: folds
-CO-humain_agressif: raises €0.04 to €0.06
-BTN-humain_debutant: calls €0.06
-SB-joueur: calls €0.05
-BB-humain_tapis: folds
-*** FLOP *** [3s Tc Qc]
-SB-joueur: bets €0.07
-CO-humain_agressif: calls €0.07
-BTN-humain_debutant: folds
-*** TURN *** [3s Tc Qc] [Ad]
-SB-joueur: bets €0.17
-CO-humain_agressif: raises €0.25 to €0.42
-SB-joueur: raises €0.83 to €1.25
-CO-humain_agressif: calls €0.83
-*** RIVER *** [3s Tc Qc Ad] [2d]
-SB-joueur: bets €0.63 and is all-in
-CO-humain_agressif: folds
-Uncalled bet (€0.63) returned to SB-joueur
-SB-joueur collected €2.82 from pot
-*** SUMMARY ***
-Total pot €2.82 | Rake €0.00
-Board [3s Tc Qc Ad 2d]
-Seat 1: SB-joueur won uncontested | résultat +72.55 bb
-Seat 2: BB-humain_tapis folded | résultat -1.00 bb
-Seat 3: UTG-humain_debutant folded | résultat +0.00 bb
-Seat 4: MP-humain_tapis folded | résultat +0.00 bb
-Seat 5: CO-humain_agressif folded | résultat -68.55 bb
-Seat 6: BTN-humain_debutant folded | résultat -3.00 bb
-</pre><p>Décision n° 9 (turn) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 20.15 bb</p><p class='legend-note'>check : +17.49 bb · mise 0.5 pot : +23.38 bb · mise 1 pot : +34.12 bb · tapis : +43.53 bb</p><pre>PokerLab Hand #15648: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7887252001792803672
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-humain_debutant (€2.00 in chips)
-Seat 3: UTG-humain_agressif (€2.00 in chips)
-Seat 4: MP-humain_tapis (€2.00 in chips)
-Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-humain_tapis (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-humain_debutant: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to SB-joueur [4h 6h]
-UTG-humain_agressif: folds
-MP-humain_tapis: folds
-CO-humain_debutant: calls €0.02
-BTN-humain_tapis: folds
-SB-joueur: raises €0.06 to €0.08
-BB-humain_debutant: calls €0.06
-CO-humain_debutant: folds
-*** FLOP *** [5c Ad 3d]
-SB-joueur: bets €0.06
-BB-humain_debutant: calls €0.06
-*** TURN *** [5c Ad 3d] [2d]
-SB-joueur: bets €0.15
-BB-humain_debutant: calls €0.15
-*** RIVER *** [5c Ad 3d 2d] [3c]
-SB-joueur: bets €0.30
-BB-humain_debutant: calls €0.30
-*** SHOW DOWN ***
-SB-joueur: shows [4h 6h]
-BB-humain_debutant: shows [Td Ah]
-SB-joueur collected €1.20 from pot
-*** SUMMARY ***
-Total pot €1.20 | Rake €0.00
-Board [5c Ad 3d 2d 3c]
-Seat 1: SB-joueur showed [4h 6h] | résultat +30.38 bb
-Seat 2: BB-humain_debutant showed [Td Ah] | résultat -29.38 bb
-Seat 3: UTG-humain_agressif folded | résultat +0.00 bb
-Seat 4: MP-humain_tapis folded | résultat +0.00 bb
-Seat 5: CO-humain_debutant folded | résultat -1.00 bb
-Seat 6: BTN-humain_tapis folded | résultat +0.00 bb
-</pre></details><details><summary>Exemples : river · brelan · rien à payer → mise</summary><p>Décision n° 11 (river) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 32.83 bb</p><p class='legend-note'>check : +72.48 bb · mise 0.5 pot : +39.65 bb · mise 1 pot : +41.73 bb · tapis : +61.30 bb</p><pre>PokerLab Hand #14808: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6350902907279350717
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-humain_tapis (€2.00 in chips)
-Seat 3: UTG-humain_debutant (€2.00 in chips)
-Seat 4: MP-humain_agressif (€2.00 in chips)
-Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-humain_prudent (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-humain_tapis: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to SB-joueur [9s 9d]
-UTG-humain_debutant: raises €0.04 to €0.06
-MP-humain_agressif: calls €0.06
-CO-humain_debutant: folds
-BTN-humain_prudent: folds
-SB-joueur: calls €0.05
-BB-humain_tapis: folds
-*** FLOP *** [As 4d 8s]
-SB-joueur: bets €0.07
-UTG-humain_debutant: folds
-MP-humain_agressif: calls €0.07
-*** TURN *** [As 4d 8s] [9h]
-SB-joueur: bets €0.17
-MP-humain_agressif: calls €0.17
-*** RIVER *** [As 4d 8s 9h] [7h]
-SB-joueur: bets €0.33
-MP-humain_agressif: calls €0.33
-*** SHOW DOWN ***
-SB-joueur: shows [9s 9d]
-MP-humain_agressif: shows [Qh Ah]
-SB-joueur collected €1.33 from pot
-*** SUMMARY ***
-Total pot €1.33 | Rake €0.00
-Board [As 4d 8s 9h 7h]
-Seat 1: SB-joueur showed [9s 9d] | résultat +35.20 bb
-Seat 2: BB-humain_tapis folded | résultat -1.00 bb
-Seat 3: UTG-humain_debutant folded | résultat -3.00 bb
-Seat 4: MP-humain_agressif showed [Qh Ah] | résultat -31.20 bb
-Seat 5: CO-humain_debutant folded | résultat +0.00 bb
+Seat 3: UTG-humain_regulier folded | résultat -3.00 bb
+Seat 4: MP-humain_prudent folded | résultat +0.00 bb
+Seat 5: CO-humain_debutant showed [Ad 6s] | résultat -25.56 bb
 Seat 6: BTN-humain_prudent folded | résultat +0.00 bb
-</pre><p>Décision n° 11 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 26.00 bb</p><p class='legend-note'>check : +39.13 bb · mise 0.5 pot : +33.00 bb · mise 1 pot : +48.75 bb · tapis : +59.00 bb</p><pre>PokerLab Hand #9768: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4522275656885610187
+</pre><p>Décision n° 10 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 27.36 bb</p><p class='legend-note'>check : +7.21 bb · mise 0.5 pot : +6.78 bb · mise 1 pot : +8.64 bb · tapis : +34.14 bb</p><pre>PokerLab Hand #14293: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5485606986381112297
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-humain_debutant (€2.00 in chips)
-Seat 3: UTG-humain_prudent (€2.00 in chips)
+Seat 1: SB-humain_debutant (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-humain_debutant (€2.00 in chips)
 Seat 4: MP-humain_prudent (€2.00 in chips)
 Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-humain_regulier (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-humain_debutant: posts big blind €0.02
+Seat 6: BTN-humain_agressif (€2.00 in chips)
+SB-humain_debutant: posts small blind €0.01
+BB-joueur: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to SB-joueur [Ts Td]
-UTG-humain_prudent: folds
+Dealt to BB-joueur [9h 6d]
+UTG-humain_debutant: calls €0.02
 MP-humain_prudent: folds
-CO-humain_debutant: raises €0.04 to €0.06
-BTN-humain_regulier: folds
-SB-joueur: calls €0.05
-BB-humain_debutant: calls €0.04
-*** FLOP *** [Ac Ks Tc]
-SB-joueur: bets €0.09
-BB-humain_debutant: calls €0.09
 CO-humain_debutant: folds
-*** TURN *** [Ac Ks Tc] [5c]
-SB-joueur: bets €0.18
-BB-humain_debutant: calls €0.18
-*** RIVER *** [Ac Ks Tc 5c] [6h]
-SB-joueur: bets €0.36
-BB-humain_debutant: calls €0.36
+BTN-humain_agressif: folds
+SB-humain_debutant: folds
+BB-joueur: checks
+*** FLOP *** [5h Jd 6h]
+BB-joueur: bets €0.02
+UTG-humain_debutant: calls €0.02
+*** TURN *** [5h Jd 6h] [Kd]
+BB-joueur: bets €0.03
+UTG-humain_debutant: calls €0.03
+*** RIVER *** [5h Jd 6h Kd] [6c]
+BB-joueur: bets €0.07
+UTG-humain_debutant: calls €0.07
 *** SHOW DOWN ***
-SB-joueur: shows [Ts Td]
-BB-humain_debutant: shows [Ad 3d]
-SB-joueur collected €1.44 from pot
+BB-joueur: shows [9h 6d]
+UTG-humain_debutant: shows [Qh Jh]
+BB-joueur collected €0.30 from pot
 *** SUMMARY ***
-Total pot €1.44 | Rake €0.00
-Board [Ac Ks Tc 5c 6h]
-Seat 1: SB-joueur showed [Ts Td] | résultat +37.50 bb
-Seat 2: BB-humain_debutant showed [Ad 3d] | résultat -34.50 bb
-Seat 3: UTG-humain_prudent folded | résultat +0.00 bb
+Total pot €0.30 | Rake €0.00
+Board [5h Jd 6h Kd 6c]
+Seat 1: SB-humain_debutant folded | résultat -0.50 bb
+Seat 2: BB-joueur showed [9h 6d] | résultat +7.71 bb
+Seat 3: UTG-humain_debutant showed [Qh Jh] | résultat -7.21 bb
 Seat 4: MP-humain_prudent folded | résultat +0.00 bb
-Seat 5: CO-humain_debutant folded | résultat -3.00 bb
-Seat 6: BTN-humain_regulier folded | résultat +0.00 bb
+Seat 5: CO-humain_debutant folded | résultat +0.00 bb
+Seat 6: BTN-humain_agressif folded | résultat +0.00 bb
 </pre><p>Décision n° 13 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 24.97 bb</p><p class='legend-note'>check : +12.79 bb · mise 0.5 pot : +23.97 bb · mise 1 pot : +35.14 bb · tapis : +48.94 bb</p><pre>PokerLab Hand #17773: Hold&#x27;em No Limit (€0.01/€0.02) - graine 392698273929736619
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
 Seat 1: SB-humain_debutant (€2.00 in chips)
@@ -4470,116 +4137,491 @@ Seat 3: UTG-humain_tapis folded | résultat +0.00 bb
 Seat 4: MP-humain_debutant folded | résultat -1.00 bb
 Seat 5: CO-humain_tapis folded | résultat +0.00 bb
 Seat 6: BTN-humain_regulier folded | résultat +0.00 bb
-</pre></details><details><summary>Exemples : préflop · As fort (AT+) · face à une sur-relance → paie</summary><p>Décision n° 6 (préflop) : prise = paie, meilleure = tapis, EV perdue ≈ 30.03 bb</p><p class='legend-note'>se couche : -3.00 bb · paie : -15.34 bb · relance min : +1.22 bb · relance 3x : -3.03 bb · tapis : +14.69 bb</p><pre>PokerLab Hand #461: Hold&#x27;em No Limit (€0.01/€0.02) - graine 878176933315727029
+</pre></details><details><summary>Exemples : river · couleur · rien à payer → mise</summary><p>Décision n° 13 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 44.06 bb</p><p class='legend-note'>check : +64.94 bb · mise 0.5 pot : +37.81 bb · mise 1 pot : +55.62 bb · tapis : +81.88 bb</p><pre>PokerLab Hand #10272: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5106447895521350697
 Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_tapis (€2.00 in chips)
-Seat 2: BB-humain_agressif (€2.00 in chips)
-Seat 3: UTG-humain_tapis (€2.00 in chips)
-Seat 4: MP-humain_agressif (€2.00 in chips)
-Seat 5: CO-humain_debutant (€2.00 in chips)
-Seat 6: BTN-joueur (€2.00 in chips)
-SB-humain_tapis: posts small blind €0.01
-BB-humain_agressif: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BTN-joueur [Qs As]
-UTG-humain_tapis: folds
-MP-humain_agressif: folds
-CO-humain_debutant: folds
-BTN-joueur: raises €0.04 to €0.06
-SB-humain_tapis: folds
-BB-humain_agressif: raises €0.12 to €0.18
-BTN-joueur: calls €0.12
-*** FLOP *** [6c Ts 4h]
-BB-humain_agressif: bets €0.27
-BTN-joueur: folds
-Uncalled bet (€0.27) returned to BB-humain_agressif
-BB-humain_agressif collected €0.37 from pot
-*** SUMMARY ***
-Total pot €0.37 | Rake €0.00
-Board [6c Ts 4h]
-Seat 1: SB-humain_tapis folded | résultat -0.50 bb
-Seat 2: BB-humain_agressif won uncontested | résultat +9.50 bb
-Seat 3: UTG-humain_tapis folded | résultat +0.00 bb
-Seat 4: MP-humain_agressif folded | résultat +0.00 bb
-Seat 5: CO-humain_debutant folded | résultat +0.00 bb
-Seat 6: BTN-joueur folded | résultat -9.00 bb
-</pre><p>Décision n° 6 (préflop) : prise = paie, meilleure = tapis, EV perdue ≈ 22.32 bb</p><p class='legend-note'>se couche : -3.00 bb · paie : -6.47 bb · relance min : -9.66 bb · relance 3x : -19.41 bb · tapis : +15.86 bb</p><pre>PokerLab Hand #11373: Hold&#x27;em No Limit (€0.01/€0.02) - graine 2464361235392943974
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_regulier (€2.00 in chips)
-Seat 2: BB-humain_prudent (€2.00 in chips)
-Seat 3: UTG-humain_prudent (€2.00 in chips)
-Seat 4: MP-joueur (€2.00 in chips)
-Seat 5: CO-humain_agressif (€2.00 in chips)
-Seat 6: BTN-humain_tapis (€2.00 in chips)
-SB-humain_regulier: posts small blind €0.01
-BB-humain_prudent: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to MP-joueur [Qs Ad]
-UTG-humain_prudent: folds
-MP-joueur: raises €0.04 to €0.06
-CO-humain_agressif: calls €0.06
-BTN-humain_tapis: raises €0.12 to €0.18
-SB-humain_regulier: folds
-BB-humain_prudent: folds
-MP-joueur: calls €0.12
-CO-humain_agressif: folds
-*** FLOP *** [Js Ts 5h]
-MP-joueur: checks
-BTN-humain_tapis: bets €0.90
-MP-joueur: folds
-Uncalled bet (€0.90) returned to BTN-humain_tapis
-BTN-humain_tapis collected €0.45 from pot
-*** SUMMARY ***
-Total pot €0.45 | Rake €0.00
-Board [Js Ts 5h]
-Seat 1: SB-humain_regulier folded | résultat -0.50 bb
-Seat 2: BB-humain_prudent folded | résultat -1.00 bb
-Seat 3: UTG-humain_prudent folded | résultat +0.00 bb
-Seat 4: MP-joueur folded | résultat -9.00 bb
-Seat 5: CO-humain_agressif folded | résultat -3.00 bb
-Seat 6: BTN-humain_tapis won uncontested | résultat +13.50 bb
-</pre><p>Décision n° 6 (préflop) : prise = paie, meilleure = tapis, EV perdue ≈ 17.98 bb</p><p class='legend-note'>se couche : -3.00 bb · paie : -7.89 bb · relance min : -11.50 bb · relance 3x : -22.00 bb · tapis : +10.09 bb</p><pre>PokerLab Hand #15794: Hold&#x27;em No Limit (€0.01/€0.02) - graine 489490309652201228
-Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
-Seat 1: SB-humain_debutant (€2.00 in chips)
+Seat 1: SB-joueur (€2.00 in chips)
 Seat 2: BB-humain_debutant (€2.00 in chips)
-Seat 3: UTG-joueur (€2.00 in chips)
-Seat 4: MP-humain_debutant (€2.00 in chips)
-Seat 5: CO-humain_tapis (€2.00 in chips)
+Seat 3: UTG-humain_debutant (€2.00 in chips)
+Seat 4: MP-humain_regulier (€2.00 in chips)
+Seat 5: CO-humain_debutant (€2.00 in chips)
 Seat 6: BTN-humain_prudent (€2.00 in chips)
-SB-humain_debutant: posts small blind €0.01
+SB-joueur: posts small blind €0.01
 BB-humain_debutant: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to UTG-joueur [Ac Qc]
-UTG-joueur: raises €0.04 to €0.06
-MP-humain_debutant: folds
-CO-humain_tapis: calls €0.06
+Dealt to SB-joueur [Qh Ad]
+UTG-humain_debutant: calls €0.02
+MP-humain_regulier: folds
+CO-humain_debutant: folds
 BTN-humain_prudent: folds
-SB-humain_debutant: raises €0.12 to €0.18
-BB-humain_debutant: folds
-UTG-joueur: calls €0.12
-CO-humain_tapis: folds
-*** FLOP *** [Js 9s 4h]
-SB-humain_debutant: checks
-UTG-joueur: checks
-*** TURN *** [Js 9s 4h] [9h]
-SB-humain_debutant: checks
-UTG-joueur: checks
-*** RIVER *** [Js 9s 4h 9h] [7c]
-SB-humain_debutant: checks
-UTG-joueur: checks
+SB-joueur: raises €0.06 to €0.08
+BB-humain_debutant: calls €0.06
+UTG-humain_debutant: calls €0.06
+*** FLOP *** [Jh 6s 4h]
+SB-joueur: checks
+BB-humain_debutant: checks
+UTG-humain_debutant: checks
+*** TURN *** [Jh 6s 4h] [Ah]
+SB-joueur: bets €0.12
+BB-humain_debutant: calls €0.12
+UTG-humain_debutant: calls €0.12
+*** RIVER *** [Jh 6s 4h Ah] [2h]
+SB-joueur: bets €0.30
+BB-humain_debutant: calls €0.30
+UTG-humain_debutant: calls €0.30
 *** SHOW DOWN ***
-SB-humain_debutant: shows [Kc Ah]
-UTG-joueur: shows [Ac Qc]
-SB-humain_debutant collected €0.44 from pot
+SB-joueur: shows [Qh Ad]
+BB-humain_debutant: shows [Th Qd]
+UTG-humain_debutant: shows [Kh 7d]
+UTG-humain_debutant collected €1.50 from pot
 *** SUMMARY ***
-Total pot €0.44 | Rake €0.00
-Board [Js 9s 4h 9h 7c]
-Seat 1: SB-humain_debutant showed [Kc Ah] | résultat +13.00 bb
-Seat 2: BB-humain_debutant folded | résultat -1.00 bb
-Seat 3: UTG-joueur showed [Ac Qc] | résultat -9.00 bb
-Seat 4: MP-humain_debutant folded | résultat +0.00 bb
-Seat 5: CO-humain_tapis folded | résultat -3.00 bb
+Total pot €1.50 | Rake €0.00
+Board [Jh 6s 4h Ah 2h]
+Seat 1: SB-joueur showed [Qh Ad] | résultat -25.00 bb
+Seat 2: BB-humain_debutant showed [Th Qd] | résultat -25.00 bb
+Seat 3: UTG-humain_debutant showed [Kh 7d] | résultat +50.00 bb
+Seat 4: MP-humain_regulier folded | résultat +0.00 bb
+Seat 5: CO-humain_debutant folded | résultat +0.00 bb
 Seat 6: BTN-humain_prudent folded | résultat +0.00 bb
+</pre><p>Décision n° 13 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 31.26 bb</p><p class='legend-note'>check : +7.76 bb · mise 0.5 pot : +15.39 bb · mise 1 pot : +23.01 bb · tapis : +46.65 bb</p><pre>PokerLab Hand #9189: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5471507328174032729
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_debutant (€2.00 in chips)
+Seat 2: BB-humain_agressif (€2.00 in chips)
+Seat 3: UTG-humain_prudent (€2.00 in chips)
+Seat 4: MP-joueur (€2.00 in chips)
+Seat 5: CO-humain_prudent (€2.00 in chips)
+Seat 6: BTN-humain_debutant (€2.00 in chips)
+SB-humain_debutant: posts small blind €0.01
+BB-humain_agressif: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to MP-joueur [Ks Tc]
+UTG-humain_prudent: folds
+MP-joueur: raises €0.04 to €0.06
+CO-humain_prudent: folds
+BTN-humain_debutant: folds
+SB-humain_debutant: calls €0.05
+BB-humain_agressif: folds
+*** FLOP *** [Jc Kc Ac]
+SB-humain_debutant: checks
+MP-joueur: bets €0.05
+SB-humain_debutant: calls €0.05
+*** TURN *** [Jc Kc Ac] [Qs]
+SB-humain_debutant: checks
+MP-joueur: bets €0.12
+SB-humain_debutant: calls €0.12
+*** RIVER *** [Jc Kc Ac Qs] [5c]
+SB-humain_debutant: checks
+MP-joueur: bets €0.23
+SB-humain_debutant: calls €0.23
+*** SHOW DOWN ***
+SB-humain_debutant: shows [8h 8d]
+MP-joueur: shows [Ks Tc]
+MP-joueur collected €0.93 from pot
+*** SUMMARY ***
+Total pot €0.93 | Rake €0.00
+Board [Jc Kc Ac Qs 5c]
+Seat 1: SB-humain_debutant showed [8h 8d] | résultat -22.74 bb
+Seat 2: BB-humain_agressif folded | résultat -1.00 bb
+Seat 3: UTG-humain_prudent folded | résultat +0.00 bb
+Seat 4: MP-joueur showed [Ks Tc] | résultat +23.74 bb
+Seat 5: CO-humain_prudent folded | résultat +0.00 bb
+Seat 6: BTN-humain_debutant folded | résultat +0.00 bb
+</pre><p>Décision n° 14 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 29.28 bb</p><p class='legend-note'>check : +30.64 bb · mise 0.5 pot : +40.09 bb · mise 1 pot : +52.04 bb · tapis : +69.38 bb</p><pre>PokerLab Hand #11473: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6076921695859916317
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_debutant (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-humain_regulier (€2.00 in chips)
+Seat 4: MP-humain_debutant (€2.00 in chips)
+Seat 5: CO-humain_debutant (€2.00 in chips)
+Seat 6: BTN-humain_tapis (€2.00 in chips)
+SB-humain_debutant: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [7h 4h]
+UTG-humain_regulier: folds
+MP-humain_debutant: calls €0.02
+CO-humain_debutant: folds
+BTN-humain_tapis: folds
+SB-humain_debutant: calls €0.01
+BB-joueur: checks
+*** FLOP *** [8h Th 6d]
+SB-humain_debutant: checks
+BB-joueur: bets €0.02
+MP-humain_debutant: calls €0.02
+SB-humain_debutant: calls €0.02
+*** TURN *** [8h Th 6d] [4c]
+SB-humain_debutant: bets €0.08
+BB-joueur: calls €0.08
+MP-humain_debutant: calls €0.08
+*** RIVER *** [8h Th 6d 4c] [2h]
+SB-humain_debutant: checks
+BB-joueur: bets €0.17
+MP-humain_debutant: calls €0.17
+SB-humain_debutant: folds
+*** SHOW DOWN ***
+BB-joueur: shows [7h 4h]
+MP-humain_debutant: shows [Jh Kh]
+MP-humain_debutant collected €0.69 from pot
+*** SUMMARY ***
+Total pot €0.69 | Rake €0.00
+Board [8h Th 6d 4c 2h]
+Seat 1: SB-humain_debutant folded | résultat -5.79 bb
+Seat 2: BB-joueur showed [7h 4h] | résultat -14.47 bb
+Seat 3: UTG-humain_regulier folded | résultat +0.00 bb
+Seat 4: MP-humain_debutant showed [Jh Kh] | résultat +20.26 bb
+Seat 5: CO-humain_debutant folded | résultat +0.00 bb
+Seat 6: BTN-humain_tapis folded | résultat +0.00 bb
+</pre></details><details><summary>Exemples : préflop · paire moyenne (66-99) · face à un tapis → se couche</summary><p>Décision n° 2 (préflop) : prise = se couche, meilleure = paie, EV perdue ≈ 28.78 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +28.78 bb</p><pre>PokerLab Hand #10030: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3382817955990186150
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_tapis (€2.00 in chips)
+Seat 2: BB-humain_tapis (€2.00 in chips)
+Seat 3: UTG-humain_tapis (€2.00 in chips)
+Seat 4: MP-humain_debutant (€2.00 in chips)
+Seat 5: CO-joueur (€2.00 in chips)
+Seat 6: BTN-humain_regulier (€2.00 in chips)
+SB-humain_tapis: posts small blind €0.01
+BB-humain_tapis: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to CO-joueur [9c 9h]
+UTG-humain_tapis: raises €1.98 to €2.00 and is all-in
+MP-humain_debutant: calls €2.00 and is all-in
+CO-joueur: folds
+BTN-humain_regulier: folds
+SB-humain_tapis: folds
+BB-humain_tapis: folds
+*** FLOP *** [7d 7h Kc]
+*** TURN *** [7d 7h Kc] [4c]
+*** RIVER *** [7d 7h Kc 4c] [3h]
+*** SHOW DOWN ***
+UTG-humain_tapis: shows [Js Qs]
+MP-humain_debutant: shows [Qd Qc]
+MP-humain_debutant collected €4.03 from pot
+*** SUMMARY ***
+Total pot €4.03 | Rake €0.00
+Board [7d 7h Kc 4c 3h]
+Seat 1: SB-humain_tapis folded | résultat -0.50 bb | all-in EV -0.50 bb
+Seat 2: BB-humain_tapis folded | résultat -1.00 bb | all-in EV -1.00 bb
+Seat 3: UTG-humain_tapis showed [Js Qs] | résultat -100.00 bb | all-in EV -68.47 bb
+Seat 4: MP-humain_debutant showed [Qd Qc] | résultat +101.50 bb | all-in EV +69.97 bb
+Seat 5: CO-joueur folded | résultat +0.00 bb | all-in EV +0.00 bb
+Seat 6: BTN-humain_regulier folded | résultat +0.00 bb | all-in EV +0.00 bb
+</pre><p>Décision n° 4 (préflop) : prise = se couche, meilleure = paie, EV perdue ≈ 27.35 bb</p><p class='legend-note'>se couche : -0.50 bb · paie : +26.85 bb</p><pre>PokerLab Hand #14940: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3603048552495981249
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-humain_debutant (€2.00 in chips)
+Seat 3: UTG-humain_tapis (€2.00 in chips)
+Seat 4: MP-humain_debutant (€2.00 in chips)
+Seat 5: CO-humain_prudent (€2.00 in chips)
+Seat 6: BTN-humain_debutant (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-humain_debutant: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [9d 9h]
+UTG-humain_tapis: raises €1.98 to €2.00 and is all-in
+MP-humain_debutant: folds
+CO-humain_prudent: folds
+BTN-humain_debutant: folds
+SB-joueur: folds
+BB-humain_debutant: folds
+Uncalled bet (€1.98) returned to UTG-humain_tapis
+UTG-humain_tapis collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Seat 1: SB-joueur folded | résultat -0.50 bb
+Seat 2: BB-humain_debutant folded | résultat -1.00 bb
+Seat 3: UTG-humain_tapis won uncontested | résultat +1.50 bb
+Seat 4: MP-humain_debutant folded | résultat +0.00 bb
+Seat 5: CO-humain_prudent folded | résultat +0.00 bb
+Seat 6: BTN-humain_debutant folded | résultat +0.00 bb
+</pre><p>Décision n° 5 (préflop) : prise = se couche, meilleure = paie, EV perdue ≈ 22.76 bb</p><p class='legend-note'>se couche : -1.00 bb · paie : +21.76 bb</p><pre>PokerLab Hand #8371: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5835084945199092283
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_regulier (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-humain_prudent (€2.00 in chips)
+Seat 4: MP-humain_agressif (€2.00 in chips)
+Seat 5: CO-humain_debutant (€2.00 in chips)
+Seat 6: BTN-humain_tapis (€2.00 in chips)
+SB-humain_regulier: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [7s 7h]
+UTG-humain_prudent: folds
+MP-humain_agressif: folds
+CO-humain_debutant: folds
+BTN-humain_tapis: raises €1.98 to €2.00 and is all-in
+SB-humain_regulier: folds
+BB-joueur: folds
+Uncalled bet (€1.98) returned to BTN-humain_tapis
+BTN-humain_tapis collected €0.05 from pot
+*** SUMMARY ***
+Total pot €0.05 | Rake €0.00
+Seat 1: SB-humain_regulier folded | résultat -0.50 bb
+Seat 2: BB-joueur folded | résultat -1.00 bb
+Seat 3: UTG-humain_prudent folded | résultat +0.00 bb
+Seat 4: MP-humain_agressif folded | résultat +0.00 bb
+Seat 5: CO-humain_debutant folded | résultat +0.00 bb
+Seat 6: BTN-humain_tapis won uncontested | résultat +1.50 bb
+</pre></details><details><summary>Exemples : river · paire moyenne · rien à payer → mise</summary><p>Décision n° 14 (river) : prise = action prise, meilleure = check, EV perdue ≈ 34.99 bb</p><p class='legend-note'>check : -39.57 bb · mise 0.5 pot : -93.75 bb · mise 1 pot : -100.00 bb · action prise : -74.56 bb</p><pre>PokerLab Hand #12300: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7857476311509209078
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-humain_debutant (€2.00 in chips)
+Seat 3: UTG-humain_prudent (€2.00 in chips)
+Seat 4: MP-humain_debutant (€2.00 in chips)
+Seat 5: CO-humain_debutant (€2.00 in chips)
+Seat 6: BTN-humain_regulier (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-humain_debutant: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [Kc Ts]
+UTG-humain_prudent: folds
+MP-humain_debutant: calls €0.02
+CO-humain_debutant: raises €0.06 to €0.08
+BTN-humain_regulier: folds
+SB-joueur: calls €0.07
+BB-humain_debutant: calls €0.06
+MP-humain_debutant: folds
+*** FLOP *** [9h Tc 9c]
+SB-joueur: bets €0.13
+BB-humain_debutant: calls €0.13
+CO-humain_debutant: calls €0.13
+*** TURN *** [9h Tc 9c] [Jd]
+SB-joueur: bets €0.21
+BB-humain_debutant: raises €0.32 to €0.54
+CO-humain_debutant: calls €0.54
+SB-joueur: calls €0.32
+*** RIVER *** [9h Tc 9c Jd] [4c]
+SB-joueur: bets €0.75
+BB-humain_debutant: calls €0.75
+CO-humain_debutant: calls €0.75
+*** SHOW DOWN ***
+SB-joueur: shows [Kc Ts]
+BB-humain_debutant: shows [Th Jc]
+CO-humain_debutant: shows [Kh Ks]
+CO-humain_debutant collected €4.49 from pot
+*** SUMMARY ***
+Total pot €4.49 | Rake €0.00
+Board [9h Tc 9c Jd 4c]
+Seat 1: SB-joueur showed [Kc Ts] | résultat -74.56 bb
+Seat 2: BB-humain_debutant showed [Th Jc] | résultat -74.56 bb
+Seat 3: UTG-humain_prudent folded | résultat +0.00 bb
+Seat 4: MP-humain_debutant folded | résultat -1.00 bb
+Seat 5: CO-humain_debutant showed [Kh Ks] | résultat +150.12 bb
+Seat 6: BTN-humain_regulier folded | résultat +0.00 bb
+</pre><p>Décision n° 16 (river) : prise = action prise, meilleure = check, EV perdue ≈ 17.64 bb</p><p class='legend-note'>check : -14.84 bb · mise 0.5 pot : -38.60 bb · mise 1 pot : -62.36 bb · tapis : -100.00 bb · action prise : -32.48 bb</p><pre>PokerLab Hand #3451: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7350158437105591259
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_debutant (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-humain_debutant (€2.00 in chips)
+Seat 4: MP-humain_agressif (€2.00 in chips)
+Seat 5: CO-humain_prudent (€2.00 in chips)
+Seat 6: BTN-humain_debutant (€2.00 in chips)
+SB-humain_debutant: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [4c Qc]
+UTG-humain_debutant: folds
+MP-humain_agressif: raises €0.04 to €0.06
+CO-humain_prudent: folds
+BTN-humain_debutant: calls €0.06
+SB-humain_debutant: calls €0.05
+BB-joueur: calls €0.04
+*** FLOP *** [Ac Qd Td]
+SB-humain_debutant: checks
+BB-joueur: bets €0.08
+MP-humain_agressif: calls €0.08
+BTN-humain_debutant: folds
+SB-humain_debutant: calls €0.08
+*** TURN *** [Ac Qd Td] [8d]
+SB-humain_debutant: checks
+BB-joueur: bets €0.16
+MP-humain_agressif: calls €0.16
+SB-humain_debutant: calls €0.16
+*** RIVER *** [Ac Qd Td 8d] [5s]
+SB-humain_debutant: checks
+BB-joueur: bets €0.31
+MP-humain_agressif: calls €0.31
+SB-humain_debutant: folds
+*** SHOW DOWN ***
+BB-joueur: shows [4c Qc]
+MP-humain_agressif: shows [Kc Th]
+BB-joueur collected €1.58 from pot
+*** SUMMARY ***
+Total pot €1.58 | Rake €0.00
+Board [Ac Qd Td 8d 5s]
+Seat 1: SB-humain_debutant folded | résultat -14.84 bb
+Seat 2: BB-joueur showed [4c Qc] | résultat +48.36 bb
+Seat 3: UTG-humain_debutant folded | résultat +0.00 bb
+Seat 4: MP-humain_agressif showed [Kc Th] | résultat -30.52 bb
+Seat 5: CO-humain_prudent folded | résultat +0.00 bb
+Seat 6: BTN-humain_debutant folded | résultat -3.00 bb
+</pre><p>Décision n° 11 (river) : prise = action prise, meilleure = check, EV perdue ≈ 17.35 bb</p><p class='legend-note'>check : -17.00 bb · mise 0.5 pot : -41.79 bb · mise 1 pot : -46.16 bb · tapis : -69.04 bb · action prise : -34.35 bb</p><pre>PokerLab Hand #10442: Hold&#x27;em No Limit (€0.01/€0.02) - graine 541026620990804995
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_agressif (€2.00 in chips)
+Seat 2: BB-humain_regulier (€2.00 in chips)
+Seat 3: UTG-joueur (€2.00 in chips)
+Seat 4: MP-humain_regulier (€2.00 in chips)
+Seat 5: CO-humain_debutant (€2.00 in chips)
+Seat 6: BTN-humain_debutant (€2.00 in chips)
+SB-humain_agressif: posts small blind €0.01
+BB-humain_regulier: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to UTG-joueur [Th Tc]
+UTG-joueur: raises €0.04 to €0.06
+MP-humain_regulier: folds
+CO-humain_debutant: folds
+BTN-humain_debutant: folds
+SB-humain_agressif: calls €0.05
+BB-humain_regulier: folds
+*** FLOP *** [Ks 7d 9h]
+SB-humain_agressif: bets €0.12
+UTG-joueur: calls €0.12
+*** TURN *** [Ks 7d 9h] [2c]
+SB-humain_agressif: bets €0.28
+UTG-joueur: calls €0.28
+*** RIVER *** [Ks 7d 9h 2c] [4s]
+SB-humain_agressif: checks
+UTG-joueur: bets €0.31
+SB-humain_agressif: folds
+Uncalled bet (€0.31) returned to UTG-joueur
+UTG-joueur collected €0.93 from pot
+*** SUMMARY ***
+Total pot €0.93 | Rake €0.00
+Board [Ks 7d 9h 2c 4s]
+Seat 1: SB-humain_agressif folded | résultat -22.83 bb
+Seat 2: BB-humain_regulier folded | résultat -1.00 bb
+Seat 3: UTG-joueur won uncontested | résultat +23.83 bb
+Seat 4: MP-humain_regulier folded | résultat +0.00 bb
+Seat 5: CO-humain_debutant folded | résultat +0.00 bb
+Seat 6: BTN-humain_debutant folded | résultat +0.00 bb
+</pre></details><details><summary>Exemples : préflop · autres · face à une relance → paie</summary><p>Décision n° 4 (préflop) : prise = paie, meilleure = relance 3x, EV perdue ≈ 16.51 bb</p><p class='legend-note'>se couche : -0.50 bb · paie : -9.81 bb · relance min : +5.27 bb · relance 3x : +6.71 bb · tapis : -5.49 bb</p><pre>PokerLab Hand #10392: Hold&#x27;em No Limit (€0.01/€0.02) - graine 9222948400597887291
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-humain_prudent (€2.00 in chips)
+Seat 3: UTG-humain_regulier (€2.00 in chips)
+Seat 4: MP-humain_regulier (€2.00 in chips)
+Seat 5: CO-humain_agressif (€2.00 in chips)
+Seat 6: BTN-humain_debutant (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-humain_prudent: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [5c Ks]
+UTG-humain_regulier: raises €0.04 to €0.06
+MP-humain_regulier: folds
+CO-humain_agressif: folds
+BTN-humain_debutant: calls €0.06
+SB-joueur: calls €0.05
+BB-humain_prudent: folds
+*** FLOP *** [9h 6h 2d]
+SB-joueur: checks
+UTG-humain_regulier: bets €0.20
+BTN-humain_debutant: calls €0.20
+SB-joueur: folds
+*** TURN *** [9h 6h 2d] [Tc]
+UTG-humain_regulier: bets €0.57
+BTN-humain_debutant: calls €0.57
+*** RIVER *** [9h 6h 2d Tc] [Td]
+UTG-humain_regulier: checks
+BTN-humain_debutant: checks
+*** SHOW DOWN ***
+UTG-humain_regulier: shows [Qh Ah]
+BTN-humain_debutant: shows [7d Jc]
+UTG-humain_regulier collected €1.75 from pot
+*** SUMMARY ***
+Total pot €1.75 | Rake €0.00
+Board [9h 6h 2d Tc Td]
+Seat 1: SB-joueur folded | résultat -3.00 bb
+Seat 2: BB-humain_prudent folded | résultat -1.00 bb
+Seat 3: UTG-humain_regulier showed [Qh Ah] | résultat +45.63 bb
+Seat 4: MP-humain_regulier folded | résultat +0.00 bb
+Seat 5: CO-humain_agressif folded | résultat +0.00 bb
+Seat 6: BTN-humain_debutant showed [7d Jc] | résultat -41.63 bb
+</pre><p>Décision n° 5 (préflop) : prise = paie, meilleure = se couche, EV perdue ≈ 15.73 bb</p><p class='legend-note'>se couche : -1.00 bb · paie : -16.73 bb · relance min : -5.27 bb · relance 3x : -11.12 bb · tapis : -4.97 bb</p><pre>PokerLab Hand #3139: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5307029471848551527
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_debutant (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-humain_debutant (€2.00 in chips)
+Seat 4: MP-humain_prudent (€2.00 in chips)
+Seat 5: CO-humain_prudent (€2.00 in chips)
+Seat 6: BTN-humain_agressif (€2.00 in chips)
+SB-humain_debutant: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [Kh 7c]
+UTG-humain_debutant: calls €0.02
+MP-humain_prudent: folds
+CO-humain_prudent: folds
+BTN-humain_agressif: raises €0.06 to €0.08
+SB-humain_debutant: folds
+BB-joueur: calls €0.06
+UTG-humain_debutant: calls €0.06
+*** FLOP *** [4h Ts Ks]
+BB-joueur: bets €0.12
+UTG-humain_debutant: calls €0.12
+BTN-humain_agressif: calls €0.12
+*** TURN *** [4h Ts Ks] [7h]
+BB-joueur: bets €0.31
+UTG-humain_debutant: calls €0.31
+BTN-humain_agressif: calls €0.31
+*** RIVER *** [4h Ts Ks 7h] [Jd]
+BB-joueur: bets €0.78
+UTG-humain_debutant: raises €0.70 to €1.48 and is all-in
+BTN-humain_agressif: calls €1.48 and is all-in
+BB-joueur: calls €0.70 and is all-in
+*** SHOW DOWN ***
+BB-joueur: shows [Kh 7c]
+UTG-humain_debutant: shows [Jc Th]
+BTN-humain_agressif: shows [Ad Ac]
+BB-joueur collected €6.01 from pot
+*** SUMMARY ***
+Total pot €6.01 | Rake €0.00
+Board [4h Ts Ks 7h Jd]
+Seat 1: SB-humain_debutant folded | résultat -0.50 bb
+Seat 2: BB-joueur showed [Kh 7c] | résultat +200.50 bb
+Seat 3: UTG-humain_debutant showed [Jc Th] | résultat -100.00 bb
+Seat 4: MP-humain_prudent folded | résultat +0.00 bb
+Seat 5: CO-humain_prudent folded | résultat +0.00 bb
+Seat 6: BTN-humain_agressif showed [Ad Ac] | résultat -100.00 bb
+</pre><p>Décision n° 5 (préflop) : prise = paie, meilleure = relance min, EV perdue ≈ 11.52 bb</p><p class='legend-note'>se couche : -1.00 bb · paie : -8.24 bb · relance min : +3.29 bb · relance 3x : +1.83 bb · tapis : -8.91 bb</p><pre>PokerLab Hand #511: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6607694834196336769
+Table &#x27;humains_simules&#x27; 6-max Seat #6 is the button
+Seat 1: SB-humain_prudent (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-humain_tapis (€2.00 in chips)
+Seat 4: MP-humain_regulier (€2.00 in chips)
+Seat 5: CO-humain_tapis (€2.00 in chips)
+Seat 6: BTN-humain_tapis (€2.00 in chips)
+SB-humain_prudent: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [9h 4h]
+UTG-humain_tapis: calls €0.02
+MP-humain_regulier: raises €0.06 to €0.08
+CO-humain_tapis: folds
+BTN-humain_tapis: calls €0.08
+SB-humain_prudent: folds
+BB-joueur: calls €0.06
+UTG-humain_tapis: folds
+*** FLOP *** [9s Tc Qc]
+BB-joueur: bets €0.09
+MP-humain_regulier: calls €0.09
+BTN-humain_tapis: folds
+*** TURN *** [9s Tc Qc] [Qh]
+BB-joueur: bets €0.15
+MP-humain_regulier: calls €0.15
+*** RIVER *** [9s Tc Qc Qh] [8s]
+BB-joueur: bets €0.25
+MP-humain_regulier: calls €0.25
+*** SHOW DOWN ***
+BB-joueur: shows [9h 4h]
+MP-humain_regulier: shows [Ks Kh]
+MP-humain_regulier collected €1.24 from pot
+*** SUMMARY ***
+Total pot €1.24 | Rake €0.00
+Board [9s Tc Qc Qh 8s]
+Seat 1: SB-humain_prudent folded | résultat -0.50 bb
+Seat 2: BB-joueur showed [9h 4h] | résultat -28.14 bb
+Seat 3: UTG-humain_tapis folded | résultat -1.00 bb
+Seat 4: MP-humain_regulier showed [Ks Kh] | résultat +33.64 bb
+Seat 5: CO-humain_tapis folded | résultat +0.00 bb
+Seat 6: BTN-humain_tapis folded | résultat -4.00 bb
 </pre></details></section>
 <p class="sub">PokerLab — simulation 100 % locale et déterministe. Les archétypes adverses ne sont pas de vrais humains.</p>
 </main></body></html>
