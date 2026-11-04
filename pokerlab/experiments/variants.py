@@ -46,8 +46,11 @@ def variant(base: dict[str, Any], changes: dict[str, Any], suffix: str) -> dict[
 def _evaluate(ctx: ExperimentContext, configs: list[dict[str, Any]], composition: str, decks: int, space: str = "deck") -> tuple[pd.DataFrame, pd.DataFrame]:
     cdict = composition_dict(composition)
     cells = [Cell(c["name"], c, cdict, {"strategy": c["name"], "composition": composition}, deck_space=space) for c in configs]
-    auto = Autostop(enabled=False, decks=decks)
-    results, _ = run_cells(cells, ctx.lab, auto, ctx.workers, record_decisions=False, log=ctx.log)
+    auto = Autostop(enabled=False, decks=decks, block_decks=int(ctx.cfg.get("block_decks", 2000)),
+                    max_minutes=float(ctx.cfg.get("max_minutes", 120)), stop_file=str(ctx.out_dir / "STOP"))
+    results, progress = run_cells(cells, ctx.lab, auto, ctx.workers, record_decisions=False, log=ctx.log)
+    partial = sorted({p.stopped for p in progress.values() if "partiels" in p.stopped})
+    ctx.partial.extend(r for r in partial if r not in ctx.partial)
     hands, decisions, _, played, _ = collect(results)
     ctx.hands_played += played
     return hands, decisions

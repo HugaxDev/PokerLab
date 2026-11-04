@@ -31,6 +31,7 @@ class ExperimentContext:
     log: Callable[[str], None] = print
     started: float = field(default_factory=time.perf_counter)
     hands_played: int = 0
+    partial: list[str] = field(default_factory=list)  # raisons d'arrêt anticipé (durée maximale, fichier STOP)
 
     @staticmethod
     def create(name: str, lab: LabConfig, cfg: dict[str, Any], out: str | Path | None = None, workers: int | None = None,
@@ -107,6 +108,9 @@ def save_outputs(
     data.setdefault("config", ctx.cfg)
     data.setdefault("mains_jouees", ctx.hands_played)
     data.setdefault("duree_s", round(ctx.elapsed(), 1))
+    if ctx.partial:
+        data["partiel"] = ctx.partial
+        report.meta["ATTENTION"] = "résultats partiels : " + " ; ".join(ctx.partial)
     paths["resume"] = write_json(ctx.out_dir / f"{prefix}resume.json", data)
     paths["rapport"] = report.save(ctx.out_dir / f"{prefix}rapport.html")
     return paths

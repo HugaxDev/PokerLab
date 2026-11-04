@@ -113,8 +113,12 @@ def run_cells(
         owners: list[str] = []
         for c in active:
             prog = progress[c.key]
-            size = autostop.block_decks if autostop.enabled else autostop.decks
-            size = max(0, min(size, max_decks - prog.decks))
+            if autostop.enabled:
+                size = max(0, min(autostop.block_decks, max_decks - prog.decks))
+            else:
+                # nombre de decks fixé : par blocs seulement si une limite de durée ou un fichier STOP est surveillé
+                watched = autostop.max_minutes is not None or stop_path is not None
+                size = max(0, min(autostop.block_decks if watched else autostop.decks, autostop.decks - prog.decks))
             if size == 0:
                 continue
             start = c.deck_offset + prog.decks
@@ -138,7 +142,10 @@ def run_cells(
             prog = progress[c.key]
             hw = prog.halfwidth(autostop.confidence)
             if not autostop.enabled:
-                prog.stopped = f"nombre de decks fixé ({prog.decks})"
+                if prog.decks >= autostop.decks:
+                    prog.stopped = f"nombre de decks fixé ({prog.decks})"
+                else:
+                    next_active.append(c)
                 continue
             if prog.decks >= autostop.min_decks and 0 < hw <= autostop.ci_halfwidth_bb100:
                 prog.stopped = f"précision atteinte (± {hw:.2f} bb/100)"

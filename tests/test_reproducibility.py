@@ -56,3 +56,27 @@ def test_duplicate_deals_same_cards_per_seat(lab) -> None:
     other = _run(lab, "large", 1, 1)
     key = ["deck", "rot", "c1", "c2", "b0"]
     pd.testing.assert_frame_equal(df[key[:4]].reset_index(drop=True), other[key[:4]].reset_index(drop=True))
+
+
+def test_fixed_decks_in_blocks_and_stop_file(lab, tmp_path) -> None:
+    """Decks fixés joués par blocs (limite de durée surveillée) = mêmes mains ; le fichier STOP arrête proprement."""
+    from pokerlab.experiments.base import composition_dict
+    from pokerlab.experiments.duplicate import Autostop, Cell, collect, run_cells
+
+    hero = resolve_spec("serre")
+    cell = Cell("serre", hero, composition_dict("micro_play_money"), {"strategy": "serre", "composition": "micro_play_money"})
+    once, _ = run_cells([cell], lab, Autostop(enabled=False, decks=4), 1, record_decisions=False, log=lambda m: None)
+    blocks, prog = run_cells([cell], lab, Autostop(enabled=False, decks=4, block_decks=1, max_minutes=60), 1, record_decisions=False, log=lambda m: None)
+    a, b = collect(once)[0], collect(blocks)[0]
+    cols = ["deck", "rot", "result_ev"]
+    pd.testing.assert_frame_equal(a[cols].sort_values(["deck", "rot"]).reset_index(drop=True), b[cols].sort_values(["deck", "rot"]).reset_index(drop=True))
+    assert prog["serre"].decks == 4
+
+    stop = tmp_path / "STOP"
+
+    def log(msg: str) -> None:  # le fichier apparaît pendant la campagne, après le premier bloc
+        if "bloc 1 " in msg:
+            stop.write_text("")
+
+    part, prog = run_cells([cell], lab, Autostop(enabled=False, decks=4, block_decks=1, stop_file=str(stop)), 1, record_decisions=False, log=log)
+    assert prog["serre"].decks == 1 and "STOP" in prog["serre"].stopped

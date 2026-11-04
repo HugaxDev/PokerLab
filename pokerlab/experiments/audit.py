@@ -10,6 +10,7 @@ meilleure action sur une moitié des rollouts, mesure sur l'autre) pour ne pas l
 from __future__ import annotations
 
 import json
+import time
 from dataclasses import dataclass
 from typing import Any
 
@@ -241,7 +242,11 @@ def run(ctx: ExperimentContext, report: Report | None = None) -> dict[str, Any]:
     pool_decks = int(cfg.get("pool_decks", 400))
     ctx.log(f"audit : {hero['name']} contre {comp}, réserve de {pool_decks} decks")
     cells = [Cell(hero["name"], hero, cdict, {"strategy": hero["name"], "composition": comp})]
-    results, _ = run_cells(cells, ctx.lab, Autostop(enabled=False, decks=pool_decks), ctx.workers, record_decisions=True, log=ctx.log)
+    max_minutes = float(cfg.get("max_minutes", 120))
+    stop_file = ctx.out_dir / "STOP"
+    auto = Autostop(enabled=False, decks=pool_decks, block_decks=int(cfg.get("block_decks", 2000)), max_minutes=max_minutes, stop_file=str(stop_file))
+    results, progress = run_cells(cells, ctx.lab, auto, ctx.workers, record_decisions=True, log=ctx.log)
+    ctx.partial.extend(sorted({p.stopped for p in progress.values() if "partiels" in p.stopped}))
     _, decisions, _, played, _ = collect(results)
     ctx.hands_played += played
     table = get_context(ctx.lab).table
@@ -249,13 +254,28 @@ def run(ctx: ExperimentContext, report: Report | None = None) -> dict[str, Any]:
     sample = sample_decisions(decisions, n_dec, derive_seed(ctx.lab.seed, "audit"), table.class_percentile, float(cfg.get("nontrivial_preflop_pct", 0.5)))
     rollouts = int(cfg.get("rollouts", 16))
     ctx.log(f"audit : {len(sample)} décisions x {rollouts} rollouts par action")
+    chunk = int(cfg.get("decisions_par_tache", 25))
     tasks = [AuditTask(ctx.lab.raw, hero, cdict, sample.iloc[a:b].to_dict("records"), rollouts, list(cfg.get("bet_sizes_pot", [0.5, 1.0])),
                        bool(cfg.get("include_allin", True)), cfg.get("range_model", {"looseness": 1.3}))
-             for a, b in split_range(0, len(sample), max(1, ctx.workers * 4))]
-    outs = run_tasks(run_audit_task, tasks, ctx.workers, ctx.lab.mp_start_method)
+             for a, b in split_range(0, len(sample), max(1, ctx.workers * 4, -(-len(sample) // chunk)))]
     merged = TaskResult()
-    for o in outs:
-        merged.merge(o)
+    batch = max(1, ctx.workers * 4)
+    t_start, done = time.perf_counter(), 0
+    for k in range(0, len(tasks), batch):
+        if ctx.partial:
+            break
+        for o in run_tasks(run_audit_task, tasks[k:k + batch], ctx.workers, ctx.lab.mp_start_method):
+            merged.merge(o)
+        done += sum(len(t.decisions) for t in tasks[k:k + batch])
+        elapsed = time.perf_counter() - t_start
+        ctx.log(f"  audit : {done}/{len(sample)} décisions en {elapsed / 60:.1f} min")
+        if k + batch < len(tasks):
+            if (time.perf_counter() - ctx.started) > max_minutes * 60:
+                ctx.partial.append(f"durée maximale atteinte ({max_minutes:g} min) : {done} décisions auditées sur {len(sample)}")
+            elif stop_file.exists():
+                ctx.partial.append(f"arrêt demandé (fichier STOP) : {done} décisions auditées sur {len(sample)}")
+            if ctx.partial:
+                ctx.log(f"  ARRÊT : {ctx.partial[-1]}")
     ctx.hands_played += merged.hands_played
     audited = merged.hands.frame()
     own = report is None
