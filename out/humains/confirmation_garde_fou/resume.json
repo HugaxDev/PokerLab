@@ -1,0 +1,113 @@
+{
+  "strategie": "joueur",
+  "compositions": [
+    "humains_simules",
+    "humains_tilt_fort"
+  ],
+  "deck_space": "confirmation",
+  "resultats": [
+    {
+      "candidat": "Joueur [seuil 0.33, top paire bon kicker]",
+      "composition": "humains_simules",
+      "écart vs actuel (bb/100)": 7.122999262205387,
+      "IC ±": 1.34691452664734,
+      "p Holm": 2.2067252062057173e-24,
+      "bat l'actuel": "oui",
+      "decks appariés": 100000.0
+    },
+    {
+      "candidat": "Joueur [seuil 0.33, top paire bon kicker]",
+      "composition": "humains_tilt_fort",
+      "écart vs actuel (bb/100)": 7.203102036519307,
+      "IC ±": 1.3903007605122053,
+      "p Holm": 1.6233810144467815e-23,
+      "bat l'actuel": "oui",
+      "decks appariés": 100000.0
+    },
+    {
+      "candidat": "Joueur [seuil 0.33, overpair]",
+      "composition": "humains_simules",
+      "écart vs actuel (bb/100)": 4.815445472282347,
+      "IC ±": 1.197720300854785,
+      "p Holm": 1.321039734424432e-14,
+      "bat l'actuel": "oui",
+      "decks appariés": 100000.0
+    },
+    {
+      "candidat": "Joueur [seuil 0.33, overpair]",
+      "composition": "humains_tilt_fort",
+      "écart vs actuel (bb/100)": 4.406291966059727,
+      "IC ±": 1.26995525113763,
+      "p Holm": 1.048695908569595e-11,
+      "bat l'actuel": "oui",
+      "decks appariés": 100000.0
+    },
+    {
+      "candidat": "Joueur [seuil 0.33, overpair QQ+]",
+      "composition": "humains_simules",
+      "écart vs actuel (bb/100)": 4.4472555765392014,
+      "IC ±": 1.183563890442763,
+      "p Holm": 5.368025664162669e-13,
+      "bat l'actuel": "oui",
+      "decks appariés": 100000.0
+    },
+    {
+      "candidat": "Joueur [seuil 0.33, overpair QQ+]",
+      "composition": "humains_tilt_fort",
+      "écart vs actuel (bb/100)": 4.632157993622173,
+      "IC ±": 1.2337413121644425,
+      "p Holm": 5.368025664162669e-13,
+      "bat l'actuel": "oui",
+      "decks appariés": 100000.0
+    }
+  ],
+  "retenus": [
+    "Joueur [seuil 0.33, top paire bon kicker]",
+    "Joueur [seuil 0.33, overpair]",
+    "Joueur [seuil 0.33, overpair QQ+]"
+  ],
+  "choisi": "Joueur [seuil 0.33, top paire bon kicker]",
+  "patch_choisi": {
+    "garde_fou_seuil": 0.33,
+    "garde_fou_force": "top_paire_bon_kicker"
+  },
+  "experience": "confirmation",
+  "config": {
+    "experiment": "confirmation",
+    "strategy": "joueur",
+    "compositions": [
+      "humains_simules",
+      "humains_tilt_fort"
+    ],
+    "deck_space": "confirmation",
+    "decks": 100000,
+    "block_decks": 2000,
+    "max_minutes": 120,
+    "reference_label": "actuel : seuil 0.5, deux paires",
+    "candidates": [
+      {
+        "label": "seuil 0.33, top paire bon kicker",
+        "patch": {
+          "garde_fou_seuil": 0.33,
+          "garde_fou_force": "top_paire_bon_kicker"
+        }
+      },
+      {
+        "label": "seuil 0.33, overpair",
+        "patch": {
+          "garde_fou_seuil": 0.33,
+          "garde_fou_force": "overpair"
+        }
+      },
+      {
+        "label": "seuil 0.33, overpair QQ+",
+        "patch": {
+          "garde_fou_seuil": 0.33,
+          "garde_fou_force": "overpair_qq"
+        }
+      }
+    ]
+  },
+  "mains_jouees": 4800000,
+  "duree_s": 2379.5
+}

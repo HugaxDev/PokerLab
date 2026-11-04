@@ -494,30 +494,33 @@ BB-humain_regulier: posts big blind €0.02
 *** HOLE CARDS ***
 Dealt to UTG-serre [2d 8h]
 UTG-serre: folds
-MP-humain_debutant: calls €0.02
+MP-humain_debutant: folds
 CO-humain_agressif: folds
 BTN-humain_debutant: calls €0.02
 SB-humain_tapis: folds
 BB-humain_regulier: checks
 *** FLOP *** [Th 7h Qc]
 BB-humain_regulier: checks
-MP-humain_debutant: bets €0.03
-BTN-humain_debutant: calls €0.03
-BB-humain_regulier: folds
+BTN-humain_debutant: checks
 *** TURN *** [Th 7h Qc] [As]
-MP-humain_debutant: bets €0.07
-BTN-humain_debutant: folds
-Uncalled bet (€0.07) returned to MP-humain_debutant
-MP-humain_debutant collected €0.13 from pot
+BB-humain_regulier: checks
+BTN-humain_debutant: checks
+*** RIVER *** [Th 7h Qc As] [Kd]
+BB-humain_regulier: bets €0.03
+BTN-humain_debutant: calls €0.03
+*** SHOW DOWN ***
+BB-humain_regulier: shows [5d 4c]
+BTN-humain_debutant: shows [9d 6d]
+BTN-humain_debutant collected €0.10 from pot
 *** SUMMARY ***
-Total pot €0.13 | Rake €0.00
-Board [Th 7h Qc As]
+Total pot €0.10 | Rake €0.00
+Board [Th 7h Qc As Kd]
 Seat 1: SB-humain_tapis folded | résultat -0.50 bb
-Seat 2: BB-humain_regulier folded | résultat -1.00 bb
+Seat 2: BB-humain_regulier showed [5d 4c] | résultat -2.26 bb
 Seat 3: UTG-serre folded | résultat +0.00 bb
-Seat 4: MP-humain_debutant won uncontested | résultat +4.11 bb
+Seat 4: MP-humain_debutant folded | résultat +0.00 bb
 Seat 5: CO-humain_agressif folded | résultat +0.00 bb
-Seat 6: BTN-humain_debutant folded | résultat -2.61 bb
+Seat 6: BTN-humain_debutant showed [9d 6d] | résultat +2.76 bb
 
 
 PokerLab Hand #15: Hold'em No Limit (€0.01/€0.02) - graine 5578083848611347119

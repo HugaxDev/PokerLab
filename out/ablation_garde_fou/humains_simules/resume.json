@@ -2,26 +2,26 @@
   "strategie": "serre",
   "composition": "humains_simules",
   "ablations": [
-    "Serré [sans garde-fou] bat Serré : significatif (3.7 ± 1.1 bb/100, p Holm = 2.14e-11)",
-    "Serré bat Serré [sans exception overpair QQ+] : significatif (2.2 ± 0.8 bb/100, p Holm = 4.42e-08)"
+    "Serré [sans garde-fou] bat Serré : significatif (3.2 ± 1.0 bb/100, p Holm = 8.84e-10)",
+    "Serré bat Serré [sans exception overpair QQ+] : significatif (1.9 ± 0.7 bb/100, p Holm = 7.43e-07)"
   ],
   "resultats": [
     {
       "regle": "garde-fou",
-      "apport_bb100": -3.7063303648053068,
-      "ci": 1.0685262877823343,
-      "p_holm": 2.1369240589653548e-11,
+      "apport_bb100": -3.1877544557143977,
+      "ci": 1.001340628802257,
+      "p_holm": 8.839984167115596e-10,
       "significatif": true
     },
     {
       "regle": "exception overpair QQ+",
-      "apport_bb100": 2.199873107263107,
-      "ci": 0.7876624834030544,
-      "p_holm": 4.417441179680546e-08,
+      "apport_bb100": 1.888372457912458,
+      "ci": 0.7476674747183624,
+      "p_holm": 7.431264177404076e-07,
       "significatif": true
     }
   ],
-  "base_bb100": 18.567779411606374,
+  "base_bb100": 17.54673922894644,
   "experience": "ablation",
   "config": {
     "experiment": "ablation",
@@ -44,5 +44,5 @@
     ]
   },
   "mains_jouees": 900000,
-  "duree_s": 314.5
+  "duree_s": 358.6
 }
