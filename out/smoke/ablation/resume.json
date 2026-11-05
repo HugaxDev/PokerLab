@@ -2,13 +2,13 @@
   "strategie": "joueur",
   "composition": "micro_play_money",
   "ablations": [
-    "Joueur bat Joueur [sans garde-fou] : pas encore significatif (0.0 ± inf bb/100, p Holm = 1)",
+    "Joueur bat Joueur [sans garde-fou] : pas encore significatif (1091.3 ± inf bb/100, p Holm = 1)",
     "Joueur bat Joueur [sans c-bet] : pas encore significatif (0.0 ± inf bb/100, p Holm = 1)"
   ],
   "resultats": [
     {
       "regle": "garde-fou",
-      "apport_bb100": 0.0,
+      "apport_bb100": 1091.3333333333335,
       "ci": Infinity,
       "p_holm": 1.0,
       "significatif": false
@@ -21,7 +21,7 @@
       "significatif": false
     }
   ],
-  "base_bb100": -1416.166666666667,
+  "base_bb100": -324.8333333333335,
   "experience": "ablation",
   "config": {
     "strategy": "joueur",
@@ -43,5 +43,5 @@
     ]
   },
   "mains_jouees": 18,
-  "duree_s": 0.1
+  "duree_s": 0.0
 }

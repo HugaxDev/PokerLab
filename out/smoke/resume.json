@@ -7,7 +7,7 @@
     "sweep": 24,
     "ablation": 18,
     "optimize": 30,
-    "audit": 86,
+    "audit": 92,
     "journal": 0,
     "fiche": 0
   },
@@ -159,6 +159,6 @@
     },
     "site": {}
   },
-  "mains_jouees": 402,
-  "duree_s": 6.4
+  "mains_jouees": 408,
+  "duree_s": 3.8
 }

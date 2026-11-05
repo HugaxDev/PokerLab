@@ -28,7 +28,7 @@
     "joueur@micro_play_money": {
       "decks": 1,
       "arret": "nombre de decks fixé (1)",
-      "bb100_metric": -1416.166666666667
+      "bb100_metric": -324.8333333333335
     },
     "equity_bot@micro_play_money": {
       "decks": 1,
@@ -108,7 +108,7 @@
     "joueur@mixte": {
       "decks": 1,
       "arret": "nombre de decks fixé (1)",
-      "bb100_metric": -388.83333333333337
+      "bb100_metric": 54.49999999999999
     },
     "equity_bot@mixte": {
       "decks": 1,
@@ -381,23 +381,23 @@
     {
       "strategy": "joueur",
       "composition": "micro_play_money",
-      "bb100": -1416.166666666667,
+      "bb100": -324.8333333333335,
       "ci": Infinity,
-      "bb100_reel": -1416.166666666667,
+      "bb100_reel": -324.8333333333335,
       "ci_reel": Infinity,
-      "sd_main_bb100": 558.9161597830811,
+      "sd_main_bb100": 478.13404152671103,
       "mains": 6,
       "mains_necessaires_duplicate": Infinity,
-      "mains_necessaires_reelles": 59.835755535617686,
-      "moyenne_main": -14.161666666666669,
-      "ecart_type_main": 55.89161597830811,
+      "mains_necessaires_reelles": 832.2893449005362,
+      "moyenne_main": -3.248333333333335,
+      "ecart_type_main": 47.813404152671104,
       "stats": {
         "VPIP": 66.66666666666667,
         "PFR": 50.0,
         "3bet": 0.0,
-        "AF": 1.25,
-        "WTSD": 100.0,
-        "W$SD": 33.333333333333336,
+        "AF": 1.3333333333333333,
+        "WTSD": 66.66666666666667,
+        "W$SD": 50.0,
         "cbet": 100.0,
         "fold_cbet": NaN
       }
@@ -405,25 +405,25 @@
     {
       "strategy": "joueur",
       "composition": "mixte",
-      "bb100": -388.83333333333337,
+      "bb100": 54.49999999999999,
       "ci": Infinity,
-      "bb100_reel": -388.83333333333337,
+      "bb100_reel": 54.49999999999999,
       "ci_reel": Infinity,
-      "sd_main_bb100": 144.611070346176,
+      "sd_main_bb100": 73.12875631377851,
       "mains": 6,
       "mains_necessaires_duplicate": Infinity,
-      "mains_necessaires_reelles": 53.13397246746433,
-      "moyenne_main": -3.8883333333333336,
-      "ecart_type_main": 14.461107034617601,
+      "mains_necessaires_reelles": 691.6391247602174,
+      "moyenne_main": 0.5449999999999999,
+      "ecart_type_main": 7.312875631377851,
       "stats": {
         "VPIP": 83.33333333333333,
         "PFR": 16.666666666666668,
         "3bet": 0.0,
-        "AF": 0.6666666666666666,
+        "AF": 2.0,
         "WTSD": 0.0,
         "W$SD": NaN,
         "cbet": NaN,
-        "fold_cbet": 50.0
+        "fold_cbet": 75.0
       }
     },
     {
@@ -981,10 +981,10 @@
       68,
       8,
       129,
-      47,
+      48,
       23,
       58,
-      144,
+      142,
       48,
       48,
       0
@@ -1000,7 +1000,7 @@
       21,
       3,
       56,
-      41,
+      42,
       19,
       79,
       56,
@@ -1093,12 +1093,12 @@
       3,
       3,
       9,
-      7,
+      8,
       14,
-      4,
+      3,
       1,
-      11,
-      7,
+      10,
+      4,
       9,
       7,
       7
@@ -1171,10 +1171,10 @@
       22,
       0,
       46,
-      30,
-      22,
+      31,
+      23,
       40,
-      70,
+      71,
       65,
       27,
       27
@@ -1282,5 +1282,5 @@
     "history_samples": 5
   },
   "mains_jouees": 192,
-  "duree_s": 2.3
+  "duree_s": 1.6
 }

@@ -51,10 +51,9 @@ joueur,micro_play_money,0,1,1,maniac|calling_station|TAG|calling_station|calling
 joueur,micro_play_money,0,1,1,maniac|calling_station|TAG|calling_station|calling_station,1,7,1,BB,40,2,1,connecté,0,3,value,4.95,4.95,0.0,15.0,97.0,4,3.0,False,True,1.0,97.0,72.66,72.66,flop,mise,KJo
 joueur,micro_play_money,0,1,1,maniac|calling_station|TAG|calling_station|calling_station,1,12,2,BB,40,2,1,connecté,0,3,value,11.48,11.48,0.0,34.8,92.05,3,7.95,False,True,1.0,92.05,72.66,72.66,turn,mise,KJo
 joueur,micro_play_money,0,1,1,maniac|calling_station|TAG|calling_station|calling_station,1,16,3,BB,40,2,0,connecté,0,3,value,22.85,22.85,0.0,69.24,80.57,2,19.43,False,True,1.0,80.57,72.66,72.66,river,mise,KJo
-joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,0,0,UTG,65,-1,0,préflop,1,4,open,3.0,3.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,-73.43,-73.43,préflop,relance,A9o
-joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,8,1,UTG,65,1,0,connecté,0,3,value,4.95,4.95,0.0,15.0,97.0,4,3.0,False,True,1.0,97.0,-73.43,-73.43,flop,mise,A9o
-joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,15,2,UTG,65,1,0,connecté,1,2,call-value,22.57,22.57,22.57,84.89,92.05,4,7.95,True,True,45.14,92.05,-73.43,-73.43,turn,paie,A9o
-joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,20,3,UTG,65,1,0,connecté,0,3,value,42.91,42.91,0.0,130.03,69.48,3,30.52,False,True,1.0,69.48,-73.43,-73.43,river,mise,A9o
+joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,0,0,UTG,65,-1,0,préflop,1,4,open,3.0,3.0,1.0,1.5,100.0,5,0.0,True,True,2.0,100.0,-7.95,-7.95,préflop,relance,A9o
+joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,8,1,UTG,65,1,0,connecté,0,3,value,4.95,4.95,0.0,15.0,97.0,4,3.0,False,True,1.0,97.0,-7.95,-7.95,flop,mise,A9o
+joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,15,2,UTG,65,1,0,connecté,1,0,fold,0.0,0.0,22.57,84.89,92.05,4,7.95,True,True,45.14,92.05,-7.95,-7.95,turn,se couche,A9o
 joueur,micro_play_money,0,3,3,maniac|calling_station|TAG|calling_station|calling_station,3,1,0,MP,79,-1,0,préflop,1,0,fold,0.0,0.0,1.0,2.5,100.0,5,0.0,True,True,2.0,100.0,0.0,0.0,préflop,se couche,K8o
 joueur,micro_play_money,0,4,4,maniac|calling_station|TAG|calling_station|calling_station,4,2,0,CO,168,-1,0,préflop,1,4,open,5.0,5.0,1.0,3.5,100.0,5,0.0,True,True,2.0,100.0,-78.2,-78.2,préflop,relance,22
 joueur,micro_play_money,0,4,4,maniac|calling_station|TAG|calling_station|calling_station,4,11,1,CO,168,1,0,connecté,1,2,call-value,8.13,8.13,8.13,42.26,95.0,4,5.0,True,True,16.26,95.0,-78.2,-78.2,flop,paie,22

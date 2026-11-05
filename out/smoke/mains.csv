@@ -31,7 +31,7 @@ bluff,micro_play_money,0,4,4,maniac|calling_station|TAG|calling_station|calling_
 bluff,micro_play_money,0,5,5,maniac|calling_station|TAG|calling_station|calling_station,5,BTN,81,36,25,40,31,37,23,-1,0.0,0.0,-1,False,0,0,8309839222257160841,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Jc8d,J8o,Qc9sJd7s,préflop,préflop
 joueur,micro_play_money,0,0,0,maniac|calling_station|TAG|calling_station|calling_station,0,SB,130,10,51,-1,-1,-1,-1,-1,-6.0,-6.0,-1,False,0,0,8309839222257160841,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,4hAs,A4o,,préflop,préflop
 joueur,micro_play_money,0,1,1,maniac|calling_station|TAG|calling_station|calling_station,1,BB,40,38,47,40,31,37,23,16,72.66,72.66,-1,True,4,3,8309839222257160841,1,1,0,1,0,0,0,0,0,1,1,1,3,0,0,0,0,JhKs,KJo,Qc9sJd7s6c,showdown,value bet
-joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,UTG,65,28,49,40,31,37,23,16,-73.43,-73.43,-1,True,4,5,8309839222257160841,1,1,1,0,0,1,1,0,0,1,1,0,2,1,1,1,1,9cAd,A9o,Qc9sJd7s6c,showdown,bluff
+joueur,micro_play_money,0,2,2,maniac|calling_station|TAG|calling_station|calling_station,2,UTG,65,28,49,40,31,37,23,16,-7.95,-7.95,-1,False,2,5,8309839222257160841,1,1,1,0,0,1,1,0,0,1,0,0,1,0,1,1,1,9cAd,A9o,Qc9sJd7s6c,turn,bluff
 joueur,micro_play_money,0,3,3,maniac|calling_station|TAG|calling_station|calling_station,3,MP,79,26,44,40,31,37,23,16,0.0,0.0,-1,False,0,0,8309839222257160841,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,8hKc,K8o,Qc9sJd7s6c,préflop,préflop
 joueur,micro_play_money,0,4,4,maniac|calling_station|TAG|calling_station|calling_station,4,CO,168,2,0,40,31,37,23,16,-78.2,-78.2,-1,True,4,2,8309839222257160841,1,1,1,0,0,0,0,0,0,1,1,0,0,3,1,1,1,2h2c,22,Qc9sJd7s6c,showdown,paie
 joueur,micro_play_money,0,5,5,maniac|calling_station|TAG|calling_station|calling_station,5,BTN,81,36,25,40,31,37,23,-1,0.0,0.0,-1,False,0,0,8309839222257160841,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Jc8d,J8o,Qc9sJd7s,préflop,préflop
@@ -129,7 +129,7 @@ joueur,mixte,0,0,0,nit|nit|LAG|TAG|maniac,0,SB,130,10,51,40,31,37,-1,-1,-3.0,-3.
 joueur,mixte,0,1,1,nit|nit|LAG|TAG|maniac,1,BB,40,38,47,40,31,37,23,16,15.27,15.27,-1,False,3,3,8309839222257160841,1,1,0,1,0,0,0,1,0,1,0,0,2,1,0,0,0,JhKs,KJo,Qc9sJd7s6c,river,value bet
 joueur,mixte,0,2,2,nit|nit|LAG|TAG|maniac,2,UTG,65,28,49,-1,-1,-1,-1,-1,-3.0,-3.0,-1,False,0,0,8309839222257160841,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,9cAd,A9o,,préflop,préflop
 joueur,mixte,0,3,3,nit|nit|LAG|TAG|maniac,3,MP,79,26,44,40,31,37,23,16,-3.0,-3.0,-1,False,1,1,8309839222257160841,1,1,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,8hKc,K8o,Qc9sJd7s6c,flop,check/abandon
-joueur,mixte,0,4,4,nit|nit|LAG|TAG|maniac,4,CO,168,2,0,40,31,37,23,16,-29.6,-29.6,-1,False,3,2,8309839222257160841,1,1,0,1,0,0,0,1,0,1,0,0,0,2,0,0,0,2h2c,22,Qc9sJd7s6c,river,paie
+joueur,mixte,0,4,4,nit|nit|LAG|TAG|maniac,4,CO,168,2,0,40,31,37,23,16,-3.0,-3.0,-1,False,1,1,8309839222257160841,1,1,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,2h2c,22,Qc9sJd7s6c,flop,check/abandon
 joueur,mixte,0,5,5,nit|nit|LAG|TAG|maniac,5,BTN,81,36,25,40,31,37,-1,-1,0.0,0.0,-1,False,0,0,8309839222257160841,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Jc8d,J8o,Qc9sJd,préflop,préflop
 equity_bot,mixte,0,0,0,nit|nit|LAG|TAG|maniac,0,SB,130,10,51,40,31,37,-1,-1,-3.0,-3.0,-1,False,1,1,8309839222257160841,1,1,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,4hAs,A4o,Qc9sJd,flop,check/abandon
 equity_bot,mixte,0,1,1,nit|nit|LAG|TAG|maniac,1,BB,40,38,47,40,31,37,23,16,-9.2,-9.2,-1,False,3,2,8309839222257160841,1,1,0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,JhKs,KJo,Qc9sJd7s6c,river,paie
