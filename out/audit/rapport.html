@@ -3665,541 +3665,286 @@ document.addEventListener('DOMContentLoaded', renderAll);
 </head><body><main>
 <button class="theme" onclick="toggleTheme()" aria-label="Basculer clair/sombre">clair / sombre</button>
 <h1>PokerLab — audit contrefactuel de Joueur</h1>
-<p class="sub">2000 décisions, 16 rollouts par action — généré le 2026-11-04 14:30</p>
+<p class="sub">2000 décisions, 16 rollouts par action — généré le 2026-11-05 00:07</p>
 <p class="sub"></p>
-<div class="card verdict"><h3>Verdict</h3><ol><li>EV perdue moyenne : 0.780 bb par décision auditée (2000 décisions).</li><li>Perte totale estimée sur l&#x27;échantillon : 1559.7 bb.</li><li>Fuite : river · petite paire · rien à payer → mise — 6.65 bb par décision (43 cas).</li><li>Fuite : turn · paire moyenne · face à une relance → paie — 65.81 bb par décision (3 cas).</li><li>Fuite : préflop · paire haute (TT+) · face à une relance → relance — 20.41 bb par décision (9 cas).</li></ol></div>
+<div class="card verdict"><h3>Verdict</h3><ol><li>EV perdue moyenne : 0.577 bb par décision auditée (2000 décisions).</li><li>Perte totale estimée sur l&#x27;échantillon : 1154.1 bb.</li><li>Fuite : river · petite paire · rien à payer → mise — 6.42 bb par décision (32 cas).</li><li>Fuite : préflop · As faible (A2-A9) · face à une relance → paie — 3.00 bb par décision (36 cas).</li><li>Fuite : turn · couleur · rien à payer → mise — 16.87 bb par décision (6 cas).</li></ol></div>
 <nav><a href="#s0">Audit contrefactuel — Joueur</a></nav>
-<section id="s0"><h2>Audit contrefactuel — Joueur</h2><div class="card"><div id="fig1" class="fig"></div><p class="legend-note">EV perdue = EV de la meilleure alternative − EV de l&#x27;action prise (validation croisée sur les rollouts).</p><script type="application/json" class="figdata" data-target="fig1">{"data":[{"type":"bar","marker":{"color":"#008300","line":{"color":"#fcfcfb","width":2}},"name":"bb","orientation":"h","y":["river \u00b7 petite paire \u00b7 rien \u00e0 payer \u2192 mise","turn \u00b7 paire moyenne \u00b7 face \u00e0 une relance \u2192 paie","pr\u00e9flop \u00b7 paire haute (TT+) \u00b7 face \u00e0 une relance \u2192 relance","river \u00b7 paire moyenne \u00b7 rien \u00e0 payer \u2192 mise","turn \u00b7 couleur \u00b7 rien \u00e0 payer \u2192 mise","river \u00b7 deux paires \u00b7 face \u00e0 une mise \u2192 relance","flop \u00b7 petite paire \u00b7 face \u00e0 une mise \u2192 paie","river \u00b7 top paire \u00b7 rien \u00e0 payer \u2192 mise","flop \u00b7 rien + tirage \u00b7 face \u00e0 une relance \u2192 paie","turn \u00b7 petite paire \u00b7 rien \u00e0 payer \u2192 mise","turn \u00b7 full ou mieux \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 As fort (AT+) \u00b7 sans relance devant \u2192 relance","river \u00b7 brelan \u00b7 rien \u00e0 payer \u2192 mise","river \u00b7 petite paire \u00b7 face \u00e0 une mise \u2192 paie","river \u00b7 petite paire \u00b7 face \u00e0 une relance \u2192 paie"],"x":[6.651802325581395,65.80520833333334,20.412879539092476,7.9749431818181815,18.421428571428574,46.785,13.804504209453336,4.563400000000001,39.33027699230679,2.004767238713667,33.393135146103894,2.0817471619092713,8.243281249999999,21.560000000000002,31.520000000000003],"error_x":{"type":"data","array":[2.5961169355181175,15.1625904074858,17.089492886405015,6.0324556451946645,11.035700305469149,58.20157054035353,12.378389982837282,6.605391074994396,20.403879321209498,3.624583819040098,41.888125168090184,2.786291360618112,8.812871296677107,2.596144747415905,7.408663861561408],"color":"#52514e","thickness":1.5,"width":4},"hovertemplate":"%{y}<br>%{x:.2f} bb<extra><\/extra>"}],"layout":{"template":"none","height":630,"margin":{"l":56,"r":16,"t":40,"b":56},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#52514e","size":12},"title":{"text":"EV perdue par d\u00e9cision, situations les plus co\u00fbteuses (class\u00e9es par perte totale)","font":{"color":"#0b0b0b","size":14},"x":0.01},"xaxis":{"gridcolor":"#e1e0d9","linecolor":"#c3c2b7","zerolinecolor":"#c3c2b7","automargin":true,"title":{"text":"bb"}},"yaxis":{"gridcolor":"#e1e0d9","linecolor":"#c3c2b7","zerolinecolor":"#c3c2b7","automargin":true,"autorange":"reversed"},"legend":{"orientation":"h","y":-0.2,"x":0,"font":{"color":"#52514e"}},"hoverlabel":{"bgcolor":"#fcfcfb","font":{"color":"#0b0b0b"},"bordercolor":"#c3c2b7"},"hovermode":"closest","showlegend":false}}</script></div><div class="card tbl"><table><thead><tr><th>situation</th><th>décisions</th><th>EV perdue / décision (bb)</th><th>IC ±</th><th>perte totale (bb)</th></tr></thead><tbody><tr><td>river · petite paire · rien à payer → mise</td><td>43</td><td>6.652</td><td>2.596</td><td>286.027</td></tr><tr><td>turn · paire moyenne · face à une relance → paie</td><td>3</td><td>65.805</td><td>15.163</td><td>197.416</td></tr><tr><td>préflop · paire haute (TT+) · face à une relance → relance</td><td>9</td><td>20.413</td><td>17.089</td><td>183.716</td></tr><tr><td>river · paire moyenne · rien à payer → mise</td><td>22</td><td>7.975</td><td>6.032</td><td>175.449</td></tr><tr><td>turn · couleur · rien à payer → mise</td><td>8</td><td>18.421</td><td>11.036</td><td>147.371</td></tr><tr><td>river · deux paires · face à une mise → relance</td><td>3</td><td>46.785</td><td>58.202</td><td>140.355</td></tr><tr><td>flop · petite paire · face à une mise → paie</td><td>10</td><td>13.805</td><td>12.378</td><td>138.045</td></tr><tr><td>river · top paire · rien à payer → mise</td><td>25</td><td>4.563</td><td>6.605</td><td>114.085</td></tr><tr><td>flop · rien + tirage · face à une relance → paie</td><td>2</td><td>39.330</td><td>20.404</td><td>78.661</td></tr><tr><td>turn · petite paire · rien à payer → mise</td><td>35</td><td>2.005</td><td>3.625</td><td>70.167</td></tr><tr><td>turn · full ou mieux · rien à payer → mise</td><td>2</td><td>33.393</td><td>41.888</td><td>66.786</td></tr><tr><td>préflop · As fort (AT+) · sans relance devant → relance</td><td>32</td><td>2.082</td><td>2.786</td><td>66.616</td></tr><tr><td>river · brelan · rien à payer → mise</td><td>8</td><td>8.243</td><td>8.813</td><td>65.946</td></tr><tr><td>river · petite paire · face à une mise → paie</td><td>3</td><td>21.560</td><td>2.596</td><td>64.680</td></tr><tr><td>river · petite paire · face à une relance → paie</td><td>2</td><td>31.520</td><td>7.409</td><td>63.040</td></tr></tbody></table></div><div class="card tbl"><table><thead><tr><th>street</th><th>décisions</th><th>EV perdue moy. (bb)</th><th>total (bb)</th></tr></thead><tbody><tr><td>flop</td><td>551</td><td>-0.553</td><td>-304.712</td></tr><tr><td>préflop</td><td>912</td><td>0.085</td><td>77.591</td></tr><tr><td>river</td><td>228</td><td>4.746</td><td>1 081.996</td></tr><tr><td>turn</td><td>309</td><td>2.281</td><td>704.835</td></tr></tbody></table><p class="legend-note">Par street.</p></div><details><summary>Exemples : river · petite paire · rien à payer → mise</summary><p>Décision n° 13 (river) : prise = action prise, meilleure = tapis, EV perdue ≈ 33.76 bb</p><p class='legend-note'>check : -21.21 bb · mise 0.5 pot : -40.33 bb · mise 1 pot : -47.13 bb · tapis : +0.37 bb · action prise : -33.39 bb</p><pre>PokerLab Hand #3709: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4669855166195672528
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-maniac (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-calling_station (€2.00 in chips)
-Seat 5: CO-nit_trappeur (€2.00 in chips)
-Seat 6: BTN-maniac (€2.00 in chips)
-SB-maniac: posts small blind €0.01
-BB-joueur: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BB-joueur [7c 7s]
-UTG-calling_station: calls €0.02
-MP-calling_station: folds
-CO-nit_trappeur: folds
-BTN-maniac: folds
-SB-maniac: calls €0.01
-BB-joueur: raises €0.08 to €0.10
-UTG-calling_station: calls €0.08
-SB-maniac: folds
-*** FLOP *** [3h 6c Js]
-BB-joueur: bets €0.07
-UTG-calling_station: calls €0.07
-*** TURN *** [3h 6c Js] [8d]
-BB-joueur: bets €0.12
-UTG-calling_station: raises €0.24 to €0.36
-BB-joueur: calls €0.24
-*** RIVER *** [3h 6c Js 8d] [Qd]
-BB-joueur: bets €0.36
-UTG-calling_station: calls €0.36
-*** SHOW DOWN ***
-BB-joueur: shows [7c 7s]
-UTG-calling_station: shows [6h 6s]
-UTG-calling_station collected €1.81 from pot
-*** SUMMARY ***
-Total pot €1.81 | Rake €0.00
-Board [3h 6c Js 8d Qd]
-Seat 1: SB-maniac folded | résultat -1.00 bb
-Seat 2: BB-joueur showed [7c 7s] | résultat -44.69 bb
-Seat 3: UTG-calling_station showed [6h 6s] | résultat +45.69 bb
-Seat 4: MP-calling_station folded | résultat +0.00 bb
-Seat 5: CO-nit_trappeur folded | résultat +0.00 bb
-Seat 6: BTN-maniac folded | résultat +0.00 bb
-</pre><p>Décision n° 18 (river) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 29.44 bb</p><p class='legend-note'>check : -29.40 bb · mise 0.5 pot : -58.85 bb</p><pre>PokerLab Hand #1093: Hold&#x27;em No Limit (€0.01/€0.02) - graine 9136987212290452290
+<section id="s0"><h2>Audit contrefactuel — Joueur</h2><div class="card"><div id="fig1" class="fig"></div><p class="legend-note">EV perdue = EV de la meilleure alternative − EV de l&#x27;action prise (validation croisée sur les rollouts).</p><script type="application/json" class="figdata" data-target="fig1">{"data":[{"type":"bar","marker":{"color":"#008300","line":{"color":"#fcfcfb","width":2}},"name":"bb","orientation":"h","y":["river \u00b7 petite paire \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 As faible (A2-A9) \u00b7 face \u00e0 une relance \u2192 paie","turn \u00b7 couleur \u00b7 rien \u00e0 payer \u2192 mise","river \u00b7 quinte \u00b7 rien \u00e0 payer \u2192 mise","turn \u00b7 overpair \u00b7 face \u00e0 une mise \u2192 paie","turn \u00b7 top paire \u00b7 rien \u00e0 payer \u2192 mise","turn \u00b7 overpair \u00b7 face \u00e0 une relance \u2192 paie","flop \u00b7 brelan \u00b7 rien \u00e0 payer \u2192 mise","pr\u00e9flop \u00b7 autres \u00b7 sans relance devant \u2192 se couche","turn \u00b7 deux paires \u00b7 face \u00e0 une mise \u2192 relance","turn \u00b7 petite paire \u00b7 face \u00e0 une mise \u2192 paie","river \u00b7 petite paire \u00b7 face \u00e0 une relance \u2192 paie","turn \u00b7 top paire \u00b7 face \u00e0 une mise \u2192 paie","river \u00b7 top paire \u00b7 rien \u00e0 payer \u2192 mise","flop \u00b7 top paire \u00b7 face \u00e0 une mise \u2192 paie"],"x":[6.42423828125,3.004240543455387,16.86873816287879,22.70421875,83.38,4.6264581741787625,78.63,12.739872081837198,0.5048035609873907,14.964049242424238,37.285,35.300000000000004,17.644616477272727,3.041420454545455,4.760203931070316],"error_x":{"type":"data","array":[3.5940065065580953,2.41716058102805,14.83052216101917,23.717966102668417,0.0,8.383259458226394,0.0,12.09183727038677,0.913591566579924,33.556449777972816,37.12661777714996,0.0,21.775929388897133,6.386225619531755,9.434143872495108],"color":"#52514e","thickness":1.5,"width":4},"hovertemplate":"%{y}<br>%{x:.2f} bb<extra><\/extra>"}],"layout":{"template":"none","height":630,"margin":{"l":56,"r":16,"t":40,"b":56},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#52514e","size":12},"title":{"text":"EV perdue par d\u00e9cision, situations les plus co\u00fbteuses (class\u00e9es par perte totale)","font":{"color":"#0b0b0b","size":14},"x":0.01},"xaxis":{"gridcolor":"#e1e0d9","linecolor":"#c3c2b7","zerolinecolor":"#c3c2b7","automargin":true,"title":{"text":"bb"}},"yaxis":{"gridcolor":"#e1e0d9","linecolor":"#c3c2b7","zerolinecolor":"#c3c2b7","automargin":true,"autorange":"reversed"},"legend":{"orientation":"h","y":-0.2,"x":0,"font":{"color":"#52514e"}},"hoverlabel":{"bgcolor":"#fcfcfb","font":{"color":"#0b0b0b"},"bordercolor":"#c3c2b7"},"hovermode":"closest","showlegend":false}}</script></div><div class="card tbl"><table><thead><tr><th>situation</th><th>décisions</th><th>EV perdue / décision (bb)</th><th>IC ±</th><th>perte totale (bb)</th></tr></thead><tbody><tr><td>river · petite paire · rien à payer → mise</td><td>32</td><td>6.424</td><td>3.594</td><td>205.576</td></tr><tr><td>préflop · As faible (A2-A9) · face à une relance → paie</td><td>36</td><td>3.004</td><td>2.417</td><td>108.153</td></tr><tr><td>turn · couleur · rien à payer → mise</td><td>6</td><td>16.869</td><td>14.831</td><td>101.212</td></tr><tr><td>river · quinte · rien à payer → mise</td><td>4</td><td>22.704</td><td>23.718</td><td>90.817</td></tr><tr><td>turn · overpair · face à une mise → paie</td><td>1</td><td>83.380</td><td>0.000</td><td>83.380</td></tr><tr><td>turn · top paire · rien à payer → mise</td><td>17</td><td>4.626</td><td>8.383</td><td>78.650</td></tr><tr><td>turn · overpair · face à une relance → paie</td><td>1</td><td>78.630</td><td>0.000</td><td>78.630</td></tr><tr><td>flop · brelan · rien à payer → mise</td><td>6</td><td>12.740</td><td>12.092</td><td>76.439</td></tr><tr><td>préflop · autres · sans relance devant → se couche</td><td>149</td><td>0.505</td><td>0.914</td><td>75.216</td></tr><tr><td>turn · deux paires · face à une mise → relance</td><td>5</td><td>14.964</td><td>33.556</td><td>74.820</td></tr><tr><td>turn · petite paire · face à une mise → paie</td><td>2</td><td>37.285</td><td>37.127</td><td>74.570</td></tr><tr><td>river · petite paire · face à une relance → paie</td><td>2</td><td>35.300</td><td>0.000</td><td>70.600</td></tr><tr><td>turn · top paire · face à une mise → paie</td><td>4</td><td>17.645</td><td>21.776</td><td>70.578</td></tr><tr><td>river · top paire · rien à payer → mise</td><td>22</td><td>3.041</td><td>6.386</td><td>66.911</td></tr><tr><td>flop · top paire · face à une mise → paie</td><td>14</td><td>4.760</td><td>9.434</td><td>66.643</td></tr></tbody></table></div><div class="card tbl"><table><thead><tr><th>street</th><th>décisions</th><th>EV perdue moy. (bb)</th><th>total (bb)</th></tr></thead><tbody><tr><td>flop</td><td>588</td><td>-0.507</td><td>-298.137</td></tr><tr><td>préflop</td><td>902</td><td>-0.057</td><td>-51.489</td></tr><tr><td>river</td><td>209</td><td>3.610</td><td>754.592</td></tr><tr><td>turn</td><td>301</td><td>2.489</td><td>749.092</td></tr></tbody></table><p class="legend-note">Par street.</p></div><details><summary>Exemples : river · petite paire · rien à payer → mise</summary><p>Décision n° 16 (river) : prise = action prise, meilleure = check, EV perdue ≈ 28.18 bb</p><p class='legend-note'>check : -33.98 bb · mise 0.5 pot : -78.65 bb · mise 1 pot : -89.57 bb · action prise : -62.16 bb</p><pre>PokerLab Hand #367: Hold&#x27;em No Limit (€0.01/€0.02) - graine 2694717970544118769
 Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
 Seat 1: SB-nit_trappeur (€2.00 in chips)
 Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
 Seat 4: MP-calling_station (€2.00 in chips)
 Seat 5: CO-calling_station (€2.00 in chips)
 Seat 6: BTN-calling_station (€2.00 in chips)
 SB-nit_trappeur: posts small blind €0.01
 BB-joueur: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to BB-joueur [3h 5h]
-UTG-calling_station: calls €0.02
+Dealt to BB-joueur [2s 2c]
+UTG-maniac: folds
 MP-calling_station: calls €0.02
 CO-calling_station: calls €0.02
 BTN-calling_station: calls €0.02
 SB-nit_trappeur: folds
-BB-joueur: raises €0.12 to €0.14
-UTG-calling_station: calls €0.12
-MP-calling_station: folds
-CO-calling_station: calls €0.12
-BTN-calling_station: calls €0.12
-*** FLOP *** [3s Ac 2s]
-BB-joueur: bets €0.19
-UTG-calling_station: calls €0.19
-CO-calling_station: calls €0.19
-BTN-calling_station: calls €0.19
-*** TURN *** [3s Ac 2s] [As]
-BB-joueur: bets €0.45
-UTG-calling_station: calls €0.45
-CO-calling_station: calls €0.45
-BTN-calling_station: calls €0.45
-*** RIVER *** [3s Ac 2s As] [8d]
-BB-joueur: bets €1.21 and is all-in
-UTG-calling_station: calls €1.21 and is all-in
-CO-calling_station: folds
-BTN-calling_station: folds
-*** SHOW DOWN ***
-BB-joueur: shows [3h 5h]
-UTG-calling_station: shows [Ah 8h]
-UTG-calling_station collected €5.60 from pot
-*** SUMMARY ***
-Total pot €5.60 | Rake €0.00
-Board [3s Ac 2s As 8d]
-Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
-Seat 2: BB-joueur showed [3h 5h] | résultat -100.00 bb
-Seat 3: UTG-calling_station showed [Ah 8h] | résultat +180.16 bb
-Seat 4: MP-calling_station folded | résultat -1.00 bb
-Seat 5: CO-calling_station folded | résultat -39.33 bb
-Seat 6: BTN-calling_station folded | résultat -39.33 bb
-</pre><p>Décision n° 20 (river) : prise = action prise, meilleure = tapis, EV perdue ≈ 22.88 bb</p><p class='legend-note'>check : +11.68 bb · mise 0.5 pot : +7.71 bb · mise 1 pot : +5.72 bb · tapis : +32.61 bb · action prise : +9.73 bb</p><pre>PokerLab Hand #4167: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3117169278419531825
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-TAG (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-joueur (€2.00 in chips)
-Seat 5: CO-calling_station (€2.00 in chips)
-Seat 6: BTN-nit (€2.00 in chips)
-SB-TAG: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to MP-joueur [As 2d]
-UTG-calling_station: calls €0.02
-MP-joueur: raises €0.06 to €0.08
-CO-calling_station: calls €0.08
-BTN-nit: folds
-SB-TAG: folds
-BB-calling_station: calls €0.06
-UTG-calling_station: calls €0.06
-*** FLOP *** [2h 4c 6c]
-BB-calling_station: checks
-UTG-calling_station: checks
-MP-joueur: bets €0.11
-CO-calling_station: calls €0.11
-BB-calling_station: calls €0.11
-UTG-calling_station: calls €0.11
-*** TURN *** [2h 4c 6c] [9h]
-BB-calling_station: checks
-UTG-calling_station: checks
-MP-joueur: bets €0.25
-CO-calling_station: folds
-BB-calling_station: calls €0.25
-UTG-calling_station: folds
-*** RIVER *** [2h 4c 6c 9h] [7s]
-BB-calling_station: checks
-MP-joueur: bets €0.42
-BB-calling_station: calls €0.42
-*** SHOW DOWN ***
-BB-calling_station: shows [Kc 9c]
-MP-joueur: shows [As 2d]
-BB-calling_station collected €2.11 from pot
-*** SUMMARY ***
-Total pot €2.11 | Rake €0.00
-Board [2h 4c 6c 9h 7s]
-Seat 1: SB-TAG folded | résultat -0.50 bb
-Seat 2: BB-calling_station showed [Kc 9c] | résultat +62.41 bb
-Seat 3: UTG-calling_station folded | résultat -9.44 bb
-Seat 4: MP-joueur showed [As 2d] | résultat -43.03 bb
-Seat 5: CO-calling_station folded | résultat -9.44 bb
-Seat 6: BTN-nit folded | résultat +0.00 bb
-</pre></details><details><summary>Exemples : turn · paire moyenne · face à une relance → paie</summary><p>Décision n° 15 (turn) : prise = paie, meilleure = se couche, EV perdue ≈ 78.47 bb</p><p class='legend-note'>se couche : -21.53 bb · paie : -100.00 bb · relance 0.5 pot : -100.00 bb</p><pre>PokerLab Hand #5310: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4817386747363131587
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-TAG (€2.00 in chips)
-Seat 5: CO-maniac (€2.00 in chips)
-Seat 6: BTN-calling_station (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to SB-joueur [Qs Ks]
-UTG-calling_station: calls €0.02
-MP-TAG: folds
-CO-maniac: raises €0.06 to €0.08
-BTN-calling_station: folds
-SB-joueur: calls €0.07
-BB-calling_station: calls €0.06
-UTG-calling_station: calls €0.06
-*** FLOP *** [Ac As Qd]
-SB-joueur: bets €0.11
-BB-calling_station: calls €0.11
-UTG-calling_station: calls €0.11
-CO-maniac: calls €0.11
-*** TURN *** [Ac As Qd] [3h]
-SB-joueur: bets €0.24
-BB-calling_station: raises €0.49 to €0.73
-UTG-calling_station: calls €0.73
-CO-maniac: folds
-SB-joueur: calls €0.49
-*** RIVER *** [Ac As Qd 3h] [5s]
-SB-joueur: bets €1.08 and is all-in
-BB-calling_station: calls €1.08 and is all-in
-UTG-calling_station: folds
-*** SHOW DOWN ***
-SB-joueur: shows [Qs Ks]
-BB-calling_station: shows [2s Ah]
-BB-calling_station collected €5.11 from pot
-*** SUMMARY ***
-Total pot €5.11 | Rake €0.00
-Board [Ac As Qd 3h 5s]
-Seat 1: SB-joueur showed [Qs Ks] | résultat -100.00 bb
-Seat 2: BB-calling_station showed [2s Ah] | résultat +155.31 bb
-Seat 3: UTG-calling_station folded | résultat -46.03 bb
-Seat 4: MP-TAG folded | résultat +0.00 bb
-Seat 5: CO-maniac folded | résultat -9.28 bb
-Seat 6: BTN-calling_station folded | résultat +0.00 bb
-</pre><p>Décision n° 17 (turn) : prise = paie, meilleure = se couche, EV perdue ≈ 67.17 bb</p><p class='legend-note'>se couche : -32.83 bb · paie : -100.00 bb · relance 0.5 pot : -86.56 bb</p><pre>PokerLab Hand #5743: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5826033812871584501
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-calling_station (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-calling_station (€2.00 in chips)
-Seat 5: CO-nit_trappeur (€2.00 in chips)
-Seat 6: BTN-maniac (€2.00 in chips)
-SB-calling_station: posts small blind €0.01
-BB-joueur: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BB-joueur [Ts Th]
-UTG-calling_station: calls €0.02
-MP-calling_station: calls €0.02
-CO-nit_trappeur: folds
-BTN-maniac: calls €0.02
-SB-calling_station: folds
 BB-joueur: raises €0.10 to €0.12
-UTG-calling_station: calls €0.10
 MP-calling_station: calls €0.10
-BTN-maniac: calls €0.10
-*** FLOP *** [7h Jc 7c]
+CO-calling_station: calls €0.10
+BTN-calling_station: calls €0.10
+*** FLOP *** [Kh 9h Ts]
 BB-joueur: bets €0.16
-UTG-calling_station: calls €0.16
 MP-calling_station: calls €0.16
-BTN-maniac: calls €0.16
-*** TURN *** [7h Jc 7c] [4h]
-BB-joueur: bets €0.38
-UTG-calling_station: calls €0.38
-MP-calling_station: calls €0.38
-BTN-maniac: raises €0.75 to €1.12
-BB-joueur: calls €0.75
-UTG-calling_station: calls €0.75
-MP-calling_station: folds
-*** RIVER *** [7h Jc 7c 4h] [3s]
-BB-joueur: bets €0.59 and is all-in
-UTG-calling_station: folds
-BTN-maniac: calls €0.59 and is all-in
-*** SHOW DOWN ***
-BB-joueur: shows [Ts Th]
-BTN-maniac: shows [Js 7d]
-BTN-maniac collected €6.07 from pot
-*** SUMMARY ***
-Total pot €6.07 | Rake €0.00
-Board [7h Jc 7c 4h 3s]
-Seat 1: SB-calling_station folded | résultat -0.50 bb
-Seat 2: BB-joueur showed [Ts Th] | résultat -100.00 bb
-Seat 3: UTG-calling_station folded | résultat -70.33 bb
-Seat 4: MP-calling_station folded | résultat -32.83 bb
-Seat 5: CO-nit_trappeur folded | résultat +0.00 bb
-Seat 6: BTN-maniac showed [Js 7d] | résultat +203.66 bb
-</pre><p>Décision n° 14 (turn) : prise = paie, meilleure = se couche, EV perdue ≈ 51.78 bb</p><p class='legend-note'>se couche : -20.77 bb · paie : -72.55 bb · relance 0.5 pot : -93.20 bb</p><pre>PokerLab Hand #1698: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5090935878327485403
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-maniac (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-maniac (€2.00 in chips)
-Seat 5: CO-calling_station (€2.00 in chips)
-Seat 6: BTN-LAG (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-maniac: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to SB-joueur [Ts 7s]
-UTG-calling_station: calls €0.02
-MP-maniac: raises €0.06 to €0.08
-CO-calling_station: calls €0.08
-BTN-LAG: folds
-SB-joueur: calls €0.07
-BB-maniac: folds
-UTG-calling_station: calls €0.06
-*** FLOP *** [Qc 5h Th]
-SB-joueur: bets €0.11
-UTG-calling_station: folds
-MP-maniac: calls €0.11
-CO-calling_station: calls €0.11
-*** TURN *** [Qc 5h Th] [6h]
-SB-joueur: bets €0.22
-MP-maniac: raises €0.45 to €0.67
-CO-calling_station: calls €0.67
-SB-joueur: calls €0.45
-*** RIVER *** [Qc 5h Th 6h] [8c]
-SB-joueur: bets €1.14 and is all-in
-MP-maniac: calls €1.14 and is all-in
-CO-calling_station: folds
-*** SHOW DOWN ***
-SB-joueur: shows [Ts 7s]
-MP-maniac: shows [Kh 8h]
-MP-maniac collected €4.96 from pot
-*** SUMMARY ***
-Total pot €4.96 | Rake €0.00
-Board [Qc 5h Th 6h 8c]
-Seat 1: SB-joueur showed [Ts 7s] | résultat -100.00 bb
-Seat 2: BB-maniac folded | résultat -1.00 bb
-Seat 3: UTG-calling_station folded | résultat -4.00 bb
-Seat 4: MP-maniac showed [Kh 8h] | résultat +148.09 bb
-Seat 5: CO-calling_station folded | résultat -43.09 bb
-Seat 6: BTN-LAG folded | résultat +0.00 bb
-</pre></details><details><summary>Exemples : préflop · paire haute (TT+) · face à une relance → relance</summary><p>Décision n° 5 (préflop) : prise = relance 3x, meilleure = paie, EV perdue ≈ 63.13 bb</p><p class='legend-note'>se couche : -1.00 bb · paie : +72.00 bb · relance min : +8.02 bb · relance 3x : +8.86 bb · tapis : +14.74 bb</p><pre>PokerLab Hand #1477: Hold&#x27;em No Limit (€0.01/€0.02) - graine 1340997967409063642
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-nit_trappeur (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-nit_trappeur (€2.00 in chips)
-Seat 4: MP-calling_station (€2.00 in chips)
-Seat 5: CO-TAG (€2.00 in chips)
-Seat 6: BTN-maniac (€2.00 in chips)
-SB-nit_trappeur: posts small blind €0.01
-BB-joueur: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BB-joueur [As Ah]
-UTG-nit_trappeur: raises €0.04 to €0.06
-MP-calling_station: calls €0.06
-CO-TAG: folds
-BTN-maniac: calls €0.06
-SB-nit_trappeur: folds
-BB-joueur: raises €0.12 to €0.18
-UTG-nit_trappeur: calls €0.12
-MP-calling_station: folds
-BTN-maniac: folds
-*** FLOP *** [Td 4c 3d]
-BB-joueur: bets €0.24
-UTG-nit_trappeur: folds
-Uncalled bet (€0.24) returned to BB-joueur
-BB-joueur collected €0.49 from pot
-*** SUMMARY ***
-Total pot €0.49 | Rake €0.00
-Board [Td 4c 3d]
-Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
-Seat 2: BB-joueur won uncontested | résultat +15.50 bb
-Seat 3: UTG-nit_trappeur folded | résultat -9.00 bb
-Seat 4: MP-calling_station folded | résultat -3.00 bb
-Seat 5: CO-TAG folded | résultat +0.00 bb
-Seat 6: BTN-maniac folded | résultat -3.00 bb
-</pre><p>Décision n° 1 (préflop) : prise = relance 3x, meilleure = paie, EV perdue ≈ 49.87 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : +67.84 bb · relance min : +15.55 bb · relance 3x : +17.97 bb · tapis : +9.52 bb</p><pre>PokerLab Hand #3003: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3235782556035150271
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-maniac (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-maniac (€2.00 in chips)
-Seat 4: MP-joueur (€2.00 in chips)
-Seat 5: CO-calling_station (€2.00 in chips)
-Seat 6: BTN-calling_station (€2.00 in chips)
-SB-maniac: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to MP-joueur [Kh Ks]
-UTG-maniac: raises €0.04 to €0.06
-MP-joueur: raises €0.12 to €0.18
-CO-calling_station: folds
+CO-calling_station: calls €0.16
 BTN-calling_station: folds
-SB-maniac: folds
-BB-calling_station: folds
-UTG-maniac: raises €1.82 to €2.00 and is all-in
-MP-joueur: calls €1.82 and is all-in
-*** FLOP *** [5c 7h 7s]
-*** TURN *** [5c 7h 7s] [As]
-*** RIVER *** [5c 7h 7s As] [3s]
+*** TURN *** [Kh 9h Ts] [5h]
+BB-joueur: bets €0.32
+MP-calling_station: calls €0.32
+CO-calling_station: calls €0.32
+*** RIVER *** [Kh 9h Ts 5h] [Js]
+BB-joueur: bets €0.64
+MP-calling_station: calls €0.64
+CO-calling_station: calls €0.64
 *** SHOW DOWN ***
-UTG-maniac: shows [Ah Ad]
-MP-joueur: shows [Kh Ks]
-UTG-maniac collected €4.03 from pot
+BB-joueur: shows [2s 2c]
+MP-calling_station: shows [Ah 2h]
+CO-calling_station: shows [Td 9d]
+MP-calling_station collected €3.86 from pot
 *** SUMMARY ***
-Total pot €4.03 | Rake €0.00
-Board [5c 7h 7s As 3s]
-Seat 1: SB-maniac folded | résultat -0.50 bb | all-in EV -0.50 bb
-Seat 2: BB-calling_station folded | résultat -1.00 bb | all-in EV -1.00 bb
-Seat 3: UTG-maniac showed [Ah Ad] | résultat +101.50 bb | all-in EV +68.62 bb
-Seat 4: MP-joueur showed [Kh Ks] | résultat -100.00 bb | all-in EV -67.12 bb
-Seat 5: CO-calling_station folded | résultat +0.00 bb | all-in EV +0.00 bb
-Seat 6: BTN-calling_station folded | résultat +0.00 bb | all-in EV +0.00 bb
-</pre><p>Décision n° 5 (préflop) : prise = relance 3x, meilleure = paie, EV perdue ≈ 43.28 bb</p><p class='legend-note'>se couche : -1.00 bb · paie : +61.73 bb · relance min : +18.46 bb · relance 3x : +18.46 bb · tapis : +18.46 bb</p><pre>PokerLab Hand #5035: Hold&#x27;em No Limit (€0.01/€0.02) - graine 2672656230232056340
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-TAG (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-calling_station (€2.00 in chips)
-Seat 5: CO-maniac (€2.00 in chips)
-Seat 6: BTN-nit (€2.00 in chips)
-SB-TAG: posts small blind €0.01
-BB-joueur: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BB-joueur [As Ad]
-UTG-calling_station: raises €0.04 to €0.06
-MP-calling_station: calls €0.06
-CO-maniac: calls €0.06
-BTN-nit: folds
-SB-TAG: folds
-BB-joueur: raises €0.12 to €0.18
-UTG-calling_station: raises €1.82 to €2.00 and is all-in
-MP-calling_station: folds
-CO-maniac: folds
-BB-joueur: calls €1.82 and is all-in
-*** FLOP *** [3c 7h 3h]
-*** TURN *** [3c 7h 3h] [Kh]
-*** RIVER *** [3c 7h 3h Kh] [5h]
-*** SHOW DOWN ***
-BB-joueur: shows [As Ad]
-UTG-calling_station: shows [Jd Js]
-BB-joueur collected €4.13 from pot
-*** SUMMARY ***
-Total pot €4.13 | Rake €0.00
-Board [3c 7h 3h Kh 5h]
-Seat 1: SB-TAG folded | résultat -0.50 bb | all-in EV -0.50 bb
-Seat 2: BB-joueur showed [As Ad] | résultat +106.50 bb | all-in EV +67.68 bb
-Seat 3: UTG-calling_station showed [Jd Js] | résultat -100.00 bb | all-in EV -61.18 bb
-Seat 4: MP-calling_station folded | résultat -3.00 bb | all-in EV -3.00 bb
-Seat 5: CO-maniac folded | résultat -3.00 bb | all-in EV -3.00 bb
-Seat 6: BTN-nit folded | résultat +0.00 bb | all-in EV +0.00 bb
-</pre></details><details><summary>Exemples : river · paire moyenne · rien à payer → mise</summary><p>Décision n° 15 (river) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 56.91 bb</p><p class='legend-note'>check : -43.09 bb · mise 0.5 pot : -100.00 bb</p><pre>PokerLab Hand #1698: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5090935878327485403
+Total pot €3.86 | Rake €0.00
+Board [Kh 9h Ts 5h Js]
+Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
+Seat 2: BB-joueur showed [2s 2c] | résultat -62.16 bb
+Seat 3: UTG-maniac folded | résultat +0.00 bb
+Seat 4: MP-calling_station showed [Ah 2h] | résultat +130.82 bb
+Seat 5: CO-calling_station showed [Td 9d] | résultat -62.16 bb
+Seat 6: BTN-calling_station folded | résultat -6.00 bb
+</pre><p>Décision n° 13 (river) : prise = action prise, meilleure = check, EV perdue ≈ 27.61 bb</p><p class='legend-note'>check : -15.83 bb · mise 0.5 pot : -41.57 bb · mise 1 pot : -60.88 bb · tapis : -91.52 bb · action prise : -43.44 bb</p><pre>PokerLab Hand #5046: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6235940266968056448
 Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
 Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-maniac (€2.00 in chips)
+Seat 2: BB-nit (€2.00 in chips)
 Seat 3: UTG-calling_station (€2.00 in chips)
 Seat 4: MP-maniac (€2.00 in chips)
 Seat 5: CO-calling_station (€2.00 in chips)
-Seat 6: BTN-LAG (€2.00 in chips)
+Seat 6: BTN-nit_trappeur (€2.00 in chips)
 SB-joueur: posts small blind €0.01
-BB-maniac: posts big blind €0.02
+BB-nit: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to SB-joueur [Ts 7s]
-UTG-calling_station: calls €0.02
-MP-maniac: raises €0.06 to €0.08
-CO-calling_station: calls €0.08
-BTN-LAG: folds
-SB-joueur: calls €0.07
-BB-maniac: folds
-UTG-calling_station: calls €0.06
-*** FLOP *** [Qc 5h Th]
-SB-joueur: bets €0.11
-UTG-calling_station: folds
-MP-maniac: calls €0.11
-CO-calling_station: calls €0.11
-*** TURN *** [Qc 5h Th] [6h]
-SB-joueur: bets €0.22
-MP-maniac: raises €0.45 to €0.67
-CO-calling_station: calls €0.67
-SB-joueur: calls €0.45
-*** RIVER *** [Qc 5h Th 6h] [8c]
-SB-joueur: bets €1.14 and is all-in
-MP-maniac: calls €1.14 and is all-in
-CO-calling_station: folds
-*** SHOW DOWN ***
-SB-joueur: shows [Ts 7s]
-MP-maniac: shows [Kh 8h]
-MP-maniac collected €4.96 from pot
-*** SUMMARY ***
-Total pot €4.96 | Rake €0.00
-Board [Qc 5h Th 6h 8c]
-Seat 1: SB-joueur showed [Ts 7s] | résultat -100.00 bb
-Seat 2: BB-maniac folded | résultat -1.00 bb
-Seat 3: UTG-calling_station folded | résultat -4.00 bb
-Seat 4: MP-maniac showed [Kh 8h] | résultat +148.09 bb
-Seat 5: CO-calling_station folded | résultat -43.09 bb
-Seat 6: BTN-LAG folded | résultat +0.00 bb
-</pre><p>Décision n° 12 (river) : prise = action prise, meilleure = mise 1 pot, EV perdue ≈ 29.26 bb</p><p class='legend-note'>check : -30.91 bb · mise 0.5 pot : -52.50 bb · mise 1 pot : -14.06 bb · action prise : -43.32 bb</p><pre>PokerLab Hand #4272: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6588005854049490115
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-joueur (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-nit_trappeur (€2.00 in chips)
-Seat 5: CO-nit (€2.00 in chips)
-Seat 6: BTN-maniac (€2.00 in chips)
-SB-joueur: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to SB-joueur [Td 9d]
-UTG-calling_station: raises €0.04 to €0.06
-MP-nit_trappeur: folds
-CO-nit: folds
-BTN-maniac: folds
-SB-joueur: calls €0.05
-BB-calling_station: calls €0.04
-*** FLOP *** [3h 9s 5d]
-SB-joueur: bets €0.09
-BB-calling_station: folds
-UTG-calling_station: raises €0.18 to €0.27
-SB-joueur: calls €0.18
-*** TURN *** [3h 9s 5d] [4s]
-SB-joueur: bets €0.36
-UTG-calling_station: calls €0.36
-*** RIVER *** [3h 9s 5d 4s] [Js]
-SB-joueur: bets €0.48
-UTG-calling_station: calls €0.48
-*** SHOW DOWN ***
-SB-joueur: shows [Td 9d]
-UTG-calling_station: shows [9h 9c]
-UTG-calling_station collected €2.39 from pot
-*** SUMMARY ***
-Total pot €2.39 | Rake €0.00
-Board [3h 9s 5d 4s Js]
-Seat 1: SB-joueur showed [Td 9d] | résultat -58.26 bb
-Seat 2: BB-calling_station folded | résultat -3.00 bb
-Seat 3: UTG-calling_station showed [9h 9c] | résultat +61.26 bb
-Seat 4: MP-nit_trappeur folded | résultat +0.00 bb
-Seat 5: CO-nit folded | résultat +0.00 bb
-Seat 6: BTN-maniac folded | résultat +0.00 bb
-</pre><p>Décision n° 16 (river) : prise = action prise, meilleure = check, EV perdue ≈ 20.77 bb</p><p class='legend-note'>check : -18.98 bb · mise 0.5 pot : -50.46 bb · mise 1 pot : -81.93 bb · tapis : -67.38 bb · action prise : -39.76 bb</p><pre>PokerLab Hand #3293: Hold&#x27;em No Limit (€0.01/€0.02) - graine 1680862281394194881
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-calling_station (€2.00 in chips)
-Seat 2: BB-LAG (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-maniac (€2.00 in chips)
-Seat 5: CO-calling_station (€2.00 in chips)
-Seat 6: BTN-joueur (€2.00 in chips)
-SB-calling_station: posts small blind €0.01
-BB-LAG: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BTN-joueur [Th Jd]
+Dealt to SB-joueur [8d 4d]
 UTG-calling_station: folds
 MP-maniac: raises €0.04 to €0.06
 CO-calling_station: calls €0.06
-BTN-joueur: calls €0.06
-SB-calling_station: folds
-BB-LAG: folds
-*** FLOP *** [Kd 9s Jh]
-MP-maniac: bets €0.17
+BTN-nit_trappeur: calls €0.06
+SB-joueur: calls €0.05
+BB-nit: folds
+*** FLOP *** [8c 7h Jh]
+SB-joueur: bets €0.09
+MP-maniac: calls €0.09
+CO-calling_station: calls €0.09
+BTN-nit_trappeur: folds
+*** TURN *** [8c 7h Jh] [5h]
+SB-joueur: bets €0.17
+MP-maniac: calls €0.17
 CO-calling_station: calls €0.17
-BTN-joueur: calls €0.17
-*** TURN *** [Kd 9s Jh] [3d]
-MP-maniac: checks
-CO-calling_station: checks
-BTN-joueur: bets €0.24
-MP-maniac: calls €0.24
-CO-calling_station: calls €0.24
-*** RIVER *** [Kd 9s Jh 3d] [2s]
-MP-maniac: checks
-CO-calling_station: checks
-BTN-joueur: bets €0.47
-MP-maniac: folds
-CO-calling_station: calls €0.47
+*** RIVER *** [8c 7h Jh 5h] [9h]
+SB-joueur: bets €0.34
+MP-maniac: calls €0.34
+CO-calling_station: calls €0.34
 *** SHOW DOWN ***
-CO-calling_station: shows [Qd 6h]
-BTN-joueur: shows [Th Jd]
-BTN-joueur collected €2.39 from pot
+SB-joueur: shows [8d 4d]
+MP-maniac: shows [Kc Tc]
+CO-calling_station: shows [3d Kh]
+CO-calling_station collected €2.05 from pot
+*** SUMMARY ***
+Total pot €2.05 | Rake €0.00
+Board [8c 7h Jh 5h 9h]
+Seat 1: SB-joueur showed [8d 4d] | résultat -32.82 bb
+Seat 2: BB-nit folded | résultat -1.00 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-maniac showed [Kc Tc] | résultat -32.82 bb
+Seat 5: CO-calling_station showed [3d Kh] | résultat +69.64 bb
+Seat 6: BTN-nit_trappeur folded | résultat -3.00 bb
+</pre><p>Décision n° 12 (river) : prise = action prise, meilleure = mise 1 pot, EV perdue ≈ 22.15 bb</p><p class='legend-note'>check : -12.38 bb · mise 0.5 pot : -19.25 bb · mise 1 pot : +7.25 bb · tapis : -3.30 bb · action prise : -14.91 bb</p><pre>PokerLab Hand #199: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3061662736455782015
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-nit_trappeur (€2.00 in chips)
+Seat 4: MP-nit (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-nit_trappeur (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [4c 4h]
+UTG-nit_trappeur: raises €0.04 to €0.06
+MP-nit: folds
+CO-maniac: calls €0.06
+BTN-nit_trappeur: folds
+SB-maniac: folds
+BB-joueur: calls €0.04
+*** FLOP *** [Jd Tc 8h]
+BB-joueur: bets €0.06
+UTG-nit_trappeur: calls €0.06
+CO-maniac: calls €0.06
+*** TURN *** [Jd Tc 8h] [3c]
+BB-joueur: bets €0.12
+UTG-nit_trappeur: calls €0.12
+CO-maniac: folds
+*** RIVER *** [Jd Tc 8h 3c] [9d]
+BB-joueur: bets €0.21
+UTG-nit_trappeur: calls €0.21
+*** SHOW DOWN ***
+BB-joueur: shows [4c 4h]
+UTG-nit_trappeur: shows [Td Ts]
+UTG-nit_trappeur collected €1.04 from pot
+*** SUMMARY ***
+Total pot €1.04 | Rake €0.00
+Board [Jd Tc 8h 3c 9d]
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-joueur showed [4c 4h] | résultat -22.74 bb
+Seat 3: UTG-nit_trappeur showed [Td Ts] | résultat +29.38 bb
+Seat 4: MP-nit folded | résultat +0.00 bb
+Seat 5: CO-maniac folded | résultat -6.14 bb
+Seat 6: BTN-nit_trappeur folded | résultat +0.00 bb
+</pre></details><details><summary>Exemples : préflop · As faible (A2-A9) · face à une relance → paie</summary><p>Décision n° 4 (préflop) : prise = paie, meilleure = relance min, EV perdue ≈ 22.51 bb</p><p class='legend-note'>se couche : -0.50 bb · paie : -14.63 bb · relance min : +7.88 bb · relance 3x : +7.25 bb · tapis : +4.21 bb</p><pre>PokerLab Hand #5664: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4029045264553093406
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-nit_trappeur (€2.00 in chips)
+Seat 5: CO-nit_trappeur (€2.00 in chips)
+Seat 6: BTN-nit_trappeur (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [Ad 4h]
+UTG-calling_station: calls €0.02
+MP-nit_trappeur: raises €0.06 to €0.08
+CO-nit_trappeur: folds
+BTN-nit_trappeur: calls €0.08
+SB-joueur: calls €0.07
+BB-maniac: folds
+UTG-calling_station: calls €0.06
+*** FLOP *** [Ts Qh 5c]
+SB-joueur: checks
+UTG-calling_station: checks
+MP-nit_trappeur: bets €0.23
+BTN-nit_trappeur: calls €0.23
+SB-joueur: folds
+UTG-calling_station: calls €0.23
+*** TURN *** [Ts Qh 5c] [Kh]
+UTG-calling_station: checks
+MP-nit_trappeur: checks
+BTN-nit_trappeur: checks
+*** RIVER *** [Ts Qh 5c Kh] [8c]
+UTG-calling_station: checks
+MP-nit_trappeur: checks
+BTN-nit_trappeur: checks
+*** SHOW DOWN ***
+UTG-calling_station: shows [Tc Qc]
+MP-nit_trappeur: shows [Jc Js]
+BTN-nit_trappeur: shows [Qs Ac]
+UTG-calling_station collected €1.03 from pot
+*** SUMMARY ***
+Total pot €1.03 | Rake €0.00
+Board [Ts Qh 5c Kh 8c]
+Seat 1: SB-joueur folded | résultat -4.00 bb
+Seat 2: BB-maniac folded | résultat -1.00 bb
+Seat 3: UTG-calling_station showed [Tc Qc] | résultat +36.06 bb
+Seat 4: MP-nit_trappeur showed [Jc Js] | résultat -15.53 bb
+Seat 5: CO-nit_trappeur folded | résultat +0.00 bb
+Seat 6: BTN-nit_trappeur showed [Qs Ac] | résultat -15.53 bb
+</pre><p>Décision n° 5 (préflop) : prise = paie, meilleure = relance min, EV perdue ≈ 16.44 bb</p><p class='legend-note'>se couche : -1.00 bb · paie : -10.41 bb · relance min : +6.03 bb · relance 3x : +5.67 bb · tapis : +0.48 bb</p><pre>PokerLab Hand #205: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8919604030400495741
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-TAG (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [9c Ac]
+UTG-calling_station: folds
+MP-calling_station: raises €0.04 to €0.06
+CO-TAG: folds
+BTN-calling_station: calls €0.06
+SB-calling_station: calls €0.05
+BB-joueur: calls €0.04
+*** FLOP *** [As Jd 3c]
+SB-calling_station: checks
+BB-joueur: bets €0.12
+MP-calling_station: calls €0.12
+BTN-calling_station: calls €0.12
+SB-calling_station: calls €0.12
+*** TURN *** [As Jd 3c] [9s]
+SB-calling_station: checks
+BB-joueur: bets €0.36
+MP-calling_station: calls €0.36
+BTN-calling_station: calls €0.36
+SB-calling_station: folds
+*** RIVER *** [As Jd 3c 9s] [Qh]
+BB-joueur: bets €0.90
+MP-calling_station: calls €0.90
+BTN-calling_station: calls €0.90
+*** SHOW DOWN ***
+BB-joueur: shows [9c Ac]
+MP-calling_station: shows [Kd Kc]
+BTN-calling_station: shows [9h 9d]
+BTN-calling_station collected €4.50 from pot
+*** SUMMARY ***
+Total pot €4.50 | Rake €0.00
+Board [As Jd 3c 9s Qh]
+Seat 1: SB-calling_station folded | résultat -9.00 bb
+Seat 2: BB-joueur showed [9c Ac] | résultat -72.00 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-calling_station showed [Kd Kc] | résultat -72.00 bb
+Seat 5: CO-TAG folded | résultat +0.00 bb
+Seat 6: BTN-calling_station showed [9h 9d] | résultat +153.00 bb
+</pre><p>Décision n° 1 (préflop) : prise = paie, meilleure = relance min, EV perdue ≈ 14.17 bb</p><p class='legend-note'>se couche : +0.00 bb · paie : -12.04 bb · relance min : +2.12 bb · relance 3x : +1.12 bb · tapis : -6.54 bb</p><pre>PokerLab Hand #3225: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8856060943426847213
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-nit_trappeur (€2.00 in chips)
+Seat 4: MP-joueur (€2.00 in chips)
+Seat 5: CO-calling_station (€2.00 in chips)
+Seat 6: BTN-nit_trappeur (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to MP-joueur [9h As]
+UTG-nit_trappeur: raises €0.04 to €0.06
+MP-joueur: calls €0.06
+CO-calling_station: calls €0.06
+BTN-nit_trappeur: folds
+SB-calling_station: folds
+BB-calling_station: calls €0.04
+*** FLOP *** [4h Jc Ad]
+BB-calling_station: bets €0.12
+UTG-nit_trappeur: folds
+MP-joueur: calls €0.12
+CO-calling_station: calls €0.12
+*** TURN *** [4h Jc Ad] [3h]
+BB-calling_station: checks
+MP-joueur: bets €0.30
+CO-calling_station: folds
+BB-calling_station: calls €0.30
+*** RIVER *** [4h Jc Ad 3h] [2c]
+BB-calling_station: checks
+MP-joueur: bets €0.60
+BB-calling_station: calls €0.60
+*** SHOW DOWN ***
+BB-calling_station: shows [Ah Qd]
+MP-joueur: shows [9h As]
+BB-calling_station collected €2.39 from pot
 *** SUMMARY ***
 Total pot €2.39 | Rake €0.00
-Board [Kd 9s Jh 3d 2s]
+Board [4h Jc Ad 3h 2c]
 Seat 1: SB-calling_station folded | résultat -0.50 bb
-Seat 2: BB-LAG folded | résultat -1.00 bb
-Seat 3: UTG-calling_station folded | résultat +0.00 bb
-Seat 4: MP-maniac folded | résultat -23.48 bb
-Seat 5: CO-calling_station showed [Qd 6h] | résultat -47.22 bb
-Seat 6: BTN-joueur showed [Th Jd] | résultat +72.20 bb
+Seat 2: BB-calling_station showed [Ah Qd] | résultat +66.00 bb
+Seat 3: UTG-nit_trappeur folded | résultat -3.00 bb
+Seat 4: MP-joueur showed [9h As] | résultat -53.69 bb
+Seat 5: CO-calling_station folded | résultat -8.81 bb
+Seat 6: BTN-nit_trappeur folded | résultat +0.00 bb
 </pre></details><details><summary>Exemples : turn · couleur · rien à payer → mise</summary><p>Décision n° 13 (turn) : prise = mise 0.5 pot, meilleure = mise 1 pot, EV perdue ≈ 42.19 bb</p><p class='legend-note'>check : +121.84 bb · mise 0.5 pot : +134.41 bb · mise 1 pot : +176.59 bb · tapis : +88.52 bb</p><pre>PokerLab Hand #5976: Hold&#x27;em No Limit (€0.01/€0.02) - graine 1022089669812469869
 Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
 Seat 1: SB-joueur (€2.00 in chips)
@@ -4250,59 +3995,6 @@ Seat 3: UTG-calling_station folded | résultat +0.00 bb
 Seat 4: MP-maniac folded | résultat -1.00 bb
 Seat 5: CO-calling_station showed [Js Td] | résultat -100.00 bb
 Seat 6: BTN-calling_station showed [5h Ac] | résultat -100.00 bb
-</pre><p>Décision n° 14 (turn) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 32.00 bb</p><p class='legend-note'>check : +150.45 bb · mise 0.5 pot : +118.45 bb · mise 1 pot : +130.97 bb · tapis : +92.46 bb</p><pre>PokerLab Hand #1417: Hold&#x27;em No Limit (€0.01/€0.02) - graine 2917995306856576911
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-calling_station (€2.00 in chips)
-Seat 2: BB-joueur (€2.00 in chips)
-Seat 3: UTG-LAG (€2.00 in chips)
-Seat 4: MP-calling_station (€2.00 in chips)
-Seat 5: CO-maniac (€2.00 in chips)
-Seat 6: BTN-maniac (€2.00 in chips)
-SB-calling_station: posts small blind €0.01
-BB-joueur: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BB-joueur [8h Jh]
-UTG-LAG: folds
-MP-calling_station: calls €0.02
-CO-maniac: raises €0.06 to €0.08
-BTN-maniac: calls €0.08
-SB-calling_station: calls €0.07
-BB-joueur: calls €0.06
-MP-calling_station: calls €0.06
-*** FLOP *** [7h Kh 8d]
-SB-calling_station: checks
-BB-joueur: bets €0.13
-MP-calling_station: calls €0.13
-CO-maniac: calls €0.13
-BTN-maniac: calls €0.13
-SB-calling_station: calls €0.13
-*** TURN *** [7h Kh 8d] [5h]
-SB-calling_station: checks
-BB-joueur: bets €0.53
-MP-calling_station: calls €0.53
-CO-maniac: calls €0.53
-BTN-maniac: calls €0.53
-SB-calling_station: calls €0.53
-*** RIVER *** [7h Kh 8d 5h] [3d]
-SB-calling_station: checks
-BB-joueur: bets €1.26 and is all-in
-MP-calling_station: folds
-CO-maniac: calls €1.26 and is all-in
-BTN-maniac: folds
-SB-calling_station: folds
-*** SHOW DOWN ***
-BB-joueur: shows [8h Jh]
-CO-maniac: shows [Ad As]
-BB-joueur collected €6.23 from pot
-*** SUMMARY ***
-Total pot €6.23 | Rake €0.00
-Board [7h Kh 8d 5h 3d]
-Seat 1: SB-calling_station folded | résultat -37.10 bb
-Seat 2: BB-joueur showed [8h Jh] | résultat +211.30 bb
-Seat 3: UTG-LAG folded | résultat +0.00 bb
-Seat 4: MP-calling_station folded | résultat -37.10 bb
-Seat 5: CO-maniac showed [Ad As] | résultat -100.00 bb
-Seat 6: BTN-maniac folded | résultat -37.10 bb
 </pre><p>Décision n° 8 (turn) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 30.87 bb</p><p class='legend-note'>check : +68.42 bb · mise 0.5 pot : +37.55 bb · mise 1 pot : +38.70 bb · tapis : +43.17 bb</p><pre>PokerLab Hand #306: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7883936283616223983
 Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
 Seat 1: SB-joueur (€2.00 in chips)
@@ -4343,454 +4035,533 @@ Seat 3: UTG-calling_station folded | résultat +0.00 bb
 Seat 4: MP-maniac folded | résultat -57.60 bb
 Seat 5: CO-maniac folded | résultat +0.00 bb
 Seat 6: BTN-calling_station folded | résultat +0.00 bb
-</pre></details><details><summary>Exemples : river · deux paires · face à une mise → relance</summary><p>Décision n° 19 (river) : prise = relance 0.5 pot, meilleure = se couche, EV perdue ≈ 78.77 bb</p><p class='legend-note'>se couche : -21.23 bb · paie : -59.89 bb · relance 0.5 pot : -100.00 bb</p><pre>PokerLab Hand #2451: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8369427454363822581
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-calling_station (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-joueur (€2.00 in chips)
-Seat 5: CO-nit_trappeur (€2.00 in chips)
-Seat 6: BTN-maniac (€2.00 in chips)
-SB-calling_station: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to MP-joueur [Qc Jc]
-UTG-calling_station: calls €0.02
-MP-joueur: raises €0.06 to €0.08
-CO-nit_trappeur: folds
-BTN-maniac: folds
-SB-calling_station: calls €0.07
-BB-calling_station: folds
-UTG-calling_station: calls €0.06
-*** FLOP *** [Kh 8s Qs]
-SB-calling_station: checks
-UTG-calling_station: checks
-MP-joueur: bets €0.09
-SB-calling_station: calls €0.09
-UTG-calling_station: calls €0.09
-*** TURN *** [Kh 8s Qs] [Js]
-SB-calling_station: checks
-UTG-calling_station: checks
-MP-joueur: bets €0.26
-SB-calling_station: calls €0.26
-UTG-calling_station: calls €0.26
-*** RIVER *** [Kh 8s Qs Js] [As]
-SB-calling_station: checks
-UTG-calling_station: bets €0.66
-MP-joueur: raises €0.92 to €1.58 and is all-in
-SB-calling_station: calls €1.58 and is all-in
-UTG-calling_station: calls €0.92 and is all-in
-*** SHOW DOWN ***
-SB-calling_station: shows [Qd Tc]
-UTG-calling_station: shows [Ah Qh]
-MP-joueur: shows [Qc Jc]
-SB-calling_station collected €6.02 from pot
-*** SUMMARY ***
-Total pot €6.02 | Rake €0.00
-Board [Kh 8s Qs Js As]
-Seat 1: SB-calling_station showed [Qd Tc] | résultat +201.00 bb
-Seat 2: BB-calling_station folded | résultat -1.00 bb
-Seat 3: UTG-calling_station showed [Ah Qh] | résultat -100.00 bb
-Seat 4: MP-joueur showed [Qc Jc] | résultat -100.00 bb
-Seat 5: CO-nit_trappeur folded | résultat +0.00 bb
-Seat 6: BTN-maniac folded | résultat +0.00 bb
-</pre><p>Décision n° 19 (river) : prise = relance 0.5 pot, meilleure = se couche, EV perdue ≈ 74.13 bb</p><p class='legend-note'>se couche : -25.87 bb · paie : -69.56 bb · relance 0.5 pot : -100.00 bb</p><pre>PokerLab Hand #4120: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7850405706899311224
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-calling_station (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-nit (€2.00 in chips)
-Seat 5: CO-joueur (€2.00 in chips)
-Seat 6: BTN-nit (€2.00 in chips)
-SB-calling_station: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to CO-joueur [9d 7d]
-UTG-calling_station: calls €0.02
-MP-nit: folds
-CO-joueur: raises €0.06 to €0.08
-BTN-nit: folds
-SB-calling_station: folds
-BB-calling_station: calls €0.06
-UTG-calling_station: calls €0.06
-*** FLOP *** [9c 4c 7s]
-BB-calling_station: checks
-UTG-calling_station: checks
-CO-joueur: bets €0.12
-BB-calling_station: calls €0.12
-UTG-calling_station: calls €0.12
-*** TURN *** [9c 4c 7s] [2c]
-BB-calling_station: checks
-UTG-calling_station: checks
-CO-joueur: bets €0.31
-BB-calling_station: calls €0.31
-UTG-calling_station: calls €0.31
-*** RIVER *** [9c 4c 7s 2c] [5c]
-BB-calling_station: bets €0.87
-UTG-calling_station: calls €0.87
-CO-joueur: raises €0.61 to €1.48 and is all-in
-BB-calling_station: calls €0.61 and is all-in
-UTG-calling_station: folds
-*** SHOW DOWN ***
-BB-calling_station: shows [Tc Kc]
-CO-joueur: shows [9d 7d]
-BB-calling_station collected €5.40 from pot
-*** SUMMARY ***
-Total pot €5.40 | Rake €0.00
-Board [9c 4c 7s 2c 5c]
-Seat 1: SB-calling_station folded | résultat -0.50 bb
-Seat 2: BB-calling_station showed [Tc Kc] | résultat +170.06 bb
-Seat 3: UTG-calling_station folded | résultat -69.56 bb
-Seat 4: MP-nit folded | résultat +0.00 bb
-Seat 5: CO-joueur showed [9d 7d] | résultat -100.00 bb
-Seat 6: BTN-nit folded | résultat +0.00 bb
-</pre><p>Décision n° 13 (river) : prise = relance 1 pot, meilleure = relance 1 pot, EV perdue ≈ -12.54 bb</p><p class='legend-note'>se couche : -26.53 bb · paie : +12.77 bb · relance 0.5 pot : +25.29 bb · relance 1 pot : +25.31 bb</p><pre>PokerLab Hand #2169: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8531548520634443337
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-calling_station (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-nit (€2.00 in chips)
-Seat 4: MP-joueur (€2.00 in chips)
-Seat 5: CO-calling_station (€2.00 in chips)
-Seat 6: BTN-LAG (€2.00 in chips)
-SB-calling_station: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to MP-joueur [8d As]
-UTG-nit: folds
-MP-joueur: raises €0.04 to €0.06
-CO-calling_station: folds
-BTN-LAG: folds
-SB-calling_station: folds
-BB-calling_station: calls €0.04
-*** FLOP *** [Ac 8c 9h]
-BB-calling_station: bets €0.07
-MP-joueur: raises €0.14 to €0.20
-BB-calling_station: calls €0.14
-*** TURN *** [Ac 8c 9h] [6c]
-BB-calling_station: checks
-MP-joueur: bets €0.27
-BB-calling_station: calls €0.27
-*** RIVER *** [Ac 8c 9h 6c] [Qd]
-BB-calling_station: bets €0.47
-MP-joueur: raises €1.00 to €1.47 and is all-in
-BB-calling_station: calls €1.00 and is all-in
-*** SHOW DOWN ***
-BB-calling_station: shows [7c Ad]
-MP-joueur: shows [8d As]
-MP-joueur collected €4.01 from pot
-*** SUMMARY ***
-Total pot €4.01 | Rake €0.00
-Board [Ac 8c 9h 6c Qd]
-Seat 1: SB-calling_station folded | résultat -0.50 bb
-Seat 2: BB-calling_station showed [7c Ad] | résultat -100.00 bb
-Seat 3: UTG-nit folded | résultat +0.00 bb
-Seat 4: MP-joueur showed [8d As] | résultat +100.50 bb
-Seat 5: CO-calling_station folded | résultat +0.00 bb
-Seat 6: BTN-LAG folded | résultat +0.00 bb
-</pre></details><details><summary>Exemples : flop · petite paire · face à une mise → paie</summary><p>Décision n° 10 (flop) : prise = paie, meilleure = se couche, EV perdue ≈ 44.25 bb</p><p class='legend-note'>se couche : -5.00 bb · paie : -49.25 bb · relance 0.5 pot : -74.17 bb · relance 1 pot : -74.33 bb · tapis : -65.22 bb</p><pre>PokerLab Hand #5393: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3045333225157279122
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-nit_trappeur (€2.00 in chips)
-Seat 2: BB-LAG (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-calling_station (€2.00 in chips)
-Seat 5: CO-maniac (€2.00 in chips)
-Seat 6: BTN-joueur (€2.00 in chips)
-SB-nit_trappeur: posts small blind €0.01
-BB-LAG: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BTN-joueur [2d 2h]
-UTG-calling_station: calls €0.02
-MP-calling_station: calls €0.02
-CO-maniac: folds
-BTN-joueur: raises €0.08 to €0.10
-SB-nit_trappeur: folds
-BB-LAG: folds
-UTG-calling_station: calls €0.08
-MP-calling_station: calls €0.08
-*** FLOP *** [5c Kc Ad]
-UTG-calling_station: bets €0.11
-MP-calling_station: calls €0.11
-BTN-joueur: calls €0.11
-*** TURN *** [5c Kc Ad] [Td]
-UTG-calling_station: checks
-MP-calling_station: checks
-BTN-joueur: bets €0.22
-UTG-calling_station: calls €0.22
-MP-calling_station: calls €0.22
-*** RIVER *** [5c Kc Ad Td] [8h]
-UTG-calling_station: checks
-MP-calling_station: checks
-BTN-joueur: bets €0.44
-UTG-calling_station: calls €0.44
-MP-calling_station: calls €0.44
-*** SHOW DOWN ***
-UTG-calling_station: shows [Jd Kh]
-MP-calling_station: shows [6s As]
-BTN-joueur: shows [2d 2h]
-MP-calling_station collected €2.66 from pot
-*** SUMMARY ***
-Total pot €2.66 | Rake €0.00
-Board [5c Kc Ad Td 8h]
-Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
-Seat 2: BB-LAG folded | résultat -1.00 bb
-Seat 3: UTG-calling_station showed [Jd Kh] | résultat -43.90 bb
-Seat 4: MP-calling_station showed [6s As] | résultat +89.30 bb
-Seat 5: CO-maniac folded | résultat +0.00 bb
-Seat 6: BTN-joueur showed [2d 2h] | résultat -43.90 bb
-</pre><p>Décision n° 11 (flop) : prise = paie, meilleure = se couche, EV perdue ≈ 41.67 bb</p><p class='legend-note'>se couche : -5.00 bb · paie : -46.67 bb · relance 0.5 pot : -61.80 bb · relance 1 pot : -62.88 bb · tapis : -41.50 bb</p><pre>PokerLab Hand #4294: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4585309465835551141
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-calling_station (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-calling_station (€2.00 in chips)
-Seat 5: CO-joueur (€2.00 in chips)
-Seat 6: BTN-calling_station (€2.00 in chips)
-SB-calling_station: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to CO-joueur [2h 2d]
-UTG-calling_station: calls €0.02
-MP-calling_station: calls €0.02
-CO-joueur: raises €0.08 to €0.10
-BTN-calling_station: calls €0.10
-SB-calling_station: calls €0.09
-BB-calling_station: folds
-UTG-calling_station: calls €0.08
-MP-calling_station: calls €0.08
-*** FLOP *** [7h Qh 9c]
-SB-calling_station: checks
-UTG-calling_station: bets €0.20
-MP-calling_station: calls €0.20
-CO-joueur: calls €0.20
-BTN-calling_station: calls €0.20
-SB-calling_station: calls €0.20
-*** TURN *** [7h Qh 9c] [8c]
-SB-calling_station: bets €0.68
-UTG-calling_station: calls €0.68
-MP-calling_station: calls €0.68
-CO-joueur: calls €0.68
-BTN-calling_station: calls €0.68
-*** RIVER *** [7h Qh 9c 8c] [Qc]
-SB-calling_station: checks
-UTG-calling_station: bets €1.02 and is all-in
-MP-calling_station: folds
-CO-joueur: folds
-BTN-calling_station: calls €1.02 and is all-in
-SB-calling_station: calls €1.02 and is all-in
-*** SHOW DOWN ***
-SB-calling_station: shows [Qs 6h]
-UTG-calling_station: shows [9d Ac]
-BTN-calling_station: shows [Tc 9h]
-SB-calling_station collected €7.98 from pot
-*** SUMMARY ***
-Total pot €7.98 | Rake €0.00
-Board [7h Qh 9c 8c Qc]
-Seat 1: SB-calling_station showed [Qs 6h] | résultat +299.16 bb
-Seat 2: BB-calling_station folded | résultat -1.00 bb
-Seat 3: UTG-calling_station showed [9d Ac] | résultat -100.00 bb
-Seat 4: MP-calling_station folded | résultat -49.08 bb
-Seat 5: CO-joueur folded | résultat -49.08 bb
-Seat 6: BTN-calling_station showed [Tc 9h] | résultat -100.00 bb
-</pre><p>Décision n° 11 (flop) : prise = paie, meilleure = relance 0.5 pot, EV perdue ≈ 34.64 bb</p><p class='legend-note'>se couche : -5.00 bb · paie : -26.04 bb · relance 0.5 pot : +8.61 bb · relance 1 pot : -7.51 bb · tapis : -36.37 bb</p><pre>PokerLab Hand #665: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6376033071961546882
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-nit_trappeur (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-calling_station (€2.00 in chips)
-Seat 5: CO-TAG (€2.00 in chips)
-Seat 6: BTN-joueur (€2.00 in chips)
-SB-nit_trappeur: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BTN-joueur [6s 6c]
-UTG-calling_station: calls €0.02
-MP-calling_station: calls €0.02
-CO-TAG: folds
-BTN-joueur: raises €0.08 to €0.10
-SB-nit_trappeur: folds
-BB-calling_station: calls €0.08
-UTG-calling_station: calls €0.08
-MP-calling_station: calls €0.08
-*** FLOP *** [3h 9h Qd]
-BB-calling_station: bets €0.21
-UTG-calling_station: calls €0.21
-MP-calling_station: folds
-BTN-joueur: calls €0.21
-*** TURN *** [3h 9h Qd] [5c]
-BB-calling_station: checks
-UTG-calling_station: bets €0.59
-BTN-joueur: folds
-BB-calling_station: calls €0.59
-*** RIVER *** [3h 9h Qd 5c] [Jd]
-BB-calling_station: bets €0.74
-UTG-calling_station: calls €0.74
-*** SHOW DOWN ***
-BB-calling_station: shows [5h Qc]
-UTG-calling_station: shows [Kh 9s]
-BB-calling_station collected €3.70 from pot
-*** SUMMARY ***
-Total pot €3.70 | Rake €0.00
-Board [3h 9h Qd 5c Jd]
-Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
-Seat 2: BB-calling_station showed [5h Qc] | résultat +102.94 bb
-Seat 3: UTG-calling_station showed [Kh 9s] | résultat -81.91 bb
-Seat 4: MP-calling_station folded | résultat -5.00 bb
-Seat 5: CO-TAG folded | résultat +0.00 bb
-Seat 6: BTN-joueur folded | résultat -15.53 bb
-</pre></details><details><summary>Exemples : river · top paire · rien à payer → mise</summary><p>Décision n° 18 (river) : prise = mise 1 pot, meilleure = check, EV perdue ≈ 43.40 bb</p><p class='legend-note'>check : -12.35 bb · mise 0.5 pot : -31.62 bb · mise 1 pot : -55.75 bb</p><pre>PokerLab Hand #5981: Hold&#x27;em No Limit (€0.01/€0.02) - graine 1022089669812469869
+</pre><p>Décision n° 11 (turn) : prise = mise 0.5 pot, meilleure = mise 1 pot, EV perdue ≈ 18.50 bb</p><p class='legend-note'>check : +44.92 bb · mise 0.5 pot : +51.01 bb · mise 1 pot : +69.51 bb · tapis : +58.23 bb</p><pre>PokerLab Hand #2563: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8307563804582906149
 Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
 Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-TAG (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [2d Kd]
+UTG-calling_station: calls €0.02
+MP-maniac: calls €0.02
+CO-TAG: folds
+BTN-calling_station: folds
+SB-maniac: folds
+BB-joueur: raises €0.08 to €0.10
+UTG-calling_station: calls €0.08
+MP-maniac: calls €0.08
+*** FLOP *** [Ts 6d 9d]
+BB-joueur: bets €0.10
+UTG-calling_station: calls €0.10
+MP-maniac: folds
+*** TURN *** [Ts 6d 9d] [Ad]
+BB-joueur: bets €0.26
+UTG-calling_station: calls €0.26
+*** RIVER *** [Ts 6d 9d Ad] [8h]
+BB-joueur: bets €0.51
+UTG-calling_station: calls €0.51
+*** SHOW DOWN ***
+BB-joueur: shows [2d Kd]
+UTG-calling_station: shows [7c Ks]
+BB-joueur collected €2.06 from pot
+*** SUMMARY ***
+Total pot €2.06 | Rake €0.00
+Board [Ts 6d 9d Ad 8h]
+Seat 1: SB-maniac folded | résultat -0.50 bb
+Seat 2: BB-joueur showed [2d Kd] | résultat +54.23 bb
+Seat 3: UTG-calling_station showed [7c Ks] | résultat -48.73 bb
+Seat 4: MP-maniac folded | résultat -5.00 bb
+Seat 5: CO-TAG folded | résultat +0.00 bb
+Seat 6: BTN-calling_station folded | résultat +0.00 bb
+</pre></details><details><summary>Exemples : river · quinte · rien à payer → mise</summary><p>Décision n° 14 (river) : prise = mise 0.5 pot, meilleure = mise 1 pot, EV perdue ≈ 55.46 bb</p><p class='legend-note'>check : +84.53 bb · mise 0.5 pot : +104.18 bb · mise 1 pot : +159.65 bb · tapis : +145.74 bb</p><pre>PokerLab Hand #1800: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3684342408824695823
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
 Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-LAG (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [Kc Jd]
+UTG-calling_station: folds
+MP-calling_station: folds
+CO-LAG: raises €0.04 to €0.06
+BTN-calling_station: calls €0.06
+SB-joueur: calls €0.05
+BB-calling_station: calls €0.04
+*** FLOP *** [3s Tc Qc]
+SB-joueur: bets €0.08
+BB-calling_station: calls €0.08
+CO-LAG: calls €0.08
+BTN-calling_station: calls €0.08
+*** TURN *** [3s Tc Qc] [Ad]
+SB-joueur: bets €0.28
+BB-calling_station: calls €0.28
+CO-LAG: folds
+BTN-calling_station: calls €0.28
+*** RIVER *** [3s Tc Qc Ad] [2d]
+SB-joueur: bets €0.70
+BB-calling_station: folds
+BTN-calling_station: calls €0.70
+*** SHOW DOWN ***
+SB-joueur: shows [Kc Jd]
+BTN-calling_station: shows [Kd 8s]
+SB-joueur collected €2.78 from pot
+*** SUMMARY ***
+Total pot €2.78 | Rake €0.00
+Board [3s Tc Qc Ad 2d]
+Seat 1: SB-joueur showed [Kc Jd] | résultat +83.52 bb
+Seat 2: BB-calling_station folded | résultat -20.88 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-calling_station folded | résultat +0.00 bb
+Seat 5: CO-LAG folded | résultat -6.96 bb
+Seat 6: BTN-calling_station showed [Kd 8s] | résultat -55.68 bb
+</pre><p>Décision n° 11 (river) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 25.36 bb</p><p class='legend-note'>check : +22.53 bb · mise 0.5 pot : +46.52 bb · mise 1 pot : +62.86 bb · tapis : +71.89 bb</p><pre>PokerLab Hand #3515: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3639958412179753533
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-LAG (€2.00 in chips)
+Seat 2: BB-LAG (€2.00 in chips)
 Seat 3: UTG-maniac (€2.00 in chips)
 Seat 4: MP-calling_station (€2.00 in chips)
 Seat 5: CO-calling_station (€2.00 in chips)
 Seat 6: BTN-joueur (€2.00 in chips)
-SB-maniac: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
+SB-LAG: posts small blind €0.01
+BB-LAG: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to BTN-joueur [5h Ac]
-UTG-maniac: calls €0.02
+Dealt to BTN-joueur [3d 8d]
+UTG-maniac: raises €0.04 to €0.06
 MP-calling_station: folds
-CO-calling_station: calls €0.02
-BTN-joueur: raises €0.08 to €0.10
-SB-maniac: folds
-BB-calling_station: calls €0.08
-UTG-maniac: folds
-CO-calling_station: calls €0.08
-*** FLOP *** [2d Ad Qd]
-BB-calling_station: checks
-CO-calling_station: checks
-BTN-joueur: bets €0.17
-BB-calling_station: calls €0.17
-CO-calling_station: calls €0.17
-*** TURN *** [2d Ad Qd] [3c]
-BB-calling_station: bets €0.47
-CO-calling_station: calls €0.47
-BTN-joueur: calls €0.47
-*** RIVER *** [2d Ad Qd 3c] [Ks]
-BB-calling_station: checks
-CO-calling_station: checks
-BTN-joueur: bets €1.26 and is all-in
-BB-calling_station: folds
-CO-calling_station: calls €1.26 and is all-in
-*** SHOW DOWN ***
-CO-calling_station: shows [Js Td]
-BTN-joueur: shows [5h Ac]
-CO-calling_station collected €4.77 from pot
-*** SUMMARY ***
-Total pot €4.77 | Rake €0.00
-Board [2d Ad Qd 3c Ks]
-Seat 1: SB-maniac folded | résultat -0.50 bb
-Seat 2: BB-calling_station folded | résultat -36.87 bb
-Seat 3: UTG-maniac folded | résultat -1.00 bb
-Seat 4: MP-calling_station folded | résultat +0.00 bb
-Seat 5: CO-calling_station showed [Js Td] | résultat +138.37 bb
-Seat 6: BTN-joueur showed [5h Ac] | résultat -100.00 bb
-</pre><p>Décision n° 22 (river) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 39.03 bb</p><p class='legend-note'>check : -12.77 bb · mise 0.5 pot : -51.80 bb</p><pre>PokerLab Hand #3029: Hold&#x27;em No Limit (€0.01/€0.02) - graine 3168546965248085149
-Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
-Seat 1: SB-nit_trappeur (€2.00 in chips)
-Seat 2: BB-calling_station (€2.00 in chips)
-Seat 3: UTG-calling_station (€2.00 in chips)
-Seat 4: MP-nit_trappeur (€2.00 in chips)
-Seat 5: CO-calling_station (€2.00 in chips)
-Seat 6: BTN-joueur (€2.00 in chips)
-SB-nit_trappeur: posts small blind €0.01
-BB-calling_station: posts big blind €0.02
-*** HOLE CARDS ***
-Dealt to BTN-joueur [9d Ah]
-UTG-calling_station: calls €0.02
-MP-nit_trappeur: folds
-CO-calling_station: calls €0.02
-BTN-joueur: raises €0.08 to €0.10
-SB-nit_trappeur: folds
-BB-calling_station: calls €0.08
-UTG-calling_station: calls €0.08
-CO-calling_station: calls €0.08
-*** FLOP *** [8h Qs As]
-BB-calling_station: bets €0.13
-UTG-calling_station: calls €0.13
-CO-calling_station: calls €0.13
-BTN-joueur: calls €0.13
-*** TURN *** [8h Qs As] [5d]
-BB-calling_station: checks
-UTG-calling_station: checks
-CO-calling_station: checks
-BTN-joueur: bets €0.46
-BB-calling_station: calls €0.46
-UTG-calling_station: calls €0.46
-CO-calling_station: calls €0.46
-*** RIVER *** [8h Qs As 5d] [Kd]
-BB-calling_station: checks
-UTG-calling_station: checks
-CO-calling_station: checks
-BTN-joueur: bets €1.31 and is all-in
-BB-calling_station: calls €1.31 and is all-in
-UTG-calling_station: calls €1.31 and is all-in
 CO-calling_station: folds
+BTN-joueur: calls €0.06
+SB-LAG: folds
+BB-LAG: folds
+*** FLOP *** [5d 7s 6d]
+UTG-maniac: bets €0.11
+BTN-joueur: calls €0.11
+*** TURN *** [5d 7s 6d] [Kh]
+UTG-maniac: bets €0.25
+BTN-joueur: calls €0.25
+*** RIVER *** [5d 7s 6d Kh] [9s]
+UTG-maniac: checks
+BTN-joueur: bets €0.44
+UTG-maniac: calls €0.44
 *** SHOW DOWN ***
-BB-calling_station: shows [Qh 6s]
-UTG-calling_station: shows [Th Ac]
-BTN-joueur: shows [9d Ah]
-UTG-calling_station collected €6.70 from pot
+UTG-maniac: shows [5s Ah]
+BTN-joueur: shows [3d 8d]
+BTN-joueur collected €1.74 from pot
 *** SUMMARY ***
-Total pot €6.70 | Rake €0.00
-Board [8h Qs As 5d Kd]
-Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
-Seat 2: BB-calling_station showed [Qh 6s] | résultat -100.00 bb
-Seat 3: UTG-calling_station showed [Th Ac] | résultat +234.77 bb
-Seat 4: MP-nit_trappeur folded | résultat +0.00 bb
-Seat 5: CO-calling_station folded | résultat -34.27 bb
-Seat 6: BTN-joueur showed [9d Ah] | résultat -100.00 bb
-</pre><p>Décision n° 18 (river) : prise = mise 0.5 pot, meilleure = mise 1 pot, EV perdue ≈ 32.78 bb</p><p class='legend-note'>check : +31.14 bb · mise 0.5 pot : +73.04 bb · mise 1 pot : +105.81 bb · tapis : +69.84 bb</p><pre>PokerLab Hand #5123: Hold&#x27;em No Limit (€0.01/€0.02) - graine 5108085314687529562
+Total pot €1.74 | Rake €0.00
+Board [5d 7s 6d Kh 9s]
+Seat 1: SB-LAG folded | résultat -0.50 bb
+Seat 2: BB-LAG folded | résultat -1.00 bb
+Seat 3: UTG-maniac showed [5s Ah] | résultat -42.81 bb
+Seat 4: MP-calling_station folded | résultat +0.00 bb
+Seat 5: CO-calling_station folded | résultat +0.00 bb
+Seat 6: BTN-joueur showed [3d 8d] | résultat +44.31 bb
+</pre><p>Décision n° 10 (river) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 9.99 bb</p><p class='legend-note'>check : +23.47 bb · mise 0.5 pot : +13.48 bb · mise 1 pot : +12.08 bb · tapis : +20.45 bb</p><pre>PokerLab Hand #2779: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4163159210050008404
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-nit (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [4d Jh]
+UTG-maniac: calls €0.02
+MP-maniac: folds
+CO-maniac: folds
+BTN-nit: folds
+SB-calling_station: folds
+BB-joueur: checks
+*** FLOP *** [Qd Th 9d]
+BB-joueur: bets €0.02
+UTG-maniac: calls €0.02
+*** TURN *** [Qd Th 9d] [Qc]
+BB-joueur: bets €0.03
+UTG-maniac: calls €0.03
+*** RIVER *** [Qd Th 9d Qc] [Ks]
+BB-joueur: bets €0.07
+UTG-maniac: folds
+Uncalled bet (€0.07) returned to BB-joueur
+BB-joueur collected €0.15 from pot
+*** SUMMARY ***
+Total pot €0.15 | Rake €0.00
+Board [Qd Th 9d Qc Ks]
+Seat 1: SB-calling_station folded | résultat -0.50 bb
+Seat 2: BB-joueur won uncontested | résultat +3.98 bb
+Seat 3: UTG-maniac folded | résultat -3.48 bb
+Seat 4: MP-maniac folded | résultat +0.00 bb
+Seat 5: CO-maniac folded | résultat +0.00 bb
+Seat 6: BTN-nit folded | résultat +0.00 bb
+</pre></details><details><summary>Exemples : turn · overpair · face à une mise → paie</summary><p>Décision n° 12 (turn) : prise = paie, meilleure = se couche, EV perdue ≈ 83.38 bb</p><p class='legend-note'>se couche : -16.62 bb · paie : -100.00 bb · relance 0.5 pot : -100.00 bb</p><pre>PokerLab Hand #5237: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6084287995400449288
 Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
 Seat 1: SB-calling_station (€2.00 in chips)
 Seat 2: BB-maniac (€2.00 in chips)
-Seat 3: UTG-maniac (€2.00 in chips)
-Seat 4: MP-TAG (€2.00 in chips)
+Seat 3: UTG-nit_trappeur (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
 Seat 5: CO-calling_station (€2.00 in chips)
 Seat 6: BTN-joueur (€2.00 in chips)
 SB-calling_station: posts small blind €0.01
 BB-maniac: posts big blind €0.02
 *** HOLE CARDS ***
-Dealt to BTN-joueur [Ks As]
-UTG-maniac: folds
-MP-TAG: folds
-CO-calling_station: calls €0.02
+Dealt to BTN-joueur [As Ac]
+UTG-nit_trappeur: folds
+MP-calling_station: calls €0.02
+CO-calling_station: folds
 BTN-joueur: raises €0.06 to €0.08
-SB-calling_station: calls €0.07
-BB-maniac: folds
-CO-calling_station: calls €0.06
-*** FLOP *** [Ad 6h 2d]
-SB-calling_station: checks
-CO-calling_station: checks
-BTN-joueur: bets €0.13
-SB-calling_station: calls €0.13
-CO-calling_station: calls €0.13
-*** TURN *** [Ad 6h 2d] [Jh]
-SB-calling_station: checks
-CO-calling_station: bets €0.24
-BTN-joueur: calls €0.24
-SB-calling_station: calls €0.24
-*** RIVER *** [Ad 6h 2d Jh] [Ts]
-SB-calling_station: checks
-CO-calling_station: checks
-BTN-joueur: bets €0.69
-SB-calling_station: calls €0.69
-CO-calling_station: calls €0.69
+SB-calling_station: folds
+BB-maniac: calls €0.06
+MP-calling_station: calls €0.06
+*** FLOP *** [7h Jh 3h]
+BB-maniac: bets €0.25
+MP-calling_station: calls €0.25
+BTN-joueur: calls €0.25
+*** TURN *** [7h Jh 3h] [8h]
+BB-maniac: bets €0.58
+MP-calling_station: calls €0.58
+BTN-joueur: calls €0.58
+*** RIVER *** [7h Jh 3h 8h] [Ts]
+BB-maniac: bets €1.08 and is all-in
+MP-calling_station: calls €1.08 and is all-in
+BTN-joueur: calls €1.08 and is all-in
 *** SHOW DOWN ***
-SB-calling_station: shows [9d 9c]
-CO-calling_station: shows [Jd Td]
-BTN-joueur: shows [Ks As]
-CO-calling_station collected €3.44 from pot
+BB-maniac: shows [4c 4s]
+MP-calling_station: shows [9h Td]
+BTN-joueur: shows [As Ac]
+MP-calling_station collected €6.01 from pot
 *** SUMMARY ***
-Total pot €3.44 | Rake €0.00
-Board [Ad 6h 2d Jh Ts]
-Seat 1: SB-calling_station showed [9d 9c] | résultat -56.97 bb
-Seat 2: BB-maniac folded | résultat -1.00 bb
-Seat 3: UTG-maniac folded | résultat +0.00 bb
-Seat 4: MP-TAG folded | résultat +0.00 bb
-Seat 5: CO-calling_station showed [Jd Td] | résultat +114.94 bb
-Seat 6: BTN-joueur showed [Ks As] | résultat -56.97 bb
+Total pot €6.01 | Rake €0.00
+Board [7h Jh 3h 8h Ts]
+Seat 1: SB-calling_station folded | résultat -0.50 bb
+Seat 2: BB-maniac showed [4c 4s] | résultat -100.00 bb
+Seat 3: UTG-nit_trappeur folded | résultat +0.00 bb
+Seat 4: MP-calling_station showed [9h Td] | résultat +200.50 bb
+Seat 5: CO-calling_station folded | résultat +0.00 bb
+Seat 6: BTN-joueur showed [As Ac] | résultat -100.00 bb
+</pre></details><details><summary>Exemples : turn · top paire · rien à payer → mise</summary><p>Décision n° 13 (turn) : prise = mise 0.5 pot, meilleure = tapis, EV perdue ≈ 47.20 bb</p><p class='legend-note'>check : +20.86 bb · mise 0.5 pot : +2.53 bb · mise 1 pot : +33.53 bb · tapis : +49.73 bb</p><pre>PokerLab Hand #5365: Hold&#x27;em No Limit (€0.01/€0.02) - graine 7030277338202479170
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-maniac (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [Ts Qd]
+UTG-maniac: raises €0.04 to €0.06
+MP-calling_station: calls €0.06
+CO-maniac: folds
+BTN-maniac: calls €0.06
+SB-calling_station: calls €0.05
+BB-joueur: calls €0.04
+*** FLOP *** [4c Jc Qh]
+SB-calling_station: checks
+BB-joueur: bets €0.15
+UTG-maniac: calls €0.15
+MP-calling_station: calls €0.15
+BTN-maniac: calls €0.15
+SB-calling_station: calls €0.15
+*** TURN *** [4c Jc Qh] [5s]
+SB-calling_station: checks
+BB-joueur: bets €0.53
+UTG-maniac: calls €0.53
+MP-calling_station: calls €0.53
+BTN-maniac: calls €0.53
+SB-calling_station: calls €0.53
+*** RIVER *** [4c Jc Qh 5s] [3h]
+SB-calling_station: checks
+BB-joueur: bets €1.27 and is all-in
+UTG-maniac: folds
+MP-calling_station: folds
+BTN-maniac: folds
+SB-calling_station: folds
+Uncalled bet (€1.27) returned to BB-joueur
+BB-joueur collected €3.68 from pot
+*** SUMMARY ***
+Total pot €3.68 | Rake €0.00
+Board [4c Jc Qh 5s 3h]
+Seat 1: SB-calling_station folded | résultat -36.75 bb
+Seat 2: BB-joueur won uncontested | résultat +147.00 bb
+Seat 3: UTG-maniac folded | résultat -36.75 bb
+Seat 4: MP-calling_station folded | résultat -36.75 bb
+Seat 5: CO-maniac folded | résultat +0.00 bb
+Seat 6: BTN-maniac folded | résultat -36.75 bb
+</pre><p>Décision n° 11 (turn) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 35.32 bb</p><p class='legend-note'>check : -12.85 bb · mise 0.5 pot : -48.16 bb · mise 1 pot : -71.58 bb · tapis : -87.73 bb</p><pre>PokerLab Hand #2156: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4371127993643809815
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-nit (€2.00 in chips)
+Seat 3: UTG-joueur (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-nit: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to UTG-joueur [6d Ad]
+UTG-joueur: raises €0.04 to €0.06
+MP-calling_station: calls €0.06
+CO-maniac: calls €0.06
+BTN-maniac: folds
+SB-calling_station: calls €0.05
+BB-nit: folds
+*** FLOP *** [3c 4c Ac]
+SB-calling_station: checks
+UTG-joueur: bets €0.13
+MP-calling_station: calls €0.13
+CO-maniac: calls €0.13
+SB-calling_station: folds
+*** TURN *** [3c 4c Ac] [9c]
+UTG-joueur: bets €0.33
+MP-calling_station: calls €0.33
+CO-maniac: folds
+*** RIVER *** [3c 4c Ac 9c] [3h]
+UTG-joueur: bets €0.65
+MP-calling_station: calls €0.65
+*** SHOW DOWN ***
+UTG-joueur: shows [6d Ad]
+MP-calling_station: shows [Ah 7c]
+MP-calling_station collected €2.60 from pot
+*** SUMMARY ***
+Total pot €2.60 | Rake €0.00
+Board [3c 4c Ac 9c 3h]
+Seat 1: SB-calling_station folded | résultat -3.00 bb
+Seat 2: BB-nit folded | résultat -1.00 bb
+Seat 3: UTG-joueur showed [6d Ad] | résultat -58.25 bb
+Seat 4: MP-calling_station showed [Ah 7c] | résultat +71.75 bb
+Seat 5: CO-maniac folded | résultat -9.50 bb
+Seat 6: BTN-maniac folded | résultat +0.00 bb
+</pre><p>Décision n° 11 (turn) : prise = mise 0.5 pot, meilleure = mise 1 pot, EV perdue ≈ 30.19 bb</p><p class='legend-note'>check : +22.59 bb · mise 0.5 pot : +13.59 bb · mise 1 pot : +43.78 bb · tapis : +11.13 bb</p><pre>PokerLab Hand #3505: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6109459218435221007
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-maniac (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-maniac: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [Th Kd]
+UTG-calling_station: folds
+MP-maniac: raises €0.04 to €0.06
+CO-maniac: calls €0.06
+BTN-calling_station: folds
+SB-maniac: calls €0.05
+BB-joueur: calls €0.04
+*** FLOP *** [5c Jd Ks]
+SB-maniac: bets €0.15
+BB-joueur: calls €0.15
+MP-maniac: calls €0.15
+CO-maniac: calls €0.15
+*** TURN *** [5c Jd Ks] [2s]
+SB-maniac: checks
+BB-joueur: bets €0.42
+MP-maniac: calls €0.42
+CO-maniac: calls €0.42
+SB-maniac: calls €0.42
+*** RIVER *** [5c Jd Ks 2s] [Qh]
+SB-maniac: bets €1.36 and is all-in
+BB-joueur: folds
+MP-maniac: folds
+CO-maniac: folds
+Uncalled bet (€1.36) returned to SB-maniac
+SB-maniac collected €2.54 from pot
+*** SUMMARY ***
+Total pot €2.54 | Rake €0.00
+Board [5c Jd Ks 2s Qh]
+Seat 1: SB-maniac won uncontested | résultat +95.31 bb
+Seat 2: BB-joueur folded | résultat -31.77 bb
+Seat 3: UTG-calling_station folded | résultat +0.00 bb
+Seat 4: MP-maniac folded | résultat -31.77 bb
+Seat 5: CO-maniac folded | résultat -31.77 bb
+Seat 6: BTN-calling_station folded | résultat +0.00 bb
+</pre></details><details><summary>Exemples : turn · overpair · face à une relance → paie</summary><p>Décision n° 12 (turn) : prise = paie, meilleure = se couche, EV perdue ≈ 78.63 bb</p><p class='legend-note'>se couche : -21.37 bb · paie : -100.00 bb · relance 0.5 pot : -85.16 bb</p><pre>PokerLab Hand #1430: Hold&#x27;em No Limit (€0.01/€0.02) - graine 2765137979389704867
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-nit_trappeur (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-joueur (€2.00 in chips)
+Seat 4: MP-LAG (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-nit_trappeur: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to UTG-joueur [Ad Ac]
+UTG-joueur: raises €0.04 to €0.06
+MP-LAG: folds
+CO-maniac: calls €0.06
+BTN-maniac: calls €0.06
+SB-nit_trappeur: folds
+BB-calling_station: folds
+*** FLOP *** [7d 7s 9c]
+UTG-joueur: bets €0.10
+CO-maniac: calls €0.10
+BTN-maniac: calls €0.10
+*** TURN *** [7d 7s 9c] [9s]
+UTG-joueur: bets €0.26
+CO-maniac: raises €0.52 to €0.79
+BTN-maniac: calls €0.79
+UTG-joueur: calls €0.52
+*** RIVER *** [7d 7s 9c 9s] [As]
+UTG-joueur: bets €1.05 and is all-in
+CO-maniac: calls €1.05 and is all-in
+BTN-maniac: calls €1.05 and is all-in
+*** SHOW DOWN ***
+UTG-joueur: shows [Ad Ac]
+CO-maniac: shows [Kd 9h]
+BTN-maniac: shows [9d Tc]
+UTG-joueur collected €6.03 from pot
+*** SUMMARY ***
+Total pot €6.03 | Rake €0.00
+Board [7d 7s 9c 9s As]
+Seat 1: SB-nit_trappeur folded | résultat -0.50 bb
+Seat 2: BB-calling_station folded | résultat -1.00 bb
+Seat 3: UTG-joueur showed [Ad Ac] | résultat +201.50 bb
+Seat 4: MP-LAG folded | résultat +0.00 bb
+Seat 5: CO-maniac showed [Kd 9h] | résultat -100.00 bb
+Seat 6: BTN-maniac showed [9d Tc] | résultat -100.00 bb
+</pre></details><details><summary>Exemples : flop · brelan · rien à payer → mise</summary><p>Décision n° 6 (flop) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 39.42 bb</p><p class='legend-note'>check : +81.55 bb · mise 0.5 pot : +42.13 bb · mise 1 pot : +46.78 bb · tapis : +39.60 bb</p><pre>PokerLab Hand #774: Hold&#x27;em No Limit (€0.01/€0.02) - graine 8901537728023889718
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-calling_station (€2.00 in chips)
+Seat 3: UTG-nit_trappeur (€2.00 in chips)
+Seat 4: MP-LAG (€2.00 in chips)
+Seat 5: CO-maniac (€2.00 in chips)
+Seat 6: BTN-calling_station (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-calling_station: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [8s 8h]
+UTG-nit_trappeur: folds
+MP-LAG: folds
+CO-maniac: raises €0.04 to €0.06
+BTN-calling_station: calls €0.06
+SB-joueur: calls €0.05
+BB-calling_station: folds
+*** FLOP *** [8c 4s 6s]
+SB-joueur: bets €0.10
+CO-maniac: calls €0.10
+BTN-calling_station: calls €0.10
+*** TURN *** [8c 4s 6s] [5c]
+SB-joueur: bets €0.25
+CO-maniac: calls €0.25
+BTN-calling_station: calls €0.25
+*** RIVER *** [8c 4s 6s 5c] [Ks]
+SB-joueur: bets €0.62
+CO-maniac: calls €0.62
+BTN-calling_station: folds
+*** SHOW DOWN ***
+SB-joueur: shows [8s 8h]
+CO-maniac: shows [As 2d]
+SB-joueur collected €2.50 from pot
+*** SUMMARY ***
+Total pot €2.50 | Rake €0.00
+Board [8c 4s 6s 5c Ks]
+Seat 1: SB-joueur showed [8s 8h] | résultat +73.25 bb
+Seat 2: BB-calling_station folded | résultat -1.00 bb
+Seat 3: UTG-nit_trappeur folded | résultat +0.00 bb
+Seat 4: MP-LAG folded | résultat +0.00 bb
+Seat 5: CO-maniac showed [As 2d] | résultat -51.75 bb
+Seat 6: BTN-calling_station folded | résultat -20.50 bb
+</pre><p>Décision n° 6 (flop) : prise = mise 0.5 pot, meilleure = mise 1 pot, EV perdue ≈ 20.25 bb</p><p class='legend-note'>check : +91.15 bb · mise 0.5 pot : +69.89 bb · mise 1 pot : +92.75 bb · tapis : +57.65 bb</p><pre>PokerLab Hand #3540: Hold&#x27;em No Limit (€0.01/€0.02) - graine 6084443496914117766
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-joueur (€2.00 in chips)
+Seat 2: BB-maniac (€2.00 in chips)
+Seat 3: UTG-LAG (€2.00 in chips)
+Seat 4: MP-maniac (€2.00 in chips)
+Seat 5: CO-nit (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-joueur: posts small blind €0.01
+BB-maniac: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to SB-joueur [5c 5s]
+UTG-LAG: raises €0.04 to €0.06
+MP-maniac: calls €0.06
+CO-nit: folds
+BTN-maniac: calls €0.06
+SB-joueur: calls €0.05
+BB-maniac: calls €0.04
+*** FLOP *** [5h 2s Jc]
+SB-joueur: bets €0.15
+BB-maniac: folds
+UTG-LAG: folds
+MP-maniac: calls €0.15
+BTN-maniac: folds
+*** TURN *** [5h 2s Jc] [Ah]
+SB-joueur: bets €0.30
+MP-maniac: calls €0.30
+*** RIVER *** [5h 2s Jc Ah] [2d]
+SB-joueur: bets €0.60
+MP-maniac: raises €0.89 to €1.49 and is all-in
+SB-joueur: calls €0.89 and is all-in
+*** SHOW DOWN ***
+SB-joueur: shows [5c 5s]
+MP-maniac: shows [4h 4s]
+SB-joueur collected €4.18 from pot
+*** SUMMARY ***
+Total pot €4.18 | Rake €0.00
+Board [5h 2s Jc Ah 2d]
+Seat 1: SB-joueur showed [5c 5s] | résultat +109.00 bb
+Seat 2: BB-maniac folded | résultat -3.00 bb
+Seat 3: UTG-LAG folded | résultat -3.00 bb
+Seat 4: MP-maniac showed [4h 4s] | résultat -100.00 bb
+Seat 5: CO-nit folded | résultat +0.00 bb
+Seat 6: BTN-maniac folded | résultat -3.00 bb
+</pre><p>Décision n° 9 (flop) : prise = mise 0.5 pot, meilleure = check, EV perdue ≈ 11.51 bb</p><p class='legend-note'>check : +46.82 bb · mise 0.5 pot : +35.30 bb · mise 1 pot : +23.23 bb · tapis : +0.59 bb</p><pre>PokerLab Hand #5311: Hold&#x27;em No Limit (€0.01/€0.02) - graine 4817386747363131587
+Table &#x27;micro_play_money&#x27; 6-max Seat #6 is the button
+Seat 1: SB-calling_station (€2.00 in chips)
+Seat 2: BB-joueur (€2.00 in chips)
+Seat 3: UTG-calling_station (€2.00 in chips)
+Seat 4: MP-calling_station (€2.00 in chips)
+Seat 5: CO-TAG (€2.00 in chips)
+Seat 6: BTN-maniac (€2.00 in chips)
+SB-calling_station: posts small blind €0.01
+BB-joueur: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to BB-joueur [2s Ah]
+UTG-calling_station: calls €0.02
+MP-calling_station: folds
+CO-TAG: folds
+BTN-maniac: folds
+SB-calling_station: calls €0.01
+BB-joueur: raises €0.08 to €0.10
+UTG-calling_station: calls €0.08
+SB-calling_station: calls €0.08
+*** FLOP *** [Ac As Qd]
+SB-calling_station: checks
+BB-joueur: bets €0.15
+UTG-calling_station: folds
+SB-calling_station: calls €0.15
+*** TURN *** [Ac As Qd] [3h]
+SB-calling_station: checks
+BB-joueur: bets €0.30
+SB-calling_station: calls €0.30
+*** RIVER *** [Ac As Qd 3h] [5s]
+SB-calling_station: bets €0.53
+BB-joueur: raises €0.92 to €1.45 and is all-in
+SB-calling_station: folds
+Uncalled bet (€0.92) returned to BB-joueur
+BB-joueur collected €2.25 from pot
+*** SUMMARY ***
+Total pot €2.25 | Rake €0.00
+Board [Ac As Qd 3h 5s]
+Seat 1: SB-calling_station folded | résultat -53.81 bb
+Seat 2: BB-joueur won uncontested | résultat +58.81 bb
+Seat 3: UTG-calling_station folded | résultat -5.00 bb
+Seat 4: MP-calling_station folded | résultat +0.00 bb
+Seat 5: CO-TAG folded | résultat +0.00 bb
+Seat 6: BTN-maniac folded | résultat +0.00 bb
 </pre></details></section>
 <p class="sub">PokerLab — simulation 100 % locale et déterministe. Les archétypes adverses ne sont pas de vrais humains.</p>
 </main></body></html>
